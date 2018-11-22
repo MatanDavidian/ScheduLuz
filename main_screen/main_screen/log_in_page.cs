@@ -21,7 +21,25 @@ namespace main_screen
         {
             if(textBox1.Text=="Matan"&& textBox2.Text=="123456")
             {
-                Calander frmCal = new Calander();
+                ManagerCalander frmCal = new ManagerCalander();
+                frmCal.Show();
+                Visible = false;
+            }
+            else if (textBox1.Text == "Tom" && textBox2.Text == "123456")
+            {
+                TeacherCalander frmCal = new TeacherCalander();
+                frmCal.Show();
+                Visible = false;
+            }
+            else if (textBox1.Text == "Aviran" && textBox2.Text == "123456")
+            {
+                StudentCalander frmCal = new StudentCalander();
+                frmCal.Show();
+                Visible = false;
+            }
+            else if (textBox1.Text == "Amir" && textBox2.Text == "123456")
+            {
+                StudentCalander frmCal = new StudentCalander();
                 frmCal.Show();
                 Visible = false;
             }

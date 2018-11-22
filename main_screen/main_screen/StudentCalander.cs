@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace main_screen
 {
-    public partial class Calander : Form
+    public partial class StudentCalander : Form
     {
-        public Calander()
+        public StudentCalander()
         {
             InitializeComponent();
         }
