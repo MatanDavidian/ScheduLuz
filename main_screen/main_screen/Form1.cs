@@ -22,6 +22,14 @@ namespace main_screen
             MessageBox.Show("hi my name is tom");
             MessageBox.Show("hi my name is amir");
             MessageBox.Show("This project has been hacked");
+            MessageBox.Show("hi my name is matan");
+            MessageBox.Show("hi my name is what my name is who");
+            MessageBox.Show("amir is hacking the project");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
