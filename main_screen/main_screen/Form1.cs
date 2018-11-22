@@ -20,6 +20,7 @@ namespace main_screen
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("hi my name is tom");
+            MessageBox.Show("hi my name is amir");
         }
     }
 }
