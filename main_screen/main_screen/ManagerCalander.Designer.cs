@@ -43,7 +43,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(293, 97);
+            this.monthCalendar1.Location = new System.Drawing.Point(312, 80);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             // 
@@ -137,7 +137,7 @@
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // Calander
+            // ManagerCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -153,7 +153,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.add_event);
             this.Controls.Add(this.monthCalendar1);
-            this.Name = "Calander";
+            this.Name = "ManagerCalander";
             this.Text = "Calander";
             this.ResumeLayout(false);
 

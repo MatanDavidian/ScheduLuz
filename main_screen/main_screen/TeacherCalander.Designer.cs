@@ -43,7 +43,7 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(28, 51);
+            this.listView1.Location = new System.Drawing.Point(23, 58);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(243, 350);
             this.listView1.TabIndex = 21;
@@ -51,7 +51,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(318, 352);
+            this.button9.Location = new System.Drawing.Point(313, 359);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(125, 50);
             this.button9.TabIndex = 20;
@@ -60,7 +60,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(318, 273);
+            this.button8.Location = new System.Drawing.Point(313, 280);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(125, 50);
             this.button8.TabIndex = 19;
@@ -69,7 +69,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(481, 352);
+            this.button7.Location = new System.Drawing.Point(476, 359);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(125, 50);
             this.button7.TabIndex = 18;
@@ -78,7 +78,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(481, 273);
+            this.button6.Location = new System.Drawing.Point(476, 280);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(125, 50);
             this.button6.TabIndex = 17;
@@ -87,7 +87,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(640, 352);
+            this.button5.Location = new System.Drawing.Point(635, 359);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(125, 50);
             this.button5.TabIndex = 16;
@@ -96,7 +96,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(640, 271);
+            this.button4.Location = new System.Drawing.Point(635, 278);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(125, 50);
             this.button4.TabIndex = 15;
@@ -105,7 +105,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(640, 194);
+            this.button3.Location = new System.Drawing.Point(635, 201);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(125, 50);
             this.button3.TabIndex = 14;
@@ -114,7 +114,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(640, 120);
+            this.button2.Location = new System.Drawing.Point(635, 127);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 50);
             this.button2.TabIndex = 13;
@@ -123,7 +123,7 @@
             // 
             // add_event
             // 
-            this.add_event.Location = new System.Drawing.Point(640, 49);
+            this.add_event.Location = new System.Drawing.Point(635, 56);
             this.add_event.Name = "add_event";
             this.add_event.Size = new System.Drawing.Size(125, 50);
             this.add_event.TabIndex = 12;
@@ -132,7 +132,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(299, 99);
+            this.monthCalendar1.Location = new System.Drawing.Point(313, 89);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 11;
             // 

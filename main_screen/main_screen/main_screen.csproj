@@ -78,6 +78,9 @@
     <Compile Include="TeacherCalander.Designer.cs">
       <DependentUpon>TeacherCalander.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Add_Event_Form.resx">
+      <DependentUpon>Add_Event_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerCalander.resx">
       <DependentUpon>ManagerCalander.cs</DependentUpon>
     </EmbeddedResource>
