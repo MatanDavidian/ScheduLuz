@@ -22,6 +22,12 @@ namespace main_screen
             MessageBox.Show("hi my name is tom");
             MessageBox.Show("hi my name is amir");
             MessageBox.Show("hi my name is matan");
+            if(textBox1.Text=="Matan"&& textBox2.Text=="123456")
+            {
+                Calander frmCal = new Calander();
+                frmCal.Show();
+                Visible = false;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

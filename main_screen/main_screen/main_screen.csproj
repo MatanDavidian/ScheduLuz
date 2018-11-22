@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calander.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calander.Designer.cs">
+      <DependentUpon>Calander.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
