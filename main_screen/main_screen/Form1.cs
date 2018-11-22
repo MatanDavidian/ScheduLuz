@@ -22,6 +22,7 @@ namespace main_screen
             MessageBox.Show("hi my name is tom");
             MessageBox.Show("hi my name is amir");
             MessageBox.Show("hi my name is matan");
+            MessageBox.Show("hi my name is what my name is who");
         }
 
         private void Form1_Load(object sender, EventArgs e)
