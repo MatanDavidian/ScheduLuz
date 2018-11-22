@@ -28,6 +28,7 @@ namespace main_screen
                 frmCal.Show();
                 Visible = false;
             }
+            MessageBox.Show("hi my name is what my name is who");
         }
 
         private void Form1_Load(object sender, EventArgs e)
