@@ -21,6 +21,7 @@ namespace main_screen
         {
             MessageBox.Show("hi my name is tom");
             MessageBox.Show("hi my name is amir");
+            MessageBox.Show("This project has been hacked");
             MessageBox.Show("hi my name is matan");
             if(textBox1.Text=="Matan"&& textBox2.Text=="123456")
             {
@@ -29,6 +30,7 @@ namespace main_screen
                 Visible = false;
             }
             MessageBox.Show("hi my name is what my name is who");
+            MessageBox.Show("amir is hacking the project");
         }
 
         private void Form1_Load(object sender, EventArgs e)
