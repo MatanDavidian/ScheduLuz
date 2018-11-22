@@ -10,27 +10,23 @@ using System.Windows.Forms;
 
 namespace main_screen
 {
-    public partial class Form1 : Form
+    public partial class log_in_page : Form
     {
-        public Form1()
+        public log_in_page()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("hi my name is tom");
-            MessageBox.Show("hi my name is amir");
-            MessageBox.Show("This project has been hacked");
-            MessageBox.Show("hi my name is matan");
             if(textBox1.Text=="Matan"&& textBox2.Text=="123456")
             {
                 Calander frmCal = new Calander();
                 frmCal.Show();
                 Visible = false;
             }
-            MessageBox.Show("hi my name is what my name is who");
-            MessageBox.Show("amir is hacking the project");
+            else
+                MessageBox.Show("Worng password");
         }
 
         private void Form1_Load(object sender, EventArgs e)
