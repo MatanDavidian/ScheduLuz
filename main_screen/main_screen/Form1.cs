@@ -21,6 +21,7 @@ namespace main_screen
         {
             MessageBox.Show("hi my name is tom");
             MessageBox.Show("hi my name is amir");
+            MessageBox.Show("This project has been hacked");
         }
     }
 }
