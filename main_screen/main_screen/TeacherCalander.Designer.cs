@@ -129,6 +129,7 @@
             this.add_event.TabIndex = 12;
             this.add_event.Text = "Add event";
             this.add_event.UseVisualStyleBackColor = true;
+            this.add_event.Click += new System.EventHandler(this.add_event_Click);
             // 
             // monthCalendar1
             // 
@@ -153,7 +154,7 @@
             this.Controls.Add(this.add_event);
             this.Controls.Add(this.monthCalendar1);
             this.Name = "TeacherCalander";
-            this.Text = "TeacherCalander";
+            this.Text = "Calander - Teacher";
             this.ResumeLayout(false);
 
         }

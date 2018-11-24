@@ -153,7 +153,7 @@
             this.Controls.Add(this.add_event);
             this.Controls.Add(this.monthCalendar1);
             this.Name = "StudentCalander";
-            this.Text = "StudentCalander";
+            this.Text = "Calander - Student";
             this.ResumeLayout(false);
 
         }

@@ -16,5 +16,10 @@ namespace main_screen
         {
             InitializeComponent();
         }
+
+        private void add_event_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

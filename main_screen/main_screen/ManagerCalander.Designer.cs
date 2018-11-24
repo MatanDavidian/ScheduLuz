@@ -154,7 +154,7 @@
             this.Controls.Add(this.add_event);
             this.Controls.Add(this.monthCalendar1);
             this.Name = "ManagerCalander";
-            this.Text = "Calander";
+            this.Text = "Calander - Manager";
             this.ResumeLayout(false);
 
         }
