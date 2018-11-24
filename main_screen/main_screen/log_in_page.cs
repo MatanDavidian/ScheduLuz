@@ -51,5 +51,10 @@ namespace main_screen
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
