@@ -19,7 +19,7 @@ namespace main_screen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Add_Event_Form frmAEF = new Add_Event_Form();
+            Manager.add_user frmAEF = new Manager.add_user();
             frmAEF.Show();
             Visible = false;
         }
