@@ -30,7 +30,8 @@
         {
             this.Add_user_title = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.Choose_type = new System.Windows.Forms.Label();
+            this.Choose_Type = new System.Windows.Forms.Label();
+            this.Return = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Add_user_title
@@ -55,25 +56,37 @@
             this.radioButton1.Text = "radioButton1";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // Choose_type
+            // Choose_Type
             // 
-            this.Choose_type.AutoSize = true;
-            this.Choose_type.Location = new System.Drawing.Point(391, 70);
-            this.Choose_type.Name = "Choose_type";
-            this.Choose_type.Size = new System.Drawing.Size(35, 13);
-            this.Choose_type.TabIndex = 2;
-            this.Choose_type.Text = "label1";
+            this.Choose_Type.AutoSize = true;
+            this.Choose_Type.Location = new System.Drawing.Point(391, 70);
+            this.Choose_Type.Name = "Choose_Type";
+            this.Choose_Type.Size = new System.Drawing.Size(73, 13);
+            this.Choose_Type.TabIndex = 2;
+            this.Choose_Type.Text = "Choose_Type";
+            // 
+            // Return
+            // 
+            this.Return.Location = new System.Drawing.Point(681, 315);
+            this.Return.Name = "Return";
+            this.Return.Size = new System.Drawing.Size(75, 23);
+            this.Return.TabIndex = 3;
+            this.Return.Text = "Return";
+            this.Return.UseVisualStyleBackColor = true;
+            this.Return.Click += new System.EventHandler(this.button1_Click);
             // 
             // add_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Choose_type);
+            this.Controls.Add(this.Return);
+            this.Controls.Add(this.Choose_Type);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.Add_user_title);
             this.Name = "add_user";
             this.Text = "add_user";
+            this.Load += new System.EventHandler(this.add_user_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,6 +96,7 @@
 
         private System.Windows.Forms.Label Add_user_title;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label Choose_type;
+        private System.Windows.Forms.Label Choose_Type;
+        private System.Windows.Forms.Button Return;
     }
 }
