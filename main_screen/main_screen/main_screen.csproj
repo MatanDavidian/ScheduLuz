@@ -52,6 +52,12 @@
     <Compile Include="Add_Event_Form.Designer.cs">
       <DependentUpon>Add_Event_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\add_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\add_user.Designer.cs">
+      <DependentUpon>add_user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\ManagerCalander.cs">
       <SubType>Form</SubType>
     </Compile>
