@@ -16,5 +16,10 @@ namespace main_screen.Manager
         {
             InitializeComponent();
         }
+
+        private void add_user_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

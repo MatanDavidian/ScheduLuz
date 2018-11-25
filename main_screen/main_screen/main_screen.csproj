@@ -87,6 +87,9 @@
     <EmbeddedResource Include="Add_Event_Form.resx">
       <DependentUpon>Add_Event_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manager\add_user.resx">
+      <DependentUpon>add_user.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManagerCalander.resx">
       <DependentUpon>ManagerCalander.cs</DependentUpon>
     </EmbeddedResource>
