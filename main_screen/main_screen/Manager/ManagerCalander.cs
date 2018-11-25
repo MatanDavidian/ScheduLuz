@@ -26,7 +26,9 @@ namespace main_screen
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            general_process.Add_event_form Mc = new general_process.Add_event_form();
+            this.Hide();
+            Mc.Show();
         }
 
         private void button9_Click(object sender, EventArgs e)

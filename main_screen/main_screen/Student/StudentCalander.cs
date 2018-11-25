@@ -23,5 +23,12 @@ namespace main_screen
             frmCal.Show();
             Visible = false;
         }
+
+        private void add_event_Click(object sender, EventArgs e)
+        {
+            general_process.Add_event_form Mc = new general_process.Add_event_form();
+            this.Hide();
+            Mc.Show();
+        }
     }
 }

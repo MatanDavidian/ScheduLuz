@@ -130,6 +130,7 @@
             this.add_event.TabIndex = 12;
             this.add_event.Text = "Add event";
             this.add_event.UseVisualStyleBackColor = true;
+            this.add_event.Click += new System.EventHandler(this.add_event_Click);
             // 
             // monthCalendar1
             // 

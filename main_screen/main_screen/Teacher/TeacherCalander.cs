@@ -19,7 +19,9 @@ namespace main_screen
 
         private void add_event_Click(object sender, EventArgs e)
         {
-      
+            general_process.Add_event_form Mc = new general_process.Add_event_form();
+            this.Hide();
+            Mc.Show();
         }
 
         private void TeacherCalander_Load(object sender, EventArgs e)
