@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add_Event_Form.cs">
+    <Compile Include="general_process\Add_event_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add_Event_Form.Designer.cs">
-      <DependentUpon>Add_Event_Form.cs</DependentUpon>
+    <Compile Include="general_process\Add_event_form.Designer.cs">
+      <DependentUpon>Add_event_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\add_user.cs">
       <SubType>Form</SubType>
@@ -64,10 +64,10 @@
     <Compile Include="Manager\ManagerCalander.Designer.cs">
       <DependentUpon>ManagerCalander.cs</DependentUpon>
     </Compile>
-    <Compile Include="log_in_page.cs">
+    <Compile Include="general_process\log_in_page.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="log_in_page.Designer.cs">
+    <Compile Include="general_process\log_in_page.Designer.cs">
       <DependentUpon>log_in_page.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -84,8 +84,8 @@
     <Compile Include="Teacher\TeacherCalander.Designer.cs">
       <DependentUpon>TeacherCalander.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Add_Event_Form.resx">
-      <DependentUpon>Add_Event_Form.cs</DependentUpon>
+    <EmbeddedResource Include="general_process\Add_event_form.resx">
+      <DependentUpon>Add_event_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\add_user.resx">
       <DependentUpon>add_user.cs</DependentUpon>
@@ -93,7 +93,7 @@
     <EmbeddedResource Include="Manager\ManagerCalander.resx">
       <DependentUpon>ManagerCalander.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="log_in_page.resx">
+    <EmbeddedResource Include="general_process\log_in_page.resx">
       <DependentUpon>log_in_page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

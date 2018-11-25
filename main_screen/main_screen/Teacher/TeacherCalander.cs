@@ -19,9 +19,19 @@ namespace main_screen
 
         private void add_event_Click(object sender, EventArgs e)
         {
-       
-          
+      
+        }
 
+        private void TeacherCalander_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            log_in_page frmCal = new log_in_page();
+            frmCal.Show();
+            Visible = false;
         }
     }
 }

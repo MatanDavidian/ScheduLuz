@@ -8,18 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace main_screen
+namespace main_screen.general_process
 {
-    public partial class Add_user : Form
+    public partial class Add_event_form : Form
     {
-        public Add_user()
+        public Add_event_form()
         {
             InitializeComponent();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+            ManagerCalander frmCal = new ManagerCalander();
+            frmCal.Show();
+            Visible = false;
         }
     }
 }

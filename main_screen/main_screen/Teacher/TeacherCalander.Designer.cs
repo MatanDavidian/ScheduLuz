@@ -55,8 +55,9 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(125, 50);
             this.button9.TabIndex = 20;
-            this.button9.Text = "button9";
+            this.button9.Text = "Log out";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -155,6 +156,7 @@
             this.Controls.Add(this.monthCalendar1);
             this.Name = "TeacherCalander";
             this.Text = "Calander - Teacher";
+            this.Load += new System.EventHandler(this.TeacherCalander_Load);
             this.ResumeLayout(false);
 
         }
