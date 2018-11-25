@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace main_screen.Manager
 {
@@ -42,6 +43,64 @@ namespace main_screen.Manager
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Student_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            string per;
+            if (Student.Checked)
+                per = "student";
+            else if (Teacher.Checked)
+                per = "teacher";
+            else if (Manager.Checked)
+                per = "manager";
+            else
+                per = "none";
+            
+            
+            if (userIDtextBox.Text.Length ==0 || userFirstNameTextBox.Text.Length == 0 || userLastNameTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("please fill all the fileds");
+            }
+            else
+            {
+                
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\PROJECTC#\SCHEDULUZ2\MAIN_SCREEN\MAIN_SCREEN\DATABASES\SCHEDULUZ.MDF;Integrated Security=True;Connect Timeout=30");
+                con.Open();
+                SqlCommand cmd;
+                cmd = new SqlCommand("INSERT INTO connection_details (id,userName,password) VALUES (@id,@userName,@password)", con);
+                cmd.Parameters.Add("@id", userIDtextBox.Text);
+                cmd.Parameters.Add("@userName", userFirstNameTextBox.Text+userLastNameTextBox.Text);
+                cmd.Parameters.Add("@password", userIDtextBox.Text);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("has added");
+
+
+                /*
+                SqlCommand sda1 = new SqlCommand(" INSERT INTO connection_details (id,userName,password) VALUES (' " + userIDtextBox.Text + "','" + userIDtextBox.Text + "','" + userIDtextBox.Text +"')",con);
+                SqlDataAdapter da = new SqlDataAdapter(sda1);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                //da.Update(ds);
+                MessageBox.Show("has added");*/
+
+
+            }
         }
     }
 }
