@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace main_screen
 {
@@ -19,35 +20,22 @@ namespace main_screen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string in_Name = textBox1.Text;
-            string in_Password = textBox2.Text;
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\git_project_c#\ScheduLuz2\main_screen\main_screen\DataBases\ScheduLuz.mdf;Integrated Security=True;Connect Timeout=30");
+            string query = "Select count(*) from connection_details Where userName = '" + textBox1.Text.Trim() + "' and Password = '" + textBox2.Text.Trim() + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
 
-            if (textBox1.Text=="Matan"&& textBox2.Text=="123456")
+            if (dtbl.Rows[0][0].ToString() == "1")
             {
-                ManagerCalander frmCal = new ManagerCalander();
-                frmCal.Show();
-                Visible = false;
-            }
-            else if (textBox1.Text == "Tom" && textBox2.Text == "123456")
-            {
-                TeacherCalander frmCal = new TeacherCalander();
-                frmCal.Show();
-                Visible = false;
-            }
-            else if (textBox1.Text == "Aviran" && textBox2.Text == "123456")
-            {
-                StudentCalander frmCal = new StudentCalander();
-                frmCal.Show();
-                Visible = false;
-            }
-            else if (textBox1.Text == "Amir" && textBox2.Text == "123456")
-            {
-                StudentCalander frmCal = new StudentCalander();
-                frmCal.Show();
-                Visible = false;
+                ManagerCalander Mc = new ManagerCalander();
+                this.Hide();
+                Mc.Show();
             }
             else
-                MessageBox.Show("Worng password");
+            {
+                MessageBox.Show("Check you username and password");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
