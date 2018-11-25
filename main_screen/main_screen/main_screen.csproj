@@ -50,6 +50,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,6 +104,12 @@
     <Compile Include="Student\StudentCalander.Designer.cs">
       <DependentUpon>StudentCalander.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\SendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\SendEmail.Designer.cs">
+      <DependentUpon>SendEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\TeacherCalander.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="Student\StudentCalander.resx">
       <DependentUpon>StudentCalander.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\SendEmail.resx">
+      <DependentUpon>SendEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\TeacherCalander.resx">
       <DependentUpon>TeacherCalander.cs</DependentUpon>
