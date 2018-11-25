@@ -33,5 +33,15 @@ namespace main_screen.Manager
             frmAEF.Show();
             Visible = false;
         }
+
+        private void Choose_Type_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
