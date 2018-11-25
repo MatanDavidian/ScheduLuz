@@ -83,12 +83,17 @@ namespace main_screen.Manager
                 SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\PROJECTC#\SCHEDULUZ2\MAIN_SCREEN\MAIN_SCREEN\DATABASES\SCHEDULUZ.MDF;Integrated Security=True;Connect Timeout=30");
                 con.Open();
                 SqlCommand cmd;
-                cmd = new SqlCommand("INSERT INTO connection_details (id,userName,password) VALUES (@id,@userName,@password)", con);
+                cmd = new SqlCommand("INSERT INTO connection_details (id,userName,password,permission) VALUES (@id,@userName,@password,@permission)", con);
                 cmd.Parameters.Add("@id", userIDtextBox.Text);
                 cmd.Parameters.Add("@userName", userFirstNameTextBox.Text+userLastNameTextBox.Text);
                 cmd.Parameters.Add("@password", userIDtextBox.Text);
+                cmd.Parameters.Add("@permission", per);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("has added");
+
+                userFirstNameTextBox.Clear();
+                userLastNameTextBox.Clear();
+                userIDtextBox.Clear();
 
 
                 /*
