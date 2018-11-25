@@ -21,7 +21,7 @@ namespace main_screen.general_process
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ManagerCalander frmCal = new ManagerCalander();
+            StudentCalander frmCal = new StudentCalander();
             frmCal.Show();
             Visible = false;
         }
@@ -31,14 +31,7 @@ namespace main_screen.general_process
             SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\calander_project\TomSce\ScheduLuz2\main_screen\main_screen\ScheduLuz.mdf;Integrated Security=True;Connect Timeout=30");
             int cellnum = 1;
             int rownum = 1;
-            /*
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                cellnum = cellnum + 1;
-                dataGridView1.Rows[rownum].Cells[1].Value=cellnum;
-                rownum = rownum + 1;
-            }
-            */
+            
             conn.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Events(Event_id,Event_name,date,hours_start,minutes_start,hours_end,minutes_end,Event_details,event_place,event_privacy) VALUES(@Event_id,@Event_name,@date,@hours_start,@minutes_start,@hours_end,@minutes_end,@Event_details,@Place,@private_B) ", conn);
             cmd.Parameters.Add("@Event_id", dataGridView1.Rows.Count.ToString());
@@ -55,7 +48,7 @@ namespace main_screen.general_process
             cmd.Parameters.Add("@Place", Place.Text);
 
             cmd.ExecuteNonQuery();
-
+            MessageBox.Show("Your event added successfully");
 
             // SqlCommand sda1 = new SqlCommand("INSERT INTO Events(Event_name,Event_details)"+ text_title.Text+"','"+ richTextBox1.Text+"')'"), sqlcon;
 

@@ -107,5 +107,12 @@ namespace main_screen.Manager
 
             }
         }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            StudentCalander frmCal = new StudentCalander();
+            frmCal.Show();
+            Visible = false;
+        }
     }
 }
