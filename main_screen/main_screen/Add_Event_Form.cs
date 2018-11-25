@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace main_screen
 {
-    public partial class Add_Event_Form : Form
+    public partial class Add_user : Form
     {
-        public Add_Event_Form()
+        public Add_user()
         {
             InitializeComponent();
         }

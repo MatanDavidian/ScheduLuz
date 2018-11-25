@@ -1,6 +1,6 @@
 ﻿namespace main_screen
 {
-    partial class Add_Event_Form
+    partial class Add_user
     {
         /// <summary>
         /// Required designer variable.

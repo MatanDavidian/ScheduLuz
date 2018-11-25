@@ -17,7 +17,7 @@ namespace main_screen.Manager
             InitializeComponent();
         }
 
-        private void add_user_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
