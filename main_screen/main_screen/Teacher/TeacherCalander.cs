@@ -35,5 +35,12 @@ namespace main_screen
             frmCal.Show();
             Visible = false;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Teacher.SendEmail frmCal = new Teacher.SendEmail();
+            frmCal.Show();
+            Visible = false;
+        }
     }
 }

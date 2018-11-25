@@ -28,106 +28,185 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.Add_user_title = new System.Windows.Forms.Label();
+            this.Student = new System.Windows.Forms.RadioButton();
+            this.Choose_Type = new System.Windows.Forms.Label();
             this.Return = new System.Windows.Forms.Button();
-            this.scheduLuzDataSet1 = new main_screen.ScheduLuzDataSet1();
-            this.connectiondetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.connection_detailsTableAdapter = new main_screen.ScheduLuzDataSet1TableAdapters.connection_detailsTableAdapter();
-            this.scheduLuzDataSet = new main_screen.ScheduLuzDataSet();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new main_screen.ScheduLuzDataSetTableAdapters.usersTableAdapter();
-            this.connectiondetailsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.connection_detailsTableAdapter1 = new main_screen.ScheduLuzDataSetTableAdapters.connection_detailsTableAdapter();
-            this.connectiondetailsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.connectiondetailsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.connectiondetailsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.connectiondetailsBindingSource2)).BeginInit();
+            this.Teacher = new System.Windows.Forms.RadioButton();
+            this.Manager = new System.Windows.Forms.RadioButton();
+            this.userIDtextBox = new System.Windows.Forms.TextBox();
+            this.Get_User_ID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.userFirstNameTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.userLastNameTextBox = new System.Windows.Forms.TextBox();
+            this.submit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Add_user_title
             // 
             this.Add_user_title.AutoSize = true;
             this.Add_user_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_user_title.Location = new System.Drawing.Point(341, 9);
+            this.Add_user_title.Location = new System.Drawing.Point(512, 14);
+            this.Add_user_title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Add_user_title.Name = "Add_user_title";
-            this.Add_user_title.Size = new System.Drawing.Size(179, 29);
+            this.Add_user_title.Size = new System.Drawing.Size(267, 40);
             this.Add_user_title.TabIndex = 0;
             this.Add_user_title.Text = "Add a new user";
             this.Add_user_title.Click += new System.EventHandler(this.label1_Click);
             // 
+            // Student
+            // 
+            this.Student.AutoSize = true;
+            this.Student.Location = new System.Drawing.Point(98, 148);
+            this.Student.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Student.Name = "Student";
+            this.Student.Size = new System.Drawing.Size(91, 24);
+            this.Student.TabIndex = 1;
+            this.Student.TabStop = true;
+            this.Student.Text = "Student";
+            this.Student.UseVisualStyleBackColor = true;
+            this.Student.CheckedChanged += new System.EventHandler(this.Student_CheckedChanged);
+            // 
+            // Choose_Type
+            // 
+            this.Choose_Type.AutoSize = true;
+            this.Choose_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Choose_Type.Location = new System.Drawing.Point(93, 102);
+            this.Choose_Type.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Choose_Type.Name = "Choose_Type";
+            this.Choose_Type.Size = new System.Drawing.Size(292, 25);
+            this.Choose_Type.TabIndex = 2;
+            this.Choose_Type.Text = "Choose the type of the new user";
+            this.Choose_Type.Click += new System.EventHandler(this.Choose_Type_Click);
+            // 
             // Return
             // 
             this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Return.Location = new System.Drawing.Point(697, 338);
+            this.Return.Location = new System.Drawing.Point(1046, 520);
+            this.Return.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Return.Name = "Return";
-            this.Return.Size = new System.Drawing.Size(75, 34);
+            this.Return.Size = new System.Drawing.Size(112, 52);
             this.Return.TabIndex = 3;
             this.Return.Text = "Return";
             this.Return.UseVisualStyleBackColor = true;
             this.Return.Click += new System.EventHandler(this.button1_Click);
             // 
-            // scheduLuzDataSet1
+            // Teacher
             // 
-            this.scheduLuzDataSet1.DataSetName = "ScheduLuzDataSet1";
-            this.scheduLuzDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Teacher.AutoSize = true;
+            this.Teacher.Location = new System.Drawing.Point(98, 183);
+            this.Teacher.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Teacher.Name = "Teacher";
+            this.Teacher.Size = new System.Drawing.Size(92, 24);
+            this.Teacher.TabIndex = 4;
+            this.Teacher.TabStop = true;
+            this.Teacher.Text = "Teacher";
+            this.Teacher.UseVisualStyleBackColor = true;
+            this.Teacher.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // connectiondetailsBindingSource
+            // Manager
             // 
-            this.connectiondetailsBindingSource.DataMember = "connection_details";
-            this.connectiondetailsBindingSource.DataSource = this.scheduLuzDataSet1;
+            this.Manager.AutoSize = true;
+            this.Manager.Location = new System.Drawing.Point(98, 218);
+            this.Manager.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Manager.Name = "Manager";
+            this.Manager.Size = new System.Drawing.Size(97, 24);
+            this.Manager.TabIndex = 5;
+            this.Manager.TabStop = true;
+            this.Manager.Text = "Manager";
+            this.Manager.UseVisualStyleBackColor = true;
             // 
-            // connection_detailsTableAdapter
+            // userIDtextBox
             // 
-            this.connection_detailsTableAdapter.ClearBeforeFill = true;
+            this.userIDtextBox.Location = new System.Drawing.Point(98, 302);
+            this.userIDtextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.userIDtextBox.Name = "userIDtextBox";
+            this.userIDtextBox.Size = new System.Drawing.Size(148, 26);
+            this.userIDtextBox.TabIndex = 6;
             // 
-            // scheduLuzDataSet
+            // Get_User_ID
             // 
-            this.scheduLuzDataSet.DataSetName = "ScheduLuzDataSet";
-            this.scheduLuzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Get_User_ID.AutoSize = true;
+            this.Get_User_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Get_User_ID.Location = new System.Drawing.Point(93, 271);
+            this.Get_User_ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Get_User_ID.Name = "Get_User_ID";
+            this.Get_User_ID.Size = new System.Drawing.Size(125, 25);
+            this.Get_User_ID.TabIndex = 7;
+            this.Get_User_ID.Text = "Enter user ID";
             // 
-            // usersBindingSource
+            // label1
             // 
-            this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.scheduLuzDataSet;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(93, 352);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 25);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Enter user first name ";
             // 
-            // usersTableAdapter
+            // userFirstNameTextBox
             // 
-            this.usersTableAdapter.ClearBeforeFill = true;
+            this.userFirstNameTextBox.Location = new System.Drawing.Point(98, 383);
+            this.userFirstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.userFirstNameTextBox.Name = "userFirstNameTextBox";
+            this.userFirstNameTextBox.Size = new System.Drawing.Size(148, 26);
+            this.userFirstNameTextBox.TabIndex = 9;
+            this.userFirstNameTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // connectiondetailsBindingSource1
+            // label2
             // 
-            this.connectiondetailsBindingSource1.DataMember = "connection_details";
-            this.connectiondetailsBindingSource1.DataSource = this.scheduLuzDataSet;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(93, 437);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(190, 25);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Enter user last name";
             // 
-            // connection_detailsTableAdapter1
+            // userLastNameTextBox
             // 
-            this.connection_detailsTableAdapter1.ClearBeforeFill = true;
+            this.userLastNameTextBox.Location = new System.Drawing.Point(98, 468);
+            this.userLastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.userLastNameTextBox.Name = "userLastNameTextBox";
+            this.userLastNameTextBox.Size = new System.Drawing.Size(148, 26);
+            this.userLastNameTextBox.TabIndex = 11;
             // 
-            // connectiondetailsBindingSource2
+            // submit
             // 
-            this.connectiondetailsBindingSource2.DataMember = "connection_details";
-            this.connectiondetailsBindingSource2.DataSource = this.scheduLuzDataSet;
+            this.submit.Location = new System.Drawing.Point(98, 520);
+            this.submit.Name = "submit";
+            this.submit.Size = new System.Drawing.Size(112, 52);
+            this.submit.TabIndex = 12;
+            this.submit.Text = "submit";
+            this.submit.UseVisualStyleBackColor = true;
+            this.submit.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // add_user
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.submit);
+            this.Controls.Add(this.userLastNameTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.userFirstNameTextBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Get_User_ID);
+            this.Controls.Add(this.userIDtextBox);
+            this.Controls.Add(this.Manager);
+            this.Controls.Add(this.Teacher);
             this.Controls.Add(this.Return);
+            this.Controls.Add(this.Choose_Type);
+            this.Controls.Add(this.Student);
             this.Controls.Add(this.Add_user_title);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "add_user";
             this.Text = "add_user";
             this.Load += new System.EventHandler(this.add_user_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.connectiondetailsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.connectiondetailsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.connectiondetailsBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,15 +215,17 @@
         #endregion
 
         private System.Windows.Forms.Label Add_user_title;
+        private System.Windows.Forms.RadioButton Student;
+        private System.Windows.Forms.Label Choose_Type;
         private System.Windows.Forms.Button Return;
-        private ScheduLuzDataSet1 scheduLuzDataSet1;
-        private System.Windows.Forms.BindingSource connectiondetailsBindingSource;
-        private ScheduLuzDataSet1TableAdapters.connection_detailsTableAdapter connection_detailsTableAdapter;
-        private ScheduLuzDataSet scheduLuzDataSet;
-        private System.Windows.Forms.BindingSource usersBindingSource;
-        private ScheduLuzDataSetTableAdapters.usersTableAdapter usersTableAdapter;
-        private System.Windows.Forms.BindingSource connectiondetailsBindingSource1;
-        private ScheduLuzDataSetTableAdapters.connection_detailsTableAdapter connection_detailsTableAdapter1;
-        private System.Windows.Forms.BindingSource connectiondetailsBindingSource2;
+        private System.Windows.Forms.RadioButton Teacher;
+        private System.Windows.Forms.RadioButton Manager;
+        private System.Windows.Forms.TextBox userIDtextBox;
+        private System.Windows.Forms.Label Get_User_ID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox userFirstNameTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox userLastNameTextBox;
+        private System.Windows.Forms.Button submit;
     }
 }
