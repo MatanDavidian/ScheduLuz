@@ -21,5 +21,17 @@ namespace main_screen.Manager
         {
 
         }
+
+        private void add_user_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ManagerCalander frmAEF = new ManagerCalander();
+            frmAEF.Show();
+            Visible = false;
+        }
     }
 }
