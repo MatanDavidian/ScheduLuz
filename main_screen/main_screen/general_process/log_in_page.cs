@@ -20,17 +20,33 @@ namespace main_screen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\git_project_c#\ScheduLuz2\main_screen\main_screen\DataBases\ScheduLuz.mdf;Integrated Security=True;Connect Timeout=30");
-            string query = "Select count(*) from connection_details Where userName = '" + textBox1.Text.Trim() + "' and Password = '" + textBox2.Text.Trim() + "'";
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\projectC#\ScheduLuz2\main_screen\main_screen\DataBases\ScheduLuz.mdf;Integrated Security=True;Connect Timeout=30");
+            string query = "Select permission from connection_details Where userName = '" + textBox1.Text.Trim() + "' and Password = '" + textBox2.Text.Trim() + "'";
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
 
-            if (dtbl.Rows[0][0].ToString() == "1")
+            if (dtbl.Rows.Count > 0)
             {
-                ManagerCalander Mc = new ManagerCalander();
-                this.Hide();
-                Mc.Show();
+                string per= dtbl.Rows[0][0].ToString().Trim();
+                if (per == "manager")
+                {
+                    ManagerCalander Mc = new ManagerCalander();
+                    this.Hide();
+                    Mc.Show();
+                }
+                if (per == "teacher" )
+                {
+                   TeacherCalander Tc = new TeacherCalander();
+                    this.Hide();
+                    Tc.Show();
+                }
+                if (per == "student")
+                {
+                    StudentCalander Sc = new StudentCalander();
+                    this.Hide();
+                    Sc.Show();
+                }
             }
             else
             {
