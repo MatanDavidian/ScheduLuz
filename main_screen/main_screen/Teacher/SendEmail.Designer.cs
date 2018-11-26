@@ -30,6 +30,7 @@ namespace main_screen.Teacher
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendEmail));
             this.label1 = new System.Windows.Forms.Label();
             this.txtTo = new System.Windows.Forms.TextBox();
             this.txtCC = new System.Windows.Forms.TextBox();
@@ -293,6 +294,7 @@ namespace main_screen.Teacher
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTo);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SendEmail";
             this.Text = "SendEmail";

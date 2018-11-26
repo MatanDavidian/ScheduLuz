@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_event_form));
             this.button2 = new System.Windows.Forms.Button();
             this.Place = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -497,6 +498,7 @@
             this.Controls.Add(this.text_title);
             this.Controls.Add(this.title);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_event_form";
             this.Text = "Add_event_form";
             this.Load += new System.EventHandler(this.Add_event_form_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerCalander));
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.add_user = new System.Windows.Forms.Button();
             this.Add_event = new System.Windows.Forms.Button();
@@ -155,6 +156,7 @@
             this.Controls.Add(this.Add_event);
             this.Controls.Add(this.add_user);
             this.Controls.Add(this.monthCalendar1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManagerCalander";
             this.Text = "Calander - Manager";
             this.ResumeLayout(false);

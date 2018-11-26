@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(add_user));
             this.Add_user_title = new System.Windows.Forms.Label();
             this.Student = new System.Windows.Forms.RadioButton();
             this.Choose_Type = new System.Windows.Forms.Label();
@@ -167,7 +168,7 @@
             // submit
             // 
             this.submit.Location = new System.Drawing.Point(65, 338);
-            this.submit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.submit.Margin = new System.Windows.Forms.Padding(2);
             this.submit.Name = "submit";
             this.submit.Size = new System.Drawing.Size(75, 34);
             this.submit.TabIndex = 12;
@@ -204,6 +205,7 @@
             this.Controls.Add(this.Choose_Type);
             this.Controls.Add(this.Student);
             this.Controls.Add(this.Add_user_title);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "add_user";
             this.Text = "add_user";
             this.Load += new System.EventHandler(this.add_user_Load);
