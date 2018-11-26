@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using database_location;
+using System.IO;
 
 
 namespace main_screen.general_process
@@ -22,9 +23,29 @@ namespace main_screen.general_process
 
         private void button2_Click(object sender, EventArgs e)
         {
-            StudentCalander frmCal = new StudentCalander();
-            frmCal.Show();
-            Visible = false;
+            StreamReader per = new StreamReader("permissionFile.txt");
+            string permission = per.ReadLine();
+            if (permission[0] == 'M')
+            {
+                ManagerCalander managerCalander = new ManagerCalander();
+                managerCalander.Show();
+                Visible = false;
+
+            }
+            if (permission[0] == 'T')
+            {
+                TeacherCalander teacherCalander = new TeacherCalander();
+                teacherCalander.Show();
+                Visible = false;
+
+            }
+
+            else
+            {
+                StudentCalander frmCal = new StudentCalander();
+                frmCal.Show();
+                Visible = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

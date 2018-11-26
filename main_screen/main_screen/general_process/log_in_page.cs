@@ -12,12 +12,13 @@ using System.Net;
 using System.Net.Mail;
 using USER;
 using database_location;
+using System.IO;
 
 
 
 
 
-    
+
 
 
 namespace main_screen
@@ -38,37 +39,50 @@ namespace main_screen
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
 
+            /*creating text file for later use.
+             * for permission only
+             * M for manager
+             * T for teacher
+             * S for student
+             */
+            StreamWriter perFile = new StreamWriter("permissionFile.txt");
 
-           
 
-            
 
             if (dtbl.Rows.Count > 0)
             {
-
                 /*
                  * the next code part is storing the user permission for later use 
                  */
                 User user = new User();
                 user.insertPermission(dtbl.Rows[0][0].ToString().Trim());
+                user.insertUsername(textBox1.Text.Trim());
+                user.insertPassword(textBox2.Text.Trim());
+                
                 string per = user.getPermission();
 
                 if (per == "manager")
                 {
                     ManagerCalander Mc = new ManagerCalander();
                     this.Hide();
+                    perFile.Write("M");
+                    perFile.Close();
                     Mc.Show();
                 }
                 if (per == "teacher" )
                 {
                    TeacherCalander Tc = new TeacherCalander();
                     this.Hide();
+                    perFile.Write("T");
+                    perFile.Close();
                     Tc.Show();
                 }
                 if (per == "student")
                 {
                     StudentCalander Sc = new StudentCalander();
                     this.Hide();
+                    perFile.Write("S");
+                    perFile.Close();
                     Sc.Show();
                 }
             }

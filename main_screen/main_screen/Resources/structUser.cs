@@ -21,7 +21,7 @@ namespace USER
          */
         string id;
         string password;
-        string name;
+        string username;
         string permission;
         string Email;
 
@@ -36,20 +36,42 @@ namespace USER
 
         }
 
+        public void insertUsername(string username_input)
+        {
+            this.username = username_input;
+        }
+
+        public string getUsername()
+        {
+            return username;
+        }
+
+        public void insertPassword(string password_input)
+        {
+            this.password = password_input;
+        }
+
+        public string getPassword()
+        {
+            return password;
+        }
+
         public string getPermission()
         {
             return this.permission;
         }
 
-        public void createtUser(string id_input, string password_input, string name_input, string permission_input, string Email_input)
+        public void createtUser(string id_input, string password_input, string username_input, string permission_input, string Email_input)
         {
             this.id = id_input;
             this.password = password_input;
-            this.name = name_input;
+            this.username = username_input;
             this.permission = permission_input;
             this.Email = Email_input;
         }
 
     }
+
+    
 }
 

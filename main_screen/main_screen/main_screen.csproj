@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>topcornerlogo.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\topcornerlogo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -214,7 +214,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ScheduLuz.mdf</DependentUpon>
     </Content>
-    <Content Include="topcornerlogo.ico" />
+    <Content Include="Resources\topcornerlogo.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
