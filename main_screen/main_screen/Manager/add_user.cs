@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using database_location;
 
 namespace main_screen.Manager
 {
@@ -79,8 +80,9 @@ namespace main_screen.Manager
             }
             else
             {
-                
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\PROJECTC#\SCHEDULUZ2\MAIN_SCREEN\MAIN_SCREEN\DATABASES\SCHEDULUZ.MDF;Integrated Security=True;Connect Timeout=30");
+
+                dataBase dataBase = new dataBase();
+                SqlConnection con = dataBase.connect_to_scheduluz_DB();
                 con.Open();
                 SqlCommand cmd;
                 cmd = new SqlCommand("INSERT INTO connection_details (id,userName,password,permission) VALUES (@id,@userName,@password,@permission)", con);
@@ -94,15 +96,6 @@ namespace main_screen.Manager
                 userFirstNameTextBox.Clear();
                 userLastNameTextBox.Clear();
                 userIDtextBox.Clear();
-
-
-                /*
-                SqlCommand sda1 = new SqlCommand(" INSERT INTO connection_details (id,userName,password) VALUES (' " + userIDtextBox.Text + "','" + userIDtextBox.Text + "','" + userIDtextBox.Text +"')",con);
-                SqlDataAdapter da = new SqlDataAdapter(sda1);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                //da.Update(ds);
-                MessageBox.Show("has added");*/
 
 
             }

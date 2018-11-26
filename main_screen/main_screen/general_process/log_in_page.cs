@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
+using USER;
+using database_location;
 
 
 
@@ -29,15 +31,28 @@ namespace main_screen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\calander_project\TomSce\ScheduLuz2\main_screen\main_screen\ScheduLuz.mdf;Integrated Security=True;Connect Timeout=30");
+            dataBase dataBase = new dataBase();
+            SqlConnection con = dataBase.connect_to_scheduluz_DB();
             string query = "Select permission from connection_details Where userName = '" + textBox1.Text.Trim() + "' and Password = '" + textBox2.Text.Trim() + "'";
-            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
 
+
+           
+
+            
+
             if (dtbl.Rows.Count > 0)
             {
-                string per= dtbl.Rows[0][0].ToString().Trim();
+
+                /*
+                 * the next code part is storing the user permission for later use 
+                 */
+                User user = new User();
+                user.insertPermission(dtbl.Rows[0][0].ToString().Trim());
+                string per = user.getPermission();
+
                 if (per == "manager")
                 {
                     ManagerCalander Mc = new ManagerCalander();

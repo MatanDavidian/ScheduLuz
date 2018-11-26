@@ -88,6 +88,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\dataBaseLocation.cs" />
+    <Compile Include="Resources\structUser.cs" />
     <Compile Include="ScheduLuzDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

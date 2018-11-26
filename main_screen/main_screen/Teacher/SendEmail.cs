@@ -122,5 +122,10 @@ namespace main_screen.Teacher
             frmCal.Show();
             Visible = false;
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

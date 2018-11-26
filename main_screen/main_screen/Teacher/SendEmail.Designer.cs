@@ -50,13 +50,14 @@ namespace main_screen.Teacher
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.Setting.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 48);
+            this.label1.Location = new System.Drawing.Point(53, 57);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 13);
@@ -66,8 +67,8 @@ namespace main_screen.Teacher
             // 
             // txtTo
             // 
-            this.txtTo.Location = new System.Drawing.Point(116, 48);
-            this.txtTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTo.Location = new System.Drawing.Point(116, 57);
+            this.txtTo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTo.Name = "txtTo";
             this.txtTo.Size = new System.Drawing.Size(216, 20);
             this.txtTo.TabIndex = 0;
@@ -75,8 +76,8 @@ namespace main_screen.Teacher
             // 
             // txtCC
             // 
-            this.txtCC.Location = new System.Drawing.Point(116, 75);
-            this.txtCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCC.Location = new System.Drawing.Point(116, 84);
+            this.txtCC.Margin = new System.Windows.Forms.Padding(2);
             this.txtCC.Name = "txtCC";
             this.txtCC.Size = new System.Drawing.Size(216, 20);
             this.txtCC.TabIndex = 1;
@@ -84,7 +85,7 @@ namespace main_screen.Teacher
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 75);
+            this.label2.Location = new System.Drawing.Point(53, 84);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 13);
@@ -94,8 +95,8 @@ namespace main_screen.Teacher
             // 
             // txtSubject
             // 
-            this.txtSubject.Location = new System.Drawing.Point(116, 105);
-            this.txtSubject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSubject.Location = new System.Drawing.Point(116, 114);
+            this.txtSubject.Margin = new System.Windows.Forms.Padding(2);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(216, 20);
             this.txtSubject.TabIndex = 2;
@@ -103,7 +104,7 @@ namespace main_screen.Teacher
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 105);
+            this.label3.Location = new System.Drawing.Point(53, 114);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
@@ -113,7 +114,7 @@ namespace main_screen.Teacher
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(53, 137);
+            this.label5.Location = new System.Drawing.Point(53, 146);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
@@ -122,8 +123,8 @@ namespace main_screen.Teacher
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(116, 137);
-            this.txtMessage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMessage.Location = new System.Drawing.Point(116, 146);
+            this.txtMessage.Margin = new System.Windows.Forms.Padding(2);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(275, 131);
             this.txtMessage.TabIndex = 4;
@@ -132,7 +133,7 @@ namespace main_screen.Teacher
             // btnSend
             // 
             this.btnSend.Location = new System.Drawing.Point(297, 19);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(2);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(87, 44);
             this.btnSend.TabIndex = 10;
@@ -152,10 +153,10 @@ namespace main_screen.Teacher
             this.Setting.Controls.Add(this.txtUser);
             this.Setting.Controls.Add(this.label7);
             this.Setting.Controls.Add(this.btnSend);
-            this.Setting.Location = new System.Drawing.Point(55, 289);
-            this.Setting.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Setting.Location = new System.Drawing.Point(55, 298);
+            this.Setting.Margin = new System.Windows.Forms.Padding(2);
             this.Setting.Name = "Setting";
-            this.Setting.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Setting.Padding = new System.Windows.Forms.Padding(2);
             this.Setting.Size = new System.Drawing.Size(401, 130);
             this.Setting.TabIndex = 3;
             this.Setting.TabStop = false;
@@ -165,7 +166,7 @@ namespace main_screen.Teacher
             // 
             this.chkSSL.AutoSize = true;
             this.chkSSL.Location = new System.Drawing.Point(11, 104);
-            this.chkSSL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkSSL.Margin = new System.Windows.Forms.Padding(2);
             this.chkSSL.Name = "chkSSL";
             this.chkSSL.Size = new System.Drawing.Size(46, 17);
             this.chkSSL.TabIndex = 19;
@@ -176,7 +177,7 @@ namespace main_screen.Teacher
             // txtSmtp
             // 
             this.txtSmtp.Location = new System.Drawing.Point(191, 79);
-            this.txtSmtp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSmtp.Margin = new System.Windows.Forms.Padding(2);
             this.txtSmtp.Name = "txtSmtp";
             this.txtSmtp.Size = new System.Drawing.Size(194, 20);
             this.txtSmtp.TabIndex = 18;
@@ -196,7 +197,7 @@ namespace main_screen.Teacher
             // txtPort
             // 
             this.txtPort.Location = new System.Drawing.Point(71, 79);
-            this.txtPort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPort.Margin = new System.Windows.Forms.Padding(2);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(69, 20);
             this.txtPort.TabIndex = 16;
@@ -217,7 +218,7 @@ namespace main_screen.Teacher
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(71, 49);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(216, 20);
             this.txtPassword.TabIndex = 14;
@@ -237,7 +238,7 @@ namespace main_screen.Teacher
             // txtUser
             // 
             this.txtUser.Location = new System.Drawing.Point(71, 22);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(216, 20);
             this.txtUser.TabIndex = 12;
@@ -256,7 +257,7 @@ namespace main_screen.Teacher
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(461, 382);
+            this.button1.Location = new System.Drawing.Point(461, 391);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(60, 28);
             this.button1.TabIndex = 9;
@@ -264,11 +265,24 @@ namespace main_screen.Teacher
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.Location = new System.Drawing.Point(12, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(204, 39);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Send Email";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
             // SendEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 443);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Setting);
             this.Controls.Add(this.txtMessage);
@@ -279,7 +293,7 @@ namespace main_screen.Teacher
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTo);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SendEmail";
             this.Text = "SendEmail";
             this.Setting.ResumeLayout(false);
@@ -313,5 +327,6 @@ namespace main_screen.Teacher
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox chkSSL;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
     }
 }
