@@ -32,7 +32,7 @@ namespace main_screen.general_process
                 Visible = false;
 
             }
-            if (permission[0] == 'T')
+            else if (permission[0] == 'T')
             {
                 TeacherCalander teacherCalander = new TeacherCalander();
                 teacherCalander.Show();
