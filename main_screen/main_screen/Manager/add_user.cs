@@ -80,7 +80,7 @@ namespace main_screen.Manager
             else
             {
                 
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\PROJECTC#\SCHEDULUZ2\MAIN_SCREEN\MAIN_SCREEN\DATABASES\SCHEDULUZ.MDF;Integrated Security=True;Connect Timeout=30");
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\calander_project\TomSce\ScheduLuz2\main_screen\main_screen\ScheduLuz.mdf;Integrated Security=True;Connect Timeout=30");
                 con.Open();
                 SqlCommand cmd;
                 cmd = new SqlCommand("INSERT INTO connection_details (id,userName,password,permission) VALUES (@id,@userName,@password,@permission)", con);
