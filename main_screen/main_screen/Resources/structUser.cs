@@ -22,8 +22,20 @@ namespace USER
         string id;
         string password;
         string username;
+        string name;
+        string lastName;
         string permission;
         string Email;
+
+        public void insertName(string name_input)
+        {
+            this.name = name_input;
+        }
+
+        public void insertLastName(string lastName_input)
+        {
+            this.lastName = lastName_input;
+        }
 
         public void insertID(string id_input)
         {
@@ -59,6 +71,21 @@ namespace USER
         public string getPermission()
         {
             return this.permission;
+        }
+
+        public string getID()
+        {
+            return id;
+        }
+
+        public string getName()
+        {
+            return name;
+        }
+
+        public string getLastName()
+        {
+            return lastName;
         }
 
         public void createtUser(string id_input, string password_input, string username_input, string permission_input, string Email_input)

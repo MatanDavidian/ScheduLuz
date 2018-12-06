@@ -93,6 +93,19 @@ namespace main_screen.Manager
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("has added");
 
+                dataBase dataBase2 = new dataBase();
+                SqlConnection con2 = dataBase.connect_to_scheduluz_DB();
+                con2.Open();
+                SqlCommand cmd2;
+                cmd2 = new SqlCommand("INSERT INTO users (id,name,lastName,permission) VALUES (@id,@name,@lastName,@permission)", con2);
+                cmd2.Parameters.Add("@id", userIDtextBox.Text);
+                cmd2.Parameters.Add("@name", userFirstNameTextBox.Text);
+                cmd2.Parameters.Add("@lastName", userLastNameTextBox.Text);
+                //cmd2.Parameters.Add("@password", userIDtextBox.Text);
+                cmd2.Parameters.Add("@permission", per);
+                cmd2.ExecuteNonQuery();
+                MessageBox.Show("has added");
+
                 userFirstNameTextBox.Clear();
                 userLastNameTextBox.Clear();
                 userIDtextBox.Clear();
