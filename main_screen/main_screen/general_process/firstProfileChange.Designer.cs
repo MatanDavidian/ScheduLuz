@@ -33,20 +33,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pass_txt = new System.Windows.Forms.TextBox();
             this.password_groupbox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.view_btn = new System.Windows.Forms.Button();
             this.confirm_pass_txt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.connections = new System.Windows.Forms.GroupBox();
+            this.confirm_PEmail_txt = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.PEmail_txt = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.phone_txt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.Email_2nd = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Email_1st = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.phone_txt = new System.Windows.Forms.TextBox();
-            this.confirm_PEmail_txt = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.PEmail_txt = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.password_groupbox.SuspendLayout();
             this.connections.SuspendLayout();
@@ -84,12 +85,13 @@
             // 
             this.pass_txt.Location = new System.Drawing.Point(12, 60);
             this.pass_txt.Name = "pass_txt";
-            this.pass_txt.PasswordChar = '*';
             this.pass_txt.Size = new System.Drawing.Size(219, 20);
             this.pass_txt.TabIndex = 3;
+            this.pass_txt.UseSystemPasswordChar = true;
             // 
             // password_groupbox
             // 
+            this.password_groupbox.Controls.Add(this.view_btn);
             this.password_groupbox.Controls.Add(this.confirm_pass_txt);
             this.password_groupbox.Controls.Add(this.label3);
             this.password_groupbox.Controls.Add(this.label1);
@@ -102,6 +104,24 @@
             this.password_groupbox.TabStop = false;
             this.password_groupbox.Text = "Password";
             // 
+            // view_btn
+            // 
+            this.view_btn.Location = new System.Drawing.Point(256, 77);
+            this.view_btn.Name = "view_btn";
+            this.view_btn.Size = new System.Drawing.Size(44, 23);
+            this.view_btn.TabIndex = 6;
+            this.view_btn.Text = "view";
+            this.view_btn.UseVisualStyleBackColor = true;
+            this.view_btn.Click += new System.EventHandler(this.view_btn_Click);
+            // 
+            // confirm_pass_txt
+            // 
+            this.confirm_pass_txt.Location = new System.Drawing.Point(12, 104);
+            this.confirm_pass_txt.Name = "confirm_pass_txt";
+            this.confirm_pass_txt.Size = new System.Drawing.Size(216, 20);
+            this.confirm_pass_txt.TabIndex = 5;
+            this.confirm_pass_txt.UseSystemPasswordChar = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -110,14 +130,6 @@
             this.label3.Size = new System.Drawing.Size(115, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "confirm your password:";
-            // 
-            // confirm_pass_txt
-            // 
-            this.confirm_pass_txt.Location = new System.Drawing.Point(12, 104);
-            this.confirm_pass_txt.Name = "confirm_pass_txt";
-            this.confirm_pass_txt.PasswordChar = '*';
-            this.confirm_pass_txt.Size = new System.Drawing.Size(216, 20);
-            this.confirm_pass_txt.TabIndex = 5;
             // 
             // connections
             // 
@@ -139,11 +151,59 @@
             this.connections.TabStop = false;
             this.connections.Text = "Connections";
             // 
+            // confirm_PEmail_txt
+            // 
+            this.confirm_PEmail_txt.Location = new System.Drawing.Point(12, 279);
+            this.confirm_PEmail_txt.Name = "confirm_PEmail_txt";
+            this.confirm_PEmail_txt.Size = new System.Drawing.Size(219, 20);
+            this.confirm_PEmail_txt.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 262);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(128, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "confirm your parent Email:";
+            // 
+            // PEmail_txt
+            // 
+            this.PEmail_txt.Location = new System.Drawing.Point(12, 235);
+            this.PEmail_txt.Name = "PEmail_txt";
+            this.PEmail_txt.Size = new System.Drawing.Size(219, 20);
+            this.PEmail_txt.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 218);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Enter parent email:";
+            // 
+            // phone_txt
+            // 
+            this.phone_txt.Location = new System.Drawing.Point(12, 167);
+            this.phone_txt.Name = "phone_txt";
+            this.phone_txt.Size = new System.Drawing.Size(219, 20);
+            this.phone_txt.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 151);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(164, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Please  Ener your phone number:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // Email_2nd
             // 
             this.Email_2nd.Location = new System.Drawing.Point(12, 104);
             this.Email_2nd.Name = "Email_2nd";
-            this.Email_2nd.PasswordChar = '*';
             this.Email_2nd.Size = new System.Drawing.Size(219, 20);
             this.Email_2nd.TabIndex = 5;
             // 
@@ -181,65 +241,13 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Enter your Email:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 151);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Please  Ener your phone number:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // phone_txt
-            // 
-            this.phone_txt.Location = new System.Drawing.Point(12, 167);
-            this.phone_txt.Name = "phone_txt";
-            this.phone_txt.PasswordChar = '*';
-            this.phone_txt.Size = new System.Drawing.Size(219, 20);
-            this.phone_txt.TabIndex = 7;
-            // 
-            // confirm_PEmail_txt
-            // 
-            this.confirm_PEmail_txt.Location = new System.Drawing.Point(12, 279);
-            this.confirm_PEmail_txt.Name = "confirm_PEmail_txt";
-            this.confirm_PEmail_txt.PasswordChar = '*';
-            this.confirm_PEmail_txt.Size = new System.Drawing.Size(219, 20);
-            this.confirm_PEmail_txt.TabIndex = 12;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 262);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "confirm your parent Email:";
-            // 
-            // PEmail_txt
-            // 
-            this.PEmail_txt.Location = new System.Drawing.Point(12, 235);
-            this.PEmail_txt.Name = "PEmail_txt";
-            this.PEmail_txt.PasswordChar = '*';
-            this.PEmail_txt.Size = new System.Drawing.Size(219, 20);
-            this.PEmail_txt.TabIndex = 10;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 218);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Enter parent email:";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(86, 282);
+            this.button1.Location = new System.Drawing.Point(327, 231);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
+            this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -286,5 +294,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox phone_txt;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button view_btn;
     }
 }
