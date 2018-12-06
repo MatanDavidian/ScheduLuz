@@ -19,10 +19,9 @@ namespace check_funcs
 
         public bool Check_onlyNums(string pnum)
         {
-            for (int i = 0; i < pnum.Length; i++)
-                if (pnum[i] < '0' || pnum[i] > '9')
-                    return false;
-            return true;
+            int n;
+            bool isNumeric = int.TryParse(pnum, out n);
+            return isNumeric;
         }
 
         public bool CheckEmail(string email)

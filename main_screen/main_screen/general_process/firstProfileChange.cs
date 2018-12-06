@@ -71,7 +71,20 @@ namespace main_screen.general_process
             string userId = userFile.ReadLine();
             userFile.Close();
             CheckDetails check = new CheckDetails();
-            if (!check.CheckEmail(Email_1st.Text))
+
+            if (pass_txt.Text == userId)
+            {
+                MessageBox.Show("Your password is the same as before, please update it.");
+            }
+            else if (pass_txt.Text == "")
+            {
+                MessageBox.Show("Please update your password.");
+            }
+            else if (pass_txt.Text != confirm_pass_txt.Text)
+            {
+                MessageBox.Show("Passwords do not match.");
+            }
+            else if (!check.CheckEmail(Email_1st.Text))
             {
                 MessageBox.Show("Email is not valid!");
             }
@@ -79,20 +92,59 @@ namespace main_screen.general_process
             {
                 MessageBox.Show("Emails do not match.");
             }
-            else if (pass_txt.Text == userId)
+            else if (phone_txt.Text == "")
             {
-                MessageBox.Show("Your password is the same as before, please update it.");
+                MessageBox.Show("Please update your phone number.");
             }
-            else if (pass_txt.Text == confirm_pass_txt.Text)
+            else if (!check.Check_onlyNums(phone_txt.Text) || phone_txt.Text.Length != 10)
             {
-                MessageBox.Show("Passwords do not match.");
+                MessageBox.Show("Invalid phone number.");
+            }
+
+            else if (!check.CheckEmail(PEmail_txt.Text))
+            {
+                MessageBox.Show("Parent Email is not valid!");
+            }
+            else if (PEmail_txt.Text != confirm_PEmail_txt.Text)
+            {
+                MessageBox.Show("Parent Emails do not match.");
+            }
+            else if (PEmail_txt.Text == Email_1st.Text)
+            {
+                MessageBox.Show("Parent Email is the same as yours.");
             }
 
 
 
             else
-                MessageBox.Show("something wrong");
+            {
+                dataBase dataBase = new dataBase();
+                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
 
+                
+
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE users SET phoneNumber ="+phone_txt.Text+"WHERE id ='"+userId+"'", conn);
+               
+
+                cmd.ExecuteNonQuery();
+            }
+
+        }
+
+        private void view_btn_Click(object sender, EventArgs e)
+        {
+            if(pass_txt.UseSystemPasswordChar == true)
+            {
+                pass_txt.UseSystemPasswordChar = false;
+                confirm_pass_txt.UseSystemPasswordChar = false;
+            }
+
+            else
+            {
+                pass_txt.UseSystemPasswordChar = true;
+                confirm_pass_txt.UseSystemPasswordChar = true;
+            }
         }
     }
 }
