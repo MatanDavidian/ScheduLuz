@@ -37,5 +37,15 @@ namespace main_screen
             frmCal.Show();
             Visible = false;
         }
+
+        private void ManagerCalander_Load(object sender, EventArgs e)
+        {
+            UserName.Text = log_in_page.loginUserName;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+ 
+        }
     }
 }

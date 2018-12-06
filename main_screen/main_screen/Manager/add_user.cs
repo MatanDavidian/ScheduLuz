@@ -116,7 +116,7 @@ namespace main_screen.Manager
 
         private void button1_Click_3(object sender, EventArgs e)
         {
-            StudentCalander frmCal = new StudentCalander();
+            ManagerCalander frmCal = new ManagerCalander();
             frmCal.Show();
             Visible = false;
         }

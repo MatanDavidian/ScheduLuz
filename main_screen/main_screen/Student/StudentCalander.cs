@@ -30,5 +30,12 @@ namespace main_screen
             this.Hide();
             Mc.Show();
         }
+
+        private void contact_page_Click(object sender, EventArgs e)
+        {
+            Student.ContactPage Mc = new Student.ContactPage();
+            this.Hide();
+            Mc.Show();
+        }
     }
 }

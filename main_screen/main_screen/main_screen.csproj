@@ -115,6 +115,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ScheduLuzDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Student\ContactPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\ContactPage.Designer.cs">
+      <DependentUpon>ContactPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\StudentCalander.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Student\ContactPage.resx">
+      <DependentUpon>ContactPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student\StudentCalander.resx">
       <DependentUpon>StudentCalander.cs</DependentUpon>
     </EmbeddedResource>

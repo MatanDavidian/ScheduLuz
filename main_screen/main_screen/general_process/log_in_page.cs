@@ -13,18 +13,12 @@ using System.Net.Mail;
 using USER;
 using database_location;
 using System.IO;
-
-
-
-
-
-
-
-
 namespace main_screen
 {
     public partial class log_in_page : Form
     {
+        public static string loginUserName;
+        public static string permission;
         public log_in_page()
         {
             InitializeComponent();
@@ -51,8 +45,8 @@ namespace main_screen
              * T for teacher
              * S for student
              */
-            StreamWriter perFile = new StreamWriter("permissionFile.txt");
-            StreamWriter userFile = new StreamWriter("userFile.txt");
+     //       StreamWriter perFile = new StreamWriter("permissionFile.txt");
+     //       StreamWriter userFile = new StreamWriter("userFile.txt");
             
 
 
@@ -72,29 +66,32 @@ namespace main_screen
                 {
 
                     string per = user.getPermission();
-
+                    permission = per;
                     if (per == "manager")
                     {
                         ManagerCalander Mc = new ManagerCalander();
                         this.Hide();
-                        perFile.Write("M");
-                        perFile.Close();
+             //           perFile.Write("M");
+                        loginUserName = textBox1.Text;
+            //            perFile.Close();
                         Mc.Show();
                     }
                     if (per == "teacher")
                     {
                         TeacherCalander Tc = new TeacherCalander();
                         this.Hide();
-                        perFile.Write("T");
-                        perFile.Close();
+             //           perFile.Write("T");
+                        loginUserName = textBox1.Text;
+             //           perFile.Close();
                         Tc.Show();
                     }
                     if (per == "student")
                     {
                         StudentCalander Sc = new StudentCalander();
                         this.Hide();
-                        perFile.Write("S");
-                        perFile.Close();
+             //           perFile.Write("S");
+                        loginUserName = textBox1.Text;
+             //           perFile.Close();
                         Sc.Show();
                     }
                    /* userFile.WriteLine(user.getID());
@@ -116,15 +113,15 @@ namespace main_screen
                     general_process.firstProfileChange p = new general_process.firstProfileChange();
                     this.Hide();
                     string per = user.getPermission();
-                    perFile.Write(per[0]);
-                    perFile.Close();
+            //        perFile.Write(per[0]);
+             //       perFile.Close();
                     
                     
-                    userFile.WriteLine(user.getID());
-                    userFile.WriteLine(user.getPassword());
-                    userFile.WriteLine(user.getPermission());
-                    userFile.WriteLine("username: " + user.getUsername());
-                    userFile.Close();
+             //       userFile.WriteLine(user.getID());
+            //        userFile.WriteLine(user.getPassword());
+             //       userFile.WriteLine(user.getPermission());
+             //       userFile.WriteLine("username: " + user.getUsername());
+             //       userFile.Close();
                     p.Show();
 
 
@@ -135,9 +132,10 @@ namespace main_screen
             else
             {
                 MessageBox.Show("Check you username and password");
-                perFile.Close();
-                userFile.Close();
+            //    perFile.Close();
+            //    userFile.Close();
             }
+            
            
         }
 

@@ -25,14 +25,14 @@ namespace main_screen.general_process
         {
             StreamReader per = new StreamReader("permissionFile.txt");  //reads the permission from permission file.
             string permission = per.ReadLine();                         //now we will check the permission
-            if (permission[0] == 'M')                                   //according to that, we wil be able to determine 
+            if (log_in_page.permission == "manager")                                   //according to that, we wil be able to determine 
             {                                                           //wich screed to go back to.
                 ManagerCalander managerCalander = new ManagerCalander();
                 managerCalander.Show();
                 Visible = false;
 
             }
-            else if (permission[0] == 'T')
+            else if (log_in_page.permission == "teacher")
             {
                 TeacherCalander teacherCalander = new TeacherCalander();
                 teacherCalander.Show();
@@ -40,7 +40,7 @@ namespace main_screen.general_process
 
             }
 
-            else
+            else if (log_in_page.permission == "student")
             {
                 StudentCalander frmCal = new StudentCalander();
                 frmCal.Show();
@@ -108,7 +108,7 @@ namespace main_screen.general_process
         {
             // TODO: This line of code loads data into the 'scheduLuzDataSet2.Events' table. You can move, or remove it, as needed.
             this.eventsTableAdapter.Fill(this.scheduLuzDataSet2.Events);
-
+            //string premmition= log_in_page.permission;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -119,6 +119,11 @@ namespace main_screen.general_process
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Name_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
