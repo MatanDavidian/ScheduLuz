@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_event_form));
             this.button2 = new System.Windows.Forms.Button();
             this.Place = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,9 +57,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.scheduLuzDataSet2 = new main_screen.ScheduLuzDataSet2();
-            this.eventsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eventsTableAdapter = new main_screen.ScheduLuzDataSet2TableAdapters.EventsTableAdapter();
             this.eventidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eventnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eventdetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,21 +69,28 @@
             this.minutesstartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoursendDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minutesendDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.scheduLuzDataSet2 = new main_screen.ScheduLuzDataSet2();
+            this.eventsTableAdapter = new main_screen.ScheduLuzDataSet2TableAdapters.EventsTableAdapter();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.minutes_start)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minutes_end)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours_end)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button2.Location = new System.Drawing.Point(335, 586);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button2.Location = new System.Drawing.Point(16, 476);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 54);
+            this.button2.Size = new System.Drawing.Size(84, 34);
             this.button2.TabIndex = 55;
             this.button2.Text = "Return";
             this.button2.UseVisualStyleBackColor = true;
@@ -93,25 +98,25 @@
             // 
             // Place
             // 
-            this.Place.Location = new System.Drawing.Point(254, 460);
+            this.Place.Location = new System.Drawing.Point(80, 105);
             this.Place.Name = "Place";
-            this.Place.Size = new System.Drawing.Size(159, 20);
+            this.Place.Size = new System.Drawing.Size(222, 20);
             this.Place.TabIndex = 54;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(121, 460);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(15, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 25);
+            this.label7.Size = new System.Drawing.Size(52, 20);
             this.label7.TabIndex = 53;
             this.label7.Text = "Place:";
             // 
             // No
             // 
             this.No.AutoSize = true;
-            this.No.Location = new System.Drawing.Point(314, 419);
+            this.No.Location = new System.Drawing.Point(165, 34);
             this.No.Name = "No";
             this.No.Size = new System.Drawing.Size(39, 17);
             this.No.TabIndex = 52;
@@ -123,7 +128,7 @@
             // Yes
             // 
             this.Yes.AutoSize = true;
-            this.Yes.Location = new System.Drawing.Point(261, 419);
+            this.Yes.Location = new System.Drawing.Point(102, 34);
             this.Yes.Name = "Yes";
             this.Yes.Size = new System.Drawing.Size(43, 17);
             this.Yes.TabIndex = 51;
@@ -135,33 +140,33 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(121, 412);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(10, 31);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 25);
+            this.label6.Size = new System.Drawing.Size(82, 20);
             this.label6.TabIndex = 50;
-            this.label6.Text = "reminder:";
+            this.label6.Text = "Reminder:";
             // 
             // minutes_start
             // 
-            this.minutes_start.Location = new System.Drawing.Point(322, 216);
+            this.minutes_start.Location = new System.Drawing.Point(368, 39);
             this.minutes_start.Name = "minutes_start";
             this.minutes_start.Size = new System.Drawing.Size(37, 20);
             this.minutes_start.TabIndex = 49;
             // 
             // hours_start
             // 
-            this.hours_start.Location = new System.Drawing.Point(264, 216);
+            this.hours_start.Location = new System.Drawing.Point(310, 39);
             this.hours_start.Name = "hours_start";
             this.hours_start.Size = new System.Drawing.Size(37, 20);
             this.hours_start.TabIndex = 48;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button1.Location = new System.Drawing.Point(102, 586);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button1.Location = new System.Drawing.Point(370, 476);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 54);
+            this.button1.Size = new System.Drawing.Size(84, 34);
             this.button1.TabIndex = 47;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
@@ -170,10 +175,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label5.Location = new System.Drawing.Point(121, 169);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label5.Location = new System.Drawing.Point(14, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 25);
+            this.label5.Size = new System.Drawing.Size(48, 20);
             this.label5.TabIndex = 46;
             this.label5.Text = "Date:";
             // 
@@ -181,7 +186,7 @@
             // 
             this.date.CustomFormat = "dd-MM-yyyy hh:mm";
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date.Location = new System.Drawing.Point(261, 169);
+            this.date.Location = new System.Drawing.Point(79, 36);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(95, 20);
             this.date.TabIndex = 45;
@@ -189,7 +194,7 @@
             // public_B
             // 
             this.public_B.AutoSize = true;
-            this.public_B.Location = new System.Drawing.Point(265, 537);
+            this.public_B.Location = new System.Drawing.Point(165, 69);
             this.public_B.Name = "public_B";
             this.public_B.Size = new System.Drawing.Size(53, 17);
             this.public_B.TabIndex = 44;
@@ -200,7 +205,7 @@
             // private_B
             // 
             this.private_B.AutoSize = true;
-            this.private_B.Location = new System.Drawing.Point(265, 503);
+            this.private_B.Location = new System.Drawing.Point(102, 69);
             this.private_B.Name = "private_B";
             this.private_B.Size = new System.Drawing.Size(57, 17);
             this.private_B.TabIndex = 43;
@@ -210,7 +215,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(261, 296);
+            this.richTextBox1.Location = new System.Drawing.Point(80, 270);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(379, 95);
             this.richTextBox1.TabIndex = 42;
@@ -219,81 +224,82 @@
             // privacy
             // 
             this.privacy.AutoSize = true;
-            this.privacy.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.privacy.Location = new System.Drawing.Point(121, 495);
+            this.privacy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.privacy.Location = new System.Drawing.Point(10, 66);
             this.privacy.Name = "privacy";
-            this.privacy.Size = new System.Drawing.Size(87, 25);
+            this.privacy.Size = new System.Drawing.Size(62, 20);
             this.privacy.TabIndex = 41;
-            this.privacy.Text = "privacy:";
+            this.privacy.Text = "Privacy:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(121, 290);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label3.Location = new System.Drawing.Point(15, 270);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 25);
+            this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 40;
             this.label3.Text = "Details:";
             // 
             // text_title
             // 
-            this.text_title.Location = new System.Drawing.Point(261, 114);
+            this.text_title.Location = new System.Drawing.Point(80, 63);
             this.text_title.Name = "text_title";
-            this.text_title.Size = new System.Drawing.Size(161, 20);
+            this.text_title.Size = new System.Drawing.Size(222, 20);
             this.text_title.TabIndex = 39;
             // 
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.title.Location = new System.Drawing.Point(121, 109);
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.title.Location = new System.Drawing.Point(15, 63);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(52, 25);
+            this.title.Size = new System.Drawing.Size(42, 20);
             this.title.TabIndex = 38;
-            this.title.Text = "title:";
+            this.title.Text = "Title:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(291, 4);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(377, 73);
+            this.label1.Size = new System.Drawing.Size(185, 39);
             this.label1.TabIndex = 37;
-            this.label1.Text = "הוספת אירוע";
+            this.label1.Text = "Add Event";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Start_time
             // 
             this.Start_time.AutoSize = true;
-            this.Start_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.Start_time.Location = new System.Drawing.Point(121, 211);
+            this.Start_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start_time.Location = new System.Drawing.Point(206, 39);
             this.Start_time.Name = "Start_time";
-            this.Start_time.Size = new System.Drawing.Size(115, 25);
+            this.Start_time.Size = new System.Drawing.Size(94, 20);
             this.Start_time.TabIndex = 56;
-            this.Start_time.Text = "Start time: ";
+            this.Start_time.Text = "Start time :  ";
             // 
             // End_time
             // 
             this.End_time.AutoSize = true;
-            this.End_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.End_time.Location = new System.Drawing.Point(121, 248);
+            this.End_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.End_time.Location = new System.Drawing.Point(206, 65);
             this.End_time.Name = "End_time";
-            this.End_time.Size = new System.Drawing.Size(102, 25);
+            this.End_time.Size = new System.Drawing.Size(84, 20);
             this.End_time.TabIndex = 57;
-            this.End_time.Text = "End time:";
+            this.End_time.Text = "End time  :";
             // 
             // minutes_end
             // 
-            this.minutes_end.Location = new System.Drawing.Point(322, 255);
+            this.minutes_end.Location = new System.Drawing.Point(368, 65);
             this.minutes_end.Name = "minutes_end";
             this.minutes_end.Size = new System.Drawing.Size(37, 20);
             this.minutes_end.TabIndex = 58;
             // 
             // hours_end
             // 
-            this.hours_end.Location = new System.Drawing.Point(261, 255);
+            this.hours_end.Location = new System.Drawing.Point(310, 65);
             this.hours_end.Name = "hours_end";
             this.hours_end.Size = new System.Drawing.Size(37, 20);
             this.hours_end.TabIndex = 59;
@@ -301,7 +307,7 @@
             // time_before
             // 
             this.time_before.FormattingEnabled = true;
-            this.time_before.Location = new System.Drawing.Point(466, 416);
+            this.time_before.Location = new System.Drawing.Point(286, 30);
             this.time_before.Name = "time_before";
             this.time_before.Size = new System.Drawing.Size(45, 21);
             this.time_before.TabIndex = 61;
@@ -311,7 +317,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label2.Location = new System.Drawing.Point(383, 419);
+            this.label2.Location = new System.Drawing.Point(203, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 62;
@@ -322,7 +328,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label4.Location = new System.Drawing.Point(517, 420);
+            this.label4.Location = new System.Drawing.Point(331, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 16);
             this.label4.TabIndex = 63;
@@ -347,25 +353,11 @@
             this.hoursendDataGridViewTextBoxColumn,
             this.minutesendDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.eventsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(386, 161);
+            this.dataGridView1.Location = new System.Drawing.Point(419, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(364, 101);
+            this.dataGridView1.Size = new System.Drawing.Size(63, 71);
             this.dataGridView1.TabIndex = 64;
             this.dataGridView1.Visible = false;
-            // 
-            // scheduLuzDataSet2
-            // 
-            this.scheduLuzDataSet2.DataSetName = "ScheduLuzDataSet2";
-            this.scheduLuzDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // eventsBindingSource
-            // 
-            this.eventsBindingSource.DataMember = "Events";
-            this.eventsBindingSource.DataSource = this.scheduLuzDataSet2;
-            // 
-            // eventsTableAdapter
-            // 
-            this.eventsTableAdapter.ClearBeforeFill = true;
             // 
             // eventidDataGridViewTextBoxColumn
             // 
@@ -439,38 +431,74 @@
             this.minutesendDataGridViewTextBoxColumn.HeaderText = "minutes_end";
             this.minutesendDataGridViewTextBoxColumn.Name = "minutesendDataGridViewTextBoxColumn";
             // 
+            // eventsBindingSource
+            // 
+            this.eventsBindingSource.DataMember = "Events";
+            this.eventsBindingSource.DataSource = this.scheduLuzDataSet2;
+            // 
+            // scheduLuzDataSet2
+            // 
+            this.scheduLuzDataSet2.DataSetName = "ScheduLuzDataSet2";
+            this.scheduLuzDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // eventsTableAdapter
+            // 
+            this.eventsTableAdapter.ClearBeforeFill = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.date);
+            this.groupBox1.Controls.Add(this.hours_start);
+            this.groupBox1.Controls.Add(this.minutes_start);
+            this.groupBox1.Controls.Add(this.Start_time);
+            this.groupBox1.Controls.Add(this.hours_end);
+            this.groupBox1.Controls.Add(this.End_time);
+            this.groupBox1.Controls.Add(this.minutes_end);
+            this.groupBox1.Location = new System.Drawing.Point(16, 164);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(447, 100);
+            this.groupBox1.TabIndex = 65;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Date and Time";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.Yes);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.No);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.public_B);
+            this.groupBox2.Controls.Add(this.time_before);
+            this.groupBox2.Controls.Add(this.private_B);
+            this.groupBox2.Controls.Add(this.privacy);
+            this.groupBox2.Location = new System.Drawing.Point(16, 371);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(443, 99);
+            this.groupBox2.TabIndex = 66;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Privacy and Reminder";
+            // 
             // Add_event_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 652);
+            this.ClientSize = new System.Drawing.Size(486, 530);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.time_before);
-            this.Controls.Add(this.hours_end);
-            this.Controls.Add(this.minutes_end);
-            this.Controls.Add(this.End_time);
-            this.Controls.Add(this.Start_time);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Place);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.No);
-            this.Controls.Add(this.Yes);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.minutes_start);
-            this.Controls.Add(this.hours_start);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.date);
-            this.Controls.Add(this.public_B);
-            this.Controls.Add(this.private_B);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.privacy);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.text_title);
             this.Controls.Add(this.title);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_event_form";
             this.Text = "Add_event_form";
             this.Load += new System.EventHandler(this.Add_event_form_Load);
@@ -479,8 +507,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.minutes_end)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours_end)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,5 +562,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn minutesstartDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hoursendDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn minutesendDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

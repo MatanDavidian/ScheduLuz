@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using database_location;
+using System.IO;
 
 
 namespace main_screen.general_process
@@ -21,14 +23,36 @@ namespace main_screen.general_process
 
         private void button2_Click(object sender, EventArgs e)
         {
-            StudentCalander frmCal = new StudentCalander();
-            frmCal.Show();
-            Visible = false;
+            StreamReader per = new StreamReader("permissionFile.txt");
+            string permission = per.ReadLine();
+            if (permission[0] == 'M')
+            {
+                ManagerCalander managerCalander = new ManagerCalander();
+                managerCalander.Show();
+                Visible = false;
+
+            }
+            if (permission[0] == 'T')
+            {
+                TeacherCalander teacherCalander = new TeacherCalander();
+                teacherCalander.Show();
+                Visible = false;
+
+            }
+
+            else
+            {
+                StudentCalander frmCal = new StudentCalander();
+                frmCal.Show();
+                Visible = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\calander_project\TomSce\ScheduLuz2\main_screen\main_screen\ScheduLuz.mdf;Integrated Security=True;Connect Timeout=30");
+            dataBase dataBase = new dataBase();
+            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+            
             int cellnum = 1;
             int rownum = 1;
             
@@ -49,6 +73,10 @@ namespace main_screen.general_process
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Your event added successfully");
+            text_title.Clear();
+            richTextBox1.Clear();
+            Place.Clear();
+            
 
             // SqlCommand sda1 = new SqlCommand("INSERT INTO Events(Event_name,Event_details)"+ text_title.Text+"','"+ richTextBox1.Text+"')'"), sqlcon;
 
@@ -78,6 +106,16 @@ namespace main_screen.general_process
         {
             // TODO: This line of code loads data into the 'scheduLuzDataSet2.Events' table. You can move, or remove it, as needed.
             this.eventsTableAdapter.Fill(this.scheduLuzDataSet2.Events);
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }
