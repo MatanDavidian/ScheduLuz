@@ -84,6 +84,7 @@ namespace main_screen.general_process
             {
                 MessageBox.Show("Passwords do not match.");
             }
+            
             else if (!check.CheckEmail(Email_1st.Text))
             {
                 MessageBox.Show("Email is not valid!");
@@ -100,7 +101,6 @@ namespace main_screen.general_process
             {
                 MessageBox.Show("Invalid phone number.");
             }
-
             else if (!check.CheckEmail(PEmail_txt.Text))
             {
                 MessageBox.Show("Parent Email is not valid!");
@@ -113,6 +113,7 @@ namespace main_screen.general_process
             {
                 MessageBox.Show("Parent Email is the same as yours.");
             }
+            
 
 
 
@@ -120,14 +121,21 @@ namespace main_screen.general_process
             {
                 dataBase dataBase = new dataBase();
                 SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+                conn.Open();
+                SqlCommand cmd1 = new SqlCommand("UPDATE users SET phoneNumber ='"+phone_txt.Text+"' WHERE id ='"+userId+"'", conn);
+                cmd1.ExecuteNonQuery();
+
+                conn = dataBase.connect_to_scheduluz_DB();
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("UPDATE users SET Email ='" + Email_1st.Text + "' WHERE id ='" + userId + "'", conn);
+                cmd2.ExecuteNonQuery();
 
                 
-
+                conn = dataBase.connect_to_scheduluz_DB();
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE users SET phoneNumber ="+phone_txt.Text+"WHERE id ='"+userId+"'", conn);
-               
-
-                cmd.ExecuteNonQuery();
+                SqlCommand cmd3 = new SqlCommand("UPDATE users SET ParentEmail ='" + PEmail_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                cmd3.ExecuteNonQuery();
+                
             }
 
         }
