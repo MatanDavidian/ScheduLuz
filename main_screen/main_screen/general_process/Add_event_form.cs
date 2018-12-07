@@ -23,8 +23,8 @@ namespace main_screen.general_process
 
         private void button2_Click(object sender, EventArgs e)
         {
-            StreamReader per = new StreamReader("permissionFile.txt");  //reads the permission from permission file.
-            string permission = per.ReadLine();                         //now we will check the permission
+        //    StreamReader per = new StreamReader("permissionFile.txt");  //reads the permission from permission file.
+       //     string permission = per.ReadLine();                         //now we will check the permission
             if (log_in_page.permission == "manager")                                   //according to that, we wil be able to determine 
             {                                                           //wich screed to go back to.
                 ManagerCalander managerCalander = new ManagerCalander();
@@ -47,17 +47,14 @@ namespace main_screen.general_process
                 Visible = false;
             }
 
-            per.Close();
+            //per.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-            
-            int cellnum = 1;
-            int rownum = 1;
-            
+     
             conn.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Events(Event_id,Event_name,date,hours_start,minutes_start,hours_end,minutes_end,Event_details,event_place,event_privacy) VALUES(@Event_id,@Event_name,@date,@hours_start,@minutes_start,@hours_end,@minutes_end,@Event_details,@Place,@private_B) ", conn);
             cmd.Parameters.Add("@Event_id", dataGridView1.Rows.Count.ToString());
@@ -73,14 +70,15 @@ namespace main_screen.general_process
             cmd.Parameters.Add("@public_B", public_B.Text);
             cmd.Parameters.Add("@Place", Place.Text);
 
+            cmd = new SqlCommand("INSERT INTO Link_Event_User(User_ID) VALUES(@User_ID) ", conn);
+            cmd.Parameters.Add("@User_ID", log_in_page.loginUserName);
+
             cmd.ExecuteNonQuery();
             MessageBox.Show("Your event added successfully");
             text_title.Clear();
             richTextBox1.Clear();
             Place.Clear();
-            
 
-            // SqlCommand sda1 = new SqlCommand("INSERT INTO Events(Event_name,Event_details)"+ text_title.Text+"','"+ richTextBox1.Text+"')'"), sqlcon;
 
         }
 
