@@ -59,8 +59,8 @@ namespace main_screen.general_process
             int rownum = 1;
             
             conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Events(Event_id,Event_name,date,hours_start,minutes_start,hours_end,minutes_end,Event_details,event_place,event_privacy) VALUES(@Event_id,@Event_name,@date,@hours_start,@minutes_start,@hours_end,@minutes_end,@Event_details,@Place,@private_B) ", conn);
-            cmd.Parameters.Add("@Event_id", dataGridView1.Rows.Count.ToString());
+            SqlCommand cmd = new SqlCommand("INSERT INTO Events(Event_name,date,hours_start,minutes_start,hours_end,minutes_end,Event_details,event_place,event_privacy) VALUES(@Event_name,@date,@hours_start,@minutes_start,@hours_end,@minutes_end,@Event_details,@Place,@private_B) ", conn);
+           
             cmd.Parameters.Add("@Event_name", text_title.Text);
             cmd.Parameters.Add("@date", date.Text);
             cmd.Parameters.Add("@hours_start", hours_start.Value);

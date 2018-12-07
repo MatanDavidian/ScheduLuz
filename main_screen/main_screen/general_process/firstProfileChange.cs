@@ -29,6 +29,9 @@ namespace main_screen.general_process
         private void Profile_Load(object sender, EventArgs e)
         {
 
+            string per = log_in_page.permission;
+            MessageBox.Show(per);
+
             StreamReader userFile = new StreamReader("userFile.txt");
             string userId=userFile.ReadLine();
             userFile.Close();
@@ -113,7 +116,15 @@ namespace main_screen.general_process
             {
                 MessageBox.Show("Parent Email is the same as yours.");
             }
-            
+            else if (yearCB.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please fill year.");
+            }
+            else if (classCB.SelectedIndex == -1 )
+            {
+                MessageBox.Show("Please fill class.");
+            }
+
 
 
 
@@ -136,6 +147,68 @@ namespace main_screen.general_process
                 SqlCommand cmd3 = new SqlCommand("UPDATE users SET ParentEmail ='" + PEmail_txt.Text + "' WHERE id ='" + userId + "'", conn);
                 cmd3.ExecuteNonQuery();
                 
+                conn = dataBase.connect_to_scheduluz_DB();
+                conn.Open();
+                SqlCommand cmd4 = new SqlCommand("UPDATE users SET grade ='" + yearCB.Items[yearCB.SelectedIndex].ToString() + "' WHERE id ='" + userId + "'", conn);
+                cmd4.ExecuteNonQuery();
+
+                conn = dataBase.connect_to_scheduluz_DB();
+                conn.Open();
+                SqlCommand cmd5 = new SqlCommand("UPDATE users SET classNumber ='" + classCB.Items[classCB.SelectedIndex].ToString() + "' WHERE id ='" + userId + "'", conn);
+                cmd5.ExecuteNonQuery();
+
+                conn = dataBase.connect_to_scheduluz_DB();
+                conn.Open();
+                SqlCommand cmd6 = new SqlCommand("UPDATE users SET address ='" + address_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                cmd6.ExecuteNonQuery();
+
+                conn = dataBase.connect_to_scheduluz_DB();
+                conn.Open();
+                SqlCommand cmd7 = new SqlCommand("UPDATE users SET birthDate ='" + birthdate_pckr.Text + "' WHERE id ='" + userId + "'", conn);
+                cmd7.ExecuteNonQuery();
+
+                conn = dataBase.connect_to_scheduluz_DB();
+                conn.Open();
+                SqlCommand cmd8 = new SqlCommand("UPDATE users SET freeTxt ='" + freetext_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
+                cmd8.ExecuteNonQuery();
+
+
+                conn = dataBase.connect_to_scheduluz_DB();
+                conn.Open();
+                SqlCommand cmd9 = new SqlCommand("UPDATE users SET hobies ='" + hobies_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
+                cmd9.ExecuteNonQuery();
+
+
+                conn = dataBase.connect_to_scheduluz_DB();
+                conn.Open();
+                SqlCommand cmd10 = new SqlCommand("UPDATE connection_details SET password ='" + pass_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                cmd10.ExecuteNonQuery();
+
+
+
+
+                if (log_in_page.permission == "manager")
+                { 
+                    ManagerCalander managerCalander = new ManagerCalander();
+                    managerCalander.Show();
+                    Visible = false;
+
+                }
+                else if (log_in_page.permission == "teacher")
+                {
+                    TeacherCalander teacherCalander = new TeacherCalander();
+                    teacherCalander.Show();
+                    Visible = false;
+
+                }
+
+                else
+                {
+                    StudentCalander frmCal = new StudentCalander();
+                    frmCal.Show();
+                    Visible = false;
+                }
+
             }
 
         }
@@ -153,6 +226,16 @@ namespace main_screen.general_process
                 pass_txt.UseSystemPasswordChar = true;
                 confirm_pass_txt.UseSystemPasswordChar = true;
             }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void birthdate_pckr_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
