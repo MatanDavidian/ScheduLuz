@@ -32,7 +32,7 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.add_user = new System.Windows.Forms.Button();
             this.Add_event = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Profile_btn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -69,14 +69,15 @@
             this.Add_event.UseVisualStyleBackColor = true;
             this.Add_event.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // Profile_btn
             // 
-            this.button3.Location = new System.Drawing.Point(634, 192);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 50);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Profile_btn.Location = new System.Drawing.Point(634, 192);
+            this.Profile_btn.Name = "Profile_btn";
+            this.Profile_btn.Size = new System.Drawing.Size(125, 50);
+            this.Profile_btn.TabIndex = 3;
+            this.Profile_btn.Text = "Profile";
+            this.Profile_btn.UseVisualStyleBackColor = true;
+            this.Profile_btn.Click += new System.EventHandler(this.Profile_btn_Click);
             // 
             // button4
             // 
@@ -164,7 +165,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Profile_btn);
             this.Controls.Add(this.Add_event);
             this.Controls.Add(this.add_user);
             this.Controls.Add(this.monthCalendar1);
@@ -182,7 +183,7 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button add_user;
         private System.Windows.Forms.Button Add_event;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Profile_btn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

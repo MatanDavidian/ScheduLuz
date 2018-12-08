@@ -25,17 +25,11 @@ namespace main_screen.general_process
         {
             InitializeComponent();
         }
+        string per = log_in_page.permission;
+        string userId = log_in_page.userId;
 
         private void Profile_Load(object sender, EventArgs e)
-        {
-
-            string per = log_in_page.permission;
-            MessageBox.Show(per);
-
-            StreamReader userFile = new StreamReader("userFile.txt");
-            string userId=userFile.ReadLine();
-            userFile.Close();
-
+        {/*
             dataBase dataBase = new dataBase();
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
             string query_name = "Select name from users Where id = '" + userId +"'";
@@ -50,7 +44,7 @@ namespace main_screen.general_process
             string userLastName = dtbl.Rows[0][0].ToString().Trim();
 
 
-            profile_name.Text =userName + " " +userLastName+"'s Profile"  ;
+            profile_name.Text =userName + " " +userLastName+"'s Profile"  ;*/
         }
 
         private void profile_name_Click(object sender, EventArgs e)
@@ -70,9 +64,7 @@ namespace main_screen.general_process
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StreamReader userFile = new StreamReader("userFile.txt");
-            string userId = userFile.ReadLine();
-            userFile.Close();
+            
             CheckDetails check = new CheckDetails();
 
             if (pass_txt.Text == userId)
@@ -184,6 +176,22 @@ namespace main_screen.general_process
                 SqlCommand cmd10 = new SqlCommand("UPDATE connection_details SET password ='" + pass_txt.Text + "' WHERE id ='" + userId + "'", conn);
                 cmd10.ExecuteNonQuery();
 
+                /* adding the image - dont ask*/
+                byte[] images = null;
+                FileStream stream = new FileStream(imgLocation , FileMode.Open , FileAccess.Read);
+                BinaryReader brs = new BinaryReader(stream);
+                images = brs.ReadBytes((int)stream.Length);
+
+                conn = dataBase.connect_to_scheduluz_DB();
+                conn.Open();
+                string sqlQuery = "UPDATE users SET picture =@images WHERE id ='"+ userId + "'" ;
+                cmd = new SqlCommand(sqlQuery, conn);
+                cmd.Parameters.Add(new SqlParameter("@images",images));
+                int N = cmd.ExecuteNonQuery();
+
+
+                MessageBox.Show("Your Details has been updated.");
+
 
 
 
@@ -236,6 +244,28 @@ namespace main_screen.general_process
         private void birthdate_pckr_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        string imgLocation = "";
+        SqlCommand cmd;
+
+        private void browse_btn_Click(object sender, EventArgs e)
+        {
+            dataBase dataBase = new dataBase();
+            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+
+            
+            
+
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                profilePic_img.ImageLocation = imgLocation;
+
+            }
+            
         }
     }
 }

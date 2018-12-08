@@ -50,23 +50,28 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.classGroup = new System.Windows.Forms.GroupBox();
-            this.yearCB = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.classCB = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.yearCB = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.address_txt = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.birthdate_pckr = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.freetext_txt = new System.Windows.Forms.RichTextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.hobies_txt = new System.Windows.Forms.RichTextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.freetext_txt = new System.Windows.Forms.RichTextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.birthdate_pckr = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.address_txt = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.browse_btn = new System.Windows.Forms.Button();
+            this.profilePic_img = new System.Windows.Forms.PictureBox();
             this.password_groupbox.SuspendLayout();
             this.connections.SuspendLayout();
             this.classGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePic_img)).BeginInit();
             this.SuspendLayout();
             // 
             // profile_name
@@ -259,7 +264,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(682, 617);
+            this.button1.Location = new System.Drawing.Point(682, 676);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -280,6 +285,37 @@
             this.classGroup.TabStop = false;
             this.classGroup.Text = "Class";
             // 
+            // classCB
+            // 
+            this.classCB.FormattingEnabled = true;
+            this.classCB.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.classCB.Location = new System.Drawing.Point(148, 25);
+            this.classCB.Name = "classCB";
+            this.classCB.Size = new System.Drawing.Size(48, 21);
+            this.classCB.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(110, 28);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(32, 13);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Class";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Year";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
             // yearCB
             // 
             this.yearCB.FormattingEnabled = true;
@@ -294,37 +330,6 @@
             this.yearCB.Name = "yearCB";
             this.yearCB.Size = new System.Drawing.Size(48, 21);
             this.yearCB.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 28);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(29, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Year";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(110, 28);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(32, 13);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Class";
-            // 
-            // classCB
-            // 
-            this.classCB.FormattingEnabled = true;
-            this.classCB.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.classCB.Location = new System.Drawing.Point(148, 25);
-            this.classCB.Name = "classCB";
-            this.classCB.Size = new System.Drawing.Size(48, 21);
-            this.classCB.TabIndex = 3;
             // 
             // groupBox1
             // 
@@ -343,30 +348,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Additional Details";
             // 
-            // label12
+            // hobies_txt
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 33);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Address";
+            this.hobies_txt.Location = new System.Drawing.Point(15, 277);
+            this.hobies_txt.Name = "hobies_txt";
+            this.hobies_txt.Size = new System.Drawing.Size(285, 96);
+            this.hobies_txt.TabIndex = 7;
+            this.hobies_txt.Text = "";
             // 
-            // address_txt
+            // label15
             // 
-            this.address_txt.Location = new System.Drawing.Point(67, 26);
-            this.address_txt.Name = "address_txt";
-            this.address_txt.Size = new System.Drawing.Size(233, 20);
-            this.address_txt.TabIndex = 1;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(9, 261);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 13);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "Hobies";
             // 
-            // label13
+            // freetext_txt
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 72);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Birthdate";
+            this.freetext_txt.Location = new System.Drawing.Point(15, 130);
+            this.freetext_txt.Name = "freetext_txt";
+            this.freetext_txt.Size = new System.Drawing.Size(285, 103);
+            this.freetext_txt.TabIndex = 5;
+            this.freetext_txt.Text = "";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 114);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 13);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Free Text";
             // 
             // birthdate_pckr
             // 
@@ -378,45 +392,67 @@
             this.birthdate_pckr.TabIndex = 3;
             this.birthdate_pckr.ValueChanged += new System.EventHandler(this.birthdate_pckr_ValueChanged);
             // 
-            // label14
+            // label13
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 114);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 13);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Free Text";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 72);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Birthdate";
             // 
-            // freetext_txt
+            // address_txt
             // 
-            this.freetext_txt.Location = new System.Drawing.Point(15, 130);
-            this.freetext_txt.Name = "freetext_txt";
-            this.freetext_txt.Size = new System.Drawing.Size(285, 103);
-            this.freetext_txt.TabIndex = 5;
-            this.freetext_txt.Text = "";
+            this.address_txt.Location = new System.Drawing.Point(67, 26);
+            this.address_txt.Name = "address_txt";
+            this.address_txt.Size = new System.Drawing.Size(233, 20);
+            this.address_txt.TabIndex = 1;
             // 
-            // label15
+            // label12
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 261);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(40, 13);
-            this.label15.TabIndex = 6;
-            this.label15.Text = "Hobies";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 33);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(45, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Address";
             // 
-            // hobies_txt
+            // groupBox2
             // 
-            this.hobies_txt.Location = new System.Drawing.Point(15, 277);
-            this.hobies_txt.Name = "hobies_txt";
-            this.hobies_txt.Size = new System.Drawing.Size(285, 96);
-            this.hobies_txt.TabIndex = 7;
-            this.hobies_txt.Text = "";
+            this.groupBox2.Controls.Add(this.browse_btn);
+            this.groupBox2.Controls.Add(this.profilePic_img);
+            this.groupBox2.Location = new System.Drawing.Point(441, 440);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(316, 187);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Picture";
+            // 
+            // browse_btn
+            // 
+            this.browse_btn.Location = new System.Drawing.Point(156, 87);
+            this.browse_btn.Name = "browse_btn";
+            this.browse_btn.Size = new System.Drawing.Size(75, 23);
+            this.browse_btn.TabIndex = 1;
+            this.browse_btn.Text = "Browse";
+            this.browse_btn.UseVisualStyleBackColor = true;
+            this.browse_btn.Click += new System.EventHandler(this.browse_btn_Click);
+            // 
+            // profilePic_img
+            // 
+            this.profilePic_img.Location = new System.Drawing.Point(12, 19);
+            this.profilePic_img.Name = "profilePic_img";
+            this.profilePic_img.Size = new System.Drawing.Size(137, 150);
+            this.profilePic_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profilePic_img.TabIndex = 0;
+            this.profilePic_img.TabStop = false;
             // 
             // firstProfileChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 735);
+            this.ClientSize = new System.Drawing.Size(794, 736);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.classGroup);
             this.Controls.Add(this.button1);
@@ -434,6 +470,8 @@
             this.classGroup.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.profilePic_img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,5 +514,8 @@
         private System.Windows.Forms.RichTextBox freetext_txt;
         private System.Windows.Forms.RichTextBox hobies_txt;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button browse_btn;
+        private System.Windows.Forms.PictureBox profilePic_img;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace main_screen
 {
     public partial class ManagerCalander : Form
@@ -46,6 +47,13 @@ namespace main_screen
         private void label1_Click(object sender, EventArgs e)
         {
  
+        }
+
+        private void Profile_btn_Click(object sender, EventArgs e)
+        {
+            general_process.Profile profile = new general_process.Profile();
+            profile.Show();
+            Visible = false;
         }
     }
 }

@@ -19,6 +19,7 @@ namespace main_screen
     {
         public static string loginUserName;
         public static string permission;
+        public static string userId;
         public log_in_page()
         {
             InitializeComponent();
@@ -60,6 +61,7 @@ namespace main_screen
                 user.insertPermission(dtbl.Rows[0][0].ToString().Trim());
                 user.insertUsername(textBox1.Text.Trim());
                 user.insertPassword(textBox2.Text.Trim());
+                userId = user.getID();
                 
 
                 if (user.getPassword() != user.getID())
@@ -71,9 +73,9 @@ namespace main_screen
                     {
                         ManagerCalander Mc = new ManagerCalander();
                         this.Hide();
-             //           perFile.Write("M");
+                       // perFile.Write("M");
                         loginUserName = textBox1.Text;
-            //            perFile.Close();
+                       //perFile.Close();
                         Mc.Show();
                     }
                     if (per == "teacher")

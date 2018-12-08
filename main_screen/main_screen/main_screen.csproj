@@ -77,6 +77,12 @@
     <Compile Include="general_process\firstProfileChange.Designer.cs">
       <DependentUpon>firstProfileChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="general_process\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general_process\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\add_user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="general_process\firstProfileChange.resx">
       <DependentUpon>firstProfileChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general_process\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\add_user.resx">
       <DependentUpon>add_user.cs</DependentUpon>
