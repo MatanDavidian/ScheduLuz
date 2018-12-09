@@ -45,5 +45,10 @@ namespace main_screen.general_process
             profile_name.Text = user.getName() + " " + user.getLastName() + "'s profile";
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
