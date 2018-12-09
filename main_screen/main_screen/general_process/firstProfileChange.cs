@@ -29,7 +29,7 @@ namespace main_screen.general_process
         string userId = log_in_page.userId;
 
         private void Profile_Load(object sender, EventArgs e)
-        {/*
+        {
             dataBase dataBase = new dataBase();
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
             string query_name = "Select name from users Where id = '" + userId +"'";
@@ -44,7 +44,7 @@ namespace main_screen.general_process
             string userLastName = dtbl.Rows[0][0].ToString().Trim();
 
 
-            profile_name.Text =userName + " " +userLastName+"'s Profile"  ;*/
+            profile_name.Text =userName + " " +userLastName+"'s Profile"  ;
         }
 
         private void profile_name_Click(object sender, EventArgs e)
@@ -64,7 +64,9 @@ namespace main_screen.general_process
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
+            MessageBox.Show("Your Details has been updated." + per);
+
             CheckDetails check = new CheckDetails();
 
             if (pass_txt.Text == userId)
@@ -190,19 +192,19 @@ namespace main_screen.general_process
                 int N = cmd.ExecuteNonQuery();
 
 
-                MessageBox.Show("Your Details has been updated.");
+                MessageBox.Show("Your Details has been updated."+userId);
 
 
 
 
-                if (log_in_page.permission == "manager")
+                if (per == "manager")
                 { 
                     ManagerCalander managerCalander = new ManagerCalander();
                     managerCalander.Show();
                     Visible = false;
 
                 }
-                else if (log_in_page.permission == "teacher")
+                else if (per == "teacher")
                 {
                     TeacherCalander teacherCalander = new TeacherCalander();
                     teacherCalander.Show();

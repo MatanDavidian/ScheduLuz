@@ -42,5 +42,12 @@ namespace main_screen
             frmCal.Show();
             Visible = false;
         }
+
+        private void profile_btn_Click(object sender, EventArgs e)
+        {
+            general_process.Profile profile = new general_process.Profile();
+            this.Hide();
+            profile.Show();
+        }
     }
 }

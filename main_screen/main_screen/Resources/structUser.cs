@@ -20,21 +20,35 @@ namespace USER
          * after the first login, of the user we wont need to check every detail in the data base.
          * 
          */
-        string id; //
-        string password; //
-        string username; //
-        string name; //
-        string lastName; //
-        string permission; //
-        string phoneNumber; //
-        string address; //
-        string Email; //
-        string birthDate; //
+
+
+        /*
+        *##########################
+        * Attributes
+        *##########################
+        */
+
+        string id; 
+        string password; 
+        string username; 
+        string name; 
+        string lastName; 
+        string permission; 
+        string phoneNumber; 
+        string address; 
+        string Email; 
+        string birthDate; 
         string grade;
         string classNumber;
         string hobies;
         string freeTxt;
         string ParentEmail;
+
+        /*
+         *##########################
+         * Get funcs 
+         *##########################
+         */
 
         public string getParentEmail()
         {
@@ -87,37 +101,6 @@ namespace USER
         {
             return username;
 
-        }
-
-        public void insertName(string name_input)
-        {
-            this.name = name_input;
-        }
-
-        public void insertLastName(string lastName_input)
-        {
-            this.lastName = lastName_input;
-        }
-
-        public void insertID(string id_input)
-        {
-            this.id = id_input;
-        }
-
-        public void insertPermission(string permission_input)
-        {
-            this.permission = permission_input;
-
-        }
-
-        public void insertUsername(string username_input)
-        {
-            this.username = username_input;
-        }
-
-        public void insertPassword(string password_input)
-        {
-            this.password = password_input;
         }
 
         public string getPassword()
@@ -252,6 +235,64 @@ namespace USER
             return this;
 
         }
+
+
+        /*
+         *##########################
+         * Set funcs 
+         *##########################
+         */
+        public void insertName(string name_input)
+        {
+            this.name = name_input;
+        }
+
+        public void insertLastName(string lastName_input)
+        {
+            this.lastName = lastName_input;
+        }
+
+        public void insertID(string id_input)
+        {
+            this.id = id_input;
+        }
+
+        public void insertPermission(string permission_input)
+        {
+            this.permission = permission_input;
+
+        }
+
+        public void insertUsername(string username_input)
+        {
+            this.username = username_input;
+        }
+
+        public void insertPassword(string password_input)
+        {
+            this.password = password_input;
+        }
+
+        public void SetPhoneNumber(string userId , string phoneNumber)
+        {
+            dataBase dataBase = new dataBase();
+            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+            conn.Open();
+            SqlCommand cmd1 = new SqlCommand("UPDATE users SET phoneNumber ='" + phoneNumber + "' WHERE id ='" + userId + "'", conn);
+            cmd1.ExecuteNonQuery();
+        }
+
+        public void SetEmail(string userId, string Email)
+        {
+            dataBase dataBase = new dataBase();
+            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+            conn.Open();
+            SqlCommand cmd1 = new SqlCommand("UPDATE users SET Email ='" + Email + "' WHERE id ='" + userId + "'", conn);
+            cmd1.ExecuteNonQuery();
+        }
+
+
+
 
     }
 
