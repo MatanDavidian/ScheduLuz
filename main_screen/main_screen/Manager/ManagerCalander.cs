@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using USER;
 
 
 namespace main_screen
@@ -41,7 +42,10 @@ namespace main_screen
 
         private void ManagerCalander_Load(object sender, EventArgs e)
         {
-            UserName.Text = log_in_page.loginUserName;
+            User user = new User();
+            user = user.GetUser(log_in_page.userId);
+
+            UserName_lbl.Text = user.getUsername();
         }
 
         private void label1_Click(object sender, EventArgs e)

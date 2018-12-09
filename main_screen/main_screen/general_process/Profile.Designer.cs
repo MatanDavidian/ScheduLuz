@@ -56,6 +56,9 @@
             this.new_pass_txt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.profile_name = new System.Windows.Forms.Label();
+            this.permi = new System.Windows.Forms.Label();
+            this.permissin_txt = new System.Windows.Forms.Label();
+            this.return_btn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic_img)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -333,11 +336,42 @@
             this.profile_name.TabIndex = 11;
             this.profile_name.Text = "X profile";
             // 
+            // permi
+            // 
+            this.permi.AutoSize = true;
+            this.permi.Location = new System.Drawing.Point(418, 20);
+            this.permi.Name = "permi";
+            this.permi.Size = new System.Drawing.Size(60, 13);
+            this.permi.TabIndex = 18;
+            this.permi.Text = "Permission:";
+            // 
+            // permissin_txt
+            // 
+            this.permissin_txt.AutoSize = true;
+            this.permissin_txt.Location = new System.Drawing.Point(485, 20);
+            this.permissin_txt.Name = "permissin_txt";
+            this.permissin_txt.Size = new System.Drawing.Size(53, 13);
+            this.permissin_txt.TabIndex = 19;
+            this.permissin_txt.Text = "Unknown";
+            // 
+            // return_btn
+            // 
+            this.return_btn.Location = new System.Drawing.Point(63, 669);
+            this.return_btn.Name = "return_btn";
+            this.return_btn.Size = new System.Drawing.Size(75, 23);
+            this.return_btn.TabIndex = 20;
+            this.return_btn.Text = "Return";
+            this.return_btn.UseVisualStyleBackColor = true;
+            this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 736);
+            this.Controls.Add(this.return_btn);
+            this.Controls.Add(this.permissin_txt);
+            this.Controls.Add(this.permi);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -390,5 +424,8 @@
         private System.Windows.Forms.TextBox new_pass_txt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label profile_name;
+        private System.Windows.Forms.Label permi;
+        private System.Windows.Forms.Label permissin_txt;
+        private System.Windows.Forms.Button return_btn;
     }
 }

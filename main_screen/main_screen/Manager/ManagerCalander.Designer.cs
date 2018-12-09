@@ -40,7 +40,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.UserName = new System.Windows.Forms.Label();
+            this.UserName_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -142,22 +142,22 @@
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // UserName
+            // UserName_lbl
             // 
-            this.UserName.AutoSize = true;
-            this.UserName.Location = new System.Drawing.Point(316, 24);
-            this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(35, 13);
-            this.UserName.TabIndex = 11;
-            this.UserName.Text = "label1";
-            this.UserName.Click += new System.EventHandler(this.label1_Click);
+            this.UserName_lbl.AutoSize = true;
+            this.UserName_lbl.Location = new System.Drawing.Point(316, 24);
+            this.UserName_lbl.Name = "UserName_lbl";
+            this.UserName_lbl.Size = new System.Drawing.Size(35, 13);
+            this.UserName_lbl.TabIndex = 11;
+            this.UserName_lbl.Text = "label1";
+            this.UserName_lbl.Click += new System.EventHandler(this.label1_Click);
             // 
             // ManagerCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.UserName);
+            this.Controls.Add(this.UserName_lbl);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -191,6 +191,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Label UserName;
+        private System.Windows.Forms.Label UserName_lbl;
     }
 }

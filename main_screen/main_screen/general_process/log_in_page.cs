@@ -63,12 +63,13 @@ namespace main_screen
                 user.insertPassword(textBox2.Text.Trim());
                 userId = user.getID();
                 
+                permission = user.getPermission();
 
                 if (user.getPassword() != user.getID())
                 {
 
                     string per = user.getPermission();
-                    permission = per;
+
                     if (per == "manager")
                     {
                         ManagerCalander Mc = new ManagerCalander();

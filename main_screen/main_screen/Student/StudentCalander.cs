@@ -37,5 +37,12 @@ namespace main_screen
             this.Hide();
             Mc.Show();
         }
+
+        private void Profile_btn_Click(object sender, EventArgs e)
+        {
+            general_process.Profile profile = new general_process.Profile();
+            this.Hide();
+            profile.Show();
+        }
     }
 }
