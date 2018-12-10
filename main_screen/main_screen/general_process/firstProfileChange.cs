@@ -30,6 +30,14 @@ namespace main_screen.general_process
 
         private void Profile_Load(object sender, EventArgs e)
         {
+            if(log_in_page.permission == "student")
+            {
+                classCB.Enabled = true;
+                PEmail_txt.Enabled = true;
+                yearCB.Enabled = true;
+                
+  
+            }
             dataBase dataBase = new dataBase();
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
             string query_name = "Select name from users Where id = '" + userId +"'";
@@ -65,7 +73,6 @@ namespace main_screen.general_process
         private void button1_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Your Details has been updated." + per);
 
             CheckDetails check = new CheckDetails();
 
@@ -98,7 +105,7 @@ namespace main_screen.general_process
             {
                 MessageBox.Show("Invalid phone number.");
             }
-            else if (!check.CheckEmail(PEmail_txt.Text))
+            else if (!check.CheckEmail(PEmail_txt.Text) && log_in_page.permission == "student")
             {
                 MessageBox.Show("Parent Email is not valid!");
             }
@@ -110,11 +117,11 @@ namespace main_screen.general_process
             {
                 MessageBox.Show("Parent Email is the same as yours.");
             }
-            else if (yearCB.SelectedIndex == -1)
+            else if (yearCB.SelectedIndex == -1 && log_in_page.permission == "student")
             {
                 MessageBox.Show("Please fill year.");
             }
-            else if (classCB.SelectedIndex == -1 )
+            else if (classCB.SelectedIndex == -1 && log_in_page.permission == "student")
             {
                 MessageBox.Show("Please fill class.");
             }
@@ -135,21 +142,24 @@ namespace main_screen.general_process
                 SqlCommand cmd2 = new SqlCommand("UPDATE users SET Email ='" + Email_1st.Text + "' WHERE id ='" + userId + "'", conn);
                 cmd2.ExecuteNonQuery();
 
-                
-                conn = dataBase.connect_to_scheduluz_DB();
-                conn.Open();
-                SqlCommand cmd3 = new SqlCommand("UPDATE users SET ParentEmail ='" + PEmail_txt.Text + "' WHERE id ='" + userId + "'", conn);
-                cmd3.ExecuteNonQuery();
-                
-                conn = dataBase.connect_to_scheduluz_DB();
-                conn.Open();
-                SqlCommand cmd4 = new SqlCommand("UPDATE users SET grade ='" + yearCB.Items[yearCB.SelectedIndex].ToString() + "' WHERE id ='" + userId + "'", conn);
-                cmd4.ExecuteNonQuery();
+                if (log_in_page.permission == "student")
+                {
+                    conn = dataBase.connect_to_scheduluz_DB();
+                    conn.Open();
+                    SqlCommand cmd3 = new SqlCommand("UPDATE users SET ParentEmail ='" + PEmail_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                    cmd3.ExecuteNonQuery();
 
-                conn = dataBase.connect_to_scheduluz_DB();
-                conn.Open();
-                SqlCommand cmd5 = new SqlCommand("UPDATE users SET classNumber ='" + classCB.Items[classCB.SelectedIndex].ToString() + "' WHERE id ='" + userId + "'", conn);
-                cmd5.ExecuteNonQuery();
+
+                    conn = dataBase.connect_to_scheduluz_DB();
+                    conn.Open();
+                    SqlCommand cmd4 = new SqlCommand("UPDATE users SET grade ='" + yearCB.Items[yearCB.SelectedIndex].ToString() + "' WHERE id ='" + userId + "'", conn);
+                    cmd4.ExecuteNonQuery();
+
+                    conn = dataBase.connect_to_scheduluz_DB();
+                    conn.Open();
+                    SqlCommand cmd5 = new SqlCommand("UPDATE users SET classNumber ='" + classCB.Items[classCB.SelectedIndex].ToString() + "' WHERE id ='" + userId + "'", conn);
+                    cmd5.ExecuteNonQuery();
+                }
 
                 conn = dataBase.connect_to_scheduluz_DB();
                 conn.Open();

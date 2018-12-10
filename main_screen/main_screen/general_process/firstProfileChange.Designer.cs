@@ -206,6 +206,7 @@
             // 
             // phone_txt
             // 
+            this.phone_txt.Enabled = false;
             this.phone_txt.Location = new System.Drawing.Point(12, 167);
             this.phone_txt.Name = "phone_txt";
             this.phone_txt.Size = new System.Drawing.Size(219, 20);
@@ -287,6 +288,7 @@
             // 
             // classCB
             // 
+            this.classCB.Enabled = false;
             this.classCB.FormattingEnabled = true;
             this.classCB.Items.AddRange(new object[] {
             "1",
@@ -318,6 +320,7 @@
             // 
             // yearCB
             // 
+            this.yearCB.Enabled = false;
             this.yearCB.FormattingEnabled = true;
             this.yearCB.Items.AddRange(new object[] {
             "7",
