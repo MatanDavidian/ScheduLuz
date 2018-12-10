@@ -83,7 +83,7 @@ namespace main_screen.general_process
             SqlDataAdapter sda = new SqlDataAdapter(query, conn);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
-            string eve_id = dtbl.Rows[0][0].ToString().Trim();
+            int eve_id = int.Parse(dtbl.Rows[0][0].ToString().Trim());
             //insert the max id event and the event id to Events_to_Users table
             cmd = new SqlCommand("INSERT INTO Events_to_Users (User_ID,Event_ID) VALUES(@User_ID,@Event_ID) ", conn);
             cmd.Parameters.Add("@User_ID", log_in_page.userId);

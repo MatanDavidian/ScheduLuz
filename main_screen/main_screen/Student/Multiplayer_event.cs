@@ -125,17 +125,21 @@ namespace main_screen.Student
             SqlDataAdapter sda = new SqlDataAdapter(query, conn);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
-            string eve_id = dtbl.Rows[0][0].ToString().Trim();
+            int eve_id = int.Parse(dtbl.Rows[0][0].ToString().Trim());
+            int usr_id;
+            String name;
             //insert the max id event and the event id to Events_to_Users table
             for (int i = listView1.Items.Count - 1; i >= 0; i--)
             {
-                if (listView1.Items[i].Selected)
-                {
-                    listView1.Items[i].Remove();
-                }
+                name = listView1.Items[i].Text.ToString().Trim();
+                query = "Select * from users Where name = '" + name + "'";
+                sda = new SqlDataAdapter(query, conn);
+                dtbl = new DataTable();
+                sda.Fill(dtbl);
+                usr_id = int.Parse(dtbl.Rows[0][0].ToString().Trim());
 
                 cmd = new SqlCommand("INSERT INTO Events_to_Users (User_ID,Event_ID) VALUES(@User_ID,@Event_ID) ", conn);
-                cmd.Parameters.Add("@User_ID", log_in_page.userId);
+                cmd.Parameters.Add("@User_ID", usr_id);
                 cmd.Parameters.Add("@Event_ID", eve_id);
                 cmd.ExecuteNonQuery();
             }
