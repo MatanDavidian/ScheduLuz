@@ -133,6 +133,12 @@
     <Compile Include="Student\ContactPage.Designer.cs">
       <DependentUpon>ContactPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\Multiplayer_event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Multiplayer_event.Designer.cs">
+      <DependentUpon>Multiplayer_event.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\StudentCalander.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </Compile>
     <EmbeddedResource Include="Student\ContactPage.resx">
       <DependentUpon>ContactPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Multiplayer_event.resx">
+      <DependentUpon>Multiplayer_event.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\StudentCalander.resx">
       <DependentUpon>StudentCalander.cs</DependentUpon>

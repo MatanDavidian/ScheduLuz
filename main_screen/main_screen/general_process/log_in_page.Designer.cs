@@ -95,6 +95,7 @@
             // 
             // log_in_page
             // 
+            this.AcceptButton = this.Login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(301, 180);

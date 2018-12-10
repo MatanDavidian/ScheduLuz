@@ -56,39 +56,27 @@
             this.time_before = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.eventidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventdetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventkindDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventplaceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventprivacyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.upforcancellationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoursstartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.minutesstartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoursendDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.minutesendDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eventsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.scheduLuzDataSet2 = new main_screen.ScheduLuzDataSet2();
             this.eventsTableAdapter = new main_screen.ScheduLuzDataSet2TableAdapters.EventsTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.minutes_start)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minutes_end)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours_end)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button2.Location = new System.Drawing.Point(16, 476);
+            this.button2.Location = new System.Drawing.Point(16, 510);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 34);
             this.button2.TabIndex = 55;
@@ -116,6 +104,7 @@
             // No
             // 
             this.No.AutoSize = true;
+            this.No.Checked = true;
             this.No.Location = new System.Drawing.Point(165, 34);
             this.No.Name = "No";
             this.No.Size = new System.Drawing.Size(39, 17);
@@ -132,7 +121,6 @@
             this.Yes.Name = "Yes";
             this.Yes.Size = new System.Drawing.Size(43, 17);
             this.Yes.TabIndex = 51;
-            this.Yes.TabStop = true;
             this.Yes.Text = "Yes";
             this.Yes.UseVisualStyleBackColor = true;
             this.Yes.CheckedChanged += new System.EventHandler(this.Yes_CheckedChanged);
@@ -164,7 +152,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button1.Location = new System.Drawing.Point(370, 476);
+            this.button1.Location = new System.Drawing.Point(370, 510);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 34);
             this.button1.TabIndex = 47;
@@ -194,18 +182,18 @@
             // public_B
             // 
             this.public_B.AutoSize = true;
-            this.public_B.Location = new System.Drawing.Point(165, 69);
+            this.public_B.Location = new System.Drawing.Point(160, 19);
             this.public_B.Name = "public_B";
             this.public_B.Size = new System.Drawing.Size(53, 17);
             this.public_B.TabIndex = 44;
-            this.public_B.TabStop = true;
             this.public_B.Text = "public";
             this.public_B.UseVisualStyleBackColor = true;
             // 
             // private_B
             // 
             this.private_B.AutoSize = true;
-            this.private_B.Location = new System.Drawing.Point(102, 69);
+            this.private_B.Checked = true;
+            this.private_B.Location = new System.Drawing.Point(97, 19);
             this.private_B.Name = "private_B";
             this.private_B.Size = new System.Drawing.Size(57, 17);
             this.private_B.TabIndex = 43;
@@ -225,7 +213,7 @@
             // 
             this.privacy.AutoSize = true;
             this.privacy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.privacy.Location = new System.Drawing.Point(10, 66);
+            this.privacy.Location = new System.Drawing.Point(5, 16);
             this.privacy.Name = "privacy";
             this.privacy.Size = new System.Drawing.Size(62, 20);
             this.privacy.TabIndex = 41;
@@ -335,102 +323,6 @@
             this.label4.Text = "before the event.";
             this.label4.Visible = false;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.eventidDataGridViewTextBoxColumn,
-            this.eventnameDataGridViewTextBoxColumn,
-            this.eventdetailsDataGridViewTextBoxColumn,
-            this.eventkindDataGridViewTextBoxColumn,
-            this.eventplaceDataGridViewTextBoxColumn,
-            this.eventprivacyDataGridViewTextBoxColumn,
-            this.upforcancellationDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.hoursstartDataGridViewTextBoxColumn,
-            this.minutesstartDataGridViewTextBoxColumn,
-            this.hoursendDataGridViewTextBoxColumn,
-            this.minutesendDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.eventsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(419, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(63, 71);
-            this.dataGridView1.TabIndex = 64;
-            this.dataGridView1.Visible = false;
-            // 
-            // eventidDataGridViewTextBoxColumn
-            // 
-            this.eventidDataGridViewTextBoxColumn.DataPropertyName = "Event_id";
-            this.eventidDataGridViewTextBoxColumn.HeaderText = "Event_id";
-            this.eventidDataGridViewTextBoxColumn.Name = "eventidDataGridViewTextBoxColumn";
-            // 
-            // eventnameDataGridViewTextBoxColumn
-            // 
-            this.eventnameDataGridViewTextBoxColumn.DataPropertyName = "Event_name";
-            this.eventnameDataGridViewTextBoxColumn.HeaderText = "Event_name";
-            this.eventnameDataGridViewTextBoxColumn.Name = "eventnameDataGridViewTextBoxColumn";
-            // 
-            // eventdetailsDataGridViewTextBoxColumn
-            // 
-            this.eventdetailsDataGridViewTextBoxColumn.DataPropertyName = "Event_details";
-            this.eventdetailsDataGridViewTextBoxColumn.HeaderText = "Event_details";
-            this.eventdetailsDataGridViewTextBoxColumn.Name = "eventdetailsDataGridViewTextBoxColumn";
-            // 
-            // eventkindDataGridViewTextBoxColumn
-            // 
-            this.eventkindDataGridViewTextBoxColumn.DataPropertyName = "event_kind";
-            this.eventkindDataGridViewTextBoxColumn.HeaderText = "event_kind";
-            this.eventkindDataGridViewTextBoxColumn.Name = "eventkindDataGridViewTextBoxColumn";
-            // 
-            // eventplaceDataGridViewTextBoxColumn
-            // 
-            this.eventplaceDataGridViewTextBoxColumn.DataPropertyName = "event_place";
-            this.eventplaceDataGridViewTextBoxColumn.HeaderText = "event_place";
-            this.eventplaceDataGridViewTextBoxColumn.Name = "eventplaceDataGridViewTextBoxColumn";
-            // 
-            // eventprivacyDataGridViewTextBoxColumn
-            // 
-            this.eventprivacyDataGridViewTextBoxColumn.DataPropertyName = "event_privacy";
-            this.eventprivacyDataGridViewTextBoxColumn.HeaderText = "event_privacy";
-            this.eventprivacyDataGridViewTextBoxColumn.Name = "eventprivacyDataGridViewTextBoxColumn";
-            // 
-            // upforcancellationDataGridViewTextBoxColumn
-            // 
-            this.upforcancellationDataGridViewTextBoxColumn.DataPropertyName = "up_for_cancellation";
-            this.upforcancellationDataGridViewTextBoxColumn.HeaderText = "up_for_cancellation";
-            this.upforcancellationDataGridViewTextBoxColumn.Name = "upforcancellationDataGridViewTextBoxColumn";
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            // 
-            // hoursstartDataGridViewTextBoxColumn
-            // 
-            this.hoursstartDataGridViewTextBoxColumn.DataPropertyName = "hours_start";
-            this.hoursstartDataGridViewTextBoxColumn.HeaderText = "hours_start";
-            this.hoursstartDataGridViewTextBoxColumn.Name = "hoursstartDataGridViewTextBoxColumn";
-            // 
-            // minutesstartDataGridViewTextBoxColumn
-            // 
-            this.minutesstartDataGridViewTextBoxColumn.DataPropertyName = "minutes_start";
-            this.minutesstartDataGridViewTextBoxColumn.HeaderText = "minutes_start";
-            this.minutesstartDataGridViewTextBoxColumn.Name = "minutesstartDataGridViewTextBoxColumn";
-            // 
-            // hoursendDataGridViewTextBoxColumn
-            // 
-            this.hoursendDataGridViewTextBoxColumn.DataPropertyName = "hours_end";
-            this.hoursendDataGridViewTextBoxColumn.HeaderText = "hours_end";
-            this.hoursendDataGridViewTextBoxColumn.Name = "hoursendDataGridViewTextBoxColumn";
-            // 
-            // minutesendDataGridViewTextBoxColumn
-            // 
-            this.minutesendDataGridViewTextBoxColumn.DataPropertyName = "minutes_end";
-            this.minutesendDataGridViewTextBoxColumn.HeaderText = "minutes_end";
-            this.minutesendDataGridViewTextBoxColumn.Name = "minutesendDataGridViewTextBoxColumn";
-            // 
             // eventsBindingSource
             // 
             this.eventsBindingSource.DataMember = "Events";
@@ -470,25 +362,35 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.No);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.public_B);
             this.groupBox2.Controls.Add(this.time_before);
-            this.groupBox2.Controls.Add(this.private_B);
-            this.groupBox2.Controls.Add(this.privacy);
             this.groupBox2.Location = new System.Drawing.Point(16, 371);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(443, 99);
+            this.groupBox2.Size = new System.Drawing.Size(443, 64);
             this.groupBox2.TabIndex = 66;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Privacy and Reminder";
+            this.groupBox2.Text = "Reminder";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.privacy);
+            this.groupBox3.Controls.Add(this.private_B);
+            this.groupBox3.Controls.Add(this.public_B);
+            this.groupBox3.Location = new System.Drawing.Point(21, 443);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(437, 50);
+            this.groupBox3.TabIndex = 67;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Privacy";
             // 
             // Add_event_form
             // 
+            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 530);
+            this.ClientSize = new System.Drawing.Size(486, 555);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Place);
             this.Controls.Add(this.label7);
@@ -506,13 +408,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minutes_end)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours_end)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,23 +449,11 @@
         private System.Windows.Forms.ComboBox time_before;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private ScheduLuzDataSet2 scheduLuzDataSet2;
         private System.Windows.Forms.BindingSource eventsBindingSource;
         private ScheduLuzDataSet2TableAdapters.EventsTableAdapter eventsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventdetailsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventkindDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventplaceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eventprivacyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn upforcancellationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoursstartDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn minutesstartDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoursendDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn minutesendDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
