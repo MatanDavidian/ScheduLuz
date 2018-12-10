@@ -32,10 +32,9 @@
             this.title = new System.Windows.Forms.Label();
             this.friend_name = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.DateTimePicker();
@@ -105,6 +104,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "find friends";
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(18, 51);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(175, 93);
+            this.listView1.TabIndex = 43;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged_1);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Invented friends:";
+            this.columnHeader1.Width = 153;
+            // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -115,28 +133,6 @@
             this.button1.Text = "submit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(18, 51);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(381, 93);
-            this.listView1.TabIndex = 43;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Name";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Picture";
             // 
             // groupBox3
             // 
@@ -286,6 +282,7 @@
             this.button2.TabIndex = 75;
             this.button2.Text = "Return";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -296,6 +293,7 @@
             this.button3.TabIndex = 74;
             this.button3.Text = "Submit";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Multiplayer_event
             // 
@@ -340,7 +338,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker date;
