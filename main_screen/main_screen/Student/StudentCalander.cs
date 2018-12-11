@@ -44,5 +44,13 @@ namespace main_screen
             this.Hide();
             profile.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Student.Multiplayer_event m = new Student.Multiplayer_event();
+            this.Hide();
+            m.Show();
+
+        }
     }
 }

@@ -34,7 +34,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Multiplayer_event_btn = new System.Windows.Forms.Button();
             this.Profile_btn = new System.Windows.Forms.Button();
             this.contact_page = new System.Windows.Forms.Button();
             this.add_event = new System.Windows.Forms.Button();
@@ -95,14 +95,15 @@
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // Multiplayer_event_btn
             // 
-            this.button4.Location = new System.Drawing.Point(639, 263);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 50);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Multiplayer_event_btn.Location = new System.Drawing.Point(639, 263);
+            this.Multiplayer_event_btn.Name = "Multiplayer_event_btn";
+            this.Multiplayer_event_btn.Size = new System.Drawing.Size(125, 50);
+            this.Multiplayer_event_btn.TabIndex = 15;
+            this.Multiplayer_event_btn.Text = "Multyplayer Event";
+            this.Multiplayer_event_btn.UseVisualStyleBackColor = true;
+            this.Multiplayer_event_btn.Click += new System.EventHandler(this.button4_Click);
             // 
             // Profile_btn
             // 
@@ -151,7 +152,7 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Multiplayer_event_btn);
             this.Controls.Add(this.Profile_btn);
             this.Controls.Add(this.contact_page);
             this.Controls.Add(this.add_event);
@@ -170,7 +171,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Multiplayer_event_btn;
         private System.Windows.Forms.Button Profile_btn;
         private System.Windows.Forms.Button contact_page;
         private System.Windows.Forms.Button add_event;
