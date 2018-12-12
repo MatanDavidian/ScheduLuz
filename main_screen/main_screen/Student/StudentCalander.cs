@@ -47,10 +47,9 @@ namespace main_screen
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Student.Multiplayer_event m = new Student.Multiplayer_event();
+            Student.Multiplayer_event Mc = new Student.Multiplayer_event();
             this.Hide();
-            m.Show();
-
+            Mc.Show();
         }
     }
 }

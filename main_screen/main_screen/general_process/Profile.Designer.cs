@@ -85,6 +85,7 @@
             this.browse_btn.TabIndex = 1;
             this.browse_btn.Text = "Browse";
             this.browse_btn.UseVisualStyleBackColor = true;
+            this.browse_btn.Click += new System.EventHandler(this.browse_btn_Click);
             // 
             // profilePic_img
             // 
@@ -94,6 +95,7 @@
             this.profilePic_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profilePic_img.TabIndex = 0;
             this.profilePic_img.TabStop = false;
+            this.profilePic_img.Click += new System.EventHandler(this.profilePic_img_Click);
             // 
             // groupBox1
             // 

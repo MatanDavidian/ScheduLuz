@@ -112,5 +112,15 @@ namespace main_screen.general_process
         {
 
         }
+
+        private void profilePic_img_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void browse_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
