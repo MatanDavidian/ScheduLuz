@@ -92,7 +92,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(125, 50);
             this.button5.TabIndex = 16;
-            this.button5.Text = "button5";
+            this.button5.Text = "Appointment";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4

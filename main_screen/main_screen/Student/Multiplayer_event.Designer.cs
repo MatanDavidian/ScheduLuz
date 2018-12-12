@@ -34,7 +34,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.Add_friend_button = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.DateTimePicker();
@@ -76,7 +76,7 @@
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.title.Location = new System.Drawing.Point(6, 16);
+            this.title.Location = new System.Drawing.Point(6, 24);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(102, 20);
             this.title.TabIndex = 39;
@@ -84,16 +84,15 @@
             // 
             // friend_name
             // 
-            this.friend_name.Location = new System.Drawing.Point(134, 16);
-            this.friend_name.Multiline = true;
+            this.friend_name.Location = new System.Drawing.Point(10, 47);
             this.friend_name.Name = "friend_name";
-            this.friend_name.Size = new System.Drawing.Size(173, 20);
+            this.friend_name.Size = new System.Drawing.Size(119, 20);
             this.friend_name.TabIndex = 40;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.Add_friend_button);
             this.groupBox1.Controls.Add(this.title);
             this.groupBox1.Controls.Add(this.friend_name);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -110,9 +109,9 @@
             this.columnHeader1});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(18, 51);
+            this.listView1.Location = new System.Drawing.Point(238, 16);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(175, 93);
+            this.listView1.Size = new System.Drawing.Size(175, 132);
             this.listView1.TabIndex = 43;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -123,16 +122,16 @@
             this.columnHeader1.Text = "Invented friends:";
             this.columnHeader1.Width = 153;
             // 
-            // button1
+            // Add_friend_button
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(337, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 20);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "submit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Add_friend_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Add_friend_button.Location = new System.Drawing.Point(145, 47);
+            this.Add_friend_button.Name = "Add_friend_button";
+            this.Add_friend_button.Size = new System.Drawing.Size(74, 20);
+            this.Add_friend_button.TabIndex = 42;
+            this.Add_friend_button.Text = "Invante";
+            this.Add_friend_button.UseVisualStyleBackColor = true;
+            this.Add_friend_button.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 
@@ -177,6 +176,7 @@
             this.hours_start.Name = "hours_start";
             this.hours_start.Size = new System.Drawing.Size(37, 20);
             this.hours_start.TabIndex = 48;
+            this.hours_start.ValueChanged += new System.EventHandler(this.hours_start_ValueChanged);
             // 
             // minutes_start
             // 
@@ -221,6 +221,7 @@
             // 
             // Place
             // 
+            this.Place.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.Place.Location = new System.Drawing.Point(98, 284);
             this.Place.Multiline = true;
             this.Place.Name = "Place";
@@ -239,6 +240,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.richTextBox1.Location = new System.Drawing.Point(88, 449);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(379, 95);
@@ -257,6 +259,7 @@
             // 
             // text_title
             // 
+            this.text_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.text_title.Location = new System.Drawing.Point(98, 242);
             this.text_title.Multiline = true;
             this.text_title.Name = "text_title";
@@ -335,7 +338,7 @@
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.TextBox friend_name;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Add_friend_button;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.GroupBox groupBox3;
