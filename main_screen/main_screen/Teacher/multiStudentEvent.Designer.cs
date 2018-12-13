@@ -45,14 +45,14 @@ namespace main_screen.Teacher
             this.date_pkr = new System.Windows.Forms.DateTimePicker();
             this.details_txt = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.return_btn = new System.Windows.Forms.Button();
-            this.create_btn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.hours_start = new System.Windows.Forms.NumericUpDown();
             this.minutes_start = new System.Windows.Forms.NumericUpDown();
             this.hours_end = new System.Windows.Forms.NumericUpDown();
             this.minutes_end = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.return_btn = new System.Windows.Forms.Button();
+            this.create_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
@@ -211,24 +211,23 @@ namespace main_screen.Teacher
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Event Details";
             // 
-            // return_btn
+            // label6
             // 
-            this.return_btn.Location = new System.Drawing.Point(21, 582);
-            this.return_btn.Name = "return_btn";
-            this.return_btn.Size = new System.Drawing.Size(75, 23);
-            this.return_btn.TabIndex = 26;
-            this.return_btn.Text = "Return";
-            this.return_btn.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(321, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "End:";
             // 
-            // create_btn
+            // label5
             // 
-            this.create_btn.Location = new System.Drawing.Point(492, 582);
-            this.create_btn.Name = "create_btn";
-            this.create_btn.Size = new System.Drawing.Size(86, 23);
-            this.create_btn.TabIndex = 27;
-            this.create_btn.Text = "Create Event";
-            this.create_btn.UseVisualStyleBackColor = true;
-            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(162, 114);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Start:";
             // 
             // hours_start
             // 
@@ -262,23 +261,25 @@ namespace main_screen.Teacher
             this.minutes_end.Size = new System.Drawing.Size(37, 20);
             this.minutes_end.TabIndex = 62;
             // 
-            // label5
+            // return_btn
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(162, 114);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 64;
-            this.label5.Text = "Start:";
+            this.return_btn.Location = new System.Drawing.Point(21, 582);
+            this.return_btn.Name = "return_btn";
+            this.return_btn.Size = new System.Drawing.Size(75, 23);
+            this.return_btn.TabIndex = 26;
+            this.return_btn.Text = "Return";
+            this.return_btn.UseVisualStyleBackColor = true;
+            this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
             // 
-            // label6
+            // create_btn
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(321, 114);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 13);
-            this.label6.TabIndex = 65;
-            this.label6.Text = "End:";
+            this.create_btn.Location = new System.Drawing.Point(492, 582);
+            this.create_btn.Name = "create_btn";
+            this.create_btn.Size = new System.Drawing.Size(86, 23);
+            this.create_btn.TabIndex = 27;
+            this.create_btn.Text = "Create Event";
+            this.create_btn.UseVisualStyleBackColor = true;
+            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
             // multiStudentEvent
             // 

@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using database_location;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Net;
-using System.Net.Mail;
-using USER;
-using database_location;
-using System.IO;
-using check_funcs;
+using System.Windows.Forms;
 
 namespace main_screen.Teacher
 {
@@ -113,8 +102,10 @@ namespace main_screen.Teacher
                 event_id = dtb.Rows[0][0].ToString().Trim() ;
             }
 
-            MessageBox.Show(event_id);
+            
             int event_Id = Int32.Parse(event_id);
+
+            
 
             
             
@@ -139,6 +130,36 @@ namespace main_screen.Teacher
             SqlCommand cmd7 = new SqlCommand("UPDATE Events SET minutes_end ='" + minutes_end.Text + "'WHERE Event_id ='" + event_id + "'", conn);
             cmd7.ExecuteNonQuery();
 
+            for (int i=0; i<student_lst.Items.Count;i++)
+            {
+                string username = student_lst.Items[i].ToString().Replace(" ","");
+
+                string queryTogetStudentID = "Select id from users Where userName = '" + username + "'";
+                SqlDataAdapter sda6 = new SqlDataAdapter(queryTogetStudentID, conn);
+                DataTable dtb6 = new DataTable();
+                sda6.Fill(dtb6);
+                string sendToId = dtb6.Rows[0][0].ToString().Trim();
+
+                cmd = new SqlCommand("INSERT INTO Events_to_Users(Event_ID,User_ID) VALUES(@Event_ID,@User_ID) ", conn);
+                cmd.Parameters.Add("@Event_ID", event_Id);
+                cmd.Parameters.Add("@User_ID",sendToId );
+                
+                cmd.ExecuteNonQuery();
+            }
+
+            MessageBox.Show("Your Event has added.");
+
+            TeacherCalander n = new TeacherCalander();
+            n.Show();
+            this.Hide();
+
+        }
+
+        private void return_btn_Click(object sender, EventArgs e)
+        {
+            TeacherCalander n = new TeacherCalander();
+            n.Show();
+            this.Hide();
         }
     }
     
