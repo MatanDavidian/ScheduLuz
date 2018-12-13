@@ -25,7 +25,14 @@ namespace main_screen.Student
 
         private void Multiplayer_event_Load(object sender, EventArgs e)
         {
-            
+            hours_start.Minimum = 0;
+            hours_start.Maximum = 24;
+            minutes_start.Minimum = 0;
+            minutes_start.Maximum = 60;
+            hours_end.Minimum = 0;
+            hours_end.Maximum = 24;
+            minutes_end.Minimum = 0;
+            minutes_end.Maximum = 60;
         }
         int count = 0;
         private void populate()
@@ -35,41 +42,48 @@ namespace main_screen.Student
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
             con.Open();
 
-            string query = "select picture from users where name='" + friend_name.Text.Trim() + "'";
-
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader dataRead = cmd.ExecuteReader();
-            dataRead.Read();
-
-
-            byte[] img = null;
-            if (dataRead.HasRows)
+            string name = friend_name.Text.ToString().Trim();
+            string query = "Select * from users Where name = '" + name + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            if (dtbl.Rows[0][3].ToString().Trim() == "student" && (dtbl.Rows[0][1].ToString().Trim()+ dtbl.Rows[0][2].ToString().Trim()).ToUpper() != log_in_page.loginUserName.ToUpper())
             {
-                img = (byte[])dataRead[0];
-            }
 
-            if (img == null)
+                byte[] img = null;
+
+                img = (byte[])dtbl.Rows[0][13];//dataRead[0];
+
+                if (img == null)
+                {
+                    listView1.SmallImageList = null;
+
+                }
+
+                else
+                {
+                    MemoryStream memoryStream = new MemoryStream(img);
+                    imgs.Images.Add(friend_name.Text.Trim(), Image.FromStream(memoryStream));
+                }
+                con.Close();
+                listView1.SmallImageList = imgs;
+                listView1.Items.Add(friend_name.Text.Trim(), count);
+                count++;
+            }
+            else if((dtbl.Rows[0][1].ToString().Trim() + dtbl.Rows[0][2].ToString().Trim()).ToUpper() == log_in_page.loginUserName.ToUpper())
             {
-                listView1.SmallImageList = null;
-
+                MessageBox.Show("You are alreary invented.");
             }
-
             else
             {
-                MemoryStream memoryStream = new MemoryStream(img);
-                imgs.Images.Add(friend_name.Text.Trim(),Image.FromStream(memoryStream));
+                MessageBox.Show("You can Invents only your friends.");
             }
-            con.Close();
-            listView1.SmallImageList = imgs;
-            listView1.Items.Add(friend_name.Text.Trim(),count);
-            count++;
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
             imgs.ImageSize = new Size(50, 50);
             populate();
-           
+            friend_name.Clear();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,6 +164,12 @@ namespace main_screen.Student
             text_title.Clear();
             richTextBox1.Clear();
             Place.Clear();
+            listView1.Clear();
+    
+        }
+
+        private void hours_start_ValueChanged(object sender, EventArgs e)
+        {
             
         }
     }

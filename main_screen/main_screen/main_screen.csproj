@@ -127,6 +127,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ScheduLuzDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Student\AppointmentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\AppointmentPage.Designer.cs">
+      <DependentUpon>AppointmentPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\ContactPage.cs">
       <SubType>Form</SubType>
     </Compile>
