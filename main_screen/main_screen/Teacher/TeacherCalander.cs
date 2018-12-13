@@ -49,5 +49,14 @@ namespace main_screen
             this.Hide();
             profile.Show();
         }
+
+        private void multi_studnt_event_btn_Click(object sender, EventArgs e)
+        {
+            Teacher.multiStudentEvent n = new Teacher.multiStudentEvent();
+            n.Show();
+            this.Hide();
+        }
+
+
     }
 }

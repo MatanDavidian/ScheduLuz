@@ -33,7 +33,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.mail_btn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.Profile_btn = new System.Windows.Forms.Button();
             this.contact_page = new System.Windows.Forms.Button();
@@ -86,14 +86,15 @@
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // mail_btn
             // 
-            this.button5.Location = new System.Drawing.Point(639, 344);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(125, 50);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.mail_btn.Location = new System.Drawing.Point(639, 344);
+            this.mail_btn.Name = "mail_btn";
+            this.mail_btn.Size = new System.Drawing.Size(125, 50);
+            this.mail_btn.TabIndex = 16;
+            this.mail_btn.Text = "Mail";
+            this.mail_btn.UseVisualStyleBackColor = true;
+            this.mail_btn.Click += new System.EventHandler(this.mail_btn_Click);
             // 
             // button4
             // 
@@ -151,7 +152,7 @@
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.mail_btn);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.Profile_btn);
             this.Controls.Add(this.contact_page);
@@ -170,7 +171,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button mail_btn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button Profile_btn;
         private System.Windows.Forms.Button contact_page;

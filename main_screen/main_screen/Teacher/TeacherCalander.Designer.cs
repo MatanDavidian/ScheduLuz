@@ -35,7 +35,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.multi_studnt_event_btn = new System.Windows.Forms.Button();
             this.profile_btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.add_event = new System.Windows.Forms.Button();
@@ -96,14 +96,15 @@
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // multi_studnt_event_btn
             // 
-            this.button4.Location = new System.Drawing.Point(635, 278);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 50);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.multi_studnt_event_btn.Location = new System.Drawing.Point(635, 278);
+            this.multi_studnt_event_btn.Name = "multi_studnt_event_btn";
+            this.multi_studnt_event_btn.Size = new System.Drawing.Size(125, 50);
+            this.multi_studnt_event_btn.TabIndex = 15;
+            this.multi_studnt_event_btn.Text = "MultiStudent Event";
+            this.multi_studnt_event_btn.UseVisualStyleBackColor = true;
+            this.multi_studnt_event_btn.Click += new System.EventHandler(this.multi_studnt_event_btn_Click);
             // 
             // profile_btn
             // 
@@ -152,7 +153,7 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.multi_studnt_event_btn);
             this.Controls.Add(this.profile_btn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.add_event);
@@ -173,7 +174,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button multi_studnt_event_btn;
         private System.Windows.Forms.Button profile_btn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button add_event;

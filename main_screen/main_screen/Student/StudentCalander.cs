@@ -51,5 +51,12 @@ namespace main_screen
             this.Hide();
             Mc.Show();
         }
+
+        private void mail_btn_Click(object sender, EventArgs e)
+        {
+            Student.Mail_form n = new Student.Mail_form();
+            this.Hide();
+            n.Show();
+        }
     }
 }
