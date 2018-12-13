@@ -1,4 +1,6 @@
-﻿namespace main_screen.general_process
+﻿using System;
+
+namespace main_screen.general_process
 {
     partial class Profile
     {
@@ -116,7 +118,6 @@
             // 
             // hobies_txt
             // 
-            this.hobies_txt.Enabled = false;
             this.hobies_txt.Location = new System.Drawing.Point(15, 277);
             this.hobies_txt.Name = "hobies_txt";
             this.hobies_txt.Size = new System.Drawing.Size(285, 96);
@@ -134,7 +135,6 @@
             // 
             // freetext_txt
             // 
-            this.freetext_txt.Enabled = false;
             this.freetext_txt.Location = new System.Drawing.Point(15, 130);
             this.freetext_txt.Name = "freetext_txt";
             this.freetext_txt.Size = new System.Drawing.Size(285, 103);
@@ -153,7 +153,6 @@
             // birthdate_pckr
             // 
             this.birthdate_pckr.CustomFormat = "yyyy-MM-dd";
-            this.birthdate_pckr.Enabled = false;
             this.birthdate_pckr.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.birthdate_pckr.Location = new System.Drawing.Point(67, 66);
             this.birthdate_pckr.Name = "birthdate_pckr";
@@ -171,7 +170,6 @@
             // 
             // address_txt
             // 
-            this.address_txt.Enabled = false;
             this.address_txt.Location = new System.Drawing.Point(67, 26);
             this.address_txt.Name = "address_txt";
             this.address_txt.Size = new System.Drawing.Size(233, 20);
@@ -213,7 +211,6 @@
             // 
             // PEmail_txt
             // 
-            this.PEmail_txt.Enabled = false;
             this.PEmail_txt.Location = new System.Drawing.Point(6, 130);
             this.PEmail_txt.Name = "PEmail_txt";
             this.PEmail_txt.Size = new System.Drawing.Size(219, 20);
@@ -230,7 +227,6 @@
             // 
             // phone_txt
             // 
-            this.phone_txt.Enabled = false;
             this.phone_txt.Location = new System.Drawing.Point(6, 83);
             this.phone_txt.Name = "phone_txt";
             this.phone_txt.Size = new System.Drawing.Size(219, 20);
@@ -247,7 +243,6 @@
             // 
             // Email_1st
             // 
-            this.Email_1st.Enabled = false;
             this.Email_1st.Location = new System.Drawing.Point(9, 39);
             this.Email_1st.Name = "Email_1st";
             this.Email_1st.Size = new System.Drawing.Size(219, 20);
@@ -395,6 +390,8 @@
             this.PerformLayout();
 
         }
+
+        
 
         #endregion
 
