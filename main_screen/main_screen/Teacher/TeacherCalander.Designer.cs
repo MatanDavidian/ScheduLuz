@@ -41,9 +41,10 @@
             this.add_event = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checklist = new System.Windows.Forms.CheckedListBox();
-            this.add_chklist_txt = new System.Windows.Forms.TextBox();
             this.add_chklist_btn = new System.Windows.Forms.Button();
+            this.add_chklist_txt = new System.Windows.Forms.TextBox();
+            this.checklist = new System.Windows.Forms.CheckedListBox();
+            this.clear_done_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,12 +144,13 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(12, 11);
+            this.monthCalendar1.Location = new System.Drawing.Point(12, 26);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 11;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.clear_done_btn);
             this.groupBox1.Controls.Add(this.add_chklist_btn);
             this.groupBox1.Controls.Add(this.add_chklist_txt);
             this.groupBox1.Controls.Add(this.checklist);
@@ -159,25 +161,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Checklist";
             // 
-            // checklist
-            // 
-            this.checklist.BackColor = System.Drawing.SystemColors.Control;
-            this.checklist.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checklist.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checklist.FormattingEnabled = true;
-            this.checklist.Location = new System.Drawing.Point(6, 60);
-            this.checklist.Name = "checklist";
-            this.checklist.Size = new System.Drawing.Size(223, 360);
-            this.checklist.TabIndex = 0;
-            // 
-            // add_chklist_txt
-            // 
-            this.add_chklist_txt.BackColor = System.Drawing.SystemColors.Control;
-            this.add_chklist_txt.Location = new System.Drawing.Point(6, 34);
-            this.add_chklist_txt.Name = "add_chklist_txt";
-            this.add_chklist_txt.Size = new System.Drawing.Size(162, 20);
-            this.add_chklist_txt.TabIndex = 1;
-            // 
             // add_chklist_btn
             // 
             this.add_chklist_btn.Location = new System.Drawing.Point(174, 32);
@@ -187,6 +170,35 @@
             this.add_chklist_btn.Text = "Add";
             this.add_chklist_btn.UseVisualStyleBackColor = true;
             this.add_chklist_btn.Click += new System.EventHandler(this.add_chklist_btn_Click);
+            // 
+            // add_chklist_txt
+            // 
+            this.add_chklist_txt.BackColor = System.Drawing.SystemColors.Control;
+            this.add_chklist_txt.Location = new System.Drawing.Point(6, 34);
+            this.add_chklist_txt.Name = "add_chklist_txt";
+            this.add_chklist_txt.Size = new System.Drawing.Size(162, 20);
+            this.add_chklist_txt.TabIndex = 1;
+            // 
+            // checklist
+            // 
+            this.checklist.BackColor = System.Drawing.SystemColors.Control;
+            this.checklist.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checklist.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checklist.FormattingEnabled = true;
+            this.checklist.Location = new System.Drawing.Point(6, 60);
+            this.checklist.Name = "checklist";
+            this.checklist.Size = new System.Drawing.Size(223, 330);
+            this.checklist.TabIndex = 0;
+            // 
+            // clear_done_btn
+            // 
+            this.clear_done_btn.Location = new System.Drawing.Point(6, 406);
+            this.clear_done_btn.Name = "clear_done_btn";
+            this.clear_done_btn.Size = new System.Drawing.Size(223, 23);
+            this.clear_done_btn.TabIndex = 3;
+            this.clear_done_btn.Text = "Clear Checked";
+            this.clear_done_btn.UseVisualStyleBackColor = true;
+            this.clear_done_btn.Click += new System.EventHandler(this.clear_done_btn_Click);
             // 
             // TeacherCalander
             // 
@@ -232,5 +244,6 @@
         private System.Windows.Forms.Button add_chklist_btn;
         private System.Windows.Forms.TextBox add_chklist_txt;
         private System.Windows.Forms.CheckedListBox checklist;
+        private System.Windows.Forms.Button clear_done_btn;
     }
 }

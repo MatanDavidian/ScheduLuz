@@ -84,16 +84,17 @@ namespace main_screen
 
         private void add_chklist_btn_Click(object sender, EventArgs e)
         {
-            if(add_chklist_txt.Text=="")
+            dataBase dataBase = new dataBase();
+            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+
+            conn.Open();
+            if (add_chklist_txt.Text=="")
             {
                 MessageBox.Show("You realy got nothig to do?");
             }
             else
             {
-                dataBase dataBase = new dataBase();
-                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-
-                conn.Open();
+                
                 SqlCommand cmd = new SqlCommand("INSERT INTO checklists(user_id,item) VALUES(@id,@item) ", conn);
                 cmd.Parameters.Add("@id", log_in_page.userId);
                 cmd.Parameters.Add("@item", add_chklist_txt.Text);
@@ -101,11 +102,63 @@ namespace main_screen
                 cmd.ExecuteNonQuery();
 
                 checklist.Items.Add(add_chklist_txt.Text);
-                conn.Close();
+                
 
                 add_chklist_txt.Text = "";
 
 
+            }
+        }
+
+        private void clearCL()
+        {
+            dataBase dataBase = new dataBase();
+            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+
+            conn.Open();
+            for (int i = 0; i<checklist.Items.Count;i++)
+            {
+                if(checklist.GetItemCheckState(i) == CheckState.Checked)
+                {
+                    try
+                    {
+                        
+                        SqlCommand cmd = new SqlCommand("DELETE FROM checklists WHERE item= @item and user_Id=@id", conn);
+                        cmd.Parameters.AddWithValue("@item", checklist.Items[i].ToString());
+                        cmd.Parameters.AddWithValue("@id", log_in_page.userId);
+                        cmd.ExecuteNonQuery();
+                        checklist.Items.Remove(checklist.Items[i]);
+                    }
+                    catch
+                    {
+
+                    }
+                }
+            }
+            conn.Close();
+
+        }
+
+        private bool CheckIfClear()
+        {
+            for (int i = 0; i < checklist.Items.Count; i++)
+            {
+                if (checklist.GetItemCheckState(i) == CheckState.Checked)
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+            
+
+
+        private void clear_done_btn_Click(object sender, EventArgs e)
+        {
+            while (!CheckIfClear())
+            {
+                clearCL();
             }
         }
     }
