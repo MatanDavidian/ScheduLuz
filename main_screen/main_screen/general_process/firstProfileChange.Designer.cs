@@ -206,7 +206,6 @@
             // 
             // phone_txt
             // 
-            this.phone_txt.Enabled = false;
             this.phone_txt.Location = new System.Drawing.Point(12, 167);
             this.phone_txt.Name = "phone_txt";
             this.phone_txt.Size = new System.Drawing.Size(219, 20);

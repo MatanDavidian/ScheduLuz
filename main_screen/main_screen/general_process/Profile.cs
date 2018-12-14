@@ -61,23 +61,29 @@ namespace main_screen.general_process
             SqlDataReader dataRead = cmd.ExecuteReader();
             dataRead.Read();
 
-            
-            byte[] img = null;
-            if (dataRead.HasRows)
+            try
             {
-                img = (byte[])dataRead[0];
-            }
+                byte[] img = null;
+                if (dataRead.HasRows)
+                {
+                    img = (byte[])dataRead[0];
+                }
 
-            if(img == null)
-            {
-                profilePic_img.Image = null;
-                
-            }
+                if (img == null)
+                {
+                    profilePic_img.Image = null;
 
-            else
+                }
+
+                else
+                {
+                    MemoryStream memoryStream = new MemoryStream(img);
+                    profilePic_img.Image = Image.FromStream(memoryStream);
+                }
+            }
+            catch
             {
-                MemoryStream memoryStream = new MemoryStream(img);
-                profilePic_img.Image = Image.FromStream(memoryStream);
+
             }
             con.Close();
 

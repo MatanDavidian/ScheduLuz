@@ -130,11 +130,11 @@ namespace main_screen.Teacher
             SqlCommand cmd7 = new SqlCommand("UPDATE Events SET minutes_end ='" + minutes_end.Text + "'WHERE Event_id ='" + event_id + "'", conn);
             cmd7.ExecuteNonQuery();
 
-            for (int i=0; i<student_lst.Items.Count;i++)
+            for (int i=0; i<send_to_lst.Items.Count;i++)
             {
-                string username = student_lst.Items[i].ToString().Replace(" ","");
+                string username = send_to_lst.Items[i].ToString().Replace(" ","");
 
-                string queryTogetStudentID = "Select id from users Where userName = '" + username + "'";
+                string queryTogetStudentID = "Select id from connection_details Where userName = '" + username + "'";
                 SqlDataAdapter sda6 = new SqlDataAdapter(queryTogetStudentID, conn);
                 DataTable dtb6 = new DataTable();
                 sda6.Fill(dtb6);
@@ -145,6 +145,7 @@ namespace main_screen.Teacher
                 cmd.Parameters.Add("@User_ID",sendToId );
                 
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Your Event has added for: "+username);
             }
 
             MessageBox.Show("Your Event has added.");
@@ -160,6 +161,35 @@ namespace main_screen.Teacher
             TeacherCalander n = new TeacherCalander();
             n.Show();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            dataBase dataBase = new dataBase();
+            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+
+            conn.Open();
+
+            string query;
+
+            if(class_num_cb.Text=="ALL")
+            {
+                query = "Select name,lastName from users where grade ='" + grade_cb.Text + "'";
+            }
+            else
+            {
+                query = "Select name,lastName from users where grade ='" + grade_cb.Text + "' and classNumber='"+class_num_cb.Text+"'";
+            }
+            
+            SqlDataAdapter sda = new SqlDataAdapter(query, conn);
+            DataTable dtb = new DataTable();
+            sda.Fill(dtb);
+
+            for (int i = 0; i<dtb.Rows.Count; i++)
+            {
+                send_to_lst.Items.Add(dtb.Rows[i]["name"].ToString().Trim() + " " + dtb.Rows[i]["lastName"].ToString().Trim());
+            }
         }
     }
     

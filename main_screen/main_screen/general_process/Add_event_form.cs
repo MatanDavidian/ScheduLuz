@@ -122,7 +122,7 @@ namespace main_screen.general_process
         private void Add_event_form_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'scheduLuzDataSet2.Events' table. You can move, or remove it, as needed.
-            this.eventsTableAdapter.Fill(this.scheduLuzDataSet2.Events);
+            //this.eventsTableAdapter.Fill(this.scheduLuzDataSet2.Events);
             //string premmition= log_in_page.permission;
             hours_start.Minimum = 0;
             hours_start.Maximum = 24;

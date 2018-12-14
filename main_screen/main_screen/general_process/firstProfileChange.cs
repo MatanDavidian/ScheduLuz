@@ -189,18 +189,22 @@ namespace main_screen.general_process
                 cmd10.ExecuteNonQuery();
 
                 /* adding the image - dont ask*/
-                byte[] images = null;
-                FileStream stream = new FileStream(imgLocation , FileMode.Open , FileAccess.Read);
-                BinaryReader brs = new BinaryReader(stream);
-                images = brs.ReadBytes((int)stream.Length);
+                if (imgLocation != "")
+                {
 
-                conn = dataBase.connect_to_scheduluz_DB();
-                conn.Open();
-                string sqlQuery = "UPDATE users SET picture =@images WHERE id ='"+ userId + "'" ;
-                cmd = new SqlCommand(sqlQuery, conn);
-                cmd.Parameters.Add(new SqlParameter("@images",images));
-                int N = cmd.ExecuteNonQuery();
 
+                    byte[] images = null;
+                    FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(stream);
+                    images = brs.ReadBytes((int)stream.Length);
+
+                    conn = dataBase.connect_to_scheduluz_DB();
+                    conn.Open();
+                    string sqlQuery = "UPDATE users SET picture =@images WHERE id ='" + userId + "'";
+                    cmd = new SqlCommand(sqlQuery, conn);
+                    cmd.Parameters.Add(new SqlParameter("@images", images));
+                    int N = cmd.ExecuteNonQuery();
+                }
 
                 MessageBox.Show("Your Details has been updated."+userId);
 
