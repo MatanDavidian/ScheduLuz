@@ -325,6 +325,7 @@ namespace main_screen.Teacher
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SendEmail";
             this.Text = "SendEmail";
+            this.Load += new System.EventHandler(this.SendEmail_Load);
             this.Setting.ResumeLayout(false);
             this.Setting.PerformLayout();
             this.ResumeLayout(false);

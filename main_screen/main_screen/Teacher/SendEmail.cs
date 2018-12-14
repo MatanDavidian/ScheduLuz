@@ -153,5 +153,10 @@ namespace main_screen.Teacher
         {
             this.progressBar1.Increment(1);
         }
+
+        private void SendEmail_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -7,6 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Net;
+using System.Net.Mail;
+using USER;
+using database_location;
+using System.IO;
+using check_funcs;
 
 namespace main_screen
 {
@@ -26,7 +33,25 @@ namespace main_screen
 
         private void TeacherCalander_Load(object sender, EventArgs e)
         {
+            dataBase dataBase = new dataBase();
+            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
 
+            conn.Open();
+
+            string query;
+
+           
+            query = "Select item from checklists where user_id ='" + log_in_page.userId + "'";
+            
+
+            SqlDataAdapter sda = new SqlDataAdapter(query, conn);
+            DataTable dtb = new DataTable();
+            sda.Fill(dtb);
+
+            for (int i = 0; i < dtb.Rows.Count; i++)
+            {
+                checklist.Items.Add(dtb.Rows[i]["item"].ToString().Trim());
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -57,6 +82,31 @@ namespace main_screen
             this.Hide();
         }
 
+        private void add_chklist_btn_Click(object sender, EventArgs e)
+        {
+            if(add_chklist_txt.Text=="")
+            {
+                MessageBox.Show("You realy got nothig to do?");
+            }
+            else
+            {
+                dataBase dataBase = new dataBase();
+                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
 
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO checklists(user_id,item) VALUES(@id,@item) ", conn);
+                cmd.Parameters.Add("@id", log_in_page.userId);
+                cmd.Parameters.Add("@item", add_chklist_txt.Text);
+
+                cmd.ExecuteNonQuery();
+
+                checklist.Items.Add(add_chklist_txt.Text);
+                conn.Close();
+
+                add_chklist_txt.Text = "";
+
+
+            }
+        }
     }
 }
