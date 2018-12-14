@@ -33,7 +33,7 @@
             this.add_user = new System.Windows.Forms.Button();
             this.Add_event = new System.Windows.Forms.Button();
             this.Profile_btn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.BBorad_btn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -79,14 +79,15 @@
             this.Profile_btn.UseVisualStyleBackColor = true;
             this.Profile_btn.Click += new System.EventHandler(this.Profile_btn_Click);
             // 
-            // button4
+            // BBorad_btn
             // 
-            this.button4.Location = new System.Drawing.Point(547, 120);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 30);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BBorad_btn.Location = new System.Drawing.Point(547, 120);
+            this.BBorad_btn.Name = "BBorad_btn";
+            this.BBorad_btn.Size = new System.Drawing.Size(125, 30);
+            this.BBorad_btn.TabIndex = 4;
+            this.BBorad_btn.Text = "Bulletin Board";
+            this.BBorad_btn.UseVisualStyleBackColor = true;
+            this.BBorad_btn.Click += new System.EventHandler(this.BBorad_btn_Click);
             // 
             // button5
             // 
@@ -164,7 +165,7 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.BBorad_btn);
             this.Controls.Add(this.Profile_btn);
             this.Controls.Add(this.Add_event);
             this.Controls.Add(this.add_user);
@@ -184,7 +185,7 @@
         private System.Windows.Forms.Button add_user;
         private System.Windows.Forms.Button Add_event;
         private System.Windows.Forms.Button Profile_btn;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BBorad_btn;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;

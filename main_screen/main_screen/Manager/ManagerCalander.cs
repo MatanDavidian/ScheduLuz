@@ -59,5 +59,13 @@ namespace main_screen
             profile.Show();
             Visible = false;
         }
+
+        private void BBorad_btn_Click(object sender, EventArgs e)
+        {
+            Manager.BBoard n = new Manager.BBoard();
+            n.Show();
+            this.Hide();
+
+        }
     }
 }

@@ -122,7 +122,7 @@
             this.contact_page.Name = "contact_page";
             this.contact_page.Size = new System.Drawing.Size(125, 30);
             this.contact_page.TabIndex = 13;
-            this.contact_page.Text = "contact page";
+            this.contact_page.Text = "Contact Page";
             this.contact_page.UseVisualStyleBackColor = true;
             this.contact_page.Click += new System.EventHandler(this.contact_page_Click);
             // 
