@@ -175,6 +175,12 @@
     <Compile Include="Teacher\multiStudentEvent.Designer.cs">
       <DependentUpon>multiStudentEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\reception_hours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\reception_hours.Designer.cs">
+      <DependentUpon>reception_hours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\SendEmail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\multiStudentEvent.resx">
       <DependentUpon>multiStudentEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\reception_hours.resx">
+      <DependentUpon>reception_hours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\SendEmail.resx">
       <DependentUpon>SendEmail.cs</DependentUpon>
