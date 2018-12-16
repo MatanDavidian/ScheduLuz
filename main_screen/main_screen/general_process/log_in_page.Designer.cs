@@ -60,9 +60,9 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(140, 58);
             this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(125, 20);
             this.textBox2.TabIndex = 2;
+            this.textBox2.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -95,6 +95,7 @@
             // 
             // log_in_page
             // 
+            this.AcceptButton = this.Login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(301, 180);

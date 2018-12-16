@@ -71,11 +71,35 @@
     <Compile Include="general_process\Add_event_form.Designer.cs">
       <DependentUpon>Add_event_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="general_process\firstProfileChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general_process\firstProfileChange.Designer.cs">
+      <DependentUpon>firstProfileChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="general_process\identify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general_process\identify.Designer.cs">
+      <DependentUpon>identify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="general_process\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general_process\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\add_user.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Manager\add_user.Designer.cs">
       <DependentUpon>add_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\BBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\BBoard.Designer.cs">
+      <DependentUpon>BBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\ManagerCalander.cs">
       <SubType>Form</SubType>
@@ -91,6 +115,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\functionsForScheduLuz.cs" />
     <Compile Include="Resources\dataBaseLocation.cs" />
     <Compile Include="Resources\structUser.cs" />
     <Compile Include="ScheduLuzDataSet.Designer.cs">
@@ -108,11 +133,47 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ScheduLuzDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Student\AppointmentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\AppointmentPage.Designer.cs">
+      <DependentUpon>AppointmentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\ContactPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\ContactPage.Designer.cs">
+      <DependentUpon>ContactPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Mail\Mails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Mail\Mails.Designer.cs">
+      <DependentUpon>Mails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Mail\NewMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Mail\NewMessage.Designer.cs">
+      <DependentUpon>NewMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Multiplayer_event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Multiplayer_event.Designer.cs">
+      <DependentUpon>Multiplayer_event.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\StudentCalander.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Student\StudentCalander.Designer.cs">
       <DependentUpon>StudentCalander.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\multiStudentEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\multiStudentEvent.Designer.cs">
+      <DependentUpon>multiStudentEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="Teacher\SendEmail.cs">
       <SubType>Form</SubType>
@@ -129,8 +190,20 @@
     <EmbeddedResource Include="general_process\Add_event_form.resx">
       <DependentUpon>Add_event_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="general_process\firstProfileChange.resx">
+      <DependentUpon>firstProfileChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general_process\identify.resx">
+      <DependentUpon>identify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general_process\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\add_user.resx">
       <DependentUpon>add_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\BBoard.resx">
+      <DependentUpon>BBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManagerCalander.resx">
       <DependentUpon>ManagerCalander.cs</DependentUpon>
@@ -148,8 +221,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Student\ContactPage.resx">
+      <DependentUpon>ContactPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Mail\Mails.resx">
+      <DependentUpon>Mails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Mail\NewMessage.resx">
+      <DependentUpon>NewMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Multiplayer_event.resx">
+      <DependentUpon>Multiplayer_event.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student\StudentCalander.resx">
       <DependentUpon>StudentCalander.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\multiStudentEvent.resx">
+      <DependentUpon>multiStudentEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\SendEmail.resx">
       <DependentUpon>SendEmail.cs</DependentUpon>

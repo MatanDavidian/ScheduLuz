@@ -30,6 +30,7 @@ namespace main_screen.Teacher
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendEmail));
             this.label1 = new System.Windows.Forms.Label();
             this.txtTo = new System.Windows.Forms.TextBox();
@@ -52,6 +53,8 @@ namespace main_screen.Teacher
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Setting.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,7 +131,7 @@ namespace main_screen.Teacher
             this.txtMessage.Margin = new System.Windows.Forms.Padding(2);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(275, 131);
-            this.txtMessage.TabIndex = 4;
+            this.txtMessage.TabIndex = 3;
             this.txtMessage.Text = "";
             // 
             // btnSend
@@ -137,7 +140,7 @@ namespace main_screen.Teacher
             this.btnSend.Margin = new System.Windows.Forms.Padding(2);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(87, 44);
-            this.btnSend.TabIndex = 10;
+            this.btnSend.TabIndex = 2;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.button1_Click);
@@ -166,6 +169,9 @@ namespace main_screen.Teacher
             // chkSSL
             // 
             this.chkSSL.AutoSize = true;
+            this.chkSSL.Checked = true;
+            this.chkSSL.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSSL.Enabled = false;
             this.chkSSL.Location = new System.Drawing.Point(11, 104);
             this.chkSSL.Margin = new System.Windows.Forms.Padding(2);
             this.chkSSL.Name = "chkSSL";
@@ -177,6 +183,7 @@ namespace main_screen.Teacher
             // 
             // txtSmtp
             // 
+            this.txtSmtp.Enabled = false;
             this.txtSmtp.Location = new System.Drawing.Point(191, 79);
             this.txtSmtp.Margin = new System.Windows.Forms.Padding(2);
             this.txtSmtp.Name = "txtSmtp";
@@ -197,6 +204,7 @@ namespace main_screen.Teacher
             // 
             // txtPort
             // 
+            this.txtPort.Enabled = false;
             this.txtPort.Location = new System.Drawing.Point(71, 79);
             this.txtPort.Margin = new System.Windows.Forms.Padding(2);
             this.txtPort.Name = "txtPort";
@@ -218,11 +226,14 @@ namespace main_screen.Teacher
             // 
             // txtPassword
             // 
+            this.txtPassword.Enabled = false;
             this.txtPassword.Location = new System.Drawing.Point(71, 49);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(216, 20);
             this.txtPassword.TabIndex = 14;
+            this.txtPassword.Text = "A1346014";
+            this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label6
@@ -238,11 +249,14 @@ namespace main_screen.Teacher
             // 
             // txtUser
             // 
+            this.txtUser.Enabled = false;
             this.txtUser.Location = new System.Drawing.Point(71, 22);
             this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(216, 20);
             this.txtUser.TabIndex = 12;
+            this.txtUser.Text = "lstomdam";
+            this.txtUser.UseSystemPasswordChar = true;
             this.txtUser.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label7
@@ -258,7 +272,7 @@ namespace main_screen.Teacher
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(461, 391);
+            this.button1.Location = new System.Drawing.Point(461, 459);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(60, 28);
             this.button1.TabIndex = 9;
@@ -278,11 +292,24 @@ namespace main_screen.Teacher
             this.label9.Text = "Send Email";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(55, 459);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(161, 23);
+            this.progressBar1.TabIndex = 39;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // SendEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 443);
+            this.ClientSize = new System.Drawing.Size(533, 499);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Setting);
@@ -298,6 +325,7 @@ namespace main_screen.Teacher
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SendEmail";
             this.Text = "SendEmail";
+            this.Load += new System.EventHandler(this.SendEmail_Load);
             this.Setting.ResumeLayout(false);
             this.Setting.PerformLayout();
             this.ResumeLayout(false);
@@ -330,5 +358,7 @@ namespace main_screen.Teacher
         private System.Windows.Forms.CheckBox chkSSL;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

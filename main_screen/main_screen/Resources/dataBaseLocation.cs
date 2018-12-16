@@ -19,7 +19,7 @@ namespace database_location
     {
         public SqlConnection connect_to_scheduluz_DB()
         {
-            return new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\projectC#\ScheduLuz2\main_screen\main_screen\ScheduLuz.mdf;Integrated Security=True;Connect Timeout=30");
+            return new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\projectC#\ScheduLuz2\main_screen\main_screen\ScheduLuz.mdf;Integrated Security=True;Connect Timeout=30");
         }
     }
 

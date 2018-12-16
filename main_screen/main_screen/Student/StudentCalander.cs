@@ -30,5 +30,33 @@ namespace main_screen
             this.Hide();
             Mc.Show();
         }
+
+        private void contact_page_Click(object sender, EventArgs e)
+        {
+            Student.ContactPage Mc = new Student.ContactPage();
+            this.Hide();
+            Mc.Show();
+        }
+
+        private void Profile_btn_Click(object sender, EventArgs e)
+        {
+            general_process.Profile profile = new general_process.Profile();
+            this.Hide();
+            profile.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Student.Multiplayer_event Mc = new Student.Multiplayer_event();
+            this.Hide();
+            Mc.Show();
+        }
+
+        private void mail_btn_Click(object sender, EventArgs e)
+        {
+            Student.Mail_form n = new Student.Mail_form();
+            this.Hide();
+            n.Show();
+        }
     }
 }
