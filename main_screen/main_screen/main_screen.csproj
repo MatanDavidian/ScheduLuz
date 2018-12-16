@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +47,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\topcornerlogo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,11 +71,35 @@
     <Compile Include="general_process\Add_event_form.Designer.cs">
       <DependentUpon>Add_event_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="general_process\firstProfileChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general_process\firstProfileChange.Designer.cs">
+      <DependentUpon>firstProfileChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="general_process\identify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general_process\identify.Designer.cs">
+      <DependentUpon>identify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="general_process\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general_process\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\add_user.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Manager\add_user.Designer.cs">
       <DependentUpon>add_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\BBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\BBoard.Designer.cs">
+      <DependentUpon>BBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\ManagerCalander.cs">
       <SubType>Form</SubType>
@@ -72,11 +115,71 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\functionsForScheduLuz.cs" />
+    <Compile Include="Resources\dataBaseLocation.cs" />
+    <Compile Include="Resources\structUser.cs" />
+    <Compile Include="ScheduLuzDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScheduLuzDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduLuzDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScheduLuzDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduLuzDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScheduLuzDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Student\AppointmentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\AppointmentPage.Designer.cs">
+      <DependentUpon>AppointmentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\ContactPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\ContactPage.Designer.cs">
+      <DependentUpon>ContactPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Mail\Mails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Mail\Mails.Designer.cs">
+      <DependentUpon>Mails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Mail\NewMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Mail\NewMessage.Designer.cs">
+      <DependentUpon>NewMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Multiplayer_event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Multiplayer_event.Designer.cs">
+      <DependentUpon>Multiplayer_event.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\StudentCalander.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Student\StudentCalander.Designer.cs">
       <DependentUpon>StudentCalander.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\multiStudentEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\multiStudentEvent.Designer.cs">
+      <DependentUpon>multiStudentEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\SendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\SendEmail.Designer.cs">
+      <DependentUpon>SendEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="Teacher\TeacherCalander.cs">
       <SubType>Form</SubType>
@@ -87,8 +190,20 @@
     <EmbeddedResource Include="general_process\Add_event_form.resx">
       <DependentUpon>Add_event_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="general_process\firstProfileChange.resx">
+      <DependentUpon>firstProfileChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general_process\identify.resx">
+      <DependentUpon>identify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general_process\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\add_user.resx">
       <DependentUpon>add_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\BBoard.resx">
+      <DependentUpon>BBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManagerCalander.resx">
       <DependentUpon>ManagerCalander.cs</DependentUpon>
@@ -106,8 +221,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Student\ContactPage.resx">
+      <DependentUpon>ContactPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Mail\Mails.resx">
+      <DependentUpon>Mails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Mail\NewMessage.resx">
+      <DependentUpon>NewMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Multiplayer_event.resx">
+      <DependentUpon>Multiplayer_event.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student\StudentCalander.resx">
       <DependentUpon>StudentCalander.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\multiStudentEvent.resx">
+      <DependentUpon>multiStudentEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\SendEmail.resx">
+      <DependentUpon>SendEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\TeacherCalander.resx">
       <DependentUpon>TeacherCalander.cs</DependentUpon>
@@ -121,12 +254,67 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ScheduLuzDataSet.xsc">
+      <DependentUpon>ScheduLuzDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ScheduLuzDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ScheduLuzDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ScheduLuzDataSet.xss">
+      <DependentUpon>ScheduLuzDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ScheduLuzDataSet1.xsc">
+      <DependentUpon>ScheduLuzDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ScheduLuzDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ScheduLuzDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ScheduLuzDataSet1.xss">
+      <DependentUpon>ScheduLuzDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ScheduLuzDataSet2.xsc">
+      <DependentUpon>ScheduLuzDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ScheduLuzDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ScheduLuzDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ScheduLuzDataSet2.xss">
+      <DependentUpon>ScheduLuzDataSet2.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sched_l_z_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScheduLuz.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ScheduLuz_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>ScheduLuz.mdf</DependentUpon>
+    </Content>
+    <Content Include="Resources\topcornerlogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
