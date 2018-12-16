@@ -71,7 +71,7 @@ namespace main_screen.general_process
             cmd.Parameters.Add("@public_B", public_B.Text);
             cmd.Parameters.Add("@Place", Place.Text);
 
-            cmd.ExecuteNonQuery();
+           //cmd.ExecuteNonQuery();
             MessageBox.Show("Your event added successfully");
             text_title.Clear();
             richTextBox1.Clear();
