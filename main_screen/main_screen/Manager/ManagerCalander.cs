@@ -7,7 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Net;
+using System.Net.Mail;
 using USER;
+using database_location;
+using System.IO;
+using check_funcs;
 
 
 namespace main_screen
@@ -42,10 +48,31 @@ namespace main_screen
 
         private void ManagerCalander_Load(object sender, EventArgs e)
         {
-            User user = new User();
-            user = user.GetUser(log_in_page.userId);
+            dataBase dataBase = new dataBase();
+            SqlConnection con = dataBase.connect_to_scheduluz_DB();
+            string rownumOfMax = "0";
+            con.Open();
 
-            UserName_lbl.Text = user.getUsername();
+            string query = "Select MAX(msg_id) from bulletin_board";
+
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            DataTable dtb = new DataTable();
+            sda.Fill(dtb);
+
+            if (dtb.Rows.Count > 0)
+            {
+                rownumOfMax = dtb.Rows[0][0].ToString();
+                query = "Select msg from bulletin_board where msg_id ='" + rownumOfMax + "'";
+
+                sda = new SqlDataAdapter(query, con);
+                dtb = new DataTable();
+                sda.Fill(dtb);
+                if (dtb.Rows.Count > 0)
+                {
+                    motd_txt.Text = dtb.Rows[0][0].ToString();
+                }
+            }
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -65,6 +92,11 @@ namespace main_screen
             Manager.BBoard n = new Manager.BBoard();
             n.Show();
             this.Hide();
+
+        }
+
+        private void motd_txt_Click(object sender, EventArgs e)
+        {
 
         }
     }

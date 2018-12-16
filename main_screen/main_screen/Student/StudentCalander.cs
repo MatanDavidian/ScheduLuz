@@ -7,6 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Net;
+using System.Net.Mail;
+using USER;
+using database_location;
+using System.IO;
+using check_funcs;
 
 namespace main_screen
 {
@@ -64,6 +71,34 @@ namespace main_screen
             Student.identify n = new Student.identify();
             this.Hide();
             n.Show();
+        }
+
+        private void StudentCalander_Load(object sender, EventArgs e)
+        {
+            dataBase dataBase = new dataBase();
+            SqlConnection con = dataBase.connect_to_scheduluz_DB();
+            string rownumOfMax = "0";
+            con.Open();
+
+            string query = "Select MAX(msg_id) from bulletin_board";
+
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            DataTable dtb = new DataTable();
+            sda.Fill(dtb);
+
+            if (dtb.Rows.Count > 0)
+            {
+                rownumOfMax = dtb.Rows[0][0].ToString();
+                query = "Select msg from bulletin_board where msg_id ='" + rownumOfMax + "'";
+
+                sda = new SqlDataAdapter(query, con);
+                dtb = new DataTable();
+                sda.Fill(dtb);
+                if (dtb.Rows.Count > 0)
+                {
+                    motd_txt.Text = dtb.Rows[0][0].ToString();
+                }
+            }
         }
     }
 }

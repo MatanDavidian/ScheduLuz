@@ -40,7 +40,9 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.UserName_lbl = new System.Windows.Forms.Label();
+            this.motd = new System.Windows.Forms.GroupBox();
+            this.motd_txt = new System.Windows.Forms.Label();
+            this.motd.SuspendLayout();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -143,22 +145,32 @@
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // UserName_lbl
+            // motd
             // 
-            this.UserName_lbl.AutoSize = true;
-            this.UserName_lbl.Location = new System.Drawing.Point(316, 24);
-            this.UserName_lbl.Name = "UserName_lbl";
-            this.UserName_lbl.Size = new System.Drawing.Size(35, 13);
-            this.UserName_lbl.TabIndex = 11;
-            this.UserName_lbl.Text = "label1";
-            this.UserName_lbl.Click += new System.EventHandler(this.label1_Click);
+            this.motd.Controls.Add(this.motd_txt);
+            this.motd.Location = new System.Drawing.Point(246, 228);
+            this.motd.Name = "motd";
+            this.motd.Size = new System.Drawing.Size(295, 221);
+            this.motd.TabIndex = 12;
+            this.motd.TabStop = false;
+            this.motd.Text = "Message Of the Day";
+            // 
+            // motd_txt
+            // 
+            this.motd_txt.AutoSize = true;
+            this.motd_txt.Location = new System.Drawing.Point(7, 20);
+            this.motd_txt.Name = "motd_txt";
+            this.motd_txt.Size = new System.Drawing.Size(104, 13);
+            this.motd_txt.TabIndex = 0;
+            this.motd_txt.Text = "Message Of the Day";
+            this.motd_txt.Click += new System.EventHandler(this.motd_txt_Click);
             // 
             // ManagerCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
-            this.Controls.Add(this.UserName_lbl);
+            this.Controls.Add(this.motd);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -174,8 +186,9 @@
             this.Name = "ManagerCalander";
             this.Text = "Calander - Manager";
             this.Load += new System.EventHandler(this.ManagerCalander_Load);
+            this.motd.ResumeLayout(false);
+            this.motd.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -192,6 +205,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Label UserName_lbl;
+        private System.Windows.Forms.GroupBox motd;
+        private System.Windows.Forms.Label motd_txt;
     }
 }

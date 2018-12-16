@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.return_btn = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.msg_txt = new System.Windows.Forms.RichTextBox();
             this.edit_last_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,13 +44,13 @@
             this.return_btn.UseVisualStyleBackColor = true;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click_1);
             // 
-            // richTextBox1
+            // msg_txt
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(13, 63);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(258, 254);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.msg_txt.Location = new System.Drawing.Point(13, 63);
+            this.msg_txt.Name = "msg_txt";
+            this.msg_txt.Size = new System.Drawing.Size(258, 254);
+            this.msg_txt.TabIndex = 1;
+            this.msg_txt.Text = "";
             // 
             // edit_last_btn
             // 
@@ -70,6 +70,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Publish";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BBoard
             // 
@@ -78,7 +79,7 @@
             this.ClientSize = new System.Drawing.Size(283, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.edit_last_btn);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.msg_txt);
             this.Controls.Add(this.return_btn);
             this.Name = "BBoard";
             this.Text = "Bulletin Board";
@@ -90,7 +91,7 @@
         #endregion
 
         private System.Windows.Forms.Button return_btn;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox msg_txt;
         private System.Windows.Forms.Button edit_last_btn;
         private System.Windows.Forms.Button button1;
     }

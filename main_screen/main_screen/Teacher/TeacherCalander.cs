@@ -52,6 +52,32 @@ namespace main_screen
             {
                 checklist.Items.Add(dtb.Rows[i]["item"].ToString().Trim());
             }
+
+           
+            string rownumOfMax = "0";
+            
+
+            query = "Select MAX(msg_id) from bulletin_board";
+
+            sda = new SqlDataAdapter(query, conn);
+            dtb = new DataTable();
+            sda.Fill(dtb);
+
+            if (dtb.Rows.Count > 0)
+            {
+                rownumOfMax = dtb.Rows[0][0].ToString();
+                query = "Select msg from bulletin_board where msg_id ='" + rownumOfMax + "'";
+
+                sda = new SqlDataAdapter(query, conn);
+                dtb = new DataTable();
+                sda.Fill(dtb);
+                if (dtb.Rows.Count > 0)
+                {
+                    motd_txt.Text = dtb.Rows[0][0].ToString();
+                }
+            }
+
+
         }
 
         private void button9_Click(object sender, EventArgs e)
