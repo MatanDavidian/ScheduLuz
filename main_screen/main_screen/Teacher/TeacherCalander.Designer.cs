@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherCalander));
             this.listView1 = new System.Windows.Forms.ListView();
             this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.reception_hours = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -41,10 +41,10 @@
             this.add_event = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clear_done_btn = new System.Windows.Forms.Button();
             this.add_chklist_btn = new System.Windows.Forms.Button();
             this.add_chklist_txt = new System.Windows.Forms.TextBox();
             this.checklist = new System.Windows.Forms.CheckedListBox();
-            this.clear_done_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,14 +66,15 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button8
+            // reception_hours
             // 
-            this.button8.Location = new System.Drawing.Point(547, 264);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(125, 30);
-            this.button8.TabIndex = 19;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.reception_hours.Location = new System.Drawing.Point(547, 264);
+            this.reception_hours.Name = "reception_hours";
+            this.reception_hours.Size = new System.Drawing.Size(125, 30);
+            this.reception_hours.TabIndex = 19;
+            this.reception_hours.Text = "reception hours";
+            this.reception_hours.UseVisualStyleBackColor = true;
+            this.reception_hours.Click += new System.EventHandler(this.reception_hours_Click);
             // 
             // button7
             // 
@@ -161,6 +162,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Checklist";
             // 
+            // clear_done_btn
+            // 
+            this.clear_done_btn.Location = new System.Drawing.Point(6, 406);
+            this.clear_done_btn.Name = "clear_done_btn";
+            this.clear_done_btn.Size = new System.Drawing.Size(223, 23);
+            this.clear_done_btn.TabIndex = 3;
+            this.clear_done_btn.Text = "Clear Checked";
+            this.clear_done_btn.UseVisualStyleBackColor = true;
+            this.clear_done_btn.Click += new System.EventHandler(this.clear_done_btn_Click);
+            // 
             // add_chklist_btn
             // 
             this.add_chklist_btn.Location = new System.Drawing.Point(174, 32);
@@ -190,16 +201,6 @@
             this.checklist.Size = new System.Drawing.Size(223, 330);
             this.checklist.TabIndex = 0;
             // 
-            // clear_done_btn
-            // 
-            this.clear_done_btn.Location = new System.Drawing.Point(6, 406);
-            this.clear_done_btn.Name = "clear_done_btn";
-            this.clear_done_btn.Size = new System.Drawing.Size(223, 23);
-            this.clear_done_btn.TabIndex = 3;
-            this.clear_done_btn.Text = "Clear Checked";
-            this.clear_done_btn.UseVisualStyleBackColor = true;
-            this.clear_done_btn.Click += new System.EventHandler(this.clear_done_btn_Click);
-            // 
             // TeacherCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,7 +209,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.reception_hours);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -231,7 +232,7 @@
 
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button reception_hours;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;

@@ -37,46 +37,77 @@ namespace main_screen.Student
         int count = 0;
         private void populate()
         {
-
             dataBase dataBase = new dataBase();
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
             con.Open();
 
-            string name = friend_name.Text.ToString().Trim();
-            string query = "Select * from users Where name = '" + name + "'";
-            SqlDataAdapter sda = new SqlDataAdapter(query, con);
-            DataTable dtbl = new DataTable();
-            sda.Fill(dtbl);
-            if (dtbl.Rows[0][3].ToString().Trim() == "student" && (dtbl.Rows[0][1].ToString().Trim()+ dtbl.Rows[0][2].ToString().Trim()).ToUpper() != log_in_page.loginUserName.ToUpper())
+            string fullName = friend_name.Text.ToString();
+            var names = fullName.Split(' ');
+            if (names.Length != 2)
             {
-
-                byte[] img = null;
-
-                img = (byte[])dtbl.Rows[0][13];//dataRead[0];
-
-                if (img == null)
-                {
-                    listView1.SmallImageList = null;
-
-                }
-
-                else
-                {
-                    MemoryStream memoryStream = new MemoryStream(img);
-                    imgs.Images.Add(friend_name.Text.Trim(), Image.FromStream(memoryStream));
-                }
+                friend_name.Clear();
+                MessageBox.Show("illegal enter first name and last name separate.");
                 con.Close();
-                listView1.SmallImageList = imgs;
-                listView1.Items.Add(friend_name.Text.Trim(), count);
-                count++;
-            }
-            else if((dtbl.Rows[0][1].ToString().Trim() + dtbl.Rows[0][2].ToString().Trim()).ToUpper() == log_in_page.loginUserName.ToUpper())
-            {
-                MessageBox.Show("You are alreary invented.");
             }
             else
             {
-                MessageBox.Show("You can Invents only your friends.");
+                string firstName = names[0];
+                string lastName = names[1];
+                string query = "Select * from users Where name = '" + firstName + "' and LastName = '" + lastName + "'";
+
+                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                DataTable dtbl = new DataTable();
+                sda.Fill(dtbl);
+
+                int flag = 1;
+                string help_full_name;
+                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                {
+                    help_full_name = listView1.Items[i].Text.ToString().Trim();
+                    if(help_full_name== fullName)
+                    {
+                        flag = 0;
+                        break;
+                    }
+                }
+                if (flag == 1 && dtbl.Rows.Count > 0 && dtbl.Rows[0][3].ToString().Trim() == "student" && (dtbl.Rows[0][1].ToString().Trim() + dtbl.Rows[0][2].ToString().Trim()).ToUpper() != log_in_page.loginUserName.ToUpper())
+                {
+                    byte[] img = null;
+
+
+                    if (!dtbl.Rows[0].IsNull("picture"))
+                    {
+                        img = (byte[])dtbl.Rows[0][13];
+                        MemoryStream memoryStream = new MemoryStream(img);
+                        imgs.Images.Add(friend_name.Text.Trim(), Image.FromStream(memoryStream));
+                    }
+                    else
+                    {
+                        listView1.SmallImageList = null;
+                    }
+
+                    con.Close();
+                    listView1.SmallImageList = imgs;
+                    listView1.Items.Add(friend_name.Text.Trim(), count);
+                    count++;
+                }
+                else if (dtbl.Rows.Count > 0 && (dtbl.Rows[0][1].ToString().Trim() + dtbl.Rows[0][2].ToString().Trim()).ToUpper() == log_in_page.loginUserName.ToUpper())
+                {
+                    MessageBox.Show("You are alreary invented.");
+                }
+                else if (dtbl.Rows.Count == 0)
+                {
+                    MessageBox.Show(firstName + " " + lastName + " dosent exist, try again.");
+                }
+                else if(flag==0)
+                {
+                    MessageBox.Show("you already invent" + fullName +" .");
+                }
+                else
+                {
+                    MessageBox.Show("You can Invents only your friends.");
+                }
+                con.Close();
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -141,21 +172,35 @@ namespace main_screen.Student
             sda.Fill(dtbl);
             int eve_id = int.Parse(dtbl.Rows[0][0].ToString().Trim());
             int usr_id;
-            String name;
+            String fullName;
             //insert the max id event and the event id to Events_to_Users table
             for (int i = listView1.Items.Count - 1; i >= 0; i--)
             {
-                name = listView1.Items[i].Text.ToString().Trim();
-                query = "Select * from users Where name = '" + name + "'";
-                sda = new SqlDataAdapter(query, conn);
-                dtbl = new DataTable();
-                sda.Fill(dtbl);
-                usr_id = int.Parse(dtbl.Rows[0][0].ToString().Trim());
+                fullName = listView1.Items[i].Text.ToString().Trim();
+                var names = fullName.Split(' ');
+                if (names.Length != 2)
+                {
+                    friend_name.Clear();
+                    MessageBox.Show("illegal enter first name and last name separate.");
+                    conn.Close();
+                }
+                else
+                {
+                    string firstName = names[0];
+                    string lastName = names[1];
+                    query = "Select * from users Where name = '" + firstName + "' and LastName = '" + lastName + "'";                    sda = new SqlDataAdapter(query, conn);
+                    dtbl = new DataTable();
+                    sda.Fill(dtbl);
+                    usr_id = int.Parse(dtbl.Rows[0][0].ToString().Trim());
 
-                cmd = new SqlCommand("INSERT INTO Events_to_Users (User_ID,Event_ID) VALUES(@User_ID,@Event_ID) ", conn);
-                cmd.Parameters.Add("@User_ID", usr_id);
-                cmd.Parameters.Add("@Event_ID", eve_id);
-                cmd.ExecuteNonQuery();
+                    cmd = new SqlCommand("INSERT INTO Events_to_Users (User_ID,Event_ID) VALUES(@User_ID,@Event_ID) ", conn);
+                    cmd.Parameters.Add("@User_ID", usr_id);
+                    cmd.Parameters.Add("@Event_ID", eve_id);
+                    cmd.ExecuteNonQuery();
+                }
+                StudentCalander n = new StudentCalander();
+                n.Show();
+                this.Hide();
             }
             
 
