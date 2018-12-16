@@ -161,5 +161,12 @@ namespace main_screen
                 clearCL();
             }
         }
+
+        private void reception_hours_Click(object sender, EventArgs e)
+        {
+            Teacher.reception_hours n = new Teacher.reception_hours();
+            n.Show();
+            this.Hide();
+        }
     }
 }

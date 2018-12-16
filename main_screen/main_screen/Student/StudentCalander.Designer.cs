@@ -32,7 +32,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.my_dear_diary_btn = new System.Windows.Forms.Button();
             this.mail_btn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.Profile_btn = new System.Windows.Forms.Button();
@@ -77,14 +77,15 @@
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // my_dear_diary_btn
             // 
-            this.button6.Location = new System.Drawing.Point(547, 192);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 30);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.my_dear_diary_btn.Location = new System.Drawing.Point(547, 192);
+            this.my_dear_diary_btn.Name = "my_dear_diary_btn";
+            this.my_dear_diary_btn.Size = new System.Drawing.Size(125, 30);
+            this.my_dear_diary_btn.TabIndex = 17;
+            this.my_dear_diary_btn.Text = "My Dear Diary";
+            this.my_dear_diary_btn.UseVisualStyleBackColor = true;
+            this.my_dear_diary_btn.Click += new System.EventHandler(this.my_dear_diary_btn_Click);
             // 
             // mail_btn
             // 
@@ -151,7 +152,7 @@
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.my_dear_diary_btn);
             this.Controls.Add(this.mail_btn);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.Profile_btn);
@@ -170,7 +171,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button my_dear_diary_btn;
         private System.Windows.Forms.Button mail_btn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button Profile_btn;
