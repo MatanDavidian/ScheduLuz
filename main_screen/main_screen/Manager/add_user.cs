@@ -34,14 +34,25 @@ namespace main_screen.Manager
             Visible = false;
         }
 
-        private void Choose_Type_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            /*
+            if (Student.Checked || Manager.Checked || Teacher.Checked)
+            {
+                if (textBox1.Text.Length == 9) // the exact amount of digits in ID number
+                {
+                    if (textBox2.TextLength > 0)
+                    {
+                        if (textBox3.TextLength > 0)
+                        {
+                            
+                        }
+                    }
+                } 
+            } 
+            */
         }
+
     }
 }
