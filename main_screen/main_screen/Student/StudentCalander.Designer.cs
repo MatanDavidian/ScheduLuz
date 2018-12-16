@@ -41,16 +41,25 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.motd = new System.Windows.Forms.GroupBox();
             this.motd_txt = new System.Windows.Forms.Label();
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Starts = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.motd.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
             // 
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Title,
+            this.Starts,
+            this.Ends});
             this.listView1.Location = new System.Drawing.Point(12, 200);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(227, 249);
+            this.listView1.Size = new System.Drawing.Size(234, 249);
             this.listView1.TabIndex = 21;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // button9
             // 
@@ -145,6 +154,7 @@
             this.monthCalendar1.Location = new System.Drawing.Point(12, 26);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 11;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // motd
             // 
@@ -164,6 +174,20 @@
             this.motd_txt.Size = new System.Drawing.Size(104, 13);
             this.motd_txt.TabIndex = 0;
             this.motd_txt.Text = "Message Of the Day";
+            // 
+            // Title
+            // 
+            this.Title.Text = "Title";
+            this.Title.Width = 110;
+            // 
+            // Starts
+            // 
+            this.Starts.Text = "Starts";
+            // 
+            // Ends
+            // 
+            this.Ends.Text = "Ends";
+            this.Ends.Width = 62;
             // 
             // StudentCalander
             // 
@@ -206,5 +230,8 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.GroupBox motd;
         private System.Windows.Forms.Label motd_txt;
+        private System.Windows.Forms.ColumnHeader Title;
+        private System.Windows.Forms.ColumnHeader Starts;
+        private System.Windows.Forms.ColumnHeader Ends;
     }
 }
