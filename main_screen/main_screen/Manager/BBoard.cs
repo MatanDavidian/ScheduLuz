@@ -33,5 +33,10 @@ namespace main_screen.Manager
         {
 
         }
+
+        private void BBoard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

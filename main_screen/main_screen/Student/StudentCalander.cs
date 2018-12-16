@@ -58,5 +58,12 @@ namespace main_screen
             this.Hide();
             n.Show();
         }
+
+        private void my_dear_diary_btn_Click(object sender, EventArgs e)
+        {
+            Student.identify n = new Student.identify();
+            this.Hide();
+            n.Show();
+        }
     }
 }
