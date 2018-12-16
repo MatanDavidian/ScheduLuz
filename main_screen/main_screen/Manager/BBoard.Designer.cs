@@ -82,6 +82,7 @@
             this.Controls.Add(this.return_btn);
             this.Name = "BBoard";
             this.Text = "Bulletin Board";
+            this.Load += new System.EventHandler(this.BBoard_Load);
             this.ResumeLayout(false);
 
         }
