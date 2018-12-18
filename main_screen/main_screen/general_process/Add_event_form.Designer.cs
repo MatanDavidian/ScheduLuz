@@ -75,7 +75,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(16, 510);
+            this.button2.Location = new System.Drawing.Point(24, 422);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 34);
             this.button2.TabIndex = 55;
@@ -86,7 +86,7 @@
             // Place
             // 
             this.Place.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Place.Location = new System.Drawing.Point(80, 105);
+            this.Place.Location = new System.Drawing.Point(83, 61);
             this.Place.Name = "Place";
             this.Place.Size = new System.Drawing.Size(222, 20);
             this.Place.TabIndex = 54;
@@ -95,7 +95,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 105);
+            this.label7.Location = new System.Drawing.Point(18, 61);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 53;
@@ -156,7 +156,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(370, 510);
+            this.button1.Location = new System.Drawing.Point(378, 422);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 34);
             this.button1.TabIndex = 47;
@@ -211,7 +211,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(80, 270);
+            this.richTextBox1.Location = new System.Drawing.Point(83, 193);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(379, 95);
             this.richTextBox1.TabIndex = 42;
@@ -221,7 +221,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 270);
+            this.label3.Location = new System.Drawing.Point(18, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 40;
@@ -230,7 +230,7 @@
             // text_title
             // 
             this.text_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_title.Location = new System.Drawing.Point(80, 63);
+            this.text_title.Location = new System.Drawing.Point(83, 35);
             this.text_title.Name = "text_title";
             this.text_title.Size = new System.Drawing.Size(222, 20);
             this.text_title.TabIndex = 39;
@@ -239,7 +239,7 @@
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(15, 63);
+            this.title.Location = new System.Drawing.Point(18, 35);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(30, 13);
             this.title.TabIndex = 38;
@@ -350,7 +350,7 @@
             this.groupBox1.Controls.Add(this.End_time);
             this.groupBox1.Controls.Add(this.minutes_end);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 164);
+            this.groupBox1.Location = new System.Drawing.Point(21, 87);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(447, 100);
             this.groupBox1.TabIndex = 65;
@@ -367,7 +367,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.time_before);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(16, 371);
+            this.groupBox2.Location = new System.Drawing.Point(19, 294);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(443, 64);
             this.groupBox2.TabIndex = 66;
@@ -379,7 +379,7 @@
             this.groupBox3.Controls.Add(this.private_B);
             this.groupBox3.Controls.Add(this.public_B);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(21, 443);
+            this.groupBox3.Location = new System.Drawing.Point(24, 366);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(140, 50);
             this.groupBox3.TabIndex = 67;
@@ -391,7 +391,7 @@
             this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 555);
+            this.ClientSize = new System.Drawing.Size(486, 470);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
