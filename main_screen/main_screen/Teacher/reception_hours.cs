@@ -7,399 +7,142 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using database_location;
 
 namespace main_screen.Teacher
 {
     public partial class reception_hours : Form
     {
+        Label[] labels = new Label[49];
         public reception_hours()
         {
             InitializeComponent();
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-         
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void reception_hours_Load(object sender, EventArgs e)
         {
+            TableLayoutPanel Table = new TableLayoutPanel();
+            Table.Location = new Point(75, 120);
+            Table.Size = new Size(536, 253);
+            Table.AutoSize = true;
+            Table.Name = "Desk";
+            Table.ColumnCount = 7;
+            Table.RowCount = 7;
+            Table.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            Table.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddRows;
+            this.Controls.Add(Table);
+
+            
+            for (int i = 0; i < 6; i++)
+            {
+                labels[i] = new Label { BackColor = Color.Black, ForeColor = Color.White, Dock = DockStyle.Fill };
+            }
+            labels[0].Text = "MONDAY";
+            Table.Controls.Add(labels[0], 1, 0);
+            labels[1].Text = "SUNDAY";
+            Table.Controls.Add(labels[1], 2, 0);
+            labels[2].Text = "THEUSEDAT";
+            Table.Controls.Add(labels[2], 3, 0);
+            labels[3].Text = "WENSDAY";
+            Table.Controls.Add(labels[3], 4, 0);
+            labels[4].Text = "SFSDF";
+            Table.Controls.Add(labels[4], 5, 0);
+            labels[5].Text = "FRIDAY";
+            Table.Controls.Add(labels[5], 6, 0);
+
+            for (int i = 6; i < 12; i++)
+            {
+                labels[i] = new Label { BackColor = Color.DarkBlue, ForeColor = Color.White, Dock = DockStyle.Fill };
+            }
+            labels[6].Text = "8-10";
+            Table.Controls.Add(labels[6], 0, 1);
+            labels[7].Text = "10-12";
+            Table.Controls.Add(labels[7], 0, 2);
+            labels[8].Text = "12-14";
+            Table.Controls.Add(labels[8], 0, 3);
+            labels[9].Text = "14-16";
+            Table.Controls.Add(labels[9], 0, 4);
+            labels[10].Text = "16-18";
+            Table.Controls.Add(labels[10], 0, 5);
+            labels[11].Text = "18-20";
+            Table.Controls.Add(labels[11], 0, 6);
+            int k = 12;
+            for (int i = 1; i < 7; i++)
+            {
+                for (int j = 1; j < 7; j++)
+                {
+                    labels[k] = new Label { BackColor = Color.DarkRed, Dock = DockStyle.Fill };
+                    Table.Controls.Add(labels[k], i, j);
+                    labels[k].Click += new System.EventHandler(labelClick);
+                    k++;
+                }
+            }
 
         }
 
-        private void label18_Click(object sender, EventArgs e)
+        private void labelClick(object sender, EventArgs e)
         {
-            if(label18.BackColor == Color.LightGreen)
+            var label = sender as Label;
+            if (label.BackColor == Color.DarkRed)
             {
-                label18.BackColor = Color.DarkRed;
+                label.BackColor = Color.LightGreen;
             }
             else
-                label18.BackColor = Color.LightGreen;
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-            if (label17.BackColor == Color.LightGreen)
             {
-                label17.BackColor = Color.DarkRed;
+                label.BackColor = Color.DarkRed;
             }
-            else
-                label17.BackColor = Color.LightGreen;
+        }
+    
+
+    private void button2_Click(object sender, EventArgs e)
+        {
+            TeacherCalander frmCal = new TeacherCalander();
+            frmCal.Show();
+            Visible = false;
         }
 
-        private void label16_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            if (label16.BackColor == Color.LightGreen)
+            for (int i = 13; i < 48; i++)
             {
-                label16.BackColor = Color.DarkRed;
-            }
-            else
-                label16.BackColor = Color.LightGreen;
-        }
+                if(labels[i].BackColor==Color.LightGreen)
+                {
+                    dataBase dataBase = new dataBase();
+                    SqlConnection conn = dataBase.connect_to_scheduluz_DB();
 
-        private void label15_Click(object sender, EventArgs e)
-        {
-            if (label15.BackColor == Color.LightGreen)
-            {
-                label15.BackColor = Color.DarkRed;
-            }
-            else
-                label15.BackColor = Color.LightGreen;
-        }
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Events(Event_name,event_kind,hours_start,minutes_start,hours_end,minutes_end,Event_details,event_place,event_privacy,up_for_cancellation) VALUES(@Event_name,@event_kind,@hours_start,@minutes_start,@hours_end,@minutes_end,@Event_details,@Place,@private_B,@up_for_cancellation) ", conn);
 
-        private void label14_Click(object sender, EventArgs e)
-        {
-            if (label14.BackColor == Color.LightGreen)
-            {
-                label14.BackColor = Color.DarkRed;
-            }
-            else
-                label14.BackColor = Color.LightGreen;
-        }
+                    cmd.Parameters.Add("@up_for_cancellation", "NO");
+                    cmd.Parameters.Add("@event_kind", "reception hours");
+                    cmd.Parameters.Add("@Event_name", log_in_page.loginUserName.ToString()+ " reception hours");
+                    cmd.Parameters.Add("@date", " ");
+                    cmd.Parameters.Add("@hours_start", " ");
+                    cmd.Parameters.Add("@minutes_start", " ");
+                    cmd.Parameters.Add("@hours_end", " ");
+                    cmd.Parameters.Add("@minutes_end", " ");
+                    cmd.Parameters.Add("@Event_details", "my reception hours");
+                    cmd.Parameters.Add("@private_B", "Public");
+                    cmd.Parameters.Add("@Place", "SCHOOL");
+                    cmd.ExecuteNonQuery();
 
-        private void label13_Click(object sender, EventArgs e)
-        {
-            if (label13.BackColor == Color.LightGreen)
-            {
-                label13.BackColor = Color.DarkRed;
-            }
-            else
-                label13.BackColor = Color.LightGreen;
-        }
+                    //take the max id event from Event table
+                    string query = "Select MAX(Event_id) from Events";
+                    SqlDataAdapter sda = new SqlDataAdapter(query, conn);
+                    DataTable dtbl = new DataTable();
+                    sda.Fill(dtbl);
+                    int eve_id = int.Parse(dtbl.Rows[0][0].ToString().Trim());
+                    //insert the max id event and the event id to Events_to_Users table
+                    cmd = new SqlCommand("INSERT INTO Events_to_Users (User_ID,Event_ID) VALUES(@User_ID,@Event_ID) ", conn);
+                    cmd.Parameters.Add("@User_ID", log_in_page.userId);
+                    cmd.Parameters.Add("@Event_ID", eve_id);
+                    cmd.ExecuteNonQuery();
 
-        private void label19_Click(object sender, EventArgs e)
-        {
-            if (label19.BackColor == Color.LightGreen)
-            {
-                label19.BackColor = Color.DarkRed;
+                    MessageBox.Show("Your event added successfully");
+                    conn.Close();
+                }
             }
-            else
-                label19.BackColor = Color.LightGreen;
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-            if (label20.BackColor == Color.LightGreen)
-            {
-                label20.BackColor = Color.DarkRed;
-            }
-            else
-                label20.BackColor = Color.LightGreen;
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-            if (label21.BackColor == Color.LightGreen)
-            {
-                label21.BackColor = Color.DarkRed;
-            }
-            else
-                label21.BackColor = Color.LightGreen;
-        }
-
-        private void label28_Click(object sender, EventArgs e)
-        {
-            if (label28.BackColor == Color.LightGreen)
-            {
-                label28.BackColor = Color.DarkRed;
-            }
-            else
-                label28.BackColor = Color.LightGreen;
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-            if (label23.BackColor == Color.LightGreen)
-            {
-                label23.BackColor = Color.DarkRed;
-            }
-            else
-                label23.BackColor = Color.LightGreen;
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-            if (label22.BackColor == Color.LightGreen)
-            {
-                label22.BackColor = Color.DarkRed;
-            }
-            else
-                label22.BackColor = Color.LightGreen;
-        }
-        private void label24_Click(object sender, EventArgs e)
-        {
-            if (label24.BackColor == Color.LightGreen)
-            {
-                label24.BackColor = Color.DarkRed;
-            }
-            else
-                label24.BackColor = Color.LightGreen;
-        }
-      
-
-        private void label30_Click(object sender, EventArgs e)
-        {
-            if (label30.BackColor == Color.LightGreen)
-            {
-                label30.BackColor = Color.DarkRed;
-            }
-            else
-                label30.BackColor = Color.LightGreen;
-        }
-
-        private void label36_Click(object sender, EventArgs e)
-        {
-            if (label36.BackColor == Color.LightGreen)
-            {
-                label36.BackColor = Color.DarkRed;
-            }
-            else
-                label36.BackColor = Color.LightGreen;
-        }
-
-        private void label42_Click(object sender, EventArgs e)
-        {
-            if (label42.BackColor == Color.LightGreen)
-            {
-                label42.BackColor = Color.DarkRed;
-            }
-            else
-                label42.BackColor = Color.LightGreen;
-        }
-
-        private void label48_Click(object sender, EventArgs e)
-        {
-            if (label48.BackColor == Color.LightGreen)
-            {
-                label48.BackColor = Color.DarkRed;
-            }
-            else
-                label48.BackColor = Color.LightGreen;
-        }
-
-        private void label47_Click(object sender, EventArgs e)
-        {
-            if (label47.BackColor == Color.LightGreen)
-            {
-                label47.BackColor = Color.DarkRed;
-            }
-            else
-                label47.BackColor = Color.LightGreen;
-        }
-
-        private void label41_Click(object sender, EventArgs e)
-        {
-            if (label41.BackColor == Color.LightGreen)
-            {
-                label41.BackColor = Color.DarkRed;
-            }
-            else
-                label41.BackColor = Color.LightGreen;
-        }
-
-        private void label35_Click(object sender, EventArgs e)
-        {
-            if (label35.BackColor == Color.LightGreen)
-            {
-                label35.BackColor = Color.DarkRed;
-            }
-            else
-                label35.BackColor = Color.LightGreen;
-        }
-
-        private void label29_Click(object sender, EventArgs e)
-        {
-            if (label29.BackColor == Color.LightGreen)
-            {
-                label29.BackColor = Color.DarkRed;
-            }
-            else
-                label29.BackColor = Color.LightGreen;
-        }
-
-        private void label40_Click(object sender, EventArgs e)
-        {
-            if (label40.BackColor == Color.LightGreen)
-            {
-                label40.BackColor = Color.DarkRed;
-            }
-            else
-                label40.BackColor = Color.LightGreen;
-        }
-
-        private void label34_Click(object sender, EventArgs e)
-        {
-            if (label34.BackColor == Color.LightGreen)
-            {
-                label34.BackColor = Color.DarkRed;
-            }
-            else
-                label34.BackColor = Color.LightGreen;
-        }
-
-        private void label46_Click(object sender, EventArgs e)
-        {
-            if (label46.BackColor == Color.LightGreen)
-            {
-                label46.BackColor = Color.DarkRed;
-            }
-            else
-                label46.BackColor = Color.LightGreen;
-        }
-
-        private void label45_Click(object sender, EventArgs e)
-        {
-            if (label45.BackColor == Color.LightGreen)
-            {
-                label45.BackColor = Color.DarkRed;
-            }
-            else
-                label45.BackColor = Color.LightGreen;
-        }
-
-        private void label39_Click(object sender, EventArgs e)
-        {
-            if (label39.BackColor == Color.LightGreen)
-            {
-                label39.BackColor = Color.DarkRed;
-            }
-            else
-                label39.BackColor = Color.LightGreen;
-        }
-
-        private void label33_Click(object sender, EventArgs e)
-        {
-            if (label33.BackColor == Color.LightGreen)
-            {
-                label33.BackColor = Color.DarkRed;
-            }
-            else
-                label33.BackColor = Color.LightGreen;
-        }
-
-        private void label27_Click(object sender, EventArgs e)
-        {
-            if (label27.BackColor == Color.LightGreen)
-            {
-                label27.BackColor = Color.DarkRed;
-            }
-            else
-                label27.BackColor = Color.LightGreen;
-        }
-
-        private void label26_Click(object sender, EventArgs e)
-        {
-            if (label26.BackColor == Color.LightGreen)
-            {
-                label26.BackColor = Color.DarkRed;
-            }
-            else
-                label26.BackColor = Color.LightGreen;
-        }
-
-        private void label32_Click(object sender, EventArgs e)
-        {
-            if (label32.BackColor == Color.LightGreen)
-            {
-                label32.BackColor = Color.DarkRed;
-            }
-            else
-                label32.BackColor = Color.LightGreen;
-        }
-
-        private void label38_Click(object sender, EventArgs e)
-        {
-            if (label38.BackColor == Color.LightGreen)
-            {
-                label38.BackColor = Color.DarkRed;
-            }
-            else
-                label38.BackColor = Color.LightGreen;
-        }
-
-        private void label44_Click(object sender, EventArgs e)
-        {
-            if (label44.BackColor == Color.LightGreen)
-            {
-                label44.BackColor = Color.DarkRed;
-            }
-            else
-                label44.BackColor = Color.LightGreen;
-        }
-
-        private void label43_Click(object sender, EventArgs e)
-        {
-            if (label43.BackColor == Color.LightGreen)
-            {
-                label43.BackColor = Color.DarkRed;
-            }
-            else
-                label43.BackColor = Color.LightGreen;
-        }
-
-        private void label37_Click(object sender, EventArgs e)
-        {
-            if (label37.BackColor == Color.LightGreen)
-            {
-                label37.BackColor = Color.DarkRed;
-            }
-            else
-                label37.BackColor = Color.LightGreen;
-        }
-
-        private void label31_Click(object sender, EventArgs e)
-        {
-            if (label31.BackColor == Color.LightGreen)
-            {
-                label31.BackColor = Color.DarkRed;
-            }
-            else
-                label31.BackColor = Color.LightGreen;
-        }
-
-        private void label25_Click(object sender, EventArgs e)
-        {
-            if (label25.BackColor == Color.LightGreen)
-            {
-                label25.BackColor = Color.DarkRed;
-            }
-            else
-                label25.BackColor = Color.LightGreen;
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
