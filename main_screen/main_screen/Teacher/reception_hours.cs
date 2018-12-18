@@ -42,11 +42,11 @@ namespace main_screen.Teacher
             Table.Controls.Add(labels[0], 1, 0);
             labels[1].Text = "SUNDAY";
             Table.Controls.Add(labels[1], 2, 0);
-            labels[2].Text = "THEUSEDAT";
+            labels[2].Text = "TUESDAY";
             Table.Controls.Add(labels[2], 3, 0);
-            labels[3].Text = "WENSDAY";
+            labels[3].Text = "WEDNESDAY";
             Table.Controls.Add(labels[3], 4, 0);
-            labels[4].Text = "SFSDF";
+            labels[4].Text = "THURSDAY";
             Table.Controls.Add(labels[4], 5, 0);
             labels[5].Text = "FRIDAY";
             Table.Controls.Add(labels[5], 6, 0);
@@ -75,6 +75,9 @@ namespace main_screen.Teacher
                     labels[k] = new Label { BackColor = Color.DarkRed, Dock = DockStyle.Fill };
                     Table.Controls.Add(labels[k], i, j);
                     labels[k].Click += new System.EventHandler(labelClick);
+                    labels[k].Text = labels[i+5].Text;
+                    labels[k].TextAlign = ContentAlignment.MiddleCenter;
+                    labels[k].ForeColor = Color.DarkRed;
                     k++;
                 }
             }
@@ -86,11 +89,13 @@ namespace main_screen.Teacher
             var label = sender as Label;
             if (label.BackColor == Color.DarkRed)
             {
+                label.ForeColor = Color.Black;
                 label.BackColor = Color.LightGreen;
             }
             else
             {
                 label.BackColor = Color.DarkRed;
+                label.ForeColor = Color.DarkRed;
             }
         }
     
@@ -104,7 +109,8 @@ namespace main_screen.Teacher
 
         private void button3_Click(object sender, EventArgs e)
         {
-            for (int i = 13; i < 48; i++)
+            /*
+            for (int i = 12; i < 48; i++)
             {
                 if(labels[i].BackColor==Color.LightGreen)
                 {
@@ -143,6 +149,7 @@ namespace main_screen.Teacher
                     conn.Close();
                 }
             }
+            */
         }
     }
 }
