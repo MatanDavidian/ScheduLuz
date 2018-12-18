@@ -34,14 +34,17 @@
             this.Add_event = new System.Windows.Forms.Button();
             this.Profile_btn = new System.Windows.Forms.Button();
             this.BBorad_btn = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.fixed_btn = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.motd = new System.Windows.Forms.GroupBox();
             this.motd_txt = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Starts = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.motd.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +53,7 @@
             this.monthCalendar1.Location = new System.Drawing.Point(12, 26);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // add_user
             // 
@@ -91,14 +95,15 @@
             this.BBorad_btn.UseVisualStyleBackColor = true;
             this.BBorad_btn.Click += new System.EventHandler(this.BBorad_btn_Click);
             // 
-            // button5
+            // fixed_btn
             // 
-            this.button5.Location = new System.Drawing.Point(547, 156);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(125, 30);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.fixed_btn.Location = new System.Drawing.Point(547, 156);
+            this.fixed_btn.Name = "fixed_btn";
+            this.fixed_btn.Size = new System.Drawing.Size(125, 30);
+            this.fixed_btn.TabIndex = 5;
+            this.fixed_btn.Text = "Fixed Schedule";
+            this.fixed_btn.UseVisualStyleBackColor = true;
+            this.fixed_btn.Click += new System.EventHandler(this.fixed_btn_Click);
             // 
             // button6
             // 
@@ -137,20 +142,12 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(12, 200);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(227, 249);
-            this.listView1.TabIndex = 10;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // motd
             // 
             this.motd.Controls.Add(this.motd_txt);
-            this.motd.Location = new System.Drawing.Point(246, 228);
+            this.motd.Location = new System.Drawing.Point(252, 228);
             this.motd.Name = "motd";
-            this.motd.Size = new System.Drawing.Size(295, 221);
+            this.motd.Size = new System.Drawing.Size(289, 221);
             this.motd.TabIndex = 12;
             this.motd.TabStop = false;
             this.motd.Text = "Message Of the Day";
@@ -165,18 +162,46 @@
             this.motd_txt.Text = "Message Of the Day";
             this.motd_txt.Click += new System.EventHandler(this.motd_txt_Click);
             // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Title,
+            this.Starts,
+            this.Ends});
+            this.listView1.Location = new System.Drawing.Point(12, 200);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(227, 249);
+            this.listView1.TabIndex = 22;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Title
+            // 
+            this.Title.Text = "Title";
+            this.Title.Width = 110;
+            // 
+            // Starts
+            // 
+            this.Starts.Text = "Starts";
+            // 
+            // Ends
+            // 
+            this.Ends.Text = "Ends";
+            this.Ends.Width = 62;
+            // 
             // ManagerCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
-            this.Controls.Add(this.motd);
             this.Controls.Add(this.listView1);
+            this.Controls.Add(this.motd);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.fixed_btn);
             this.Controls.Add(this.BBorad_btn);
             this.Controls.Add(this.Profile_btn);
             this.Controls.Add(this.Add_event);
@@ -199,13 +224,16 @@
         private System.Windows.Forms.Button Add_event;
         private System.Windows.Forms.Button Profile_btn;
         private System.Windows.Forms.Button BBorad_btn;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button fixed_btn;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.GroupBox motd;
         private System.Windows.Forms.Label motd_txt;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader Title;
+        private System.Windows.Forms.ColumnHeader Starts;
+        private System.Windows.Forms.ColumnHeader Ends;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherCalander));
-            this.listView1 = new System.Windows.Forms.ListView();
             this.button9 = new System.Windows.Forms.Button();
             this.reception_hours = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -47,17 +46,13 @@
             this.checklist = new System.Windows.Forms.CheckedListBox();
             this.motd = new System.Windows.Forms.GroupBox();
             this.motd_txt = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Starts = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.motd.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(12, 200);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(227, 249);
-            this.listView1.TabIndex = 21;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // button9
             // 
@@ -151,6 +146,7 @@
             this.monthCalendar1.Location = new System.Drawing.Point(12, 26);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 11;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // groupBox1
             // 
@@ -223,14 +219,42 @@
             this.motd_txt.TabIndex = 0;
             this.motd_txt.Text = "Message Of the Day";
             // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Title,
+            this.Starts,
+            this.Ends});
+            this.listView1.Location = new System.Drawing.Point(12, 200);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(227, 249);
+            this.listView1.TabIndex = 24;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Title
+            // 
+            this.Title.Text = "Title";
+            this.Title.Width = 110;
+            // 
+            // Starts
+            // 
+            this.Starts.Text = "Starts";
+            // 
+            // Ends
+            // 
+            this.Ends.Text = "Ends";
+            this.Ends.Width = 62;
+            // 
             // TeacherCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 461);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.motd);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.reception_hours);
             this.Controls.Add(this.button7);
@@ -254,8 +278,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button reception_hours;
         private System.Windows.Forms.Button button7;
@@ -273,5 +295,9 @@
         private System.Windows.Forms.Button clear_done_btn;
         private System.Windows.Forms.GroupBox motd;
         private System.Windows.Forms.Label motd_txt;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader Title;
+        private System.Windows.Forms.ColumnHeader Starts;
+        private System.Windows.Forms.ColumnHeader Ends;
     }
 }
