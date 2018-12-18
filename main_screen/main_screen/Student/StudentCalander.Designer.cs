@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Starts = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -41,9 +44,6 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.motd = new System.Windows.Forms.GroupBox();
             this.motd_txt = new System.Windows.Forms.Label();
-            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Starts = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.motd.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,10 +56,24 @@
             this.Ends});
             this.listView1.Location = new System.Drawing.Point(12, 200);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(234, 249);
+            this.listView1.Size = new System.Drawing.Size(227, 249);
             this.listView1.TabIndex = 21;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Title
+            // 
+            this.Title.Text = "Title";
+            this.Title.Width = 110;
+            // 
+            // Starts
+            // 
+            this.Starts.Text = "Starts";
+            // 
+            // Ends
+            // 
+            this.Ends.Text = "Ends";
+            this.Ends.Width = 62;
             // 
             // button9
             // 
@@ -174,20 +188,6 @@
             this.motd_txt.Size = new System.Drawing.Size(104, 13);
             this.motd_txt.TabIndex = 0;
             this.motd_txt.Text = "Message Of the Day";
-            // 
-            // Title
-            // 
-            this.Title.Text = "Title";
-            this.Title.Width = 110;
-            // 
-            // Starts
-            // 
-            this.Starts.Text = "Starts";
-            // 
-            // Ends
-            // 
-            this.Ends.Text = "Ends";
-            this.Ends.Width = 62;
             // 
             // StudentCalander
             // 
