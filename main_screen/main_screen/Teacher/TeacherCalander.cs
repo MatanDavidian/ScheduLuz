@@ -302,7 +302,7 @@ namespace main_screen
 
             }
 
-            string query3 = "Select * from weekly_events where day_in_week='" + dayOfWeek+"'";
+            string query3 = "Select * from weekly_events where day_in_week='" + dayOfWeek+"' and user_id_OR_class='"+log_in_page.userId+"'";
 
             SqlDataAdapter sda3 = new SqlDataAdapter(query3, conn);
             DataTable dtb3 = new DataTable();
