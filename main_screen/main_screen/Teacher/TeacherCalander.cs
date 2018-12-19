@@ -33,6 +33,7 @@ namespace main_screen
 
         private void TeacherCalander_Load(object sender, EventArgs e)
         {
+            
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
 
@@ -201,6 +202,8 @@ namespace main_screen
             /*
              * show events on calander.
              */
+
+            List <ListViewItem> itemlist = new List<ListViewItem>();
             listView1.Items.Clear();
 
             int thisday = monthCalendar1.SelectionRange.Start.Day;
@@ -292,7 +295,8 @@ namespace main_screen
                             default:
                                 break;
                         }
-                        listView1.Items.Add(item);
+                        //listView1.Items.Add(item);
+                        itemlist.Add(item);
                     }
                 }
 
@@ -332,8 +336,32 @@ namespace main_screen
                 item.SubItems.Add(hours_end + ":" + minutes_end);
                 item.BackColor = Color.IndianRed;
 
-                listView1.Items.Add(item);
+                //listView1.Items.Add(item);
+                itemlist.Add(item);
 
+            }
+
+            //MessageBox.Show(itemlist[0].SubItems[1].ToString());
+
+            for(int i = 0;i<itemlist.Count-2;i++)
+            {
+                for(int j=0; j<itemlist.Count-2;j++)
+                {
+                    string firsthour = itemlist[j].SubItems[1].ToString();
+                    string secondhour = itemlist[j + 1].SubItems[1].ToString();
+                    if (compairhours(firsthour,secondhour))
+                    {
+                        ListViewItem temp = new ListViewItem();
+                        temp = itemlist[j];
+                        itemlist[j] = itemlist[j + 1];
+                        itemlist[j + 1] = temp;
+                    }
+                }
+            }
+
+            for(int i = 0; i<itemlist.Count; i++)
+            {
+                listView1.Items.Add(itemlist[i]);
             }
 
             
@@ -341,9 +369,48 @@ namespace main_screen
 
     }
 
+        private static void NewMethod(List<ListViewItem> itemlist, ListViewItem item)
+        {
+            itemlist.Add(item);
+        }
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checklist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private Boolean compairhours(string a , string b)//if a>=b
+        {
+            string listsubitemshit = "ListViewSubItem: {";
+            int dif = listsubitemshit.Length;
+            //checks hours
+            if (a[0+dif] > b[0+dif])
+                return true;
+            if (b[0+dif] > a[0+dif])
+                return false;
+
+           
+            if (a[1+dif] > b[1+dif])
+                return true;
+            if (b[1+dif] > a[1+dif])
+                return false;
+            //skips a[2+dif] cus its ':'
+            //checks minutes
+            if (a[3+dif] > b[3+dif])
+                return true;
+            if (b[3+dif] > a[3+dif])
+                return false;
+
+            if (a[4+dif] > b[4+dif])
+                return true;
+            
+
+            return false; 
         }
     }
 }
