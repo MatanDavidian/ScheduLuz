@@ -199,6 +199,7 @@
             this.checklist.Name = "checklist";
             this.checklist.Size = new System.Drawing.Size(196, 330);
             this.checklist.TabIndex = 0;
+            this.checklist.SelectedIndexChanged += new System.EventHandler(this.checklist_SelectedIndexChanged);
             // 
             // motd
             // 
