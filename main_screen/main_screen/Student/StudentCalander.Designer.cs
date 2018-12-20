@@ -92,8 +92,9 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(125, 30);
             this.button8.TabIndex = 19;
-            this.button8.Text = "button8";
+            this.button8.Text = "Schedule a meeting";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
