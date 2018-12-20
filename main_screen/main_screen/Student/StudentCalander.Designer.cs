@@ -29,25 +29,51 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Starts = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.my_dear_diary_btn = new System.Windows.Forms.Button();
             this.mail_btn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.Profile_btn = new System.Windows.Forms.Button();
             this.contact_page = new System.Windows.Forms.Button();
             this.add_event = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.motd = new System.Windows.Forms.GroupBox();
+            this.motd_txt = new System.Windows.Forms.Label();
+            this.motd.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
             // 
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Title,
+            this.Starts,
+            this.Ends});
             this.listView1.Location = new System.Drawing.Point(12, 200);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(227, 249);
             this.listView1.TabIndex = 21;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Title
+            // 
+            this.Title.Text = "Title";
+            this.Title.Width = 110;
+            // 
+            // Starts
+            // 
+            this.Starts.Text = "Starts";
+            // 
+            // Ends
+            // 
+            this.Ends.Text = "Ends";
+            this.Ends.Width = 62;
             // 
             // button9
             // 
@@ -65,8 +91,9 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(125, 30);
             this.button8.TabIndex = 19;
-            this.button8.Text = "button8";
+            this.button8.Text = "Schedule a meeting";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -77,14 +104,15 @@
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // my_dear_diary_btn
             // 
-            this.button6.Location = new System.Drawing.Point(547, 192);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 30);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.my_dear_diary_btn.Location = new System.Drawing.Point(547, 192);
+            this.my_dear_diary_btn.Name = "my_dear_diary_btn";
+            this.my_dear_diary_btn.Size = new System.Drawing.Size(125, 30);
+            this.my_dear_diary_btn.TabIndex = 17;
+            this.my_dear_diary_btn.Text = "My Dear Diary";
+            this.my_dear_diary_btn.UseVisualStyleBackColor = true;
+            this.my_dear_diary_btn.Click += new System.EventHandler(this.my_dear_diary_btn_Click);
             // 
             // mail_btn
             // 
@@ -141,17 +169,38 @@
             this.monthCalendar1.Location = new System.Drawing.Point(12, 26);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 11;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // motd
+            // 
+            this.motd.Controls.Add(this.motd_txt);
+            this.motd.Location = new System.Drawing.Point(245, 228);
+            this.motd.Name = "motd";
+            this.motd.Size = new System.Drawing.Size(295, 221);
+            this.motd.TabIndex = 22;
+            this.motd.TabStop = false;
+            this.motd.Text = "Message Of the Day";
+            // 
+            // motd_txt
+            // 
+            this.motd_txt.AutoSize = true;
+            this.motd_txt.Location = new System.Drawing.Point(7, 20);
+            this.motd_txt.Name = "motd_txt";
+            this.motd_txt.Size = new System.Drawing.Size(104, 13);
+            this.motd_txt.TabIndex = 0;
+            this.motd_txt.Text = "Message Of the Day";
             // 
             // StudentCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.motd);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.my_dear_diary_btn);
             this.Controls.Add(this.mail_btn);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.Profile_btn);
@@ -160,6 +209,9 @@
             this.Controls.Add(this.monthCalendar1);
             this.Name = "StudentCalander";
             this.Text = "Calander - Student";
+            this.Load += new System.EventHandler(this.StudentCalander_Load);
+            this.motd.ResumeLayout(false);
+            this.motd.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -170,12 +222,17 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button my_dear_diary_btn;
         private System.Windows.Forms.Button mail_btn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button Profile_btn;
         private System.Windows.Forms.Button contact_page;
         private System.Windows.Forms.Button add_event;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.GroupBox motd;
+        private System.Windows.Forms.Label motd_txt;
+        private System.Windows.Forms.ColumnHeader Title;
+        private System.Windows.Forms.ColumnHeader Starts;
+        private System.Windows.Forms.ColumnHeader Ends;
     }
 }

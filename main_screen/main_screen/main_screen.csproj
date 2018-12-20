@@ -101,6 +101,12 @@
     <Compile Include="Manager\BBoard.Designer.cs">
       <DependentUpon>BBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\fixed_shedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\fixed_shedule.Designer.cs">
+      <DependentUpon>fixed_shedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\ManagerCalander.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,12 @@
     <Compile Include="Student\ContactPage.Designer.cs">
       <DependentUpon>ContactPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\identify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\identify.Designer.cs">
+      <DependentUpon>identify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\Mail\Mails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +175,12 @@
     <Compile Include="Student\Multiplayer_event.Designer.cs">
       <DependentUpon>Multiplayer_event.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\MyDearDairy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\MyDearDairy.Designer.cs">
+      <DependentUpon>MyDearDairy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\StudentCalander.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +192,12 @@
     </Compile>
     <Compile Include="Teacher\multiStudentEvent.Designer.cs">
       <DependentUpon>multiStudentEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\reception_hours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\reception_hours.Designer.cs">
+      <DependentUpon>reception_hours.cs</DependentUpon>
     </Compile>
     <Compile Include="Teacher\SendEmail.cs">
       <SubType>Form</SubType>
@@ -205,6 +229,9 @@
     <EmbeddedResource Include="Manager\BBoard.resx">
       <DependentUpon>BBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manager\fixed_shedule.resx">
+      <DependentUpon>fixed_shedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManagerCalander.resx">
       <DependentUpon>ManagerCalander.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,8 +248,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Student\AppointmentPage.resx">
+      <DependentUpon>AppointmentPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student\ContactPage.resx">
       <DependentUpon>ContactPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\identify.resx">
+      <DependentUpon>identify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Mail\Mails.resx">
       <DependentUpon>Mails.cs</DependentUpon>
@@ -233,11 +266,17 @@
     <EmbeddedResource Include="Student\Multiplayer_event.resx">
       <DependentUpon>Multiplayer_event.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Student\MyDearDairy.resx">
+      <DependentUpon>MyDearDairy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student\StudentCalander.resx">
       <DependentUpon>StudentCalander.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\multiStudentEvent.resx">
       <DependentUpon>multiStudentEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\reception_hours.resx">
+      <DependentUpon>reception_hours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\SendEmail.resx">
       <DependentUpon>SendEmail.cs</DependentUpon>

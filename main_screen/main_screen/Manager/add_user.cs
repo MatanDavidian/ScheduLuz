@@ -91,7 +91,7 @@ namespace main_screen.Manager
                 cmd.Parameters.Add("@password", userIDtextBox.Text);
                 cmd.Parameters.Add("@permission", per);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("has added");
+                
 
                 dataBase dataBase2 = new dataBase();
                 SqlConnection con2 = dataBase.connect_to_scheduluz_DB();
