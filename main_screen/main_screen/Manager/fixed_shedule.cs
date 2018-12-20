@@ -336,6 +336,13 @@ namespace main_screen.Manager
 
         private void days_SelectedIndexChanged(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow myRow in schedule.Rows)
+            {
+                myRow.Cells[2].Value = null; // assuming you want to clear the first column
+            }
+
+
+
             string username = teacher_name_txt.Text.Replace(" ", "");
             if (teacher_or_class_flag == 't')
             {
@@ -357,7 +364,9 @@ namespace main_screen.Manager
                     con.Close();
                     for (int i = 0; i < dtbl.Rows.Count; i++)
                     {
-                        schedule["profassionORclass", Int32.Parse(dtbl.Rows[i][0].ToString().Trim()) - 8].Value = dtbl.Rows[i]["title"].ToString().Trim();
+                        int index = Int32.Parse(dtbl.Rows[i][0].ToString().Trim()) - 8;
+                        if(index >=0 && index <=7)
+                            schedule["profassionORclass", index].Value = dtbl.Rows[i]["title"].ToString().Trim();
                     }
                 }
             }

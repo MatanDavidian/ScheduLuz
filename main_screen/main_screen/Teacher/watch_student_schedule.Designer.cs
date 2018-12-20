@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(watch_student_schedule));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.profilePic_img = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.hobies_txt = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -45,7 +47,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Email_1st = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.profilePic_img = new System.Windows.Forms.PictureBox();
             this.student_lst = new System.Windows.Forms.ListBox();
             this.student_name_txt = new System.Windows.Forms.TextBox();
             this.load_student_btn = new System.Windows.Forms.Button();
@@ -56,9 +57,9 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.return_btn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePic_img)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.connections.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePic_img)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -70,6 +71,15 @@
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Picture";
+            // 
+            // profilePic_img
+            // 
+            this.profilePic_img.Location = new System.Drawing.Point(12, 19);
+            this.profilePic_img.Name = "profilePic_img";
+            this.profilePic_img.Size = new System.Drawing.Size(110, 110);
+            this.profilePic_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profilePic_img.TabIndex = 0;
+            this.profilePic_img.TabStop = false;
             // 
             // groupBox1
             // 
@@ -221,15 +231,6 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Email:";
             // 
-            // profilePic_img
-            // 
-            this.profilePic_img.Location = new System.Drawing.Point(12, 19);
-            this.profilePic_img.Name = "profilePic_img";
-            this.profilePic_img.Size = new System.Drawing.Size(110, 110);
-            this.profilePic_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profilePic_img.TabIndex = 0;
-            this.profilePic_img.TabStop = false;
-            // 
             // student_lst
             // 
             this.student_lst.FormattingEnabled = true;
@@ -317,14 +318,15 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.connections);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "watch_student_schedule";
             this.Text = "watch_student_schedule";
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.profilePic_img)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.connections.ResumeLayout(false);
             this.connections.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePic_img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

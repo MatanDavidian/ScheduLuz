@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppointmentPage));
             this.title = new System.Windows.Forms.Label();
             this.choose_teacher = new System.Windows.Forms.Label();
             this.teacher_name = new System.Windows.Forms.TextBox();
@@ -107,6 +108,7 @@
             this.Controls.Add(this.teacher_name);
             this.Controls.Add(this.choose_teacher);
             this.Controls.Add(this.title);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AppointmentPage";
             this.Text = "AppointmentPage";
             this.Load += new System.EventHandler(this.AppointmentPage_Load);
