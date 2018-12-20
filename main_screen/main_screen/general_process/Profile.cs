@@ -157,98 +157,106 @@ namespace main_screen.general_process
 
             else
             {
-                dataBase dataBase = new dataBase();
-                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-                conn.Open();
-                SqlCommand cmd1 = new SqlCommand("UPDATE users SET phoneNumber ='" + phone_txt.Text + "' WHERE id ='" + userId + "'", conn);
-                cmd1.ExecuteNonQuery();
-
-                conn = dataBase.connect_to_scheduluz_DB();
-                conn.Open();
-                SqlCommand cmd2 = new SqlCommand("UPDATE users SET Email ='" + Email_1st.Text + "' WHERE id ='" + userId + "'", conn);
-                cmd2.ExecuteNonQuery();
-
-                if (log_in_page.permission == "student")
+                try
                 {
-                    conn = dataBase.connect_to_scheduluz_DB();
+
+
+                    dataBase dataBase = new dataBase();
+                    SqlConnection conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd3 = new SqlCommand("UPDATE users SET ParentEmail ='" + PEmail_txt.Text + "' WHERE id ='" + userId + "'", conn);
-                    cmd3.ExecuteNonQuery();
-                }
-
-                conn = dataBase.connect_to_scheduluz_DB();
-                conn.Open();
-                SqlCommand cmd6 = new SqlCommand("UPDATE users SET address ='" + address_txt.Text + "' WHERE id ='" + userId + "'", conn);
-                cmd6.ExecuteNonQuery();
-
-                conn = dataBase.connect_to_scheduluz_DB();
-                conn.Open();
-                SqlCommand cmd7 = new SqlCommand("UPDATE users SET birthDate ='" + birthdate_pckr.Text + "' WHERE id ='" + userId + "'", conn);
-                cmd7.ExecuteNonQuery();
-
-                conn = dataBase.connect_to_scheduluz_DB();
-                conn.Open();
-                SqlCommand cmd8 = new SqlCommand("UPDATE users SET freeTxt ='" + freetext_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
-                cmd8.ExecuteNonQuery();
-
-
-                conn = dataBase.connect_to_scheduluz_DB();
-                conn.Open();
-                SqlCommand cmd9 = new SqlCommand("UPDATE users SET hobies ='" + hobies_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
-                cmd9.ExecuteNonQuery();
-
-                if (new_pass_txt.Text != "")
-                {
-                    conn = dataBase.connect_to_scheduluz_DB();
-                    conn.Open();
-                    SqlCommand cmd10 = new SqlCommand("UPDATE connection_details SET password ='" + new_pass_txt.Text + "' WHERE id ='" + userId + "'", conn);
-                    cmd10.ExecuteNonQuery();
-                }
-
-                /* adding the image - dont ask*/
-                if (imgLocation != "")
-                {
-                    byte[] images = null;
-                    FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-                    BinaryReader brs = new BinaryReader(stream);
-                    images = brs.ReadBytes((int)stream.Length);
+                    SqlCommand cmd1 = new SqlCommand("UPDATE users SET phoneNumber ='" + phone_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                    cmd1.ExecuteNonQuery();
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    string sqlQuery = "UPDATE users SET picture =@images WHERE id ='" + userId + "'";
-                    cmd = new SqlCommand(sqlQuery, conn);
-                    cmd.Parameters.Add(new SqlParameter("@images", images));
-                    int N = cmd.ExecuteNonQuery();
+                    SqlCommand cmd2 = new SqlCommand("UPDATE users SET Email ='" + Email_1st.Text + "' WHERE id ='" + userId + "'", conn);
+                    cmd2.ExecuteNonQuery();
+
+                    if (log_in_page.permission == "student")
+                    {
+                        conn = dataBase.connect_to_scheduluz_DB();
+                        conn.Open();
+                        SqlCommand cmd3 = new SqlCommand("UPDATE users SET ParentEmail ='" + PEmail_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                        cmd3.ExecuteNonQuery();
+                    }
+
+                    conn = dataBase.connect_to_scheduluz_DB();
+                    conn.Open();
+                    SqlCommand cmd6 = new SqlCommand("UPDATE users SET address ='" + address_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                    cmd6.ExecuteNonQuery();
+
+                    conn = dataBase.connect_to_scheduluz_DB();
+                    conn.Open();
+                    SqlCommand cmd7 = new SqlCommand("UPDATE users SET birthDate ='" + birthdate_pckr.Text + "' WHERE id ='" + userId + "'", conn);
+                    cmd7.ExecuteNonQuery();
+
+                    conn = dataBase.connect_to_scheduluz_DB();
+                    conn.Open();
+                    SqlCommand cmd8 = new SqlCommand("UPDATE users SET freeTxt ='" + freetext_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
+                    cmd8.ExecuteNonQuery();
+
+
+                    conn = dataBase.connect_to_scheduluz_DB();
+                    conn.Open();
+                    SqlCommand cmd9 = new SqlCommand("UPDATE users SET hobies ='" + hobies_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
+                    cmd9.ExecuteNonQuery();
+
+                    if (new_pass_txt.Text != "")
+                    {
+                        conn = dataBase.connect_to_scheduluz_DB();
+                        conn.Open();
+                        SqlCommand cmd10 = new SqlCommand("UPDATE connection_details SET password ='" + new_pass_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                        cmd10.ExecuteNonQuery();
+                    }
+
+                    /* adding the image - dont ask*/
+                    if (imgLocation != "")
+                    {
+                        byte[] images = null;
+                        FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                        BinaryReader brs = new BinaryReader(stream);
+                        images = brs.ReadBytes((int)stream.Length);
+
+                        conn = dataBase.connect_to_scheduluz_DB();
+                        conn.Open();
+                        string sqlQuery = "UPDATE users SET picture =@images WHERE id ='" + userId + "'";
+                        cmd = new SqlCommand(sqlQuery, conn);
+                        cmd.Parameters.Add(new SqlParameter("@images", images));
+                        int N = cmd.ExecuteNonQuery();
+                    }
+
+
+                    MessageBox.Show("Your Details has been updated." + userId);
+
+
+
+
+                    if (per == "manager")
+                    {
+                        ManagerCalander managerCalander = new ManagerCalander();
+                        managerCalander.Show();
+                        Visible = false;
+
+                    }
+                    else if (per == "teacher")
+                    {
+                        TeacherCalander teacherCalander = new TeacherCalander();
+                        teacherCalander.Show();
+                        Visible = false;
+
+                    }
+
+                    else
+                    {
+                        StudentCalander frmCal = new StudentCalander();
+                        frmCal.Show();
+                        Visible = false;
+                    }
                 }
-
-
-                MessageBox.Show("Your Details has been updated." + userId);
-
-
-
-
-                if (per == "manager")
+                catch
                 {
-                    ManagerCalander managerCalander = new ManagerCalander();
-                    managerCalander.Show();
-                    Visible = false;
-
+                    MessageBox.Show("Problem detected. please contact your Scheduluz Guide for more information.");
                 }
-                else if (per == "teacher")
-                {
-                    TeacherCalander teacherCalander = new TeacherCalander();
-                    teacherCalander.Show();
-                    Visible = false;
-
-                }
-
-                else
-                {
-                    StudentCalander frmCal = new StudentCalander();
-                    frmCal.Show();
-                    Visible = false;
-                }
-
             }
         }
 

@@ -30,6 +30,7 @@ namespace main_screen.general_process
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.browse_btn = new System.Windows.Forms.Button();
             this.profilePic_img = new System.Windows.Forms.PictureBox();
@@ -72,7 +73,7 @@ namespace main_screen.general_process
             // 
             this.groupBox2.Controls.Add(this.browse_btn);
             this.groupBox2.Controls.Add(this.profilePic_img);
-            this.groupBox2.Location = new System.Drawing.Point(418, 229);
+            this.groupBox2.Location = new System.Drawing.Point(367, 220);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(316, 199);
             this.groupBox2.TabIndex = 17;
@@ -109,7 +110,7 @@ namespace main_screen.general_process
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.address_txt);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Location = new System.Drawing.Point(63, 57);
+            this.groupBox1.Location = new System.Drawing.Point(12, 48);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 397);
             this.groupBox1.TabIndex = 16;
@@ -186,7 +187,7 @@ namespace main_screen.general_process
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(659, 669);
+            this.button1.Location = new System.Drawing.Point(608, 451);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 14;
@@ -202,7 +203,7 @@ namespace main_screen.general_process
             this.connections.Controls.Add(this.label7);
             this.connections.Controls.Add(this.Email_1st);
             this.connections.Controls.Add(this.label6);
-            this.connections.Location = new System.Drawing.Point(418, 57);
+            this.connections.Location = new System.Drawing.Point(367, 48);
             this.connections.Name = "connections";
             this.connections.Size = new System.Drawing.Size(316, 166);
             this.connections.TabIndex = 13;
@@ -221,9 +222,9 @@ namespace main_screen.general_process
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(3, 113);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 13);
+            this.label10.Size = new System.Drawing.Size(68, 13);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Enter parent email:";
+            this.label10.Text = "Parent email:";
             // 
             // phone_txt
             // 
@@ -237,9 +238,9 @@ namespace main_screen.general_process
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(3, 67);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 13);
+            this.label7.Size = new System.Drawing.Size(79, 13);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Please  Ener your phone number:";
+            this.label7.Text = "Phone number:";
             // 
             // Email_1st
             // 
@@ -253,9 +254,9 @@ namespace main_screen.general_process
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Enter your Email:";
+            this.label6.Text = "Email:";
             // 
             // password_groupbox
             // 
@@ -265,7 +266,7 @@ namespace main_screen.general_process
             this.password_groupbox.Controls.Add(this.label1);
             this.password_groupbox.Controls.Add(this.new_pass_txt);
             this.password_groupbox.Controls.Add(this.label2);
-            this.password_groupbox.Location = new System.Drawing.Point(63, 460);
+            this.password_groupbox.Location = new System.Drawing.Point(12, 451);
             this.password_groupbox.Name = "password_groupbox";
             this.password_groupbox.Size = new System.Drawing.Size(316, 187);
             this.password_groupbox.TabIndex = 12;
@@ -327,7 +328,7 @@ namespace main_screen.general_process
             // profile_name
             // 
             this.profile_name.AutoSize = true;
-            this.profile_name.Location = new System.Drawing.Point(60, 20);
+            this.profile_name.Location = new System.Drawing.Point(9, 11);
             this.profile_name.Name = "profile_name";
             this.profile_name.Size = new System.Drawing.Size(45, 13);
             this.profile_name.TabIndex = 11;
@@ -336,7 +337,7 @@ namespace main_screen.general_process
             // permi
             // 
             this.permi.AutoSize = true;
-            this.permi.Location = new System.Drawing.Point(418, 20);
+            this.permi.Location = new System.Drawing.Point(367, 11);
             this.permi.Name = "permi";
             this.permi.Size = new System.Drawing.Size(60, 13);
             this.permi.TabIndex = 18;
@@ -345,7 +346,7 @@ namespace main_screen.general_process
             // permissin_txt
             // 
             this.permissin_txt.AutoSize = true;
-            this.permissin_txt.Location = new System.Drawing.Point(485, 20);
+            this.permissin_txt.Location = new System.Drawing.Point(434, 11);
             this.permissin_txt.Name = "permissin_txt";
             this.permissin_txt.Size = new System.Drawing.Size(53, 13);
             this.permissin_txt.TabIndex = 19;
@@ -353,7 +354,7 @@ namespace main_screen.general_process
             // 
             // return_btn
             // 
-            this.return_btn.Location = new System.Drawing.Point(63, 669);
+            this.return_btn.Location = new System.Drawing.Point(12, 660);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(75, 23);
             this.return_btn.TabIndex = 20;
@@ -365,7 +366,7 @@ namespace main_screen.general_process
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 736);
+            this.ClientSize = new System.Drawing.Size(694, 693);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.permissin_txt);
             this.Controls.Add(this.permi);
@@ -375,6 +376,7 @@ namespace main_screen.general_process
             this.Controls.Add(this.connections);
             this.Controls.Add(this.password_groupbox);
             this.Controls.Add(this.profile_name);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Profile";
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);

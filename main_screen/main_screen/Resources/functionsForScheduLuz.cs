@@ -14,6 +14,7 @@ using USER;
 
 namespace check_funcs
 {
+    
     struct CheckDetails
     {
 

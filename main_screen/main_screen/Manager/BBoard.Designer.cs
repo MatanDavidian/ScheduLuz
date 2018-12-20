@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BBoard));
             this.return_btn = new System.Windows.Forms.Button();
             this.msg_txt = new System.Windows.Forms.RichTextBox();
             this.edit_last_btn = new System.Windows.Forms.Button();
@@ -81,6 +82,7 @@
             this.Controls.Add(this.edit_last_btn);
             this.Controls.Add(this.msg_txt);
             this.Controls.Add(this.return_btn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BBoard";
             this.Text = "Bulletin Board";
             this.Load += new System.EventHandler(this.BBoard_Load);

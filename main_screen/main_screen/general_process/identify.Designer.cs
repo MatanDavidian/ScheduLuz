@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(identify));
             this.label1 = new System.Windows.Forms.Label();
             this.pass_txt = new System.Windows.Forms.TextBox();
             this.Confirm_btn = new System.Windows.Forms.Button();
@@ -51,7 +52,7 @@
             // 
             // Confirm_btn
             // 
-            this.Confirm_btn.Location = new System.Drawing.Point(126, 86);
+            this.Confirm_btn.Location = new System.Drawing.Point(71, 86);
             this.Confirm_btn.Name = "Confirm_btn";
             this.Confirm_btn.Size = new System.Drawing.Size(75, 23);
             this.Confirm_btn.TabIndex = 2;
@@ -63,10 +64,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(244, 121);
+            this.ClientSize = new System.Drawing.Size(223, 121);
             this.Controls.Add(this.Confirm_btn);
             this.Controls.Add(this.pass_txt);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "identify";
             this.Text = "identify";
             this.Load += new System.EventHandler(this.identify_Load);

@@ -63,6 +63,26 @@ namespace main_screen.Manager
 
         private void button1_Click_2(object sender, EventArgs e)
         {
+            bool user_exsist = false;
+            try
+            {
+                dataBase dataBase = new dataBase();
+                SqlConnection con = dataBase.connect_to_scheduluz_DB();
+                string query = "Select * from connection_details Where userName = '" + userIDtextBox.Text.Trim() + "' or userName = '" + userFirstNameTextBox.Text.Trim()+userLastNameTextBox.Text.Trim() + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                DataTable dtbl = new DataTable();
+                sda.Fill(dtbl);
+
+                if (dtbl.Rows.Count > 0)
+                    user_exsist = true;
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Problem detected. please contact your Scheduluz Guide for more information.");
+            }
+
             string per;
             if (Student.Checked)
                 per = "student";
@@ -72,45 +92,54 @@ namespace main_screen.Manager
                 per = "manager";
             else
                 per = "none";
-            
-            
-            if (userIDtextBox.Text.Length ==0 || userFirstNameTextBox.Text.Length == 0 || userLastNameTextBox.Text.Length == 0)
+
+            try
             {
-                MessageBox.Show("please fill all the fileds");
+
+
+                if (userIDtextBox.Text.Length == 0 || userFirstNameTextBox.Text.Length == 0 || userLastNameTextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("please fill all the fileds");
+                }
+                else if (user_exsist == false)
+                {
+
+                    dataBase dataBase = new dataBase();
+                    SqlConnection con = dataBase.connect_to_scheduluz_DB();
+                    con.Open();
+                    SqlCommand cmd;
+                    cmd = new SqlCommand("INSERT INTO connection_details (id,userName,password,permission) VALUES (@id,@userName,@password,@permission)", con);
+                    cmd.Parameters.Add("@id", userIDtextBox.Text);
+                    cmd.Parameters.Add("@userName", userFirstNameTextBox.Text + userLastNameTextBox.Text);
+                    cmd.Parameters.Add("@password", userIDtextBox.Text);
+                    cmd.Parameters.Add("@permission", per);
+                    cmd.ExecuteNonQuery();
+
+
+                    dataBase dataBase2 = new dataBase();
+                    SqlConnection con2 = dataBase.connect_to_scheduluz_DB();
+                    con2.Open();
+                    SqlCommand cmd2;
+                    cmd2 = new SqlCommand("INSERT INTO users (id,name,lastName,permission) VALUES (@id,@name,@lastName,@permission)", con2);
+                    cmd2.Parameters.Add("@id", userIDtextBox.Text);
+                    cmd2.Parameters.Add("@name", userFirstNameTextBox.Text);
+                    cmd2.Parameters.Add("@lastName", userLastNameTextBox.Text);
+                    //cmd2.Parameters.Add("@password", userIDtextBox.Text);
+                    cmd2.Parameters.Add("@permission", per);
+                    cmd2.ExecuteNonQuery();
+                    MessageBox.Show("has added");
+
+                    userFirstNameTextBox.Clear();
+                    userLastNameTextBox.Clear();
+                    userIDtextBox.Clear();
+
+
+                }
             }
-            else
+
+            catch
             {
-
-                dataBase dataBase = new dataBase();
-                SqlConnection con = dataBase.connect_to_scheduluz_DB();
-                con.Open();
-                SqlCommand cmd;
-                cmd = new SqlCommand("INSERT INTO connection_details (id,userName,password,permission) VALUES (@id,@userName,@password,@permission)", con);
-                cmd.Parameters.Add("@id", userIDtextBox.Text);
-                cmd.Parameters.Add("@userName", userFirstNameTextBox.Text+userLastNameTextBox.Text);
-                cmd.Parameters.Add("@password", userIDtextBox.Text);
-                cmd.Parameters.Add("@permission", per);
-                cmd.ExecuteNonQuery();
-                
-
-                dataBase dataBase2 = new dataBase();
-                SqlConnection con2 = dataBase.connect_to_scheduluz_DB();
-                con2.Open();
-                SqlCommand cmd2;
-                cmd2 = new SqlCommand("INSERT INTO users (id,name,lastName,permission) VALUES (@id,@name,@lastName,@permission)", con2);
-                cmd2.Parameters.Add("@id", userIDtextBox.Text);
-                cmd2.Parameters.Add("@name", userFirstNameTextBox.Text);
-                cmd2.Parameters.Add("@lastName", userLastNameTextBox.Text);
-                //cmd2.Parameters.Add("@password", userIDtextBox.Text);
-                cmd2.Parameters.Add("@permission", per);
-                cmd2.ExecuteNonQuery();
-                MessageBox.Show("has added");
-
-                userFirstNameTextBox.Clear();
-                userLastNameTextBox.Clear();
-                userIDtextBox.Clear();
-
-
+                MessageBox.Show("Problem detected. please contact your Scheduluz Guide for more information.");
             }
         }
 

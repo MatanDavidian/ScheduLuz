@@ -33,7 +33,7 @@
             this.reception_hours = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.watch_stundent_schedule = new System.Windows.Forms.Button();
             this.multi_studnt_event_btn = new System.Windows.Forms.Button();
             this.profile_btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@
             // 
             // reception_hours
             // 
-            this.reception_hours.Location = new System.Drawing.Point(706, 264);
+            this.reception_hours.Location = new System.Drawing.Point(706, 274);
             this.reception_hours.Name = "reception_hours";
             this.reception_hours.Size = new System.Drawing.Size(125, 30);
             this.reception_hours.TabIndex = 19;
@@ -76,7 +76,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(706, 228);
+            this.button7.Location = new System.Drawing.Point(706, 238);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(125, 30);
             this.button7.TabIndex = 18;
@@ -85,21 +85,22 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(706, 192);
+            this.button6.Location = new System.Drawing.Point(706, 202);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(125, 30);
             this.button6.TabIndex = 17;
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // watch_stundent_schedule
             // 
-            this.button5.Location = new System.Drawing.Point(706, 156);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(125, 30);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.watch_stundent_schedule.Location = new System.Drawing.Point(706, 156);
+            this.watch_stundent_schedule.Name = "watch_stundent_schedule";
+            this.watch_stundent_schedule.Size = new System.Drawing.Size(125, 40);
+            this.watch_stundent_schedule.TabIndex = 16;
+            this.watch_stundent_schedule.Text = "Watch Student Schedule";
+            this.watch_stundent_schedule.UseVisualStyleBackColor = true;
+            this.watch_stundent_schedule.Click += new System.EventHandler(this.watch_stundent_schedule_Click);
             // 
             // multi_studnt_event_btn
             // 
@@ -261,7 +262,7 @@
             this.Controls.Add(this.reception_hours);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.watch_stundent_schedule);
             this.Controls.Add(this.multi_studnt_event_btn);
             this.Controls.Add(this.profile_btn);
             this.Controls.Add(this.button2);
@@ -284,7 +285,7 @@
         private System.Windows.Forms.Button reception_hours;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button watch_stundent_schedule;
         private System.Windows.Forms.Button multi_studnt_event_btn;
         private System.Windows.Forms.Button profile_btn;
         private System.Windows.Forms.Button button2;
