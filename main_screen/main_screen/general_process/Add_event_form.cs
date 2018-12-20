@@ -61,11 +61,11 @@ namespace main_screen.general_process
                 MessageBox.Show("please fill the place.");
             }
 
-            else if (hours_start.Value < hours_end.Value)
+            else if (hours_start.Value > hours_end.Value)
             {
                 MessageBox.Show("your end time is before your start time.");
             }
-            else if (hours_end.Value == hours_start.Value && minutes_end.Value > minutes_start.Value)
+            else if (hours_end.Value == hours_start.Value && minutes_end.Value <= minutes_start.Value)
             {
                 MessageBox.Show("your end time is before your start time.");
             }

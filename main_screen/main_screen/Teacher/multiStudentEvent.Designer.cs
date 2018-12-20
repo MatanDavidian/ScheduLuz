@@ -30,12 +30,18 @@ namespace main_screen.Teacher
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(multiStudentEvent));
             this.student_lst = new System.Windows.Forms.ListBox();
             this.to_txt = new System.Windows.Forms.TextBox();
             this.send_to_lst = new System.Windows.Forms.ListBox();
             this.add_btn = new System.Windows.Forms.Button();
             this.clear_btn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.class_num_cb = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.grade_cb = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,12 +59,7 @@ namespace main_screen.Teacher
             this.minutes_end = new System.Windows.Forms.NumericUpDown();
             this.return_btn = new System.Windows.Forms.Button();
             this.create_btn = new System.Windows.Forms.Button();
-            this.grade_cb = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.class_num_cb = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
@@ -131,6 +132,62 @@ namespace main_screen.Teacher
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Users:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(298, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Add Class>>";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(135, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Class Number:";
+            // 
+            // class_num_cb
+            // 
+            this.class_num_cb.FormattingEnabled = true;
+            this.class_num_cb.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "ALL"});
+            this.class_num_cb.Location = new System.Drawing.Point(216, 15);
+            this.class_num_cb.Name = "class_num_cb";
+            this.class_num_cb.Size = new System.Drawing.Size(75, 21);
+            this.class_num_cb.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Grade:";
+            // 
+            // grade_cb
+            // 
+            this.grade_cb.FormattingEnabled = true;
+            this.grade_cb.Items.AddRange(new object[] {
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.grade_cb.Location = new System.Drawing.Point(52, 15);
+            this.grade_cb.Name = "grade_cb";
+            this.grade_cb.Size = new System.Drawing.Size(75, 21);
+            this.grade_cb.TabIndex = 11;
             // 
             // label1
             // 
@@ -292,62 +349,6 @@ namespace main_screen.Teacher
             this.create_btn.UseVisualStyleBackColor = true;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
-            // grade_cb
-            // 
-            this.grade_cb.FormattingEnabled = true;
-            this.grade_cb.Items.AddRange(new object[] {
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.grade_cb.Location = new System.Drawing.Point(52, 15);
-            this.grade_cb.Name = "grade_cb";
-            this.grade_cb.Size = new System.Drawing.Size(75, 21);
-            this.grade_cb.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Grade:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(135, 18);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Class Number:";
-            // 
-            // class_num_cb
-            // 
-            this.class_num_cb.FormattingEnabled = true;
-            this.class_num_cb.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "ALL"});
-            this.class_num_cb.Location = new System.Drawing.Point(216, 15);
-            this.class_num_cb.Name = "class_num_cb";
-            this.class_num_cb.Size = new System.Drawing.Size(75, 21);
-            this.class_num_cb.TabIndex = 13;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(298, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Add Class>>";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // multiStudentEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,6 +358,7 @@ namespace main_screen.Teacher
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "multiStudentEvent";
             this.Text = "multiStudentEvent";
             this.Load += new System.EventHandler(this.multiStudentEvent_Load);

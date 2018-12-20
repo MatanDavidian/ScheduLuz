@@ -61,32 +61,47 @@ namespace main_screen.Student.Mail
 
         private void send_btn_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-            dataBase dataBase = new dataBase();
-            SqlConnection con = dataBase.connect_to_scheduluz_DB();
 
-            string reciver_username = to_txt.Text.Replace(" ", "");
-            
-            string query = "Select id from connection_details Where userName = '"+ reciver_username + "'";
-            
-            SqlDataAdapter sda = new SqlDataAdapter(query, con);
-            DataTable dtb = new DataTable();
-            sda.Fill(dtb);
-            reciver_id = dtb.Rows[0][0].ToString().Trim();
+                dataBase dataBase = new dataBase();
+                SqlConnection con = dataBase.connect_to_scheduluz_DB();
 
-            con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Mail_box (user_id_send,user_id_get,date_and_time,msg_txt,subject) VALUES (@user_id_send,@user_id_get,@date_and_time,@msg_txt,@subject)", con);
-            cmd.Parameters.Add("@user_id_send", log_in_page.userId);
-            cmd.Parameters.Add("@user_id_get", reciver_id);
-            cmd.Parameters.Add("@date_and_time", DateTime.Now);
-            cmd.Parameters.Add("@msg_txt", msg_txt.Text);
-            cmd.Parameters.Add("@subject", subject_txt.Text);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Your Message has been sent.");
+                string reciver_username = to_txt.Text.Replace(" ", "");
 
-            Mail_form n = new Mail_form();
-            n.Show();
-            this.Hide();
+                string query = "Select id from connection_details Where userName = '" + reciver_username + "'";
+
+                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                DataTable dtb = new DataTable();
+                sda.Fill(dtb);
+                if (dtb.Rows.Count > 0)
+                {
+                    reciver_id = dtb.Rows[0][0].ToString().Trim();
+
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Mail_box (user_id_send,user_id_get,date_and_time,msg_txt,subject) VALUES (@user_id_send,@user_id_get,@date_and_time,@msg_txt,@subject)", con);
+                    cmd.Parameters.Add("@user_id_send", log_in_page.userId);
+                    cmd.Parameters.Add("@user_id_get", reciver_id);
+                    cmd.Parameters.Add("@date_and_time", DateTime.Now);
+                    cmd.Parameters.Add("@msg_txt", msg_txt.Text);
+                    cmd.Parameters.Add("@subject", subject_txt.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Your Message has been sent.");
+
+                    Mail_form n = new Mail_form();
+                    n.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong student name.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Problem detected. please contact your Scheduluz Guide for more information.");
+            }
         }
 
         private void student_lst_SelectedIndexChanged(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(identify));
             this.label1 = new System.Windows.Forms.Label();
             this.pass_txt = new System.Windows.Forms.TextBox();
             this.submit_pass = new System.Windows.Forms.Button();
@@ -69,6 +70,7 @@
             this.Controls.Add(this.submit_pass);
             this.Controls.Add(this.pass_txt);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "identify";
             this.Text = "identify";
             this.Load += new System.EventHandler(this.identify_Load);
