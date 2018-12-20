@@ -248,6 +248,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Student\AppointmentPage.resx">
+      <DependentUpon>AppointmentPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student\ContactPage.resx">
       <DependentUpon>ContactPage.cs</DependentUpon>
     </EmbeddedResource>

@@ -87,7 +87,7 @@ namespace main_screen.Teacher
                     
                     labels[k] = new Label { BackColor = Color.DarkRed, Dock = DockStyle.Fill };
                     Table.Controls.Add(labels[k], j, i);
-                    labels[k].Click += new System.EventHandler(labelClick);
+                    labels[k].Click += new System.EventHandler(LabelClick);
                     labels[k].Text = labels[i+5].Text;
                     labels[k].TextAlign = ContentAlignment.MiddleCenter;
                     labels[k].ForeColor = Color.DarkRed;
@@ -106,7 +106,7 @@ namespace main_screen.Teacher
 
         }
 
-        private void labelClick(object sender, EventArgs e)
+        private void LabelClick(object sender, EventArgs e)
         {
             var label = sender as Label;
             if (label.BackColor == Color.DarkRed)

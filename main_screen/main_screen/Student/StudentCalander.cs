@@ -204,5 +204,12 @@ namespace main_screen
             
             
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Student.AppointmentPage Apmnt = new Student.AppointmentPage();
+            this.Hide();
+            Apmnt.Show();
+        }
     }
 }
