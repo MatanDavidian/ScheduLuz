@@ -291,6 +291,9 @@ namespace main_screen
                             case "Regular":
                                 item.BackColor = Color.SteelBlue;
                                 break;
+                            case "system-public":
+                                item.BackColor = Color.HotPink;
+                                break;
 
                             default:
                                 break;
@@ -343,9 +346,9 @@ namespace main_screen
 
             //MessageBox.Show(itemlist[0].SubItems[1].ToString());
 
-            for(int i = 0;i<itemlist.Count-2;i++)
+            for(int i = 0;i<itemlist.Count-1;i++)
             {
-                for(int j=0; j<itemlist.Count-2;j++)
+                for(int j=0; j<itemlist.Count-1;j++)
                 {
                     string firsthour = itemlist[j].SubItems[1].ToString();
                     string secondhour = itemlist[j + 1].SubItems[1].ToString();
@@ -418,6 +421,14 @@ namespace main_screen
             Teacher.watch_student_schedule n = new Teacher.watch_student_schedule();
             n.Show();
             this.Hide();
+        }
+
+        private void view_contacts_btn_Click(object sender, EventArgs e)
+        {
+            general_process.ManagerAndTeacher_view_contacts n = new general_process.ManagerAndTeacher_view_contacts();
+            n.Show();
+            this.Hide();
+
         }
     }
 }

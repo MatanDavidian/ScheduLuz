@@ -83,6 +83,12 @@
     <Compile Include="general_process\identify.Designer.cs">
       <DependentUpon>identify.cs</DependentUpon>
     </Compile>
+    <Compile Include="general_process\ManagerAndTeacher_view_contacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general_process\ManagerAndTeacher_view_contacts.Designer.cs">
+      <DependentUpon>ManagerAndTeacher_view_contacts.cs</DependentUpon>
+    </Compile>
     <Compile Include="general_process\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,12 @@
     </Compile>
     <Compile Include="general_process\log_in_page.Designer.cs">
       <DependentUpon>log_in_page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\public_event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\public_event.Designer.cs">
+      <DependentUpon>public_event.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -226,6 +238,9 @@
     <EmbeddedResource Include="general_process\identify.resx">
       <DependentUpon>identify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="general_process\ManagerAndTeacher_view_contacts.resx">
+      <DependentUpon>ManagerAndTeacher_view_contacts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="general_process\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="general_process\log_in_page.resx">
       <DependentUpon>log_in_page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\public_event.resx">
+      <DependentUpon>public_event.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

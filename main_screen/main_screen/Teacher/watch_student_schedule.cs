@@ -49,6 +49,8 @@ namespace main_screen.Teacher
 
         private void load_student_btn_Click(object sender, EventArgs e)
         {
+            profilePic_img.Image = null;
+
             dataBase dataBase = new dataBase();
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
             string queryTogetStudentID = "Select id from connection_details Where userName = '" + student_name_txt.Text.Replace(" ","") + "'";
@@ -102,7 +104,7 @@ namespace main_screen.Teacher
                     if (img == null)
                     {
                         profilePic_img.Image = null;
-                        
+
 
                     }
 
@@ -112,9 +114,10 @@ namespace main_screen.Teacher
                         profilePic_img.Image = Image.FromStream(memoryStream);
                     }
                 }
+
                 catch
                 {
-                    MessageBox.Show("There was a problem with the picture of the student.");
+
                 }
                 con.Close();
 

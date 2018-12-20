@@ -65,7 +65,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.profilePic_img);
-            this.groupBox2.Location = new System.Drawing.Point(580, 12);
+            this.groupBox2.Location = new System.Drawing.Point(388, 11);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(132, 140);
             this.groupBox2.TabIndex = 20;
@@ -92,7 +92,7 @@
             this.groupBox1.Controls.Add(this.address_txt);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(637, 162);
+            this.groupBox1.Location = new System.Drawing.Point(445, 161);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 397);
             this.groupBox1.TabIndex = 19;
@@ -176,7 +176,7 @@
             this.connections.Controls.Add(this.Email_1st);
             this.connections.Controls.Add(this.label6);
             this.connections.Enabled = false;
-            this.connections.Location = new System.Drawing.Point(718, 5);
+            this.connections.Location = new System.Drawing.Point(526, 4);
             this.connections.Name = "connections";
             this.connections.Size = new System.Drawing.Size(235, 157);
             this.connections.TabIndex = 18;
@@ -234,18 +234,18 @@
             // student_lst
             // 
             this.student_lst.FormattingEnabled = true;
-            this.student_lst.Location = new System.Drawing.Point(28, 88);
+            this.student_lst.Location = new System.Drawing.Point(12, 50);
             this.student_lst.Name = "student_lst";
-            this.student_lst.Size = new System.Drawing.Size(239, 82);
+            this.student_lst.Size = new System.Drawing.Size(227, 82);
             this.student_lst.Sorted = true;
             this.student_lst.TabIndex = 22;
             this.student_lst.SelectedIndexChanged += new System.EventHandler(this.student_lst_SelectedIndexChanged);
             // 
             // student_name_txt
             // 
-            this.student_name_txt.Location = new System.Drawing.Point(28, 69);
+            this.student_name_txt.Location = new System.Drawing.Point(12, 31);
             this.student_name_txt.Name = "student_name_txt";
-            this.student_name_txt.Size = new System.Drawing.Size(239, 20);
+            this.student_name_txt.Size = new System.Drawing.Size(227, 20);
             this.student_name_txt.TabIndex = 21;
             this.student_name_txt.TextChanged += new System.EventHandler(this.to_txt_TextChanged);
             // 
@@ -266,9 +266,9 @@
             this.Title,
             this.Starts,
             this.Ends});
-            this.listView1.Location = new System.Drawing.Point(341, 301);
+            this.listView1.Location = new System.Drawing.Point(12, 338);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(238, 249);
+            this.listView1.Size = new System.Drawing.Size(227, 177);
             this.listView1.TabIndex = 25;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -285,11 +285,11 @@
             // Ends
             // 
             this.Ends.Text = "Ends";
-            this.Ends.Width = 62;
+            this.Ends.Width = 53;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(341, 127);
+            this.monthCalendar1.Location = new System.Drawing.Point(12, 164);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 24;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);

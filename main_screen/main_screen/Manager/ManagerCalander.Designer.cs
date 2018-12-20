@@ -35,8 +35,8 @@
             this.Profile_btn = new System.Windows.Forms.Button();
             this.BBorad_btn = new System.Windows.Forms.Button();
             this.fixed_btn = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.contact_page_btn = new System.Windows.Forms.Button();
+            this.public_event_btn = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.motd = new System.Windows.Forms.GroupBox();
@@ -103,25 +103,27 @@
             this.fixed_btn.TabIndex = 5;
             this.fixed_btn.Text = "Fixed Schedule";
             this.fixed_btn.UseVisualStyleBackColor = true;
-            this.fixed_btn.Click += new System.EventHandler(this.fixed_btn_Click);
+           //this.fixed_btn.Click += new System.EventHandler(this.fixed_btn_Click);
             // 
-            // button6
+            // contact_page_btn
             // 
-            this.button6.Location = new System.Drawing.Point(547, 192);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 30);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.contact_page_btn.Location = new System.Drawing.Point(547, 192);
+            this.contact_page_btn.Name = "contact_page_btn";
+            this.contact_page_btn.Size = new System.Drawing.Size(125, 30);
+            this.contact_page_btn.TabIndex = 6;
+            this.contact_page_btn.Text = "Contact Page";
+            this.contact_page_btn.UseVisualStyleBackColor = true;
+            //this.contact_page_btn.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // public_event_btn
             // 
-            this.button7.Location = new System.Drawing.Point(547, 228);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(125, 30);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.public_event_btn.Location = new System.Drawing.Point(547, 228);
+            this.public_event_btn.Name = "public_event_btn";
+            this.public_event_btn.Size = new System.Drawing.Size(125, 30);
+            this.public_event_btn.TabIndex = 7;
+            this.public_event_btn.Text = "Public Event";
+            this.public_event_btn.UseVisualStyleBackColor = true;
+           // this.public_event_btn.Click += new System.EventHandler(this.public_event_btn_Click);
             // 
             // button8
             // 
@@ -199,8 +201,8 @@
             this.Controls.Add(this.motd);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.public_event_btn);
+            this.Controls.Add(this.contact_page_btn);
             this.Controls.Add(this.fixed_btn);
             this.Controls.Add(this.BBorad_btn);
             this.Controls.Add(this.Profile_btn);
@@ -225,8 +227,8 @@
         private System.Windows.Forms.Button Profile_btn;
         private System.Windows.Forms.Button BBorad_btn;
         private System.Windows.Forms.Button fixed_btn;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button contact_page_btn;
+        private System.Windows.Forms.Button public_event_btn;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.GroupBox motd;
