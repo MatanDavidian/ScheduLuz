@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fixed_schedule));
             this.teachers_lst = new System.Windows.Forms.ListBox();
             this.teacher_name_txt = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.schedule = new System.Windows.Forms.DataGridView();
             this.startTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,11 +43,10 @@
             this.teacher_rad_btn = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.grade_cb = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.classnum_cb = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.grade_cb = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schedule)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -81,6 +82,15 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Teacher";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Name:";
             // 
             // schedule
             // 
@@ -188,6 +198,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Class";
             // 
+            // classnum_cb
+            // 
+            this.classnum_cb.FormattingEnabled = true;
+            this.classnum_cb.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.classnum_cb.Location = new System.Drawing.Point(64, 69);
+            this.classnum_cb.Name = "classnum_cb";
+            this.classnum_cb.Size = new System.Drawing.Size(65, 21);
+            this.classnum_cb.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Class #";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Grade:";
+            // 
             // grade_cb
             // 
             this.grade_cb.FormattingEnabled = true;
@@ -203,50 +243,11 @@
             this.grade_cb.Size = new System.Drawing.Size(65, 21);
             this.grade_cb.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Grade:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Name:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Class #";
-            // 
-            // classnum_cb
-            // 
-            this.classnum_cb.FormattingEnabled = true;
-            this.classnum_cb.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.classnum_cb.Location = new System.Drawing.Point(64, 69);
-            this.classnum_cb.Name = "classnum_cb";
-            this.classnum_cb.Size = new System.Drawing.Size(65, 21);
-            this.classnum_cb.TabIndex = 3;
-            // 
             // fixed_schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 450);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.teacher_rad_btn);
@@ -255,6 +256,7 @@
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.schedule);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fixed_schedule";
             this.Text = "Fixed Schedule";
             this.Load += new System.EventHandler(this.fixed_schedule_Load);

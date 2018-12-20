@@ -211,6 +211,12 @@
     <Compile Include="Teacher\TeacherCalander.Designer.cs">
       <DependentUpon>TeacherCalander.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\watch_student_schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\watch_student_schedule.Designer.cs">
+      <DependentUpon>watch_student_schedule.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="general_process\Add_event_form.resx">
       <DependentUpon>Add_event_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\TeacherCalander.resx">
       <DependentUpon>TeacherCalander.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\watch_student_schedule.resx">
+      <DependentUpon>watch_student_schedule.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

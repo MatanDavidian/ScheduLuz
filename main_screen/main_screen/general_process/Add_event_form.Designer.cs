@@ -33,9 +33,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.Place = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.No = new System.Windows.Forms.RadioButton();
-            this.Yes = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
             this.minutes_start = new System.Windows.Forms.NumericUpDown();
             this.hours_start = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,14 +49,10 @@
             this.End_time = new System.Windows.Forms.Label();
             this.minutes_end = new System.Windows.Forms.NumericUpDown();
             this.hours_end = new System.Windows.Forms.NumericUpDown();
-            this.time_before = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.eventsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.scheduLuzDataSet2 = new main_screen.ScheduLuzDataSet2();
             this.eventsTableAdapter = new main_screen.ScheduLuzDataSet2TableAdapters.EventsTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.minutes_start)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
@@ -68,16 +61,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet2)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(24, 422);
+            this.button2.Location = new System.Drawing.Point(21, 360);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 34);
+            this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 55;
             this.button2.Text = "Return";
             this.button2.UseVisualStyleBackColor = true;
@@ -89,7 +81,7 @@
             this.Place.Location = new System.Drawing.Point(83, 61);
             this.Place.Name = "Place";
             this.Place.Size = new System.Drawing.Size(222, 20);
-            this.Place.TabIndex = 54;
+            this.Place.TabIndex = 3;
             // 
             // label7
             // 
@@ -101,46 +93,15 @@
             this.label7.TabIndex = 53;
             this.label7.Text = "Place:";
             // 
-            // No
-            // 
-            this.No.AutoSize = true;
-            this.No.Checked = true;
-            this.No.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.No.Location = new System.Drawing.Point(165, 34);
-            this.No.Name = "No";
-            this.No.Size = new System.Drawing.Size(39, 17);
-            this.No.TabIndex = 52;
-            this.No.TabStop = true;
-            this.No.Text = "No";
-            this.No.UseVisualStyleBackColor = true;
-            this.No.CheckedChanged += new System.EventHandler(this.No_CheckedChanged);
-            // 
-            // Yes
-            // 
-            this.Yes.AutoSize = true;
-            this.Yes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Yes.Location = new System.Drawing.Point(102, 34);
-            this.Yes.Name = "Yes";
-            this.Yes.Size = new System.Drawing.Size(43, 17);
-            this.Yes.TabIndex = 51;
-            this.Yes.Text = "Yes";
-            this.Yes.UseVisualStyleBackColor = true;
-            this.Yes.CheckedChanged += new System.EventHandler(this.Yes_CheckedChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(10, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 50;
-            this.label6.Text = "Reminder:";
-            // 
             // minutes_start
             // 
             this.minutes_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minutes_start.Location = new System.Drawing.Point(368, 39);
+            this.minutes_start.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
             this.minutes_start.Name = "minutes_start";
             this.minutes_start.Size = new System.Drawing.Size(37, 20);
             this.minutes_start.TabIndex = 49;
@@ -149,17 +110,22 @@
             // 
             this.hours_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hours_start.Location = new System.Drawing.Point(310, 39);
+            this.hours_start.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.hours_start.Name = "hours_start";
             this.hours_start.Size = new System.Drawing.Size(37, 20);
-            this.hours_start.TabIndex = 48;
+            this.hours_start.TabIndex = 3;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(378, 422);
+            this.button1.Location = new System.Drawing.Point(362, 360);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 34);
-            this.button1.TabIndex = 47;
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -171,7 +137,7 @@
             this.label5.Location = new System.Drawing.Point(14, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
-            this.label5.TabIndex = 46;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Date:";
             // 
             // date
@@ -182,7 +148,7 @@
             this.date.Location = new System.Drawing.Point(79, 36);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(95, 20);
-            this.date.TabIndex = 45;
+            this.date.TabIndex = 1;
             // 
             // public_B
             // 
@@ -213,8 +179,8 @@
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(83, 193);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(379, 95);
-            this.richTextBox1.TabIndex = 42;
+            this.richTextBox1.Size = new System.Drawing.Size(343, 95);
+            this.richTextBox1.TabIndex = 7;
             this.richTextBox1.Text = "";
             // 
             // label3
@@ -233,7 +199,7 @@
             this.text_title.Location = new System.Drawing.Point(83, 35);
             this.text_title.Name = "text_title";
             this.text_title.Size = new System.Drawing.Size(222, 20);
-            this.text_title.TabIndex = 39;
+            this.text_title.TabIndex = 2;
             // 
             // title
             // 
@@ -264,7 +230,7 @@
             this.Start_time.Location = new System.Drawing.Point(206, 39);
             this.Start_time.Name = "Start_time";
             this.Start_time.Size = new System.Drawing.Size(63, 13);
-            this.Start_time.TabIndex = 56;
+            this.Start_time.TabIndex = 2;
             this.Start_time.Text = "Start time :  ";
             // 
             // End_time
@@ -274,13 +240,18 @@
             this.End_time.Location = new System.Drawing.Point(206, 65);
             this.End_time.Name = "End_time";
             this.End_time.Size = new System.Drawing.Size(57, 13);
-            this.End_time.TabIndex = 57;
+            this.End_time.TabIndex = 5;
             this.End_time.Text = "End time  :";
             // 
             // minutes_end
             // 
             this.minutes_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minutes_end.Location = new System.Drawing.Point(368, 65);
+            this.minutes_end.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
             this.minutes_end.Name = "minutes_end";
             this.minutes_end.Size = new System.Drawing.Size(37, 20);
             this.minutes_end.TabIndex = 58;
@@ -289,41 +260,14 @@
             // 
             this.hours_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hours_end.Location = new System.Drawing.Point(310, 65);
+            this.hours_end.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.hours_end.Name = "hours_end";
             this.hours_end.Size = new System.Drawing.Size(37, 20);
-            this.hours_end.TabIndex = 59;
-            // 
-            // time_before
-            // 
-            this.time_before.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.time_before.FormattingEnabled = true;
-            this.time_before.Location = new System.Drawing.Point(286, 30);
-            this.time_before.Name = "time_before";
-            this.time_before.Size = new System.Drawing.Size(45, 21);
-            this.time_before.TabIndex = 61;
-            this.time_before.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(203, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 62;
-            this.label2.Text = "remind me: ";
-            this.label2.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(331, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 13);
-            this.label4.TabIndex = 63;
-            this.label4.Text = "before the event.";
-            this.label4.Visible = false;
+            this.hours_end.TabIndex = 7;
             // 
             // eventsBindingSource
             // 
@@ -352,37 +296,21 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(21, 87);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(447, 100);
-            this.groupBox1.TabIndex = 65;
+            this.groupBox1.Size = new System.Drawing.Size(416, 100);
+            this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Date and Time";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.Yes);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.No);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.time_before);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(19, 294);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(443, 64);
-            this.groupBox2.TabIndex = 66;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Reminder";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.private_B);
             this.groupBox3.Controls.Add(this.public_B);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(24, 366);
+            this.groupBox3.Location = new System.Drawing.Point(24, 294);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(140, 50);
-            this.groupBox3.TabIndex = 67;
+            this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Privacy";
             // 
@@ -391,9 +319,8 @@
             this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 470);
+            this.ClientSize = new System.Drawing.Size(448, 395);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Place);
@@ -406,7 +333,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_event_form";
-            this.Text = "Add_event_form";
+            this.Text = "Add Event";
             this.Load += new System.EventHandler(this.Add_event_form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.minutes_start)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).EndInit();
@@ -416,8 +343,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.scheduLuzDataSet2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -430,9 +355,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox Place;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton No;
-        private System.Windows.Forms.RadioButton Yes;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown minutes_start;
         private System.Windows.Forms.NumericUpDown hours_start;
         private System.Windows.Forms.Button button1;
@@ -449,14 +371,10 @@
         private System.Windows.Forms.Label End_time;
         private System.Windows.Forms.NumericUpDown minutes_end;
         private System.Windows.Forms.NumericUpDown hours_end;
-        private System.Windows.Forms.ComboBox time_before;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private ScheduLuzDataSet2 scheduLuzDataSet2;
         private System.Windows.Forms.BindingSource eventsBindingSource;
         private ScheduLuzDataSet2TableAdapters.EventsTableAdapter eventsTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
     }
 }

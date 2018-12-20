@@ -90,224 +90,243 @@ namespace main_screen.Manager
              * wich means 10th year class number 3
              * 
              */
-            if (teacher_or_class_flag == 't')
+            try
             {
-                /*
-                 * for teacher:
-                 */
 
-                string username = teacher_name_txt.Text.Replace(" ", "");
 
-                dataBase dataBase = new dataBase();
-                SqlConnection con = dataBase.connect_to_scheduluz_DB();
-                string query = "Select id from connection_details Where userName = '" + username + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                DataTable dtbl = new DataTable();
-                sda.Fill(dtbl);
-
-                string userID = dtbl.Rows[0][0].ToString().Trim(); // getting the userID
-
-                query = "Select wEvent_id from weekly_events Where user_id_OR_class = '" + userID + "' and day_in_week='" + days.Text + "'";
-                sda = new SqlDataAdapter(query, con);
-                dtbl = new DataTable();
-                sda.Fill(dtbl);
-                con.Close();  //gets all the event this day
-
-                if (dtbl.Rows.Count >= 0)
+                if (teacher_or_class_flag == 't')
                 {
-                    for (int i = 0; i < 8; i++) // max 8 hours in the schedule
+                    /*
+                     * for teacher:
+                     */
+
+                    string username = teacher_name_txt.Text.Replace(" ", "");
+
+                    dataBase dataBase = new dataBase();
+                    SqlConnection con = dataBase.connect_to_scheduluz_DB();
+                    string query = "Select id from connection_details Where userName = '" + username + "'";
+                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                    DataTable dtbl = new DataTable();
+                    sda.Fill(dtbl);
+
+                    if (dtbl.Rows.Count == 0)
                     {
-                        dataBase = new dataBase();
-                        con = dataBase.connect_to_scheduluz_DB();
-                        query = "Select wEvent_id from weekly_events Where user_id_OR_class = '" + userID + "' and day_in_week='" + days.Text + "' and start='" + schedule["startTime", i].Value.ToString().Trim() + "'";
+                        MessageBox.Show("there is no such a teacher.");
+                    }
+                    else
+                    {
+
+
+
+                        string userID = dtbl.Rows[0][0].ToString().Trim(); // getting the userID
+
+                        query = "Select wEvent_id from weekly_events Where user_id_OR_class = '" + userID + "' and day_in_week='" + days.Text + "'";
                         sda = new SqlDataAdapter(query, con);
                         dtbl = new DataTable();
                         sda.Fill(dtbl);
+                        con.Close();  //gets all the event this day
 
-
-                        if (schedule[2, i].Value != null)
+                        if (dtbl.Rows.Count >= 0)
                         {
-                            if (dtbl.Rows.Count > 0)
+                            for (int i = 0; i < 8; i++) // max 8 hours in the schedule
                             {
                                 dataBase = new dataBase();
-                                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-                                conn.Open();
-                                SqlCommand cmd1 = new SqlCommand("UPDATE weekly_events SET title ='" + schedule[2, i].Value.ToString() + "' WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + userID + "'", conn);
-                                cmd1.ExecuteNonQuery();
-                                conn.Close();
+                                con = dataBase.connect_to_scheduluz_DB();
+                                query = "Select wEvent_id from weekly_events Where user_id_OR_class = '" + userID + "' and day_in_week='" + days.Text + "' and start='" + schedule["startTime", i].Value.ToString().Trim() + "'";
+                                sda = new SqlDataAdapter(query, con);
+                                dtbl = new DataTable();
+                                sda.Fill(dtbl);
+
+
+                                if (schedule[2, i].Value != null)
+                                {
+                                    if (dtbl.Rows.Count > 0)
+                                    {
+                                        dataBase = new dataBase();
+                                        SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+                                        conn.Open();
+                                        SqlCommand cmd1 = new SqlCommand("UPDATE weekly_events SET title ='" + schedule[2, i].Value.ToString() + "' WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + userID + "'", conn);
+                                        cmd1.ExecuteNonQuery();
+                                        conn.Close();
+                                    }
+                                    else
+                                    {
+                                        con.Open();
+                                        SqlCommand cmd = new SqlCommand("INSERT INTO weekly_events(user_id_OR_class,day_in_week,start,ends,title) VALUES(@user_id_OR_class,@day_in_week,@start,@ends,@title) ", con);
+
+                                        cmd.Parameters.Add("@user_id_OR_class", userID);
+                                        cmd.Parameters.Add("@day_in_week", days.Text);
+                                        cmd.Parameters.Add("@start", schedule[0, i].Value.ToString());
+                                        if (schedule[2, i].Value != null)
+
+                                            cmd.Parameters.Add("@ends", schedule[1, i].Value.ToString());
+                                        cmd.Parameters.Add("@title", schedule[2, i].Value.ToString());
+                                        cmd.ExecuteNonQuery();
+                                        con.Close();
+                                    }
+
+
+                                }
+                                else
+                                {
+                                    //delete the event from the DB
+
+
+                                    try
+                                    {
+                                        dataBase = new dataBase();
+                                        SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+                                        conn.Open();
+                                        SqlCommand cmd1 = new SqlCommand("DELETE FROM weekly_events WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + userID + "'", conn);
+                                        cmd1.ExecuteNonQuery();
+                                    }
+                                    catch
+                                    {
+                                    }
+
+                                }
+                            }
+                            //// the problem is that its inserting OR updating not both.
+                        }
+                        else
+                        {
+                            for (int i = 0; i < 8; i++) // max 8 hours in the schedule
+                            {
+                                if (schedule[2, i].Value != null)
+                                {
+                                    dataBase = new dataBase();
+                                    SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+                                    conn.Open();
+                                    SqlCommand cmd1 = new SqlCommand("UPDATE weekly_events SET title ='" + schedule[2, i].Value.ToString() + "' WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + userID + "'", conn);
+                                    cmd1.ExecuteNonQuery();
+                                }
+                                else
+                                {
+                                    try
+                                    {
+                                        dataBase = new dataBase();
+                                        SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+                                        conn.Open();
+                                        SqlCommand cmd1 = new SqlCommand("DELETE FROM weekly_events WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + userID + "'", conn);
+                                        cmd1.ExecuteNonQuery();
+                                    }
+                                    catch
+                                    {
+                                    }
+                                }
+                            }
+                        }
+
+
+                        User user = new User();
+                        user = user.GetUser(userID);
+                        MessageBox.Show(user.getName() + " " + user.getLastName() + ": Schedule updated.");
+                    }
+                }
+                if (teacher_or_class_flag == 'c')
+                {
+                    string classID = grade_cb.Text + "-" + classnum_cb.Text;
+                    dataBase dataBase = new dataBase();
+                    SqlConnection con = dataBase.connect_to_scheduluz_DB();
+                    string query = "Select wEvent_id from weekly_events Where user_id_OR_class = '" + classID + "' and day_in_week='" + days.Text + "'";
+                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                    DataTable dtbl = new DataTable();
+                    sda.Fill(dtbl);
+                    con.Close();
+                    if (dtbl.Rows.Count >= 0)
+                    {
+                        for (int i = 0; i < 8; i++) // max 8 hours in the schedule
+                        {
+                            dataBase = new dataBase();
+                            con = dataBase.connect_to_scheduluz_DB();
+                            query = "Select wEvent_id from weekly_events Where user_id_OR_class = '" + classID + "' and day_in_week='" + days.Text + "' and start='" + schedule["startTime", i].Value.ToString().Trim() + "'";
+                            sda = new SqlDataAdapter(query, con);
+                            dtbl = new DataTable();
+                            sda.Fill(dtbl);
+
+
+                            if (schedule[2, i].Value != null)
+                            {
+                                if (dtbl.Rows.Count > 0)
+                                {
+                                    dataBase = new dataBase();
+                                    SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+                                    conn.Open();
+                                    SqlCommand cmd1 = new SqlCommand("UPDATE weekly_events SET title ='" + schedule[2, i].Value.ToString() + "' WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + classID + "'", conn);
+                                    cmd1.ExecuteNonQuery();
+                                    conn.Close();
+                                }
+                                else
+                                {
+                                    con.Open();
+                                    SqlCommand cmd = new SqlCommand("INSERT INTO weekly_events(user_id_OR_class,day_in_week,start,ends,title) VALUES(@user_id_OR_class,@day_in_week,@start,@ends,@title) ", con);
+
+                                    cmd.Parameters.Add("@user_id_OR_class", classID);
+                                    cmd.Parameters.Add("@day_in_week", days.Text);
+                                    cmd.Parameters.Add("@start", schedule[0, i].Value.ToString());
+                                    if (schedule[2, i].Value != null)
+
+                                        cmd.Parameters.Add("@ends", schedule[1, i].Value.ToString());
+                                    cmd.Parameters.Add("@title", schedule[2, i].Value.ToString());
+                                    cmd.ExecuteNonQuery();
+                                    con.Close();
+                                }
+
+
                             }
                             else
                             {
-                                con.Open();
-                                SqlCommand cmd = new SqlCommand("INSERT INTO weekly_events(user_id_OR_class,day_in_week,start,ends,title) VALUES(@user_id_OR_class,@day_in_week,@start,@ends,@title) ", con);
-
-                                cmd.Parameters.Add("@user_id_OR_class", userID);
-                                cmd.Parameters.Add("@day_in_week", days.Text);
-                                cmd.Parameters.Add("@start", schedule[0, i].Value.ToString());
-                                if (schedule[2, i].Value != null)
-
-                                    cmd.Parameters.Add("@ends", schedule[1, i].Value.ToString());
-                                cmd.Parameters.Add("@title", schedule[2, i].Value.ToString());
-                                cmd.ExecuteNonQuery();
-                                con.Close();
-                            }
+                                //delete the event from the DB
 
 
-                        }
-                        else
-                        {
-                            //delete the event from the DB
+                                try
+                                {
+                                    dataBase = new dataBase();
+                                    SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+                                    conn.Open();
+                                    SqlCommand cmd1 = new SqlCommand("DELETE FROM weekly_events WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + classID + "'", conn);
+                                    cmd1.ExecuteNonQuery();
+                                }
+                                catch
+                                {
+                                }
 
-
-                            try
-                            {
-                                dataBase = new dataBase();
-                                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-                                conn.Open();
-                                SqlCommand cmd1 = new SqlCommand("DELETE FROM weekly_events WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + userID + "'", conn);
-                                cmd1.ExecuteNonQuery();
-                            }
-                            catch
-                            {
-                            }
-
-                        }
-                    }
-                    //// the problem is that its inserting OR updating not both.
-                }
-                else
-                {
-                    for (int i = 0; i < 8; i++) // max 8 hours in the schedule
-                    {
-                        if (schedule[2, i].Value != null)
-                        {
-                            dataBase = new dataBase();
-                            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-                            conn.Open();
-                            SqlCommand cmd1 = new SqlCommand("UPDATE weekly_events SET title ='" + schedule[2, i].Value.ToString() + "' WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + userID + "'", conn);
-                            cmd1.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            try
-                            {
-                                dataBase = new dataBase();
-                                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-                                conn.Open();
-                                SqlCommand cmd1 = new SqlCommand("DELETE FROM weekly_events WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + userID + "'", conn);
-                                cmd1.ExecuteNonQuery();
-                            }
-                            catch
-                            {
                             }
                         }
                     }
-                }
-
-
-                User user = new User();
-                user = user.GetUser(userID);
-                MessageBox.Show(user.getName() + " " + user.getLastName() + ": Schedule updated.");
-            }
-            if (teacher_or_class_flag == 'c')
-            {
-                string classID = grade_cb.Text + "-" + classnum_cb.Text;
-                dataBase dataBase = new dataBase();
-                SqlConnection con = dataBase.connect_to_scheduluz_DB();
-                string query = "Select wEvent_id from weekly_events Where user_id_OR_class = '" + classID + "' and day_in_week='" + days.Text + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                DataTable dtbl = new DataTable();
-                sda.Fill(dtbl);
-                con.Close();
-                if (dtbl.Rows.Count >= 0)
-                {
-                    for (int i = 0; i < 8; i++) // max 8 hours in the schedule
+                    else
                     {
-                        dataBase = new dataBase();
-                        con = dataBase.connect_to_scheduluz_DB();
-                        query = "Select wEvent_id from weekly_events Where user_id_OR_class = '" + classID + "' and day_in_week='" + days.Text + "' and start='" + schedule["startTime", i].Value.ToString().Trim() + "'";
-                        sda = new SqlDataAdapter(query, con);
-                        dtbl = new DataTable();
-                        sda.Fill(dtbl);
-
-
-                        if (schedule[2, i].Value != null)
+                        for (int i = 0; i < 8; i++) // max 8 hours in the schedule
                         {
-                            if (dtbl.Rows.Count > 0)
+                            if (schedule[2, i].Value != null)
                             {
                                 dataBase = new dataBase();
                                 SqlConnection conn = dataBase.connect_to_scheduluz_DB();
                                 conn.Open();
                                 SqlCommand cmd1 = new SqlCommand("UPDATE weekly_events SET title ='" + schedule[2, i].Value.ToString() + "' WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + classID + "'", conn);
                                 cmd1.ExecuteNonQuery();
-                                conn.Close();
                             }
                             else
                             {
-                                con.Open();
-                                SqlCommand cmd = new SqlCommand("INSERT INTO weekly_events(user_id_OR_class,day_in_week,start,ends,title) VALUES(@user_id_OR_class,@day_in_week,@start,@ends,@title) ", con);
-
-                                cmd.Parameters.Add("@user_id_OR_class", classID);
-                                cmd.Parameters.Add("@day_in_week", days.Text);
-                                cmd.Parameters.Add("@start", schedule[0, i].Value.ToString());
-                                if (schedule[2, i].Value != null)
-
-                                    cmd.Parameters.Add("@ends", schedule[1, i].Value.ToString());
-                                cmd.Parameters.Add("@title", schedule[2, i].Value.ToString());
-                                cmd.ExecuteNonQuery();
-                                con.Close();
-                            }
-
-
-                        }
-                        else
-                        {
-                            //delete the event from the DB
-
-
-                            try
-                            {
-                                dataBase = new dataBase();
-                                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-                                conn.Open();
-                                SqlCommand cmd1 = new SqlCommand("DELETE FROM weekly_events WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + classID + "'", conn);
-                                cmd1.ExecuteNonQuery();
-                            }
-                            catch
-                            {
-                            }
-
-                        }
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < 8; i++) // max 8 hours in the schedule
-                    {
-                        if (schedule[2, i].Value != null)
-                        {
-                            dataBase = new dataBase();
-                            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-                            conn.Open();
-                            SqlCommand cmd1 = new SqlCommand("UPDATE weekly_events SET title ='" + schedule[2, i].Value.ToString() + "' WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + classID + "'", conn);
-                            cmd1.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            try
-                            {
-                                dataBase = new dataBase();
-                                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-                                conn.Open();
-                                SqlCommand cmd1 = new SqlCommand("DELETE FROM weekly_events WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + classID + "'", conn);
-                                cmd1.ExecuteNonQuery();
-                            }
-                            catch
-                            {
+                                try
+                                {
+                                    dataBase = new dataBase();
+                                    SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+                                    conn.Open();
+                                    SqlCommand cmd1 = new SqlCommand("DELETE FROM weekly_events WHERE day_in_week ='" + days.Text + "' and start='" + schedule[0, i].Value.ToString() + "' and user_id_OR_class='" + classID + "'", conn);
+                                    cmd1.ExecuteNonQuery();
+                                }
+                                catch
+                                {
+                                }
                             }
                         }
                     }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Problem detected. please contact your Scheduluz Guide for more information.");
             }
 
 

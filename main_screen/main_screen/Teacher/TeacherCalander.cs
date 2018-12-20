@@ -412,5 +412,12 @@ namespace main_screen
 
             return false; 
         }
+
+        private void watch_stundent_schedule_Click(object sender, EventArgs e)
+        {
+            Teacher.watch_student_schedule n = new Teacher.watch_student_schedule();
+            n.Show();
+            this.Hide();
+        }
     }
 }

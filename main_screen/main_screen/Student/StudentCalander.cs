@@ -302,6 +302,11 @@ namespace main_screen
 
             return false;
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
                 

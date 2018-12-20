@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(firstProfileChange));
             this.profile_name = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,7 +78,7 @@
             // profile_name
             // 
             this.profile_name.AutoSize = true;
-            this.profile_name.Location = new System.Drawing.Point(83, 27);
+            this.profile_name.Location = new System.Drawing.Point(9, 6);
             this.profile_name.Name = "profile_name";
             this.profile_name.Size = new System.Drawing.Size(45, 13);
             this.profile_name.TabIndex = 0;
@@ -118,7 +119,7 @@
             this.password_groupbox.Controls.Add(this.label1);
             this.password_groupbox.Controls.Add(this.pass_txt);
             this.password_groupbox.Controls.Add(this.label2);
-            this.password_groupbox.Location = new System.Drawing.Point(86, 64);
+            this.password_groupbox.Location = new System.Drawing.Point(12, 22);
             this.password_groupbox.Name = "password_groupbox";
             this.password_groupbox.Size = new System.Drawing.Size(316, 150);
             this.password_groupbox.TabIndex = 4;
@@ -165,7 +166,7 @@
             this.connections.Controls.Add(this.label5);
             this.connections.Controls.Add(this.Email_1st);
             this.connections.Controls.Add(this.label6);
-            this.connections.Location = new System.Drawing.Point(441, 64);
+            this.connections.Location = new System.Drawing.Point(367, 22);
             this.connections.Name = "connections";
             this.connections.Size = new System.Drawing.Size(316, 362);
             this.connections.TabIndex = 6;
@@ -264,7 +265,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(682, 676);
+            this.button1.Location = new System.Drawing.Point(608, 591);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -278,7 +279,7 @@
             this.classGroup.Controls.Add(this.label11);
             this.classGroup.Controls.Add(this.label9);
             this.classGroup.Controls.Add(this.yearCB);
-            this.classGroup.Location = new System.Drawing.Point(86, 231);
+            this.classGroup.Location = new System.Drawing.Point(12, 189);
             this.classGroup.Name = "classGroup";
             this.classGroup.Size = new System.Drawing.Size(316, 64);
             this.classGroup.TabIndex = 8;
@@ -343,7 +344,7 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.address_txt);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Location = new System.Drawing.Point(86, 326);
+            this.groupBox1.Location = new System.Drawing.Point(12, 284);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 397);
             this.groupBox1.TabIndex = 9;
@@ -389,9 +390,12 @@
             this.birthdate_pckr.CustomFormat = "yyyy-MM-dd";
             this.birthdate_pckr.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.birthdate_pckr.Location = new System.Drawing.Point(67, 66);
+            this.birthdate_pckr.MaxDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.birthdate_pckr.MinDate = new System.DateTime(1997, 1, 1, 0, 0, 0, 0);
             this.birthdate_pckr.Name = "birthdate_pckr";
             this.birthdate_pckr.Size = new System.Drawing.Size(95, 20);
             this.birthdate_pckr.TabIndex = 3;
+            this.birthdate_pckr.Value = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.birthdate_pckr.ValueChanged += new System.EventHandler(this.birthdate_pckr_ValueChanged);
             // 
             // label13
@@ -423,7 +427,7 @@
             // 
             this.groupBox2.Controls.Add(this.browse_btn);
             this.groupBox2.Controls.Add(this.profilePic_img);
-            this.groupBox2.Location = new System.Drawing.Point(441, 440);
+            this.groupBox2.Location = new System.Drawing.Point(367, 398);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(316, 187);
             this.groupBox2.TabIndex = 10;
@@ -453,7 +457,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 736);
+            this.ClientSize = new System.Drawing.Size(691, 690);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.classGroup);
@@ -461,6 +465,7 @@
             this.Controls.Add(this.connections);
             this.Controls.Add(this.password_groupbox);
             this.Controls.Add(this.profile_name);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "firstProfileChange";
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);
