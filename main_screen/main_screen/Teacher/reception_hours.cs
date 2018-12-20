@@ -90,7 +90,7 @@ namespace main_screen.Teacher
                     labels[k].Click += new System.EventHandler(LabelClick);
                     labels[k].Text = labels[i+5].Text;
                     labels[k].TextAlign = ContentAlignment.MiddleCenter;
-                    labels[k].ForeColor = Color.DarkRed;
+                    labels[k].ForeColor = Color.Black;
 
                     for (int m = 0; m < dtbl.Rows.Count; m++)
                     {
@@ -117,7 +117,7 @@ namespace main_screen.Teacher
             else
             {
                 label.BackColor = Color.DarkRed;
-                label.ForeColor = Color.DarkRed;
+                label.ForeColor = Color.Black;
             }
         }
     
@@ -141,13 +141,13 @@ namespace main_screen.Teacher
 
             conn.Open();
 
-            string query0 = "Select * from weekly_events where user_id_OR_class=" + log_in_page.userId + "and event_kind='" + "reception_hours" + "'";
+            string query0 = "Select * from weekly_events where user_id_OR_class=" + log_in_page.userId/* + "and event_kind='" + "reception_hours" + "'"*/;
             sda0 = new SqlDataAdapter(query0, conn);
             dtbl0 = new DataTable();
             sda0.Fill(dtbl0);
             string already_exist;
             bool flag = false;
-
+            bool flag2 = false;
             for (int i = 12; i < 48; i++)
             {
                 if(labels[i].BackColor==Color.LightGreen)
@@ -167,10 +167,14 @@ namespace main_screen.Teacher
                     cmd.Parameters.Add("@ends", int_end);
                     cmd.Parameters.Add("@event_kind", "reception_hours");
                     for (int m = 0; m < dtbl0.Rows.Count; m++)//***CHECK IF THE EVENT IS ALREADY EXIST.
-                    {
+                    {//labels[i].Text.ToString().Trim() == already_exist && 
                         already_exist = dtbl0.Rows[m]["start"].ToString().Trim() + "-" + dtbl0.Rows[m]["ends"].ToString().Trim();
-                        if (labels[i].Text.ToString().Trim() == already_exist && labels[i % 6].Text.Trim() == dtbl0.Rows[m]["day_in_week"].ToString().Trim())
+                        if ((int_start == int.Parse(dtbl0.Rows[m]["start"].ToString().Trim()) || int_end== int.Parse(dtbl0.Rows[m]["ends"].ToString().Trim())) && labels[i % 6].Text.Trim() == dtbl0.Rows[m]["day_in_week"].ToString().Trim() )
                         {
+                            if (dtbl0.Rows[m]["event_kind"].ToString().Trim() != "reception_hours")
+                            {
+                                flag2 = true;
+                            }
                             flag = true;
                             break;
                         }
@@ -178,6 +182,12 @@ namespace main_screen.Teacher
                     if(flag)//IF the event already exist.
                     {
                         flag = false;
+                        if (flag2==true)
+                        {
+                            labels[i].BackColor = Color.DarkRed;
+                            MessageBox.Show("You have other event at "+ labels[i % 6].Text.Trim() + " between " + int_start + " to " + int_end + " choose other time.");
+                            flag2 = false;
+                        }
                         continue;
                     }
                     cmd.ExecuteNonQuery();
