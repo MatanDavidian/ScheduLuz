@@ -26,7 +26,9 @@ namespace main_screen.Student
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            StudentCalander n = new StudentCalander();
+            n.Show();
+            this.Hide();
         }
 
         private void edit_btn_Click(object sender, EventArgs e)
