@@ -307,6 +307,13 @@ namespace main_screen
         {
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Student.AppointmentPage n = new Student.AppointmentPage();
+            this.Hide();
+            n.Show();
+        }
     }
 }
                 

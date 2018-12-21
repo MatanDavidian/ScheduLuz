@@ -121,7 +121,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Invented friends:";
-            this.columnHeader1.Width = 153;
+            this.columnHeader1.Width = 171;
             // 
             // Add_friend_button
             // 

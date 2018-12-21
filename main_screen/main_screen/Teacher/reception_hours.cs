@@ -38,9 +38,9 @@ namespace main_screen.Teacher
             {
                 labels[i] = new Label { BackColor = Color.Black, ForeColor = Color.White, Dock = DockStyle.Fill };
             }
-            labels[0].Text = "Monday";
+            labels[0].Text = "Sunday";
             Table.Controls.Add(labels[0], 1, 0);
-            labels[1].Text = "Sunday";
+            labels[1].Text = "Monday";
             Table.Controls.Add(labels[1], 2, 0);
             labels[2].Text = "Tuesday";
             Table.Controls.Add(labels[2], 3, 0);
@@ -141,7 +141,7 @@ namespace main_screen.Teacher
 
             conn.Open();
 
-            string query0 = "Select * from weekly_events where user_id_OR_class=" + log_in_page.userId/* + "and event_kind='" + "reception_hours" + "'"*/;
+            string query0 = "Select * from weekly_events where user_id_OR_class='" + log_in_page.userId+"'";/* + "and event_kind='" + "reception_hours" + "'"*/
             sda0 = new SqlDataAdapter(query0, conn);
             dtbl0 = new DataTable();
             sda0.Fill(dtbl0);
@@ -185,7 +185,7 @@ namespace main_screen.Teacher
                         if (flag2==true)
                         {
                             labels[i].BackColor = Color.DarkRed;
-                            MessageBox.Show("You have other event at "+ labels[i % 6].Text.Trim() + " between " + int_start + " to " + int_end + " choose other time.");
+                            MessageBox.Show("You have other system event at "+ labels[i % 6].Text.Trim() + " between " + int_start + " to " + int_end + " choose other time.");
                             flag2 = false;
                         }
                         continue;
