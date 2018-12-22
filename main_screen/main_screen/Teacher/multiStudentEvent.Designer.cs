@@ -301,6 +301,11 @@ namespace main_screen.Teacher
             // 
             this.hours_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hours_start.Location = new System.Drawing.Point(203, 108);
+            this.hours_start.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.hours_start.Name = "hours_start";
             this.hours_start.Size = new System.Drawing.Size(37, 20);
             this.hours_start.TabIndex = 60;
@@ -309,6 +314,11 @@ namespace main_screen.Teacher
             // 
             this.minutes_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minutes_start.Location = new System.Drawing.Point(246, 109);
+            this.minutes_start.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
             this.minutes_start.Name = "minutes_start";
             this.minutes_start.Size = new System.Drawing.Size(37, 20);
             this.minutes_start.TabIndex = 61;
@@ -317,6 +327,11 @@ namespace main_screen.Teacher
             // 
             this.hours_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hours_end.Location = new System.Drawing.Point(362, 109);
+            this.hours_end.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.hours_end.Name = "hours_end";
             this.hours_end.Size = new System.Drawing.Size(37, 20);
             this.hours_end.TabIndex = 63;
@@ -325,6 +340,11 @@ namespace main_screen.Teacher
             // 
             this.minutes_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minutes_end.Location = new System.Drawing.Point(405, 109);
+            this.minutes_end.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
             this.minutes_end.Name = "minutes_end";
             this.minutes_end.Size = new System.Drawing.Size(37, 20);
             this.minutes_end.TabIndex = 62;

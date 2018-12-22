@@ -72,12 +72,12 @@ namespace main_screen
                     motd_txt.Text = dtb.Rows[0][0].ToString();
                 }
             }
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
- 
+
         }
 
         private void Profile_btn_Click(object sender, EventArgs e)
@@ -102,14 +102,15 @@ namespace main_screen
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-
-            /*
-             * show events on calander.
-             */
+            List<ListViewItem> itemlist = new List<ListViewItem>();
+            listView1.Items.Clear();
 
             int thisday = monthCalendar1.SelectionRange.Start.Day;
             int thismonth = monthCalendar1.SelectionRange.Start.Month;
             int thisyear = monthCalendar1.SelectionRange.Start.Year;
+            string dayOfWeek = monthCalendar1.SelectionRange.Start.DayOfWeek.ToString();
+
+
 
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
@@ -189,16 +190,118 @@ namespace main_screen
                             case "Regular":
                                 item.BackColor = Color.SteelBlue;
                                 break;
+                            case "system-public":
+                                item.BackColor = Color.HotPink;
+                                break;
 
                             default:
                                 break;
                         }
-                        listView1.Items.Add(item);
+                        //listView1.Items.Add(item);
+                        itemlist.Add(item);
                     }
                 }
 
             }
+
+
+            string user_class;
+            User user = new User();
+            user = user.GetUser(log_in_page.userId);
+            user_class = user.getGrade() + "-" + user.getClassNumber();
+            string query3 = "Select * from weekly_events where day_in_week='" + dayOfWeek + "' and user_id_OR_class='" + user_class + "'";
+
+            SqlDataAdapter sda3 = new SqlDataAdapter(query3, conn);
+            DataTable dtb3 = new DataTable();
+            sda3.Fill(dtb3);
+
+            for (int i = 0; i < dtb3.Rows.Count; i++)
+            {
+                string hours_end = dtb3.Rows[i]["ends"].ToString().Trim();
+
+                if (hours_end.Length < 2)
+                {
+                    hours_end = "0" + hours_end;
+                }
+
+                string hours_start = dtb3.Rows[i]["start"].ToString().Trim();
+
+                if (hours_start.Length < 2)
+                {
+                    hours_start = "0" + hours_start;
+                }
+
+                string minutes_start = "00";
+
+
+
+                string minutes_end = "00";
+
+
+                ListViewItem item = new ListViewItem(dtb3.Rows[i]["title"].ToString().Trim());
+                item.SubItems.Add(hours_start + ":" + minutes_start);
+                item.SubItems.Add(hours_end + ":" + minutes_end);
+                item.BackColor = Color.IndianRed;
+
+                //listView1.Items.Add(item);
+                itemlist.Add(item);
+
+            }
+
+            //MessageBox.Show(itemlist[0].SubItems[1].ToString());
+
+            for (int i = 0; i < itemlist.Count - 1; i++)
+            {
+                for (int j = 0; j < itemlist.Count - 1; j++)
+                {
+                    string firsthour = itemlist[j].SubItems[1].ToString();
+                    string secondhour = itemlist[j + 1].SubItems[1].ToString();
+                    if (compairhours(firsthour, secondhour))
+                    {
+                        ListViewItem temp = new ListViewItem();
+                        temp = itemlist[j];
+                        itemlist[j] = itemlist[j + 1];
+                        itemlist[j + 1] = temp;
+                    }
+                }
+            }
+
+            for (int i = 0; i < itemlist.Count; i++)
+            {
+                listView1.Items.Add(itemlist[i]);
+            }
         }
+
+        private Boolean compairhours(string a, string b)//if a>=b
+        {
+            string listsubitemshit = "ListViewSubItem: {";
+            int dif = listsubitemshit.Length;
+            //checks hours
+            if (a[0 + dif] > b[0 + dif])
+                return true;
+            if (b[0 + dif] > a[0 + dif])
+                return false;
+
+
+            if (a[1 + dif] > b[1 + dif])
+                return true;
+            if (b[1 + dif] > a[1 + dif])
+                return false;
+            //skips a[2+dif] cus its ':'
+            //checks minutes
+            if (a[3 + dif] > b[3 + dif])
+                return true;
+            if (b[3 + dif] > a[3 + dif])
+                return false;
+
+            if (a[4 + dif] > b[4 + dif])
+                return true;
+
+
+            return false;
+        }
+
+
 
         private void fixed_btn_Click(object sender, EventArgs e)
         {
@@ -206,5 +309,20 @@ namespace main_screen
             n.Show();
             this.Hide();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            general_process.ManagerAndTeacher_view_contacts n = new general_process.ManagerAndTeacher_view_contacts();
+            n.Show();
+            this.Hide();
+        }
+
+        private void public_event_btn_Click(object sender, EventArgs e)
+        {
+            Manager.public_event n = new Manager.public_event();
+            n.Show();
+            this.Hide();
+        }
     }
 }
+

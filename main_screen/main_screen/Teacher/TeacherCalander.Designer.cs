@@ -32,7 +32,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.reception_hours = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.view_contacts_btn = new System.Windows.Forms.Button();
             this.watch_stundent_schedule = new System.Windows.Forms.Button();
             this.multi_studnt_event_btn = new System.Windows.Forms.Button();
             this.profile_btn = new System.Windows.Forms.Button();
@@ -83,14 +83,15 @@
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // view_contacts_btn
             // 
-            this.button6.Location = new System.Drawing.Point(706, 202);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 30);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.view_contacts_btn.Location = new System.Drawing.Point(706, 202);
+            this.view_contacts_btn.Name = "view_contacts_btn";
+            this.view_contacts_btn.Size = new System.Drawing.Size(125, 30);
+            this.view_contacts_btn.TabIndex = 17;
+            this.view_contacts_btn.Text = "Contacts Page";
+            this.view_contacts_btn.UseVisualStyleBackColor = true;
+            this.view_contacts_btn.Click += new System.EventHandler(this.view_contacts_btn_Click);
             // 
             // watch_stundent_schedule
             // 
@@ -261,7 +262,7 @@
             this.Controls.Add(this.button9);
             this.Controls.Add(this.reception_hours);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.view_contacts_btn);
             this.Controls.Add(this.watch_stundent_schedule);
             this.Controls.Add(this.multi_studnt_event_btn);
             this.Controls.Add(this.profile_btn);
@@ -284,7 +285,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button reception_hours;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button view_contacts_btn;
         private System.Windows.Forms.Button watch_stundent_schedule;
         private System.Windows.Forms.Button multi_studnt_event_btn;
         private System.Windows.Forms.Button profile_btn;
