@@ -169,6 +169,7 @@
             this.Controls.Add(this.grade_cb);
             this.Name = "ManagerAndTeacher_view_contacts";
             this.Text = "ManagerAndTeacher_view_contacts";
+            this.Load += new System.EventHandler(this.ManagerAndTeacher_view_contacts_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

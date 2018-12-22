@@ -135,6 +135,10 @@ namespace main_screen.Manager
 
 
                 }
+                else
+                {
+                    MessageBox.Show(userFirstNameTextBox.Text.Trim() + " " + userLastNameTextBox.Text.Trim() + " already exsists in the system");
+                }
             }
 
             catch

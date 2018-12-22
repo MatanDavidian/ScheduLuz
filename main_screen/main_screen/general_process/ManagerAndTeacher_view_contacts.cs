@@ -108,5 +108,10 @@ namespace main_screen.general_process
             }
 
         }
+
+        private void ManagerAndTeacher_view_contacts_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
