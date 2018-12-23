@@ -63,6 +63,16 @@ namespace main_screen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1680 {
+            get {
+                object obj = ResourceManager.GetObject("1680", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bBoard {
             get {
                 object obj = ResourceManager.GetObject("bBoard", resourceCulture);
@@ -86,6 +96,16 @@ namespace main_screen.Properties {
         internal static System.Drawing.Bitmap sched_l_z_logo {
             get {
                 object obj = ResourceManager.GetObject("sched_l_z_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap small_button_hi {
+            get {
+                object obj = ResourceManager.GetObject("small-button-hi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

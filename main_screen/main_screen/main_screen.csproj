@@ -409,6 +409,8 @@
   <ItemGroup>
     <None Include="Resources\bBoard.png" />
     <None Include="Resources\checklist.png" />
+    <None Include="Resources\small-button-hi.png" />
+    <None Include="Resources\1680.jpg" />
     <Content Include="ScheduLuz.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
