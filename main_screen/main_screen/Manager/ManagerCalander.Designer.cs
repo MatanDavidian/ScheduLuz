@@ -61,6 +61,9 @@
             this.add_user.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("add_user.BackgroundImage")));
             this.add_user.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.add_user.FlatAppearance.BorderSize = 0;
+            this.add_user.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.add_user.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.add_user.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.add_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_user.Location = new System.Drawing.Point(547, 12);
             this.add_user.Name = "add_user";
@@ -76,6 +79,9 @@
             this.Add_event.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Add_event.BackgroundImage")));
             this.Add_event.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Add_event.FlatAppearance.BorderSize = 0;
+            this.Add_event.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.Add_event.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Add_event.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Add_event.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_event.Location = new System.Drawing.Point(547, 48);
             this.Add_event.Name = "Add_event";
@@ -91,6 +97,9 @@
             this.Profile_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Profile_btn.BackgroundImage")));
             this.Profile_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Profile_btn.FlatAppearance.BorderSize = 0;
+            this.Profile_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.Profile_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Profile_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Profile_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Profile_btn.Location = new System.Drawing.Point(547, 84);
             this.Profile_btn.Name = "Profile_btn";
@@ -106,6 +115,9 @@
             this.BBorad_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BBorad_btn.BackgroundImage")));
             this.BBorad_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BBorad_btn.FlatAppearance.BorderSize = 0;
+            this.BBorad_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.BBorad_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BBorad_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BBorad_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BBorad_btn.Location = new System.Drawing.Point(547, 120);
             this.BBorad_btn.Name = "BBorad_btn";
@@ -121,6 +133,9 @@
             this.fixed_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fixed_btn.BackgroundImage")));
             this.fixed_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fixed_btn.FlatAppearance.BorderSize = 0;
+            this.fixed_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.fixed_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.fixed_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.fixed_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fixed_btn.Location = new System.Drawing.Point(547, 156);
             this.fixed_btn.Name = "fixed_btn";
@@ -136,6 +151,9 @@
             this.contact_page_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("contact_page_btn.BackgroundImage")));
             this.contact_page_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.contact_page_btn.FlatAppearance.BorderSize = 0;
+            this.contact_page_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.contact_page_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.contact_page_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.contact_page_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.contact_page_btn.Location = new System.Drawing.Point(547, 192);
             this.contact_page_btn.Name = "contact_page_btn";
@@ -150,6 +168,9 @@
             this.public_event_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("public_event_btn.BackgroundImage")));
             this.public_event_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.public_event_btn.FlatAppearance.BorderSize = 0;
+            this.public_event_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.public_event_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.public_event_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.public_event_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.public_event_btn.Location = new System.Drawing.Point(547, 228);
             this.public_event_btn.Name = "public_event_btn";
@@ -164,6 +185,9 @@
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Location = new System.Drawing.Point(547, 264);
             this.button8.Name = "button8";
@@ -179,6 +203,9 @@
             this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Location = new System.Drawing.Point(547, 419);
             this.button9.Name = "button9";
