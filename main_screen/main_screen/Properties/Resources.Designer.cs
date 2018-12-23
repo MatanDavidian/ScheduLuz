@@ -73,9 +73,39 @@ namespace main_screen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5a1bf3bd298f32_9845137615117813091702 {
+            get {
+                object obj = ResourceManager.GetObject("5a1bf3bd298f32.9845137615117813091702", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bBoard {
             get {
                 object obj = ResourceManager.GetObject("bBoard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_student {
+            get {
+                object obj = ResourceManager.GetObject("bg_student", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_worker {
+            get {
+                object obj = ResourceManager.GetObject("bg_worker", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +126,17 @@ namespace main_screen.Properties {
         internal static System.Drawing.Bitmap deardairy {
             get {
                 object obj = ResourceManager.GetObject("deardairy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_triangle_yellow_pattern_personalized_diamond_lattice_gradient_background_5a91ef91c81131_6370130715195134898195 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-triangle-yellow-pattern-personalized-diamond-lattice-gradient-background-" +
+                        "5a91ef91c81131.6370130715195134898195", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
