@@ -329,6 +329,13 @@ namespace main_screen
         {
 
         }
+
+        private void add_hw_btn_Click(object sender, EventArgs e)
+        {
+            Student.Add_hw_form n = new Student.Add_hw_form();
+            this.Hide();
+            n.Show();
+        }
     }
 }
                 

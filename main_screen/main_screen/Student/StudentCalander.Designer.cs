@@ -35,7 +35,7 @@
             this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.add_hw_btn = new System.Windows.Forms.Button();
             this.my_dear_diary_btn = new System.Windows.Forms.Button();
             this.mail_btn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -98,14 +98,15 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button7
+            // add_hw_btn
             // 
-            this.button7.Location = new System.Drawing.Point(547, 228);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(125, 30);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.add_hw_btn.Location = new System.Drawing.Point(547, 228);
+            this.add_hw_btn.Name = "add_hw_btn";
+            this.add_hw_btn.Size = new System.Drawing.Size(125, 30);
+            this.add_hw_btn.TabIndex = 18;
+            this.add_hw_btn.Text = "Add H.W";
+            this.add_hw_btn.UseVisualStyleBackColor = true;
+            this.add_hw_btn.Click += new System.EventHandler(this.add_hw_btn_Click);
             // 
             // my_dear_diary_btn
             // 
@@ -220,7 +221,7 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.add_hw_btn);
             this.Controls.Add(this.my_dear_diary_btn);
             this.Controls.Add(this.mail_btn);
             this.Controls.Add(this.button4);
@@ -243,7 +244,7 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button add_hw_btn;
         private System.Windows.Forms.Button my_dear_diary_btn;
         private System.Windows.Forms.Button mail_btn;
         private System.Windows.Forms.Button button4;
