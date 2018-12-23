@@ -93,6 +93,26 @@ namespace main_screen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap deardairy {
+            get {
+                object obj = ResourceManager.GetObject("deardairy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap multiEventBackground {
+            get {
+                object obj = ResourceManager.GetObject("multiEventBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sched_l_z_logo {
             get {
                 object obj = ResourceManager.GetObject("sched_l_z_logo", resourceCulture);

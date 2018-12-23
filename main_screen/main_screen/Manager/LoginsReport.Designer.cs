@@ -38,6 +38,7 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.small_button_hi;
             this.return_btn.Location = new System.Drawing.Point(12, 415);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(75, 23);

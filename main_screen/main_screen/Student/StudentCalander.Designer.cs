@@ -81,7 +81,7 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.White;
+            this.button9.BackColor = System.Drawing.Color.Transparent;
             this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button9.FlatAppearance.BorderSize = 0;
@@ -96,7 +96,7 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.White;
+            this.button8.BackColor = System.Drawing.Color.Transparent;
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button8.FlatAppearance.BorderSize = 0;
@@ -111,7 +111,7 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.White;
+            this.button7.BackColor = System.Drawing.Color.Transparent;
             this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button7.FlatAppearance.BorderSize = 0;
@@ -125,7 +125,7 @@
             // 
             // my_dear_diary_btn
             // 
-            this.my_dear_diary_btn.BackColor = System.Drawing.Color.White;
+            this.my_dear_diary_btn.BackColor = System.Drawing.Color.Transparent;
             this.my_dear_diary_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("my_dear_diary_btn.BackgroundImage")));
             this.my_dear_diary_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.my_dear_diary_btn.FlatAppearance.BorderSize = 0;
@@ -140,7 +140,7 @@
             // 
             // mail_btn
             // 
-            this.mail_btn.BackColor = System.Drawing.Color.White;
+            this.mail_btn.BackColor = System.Drawing.Color.Transparent;
             this.mail_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mail_btn.BackgroundImage")));
             this.mail_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.mail_btn.FlatAppearance.BorderSize = 0;
@@ -155,7 +155,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.BackgroundImage = global::main_screen.Properties.Resources.small_button_hi;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatAppearance.BorderSize = 0;
@@ -170,7 +170,7 @@
             // 
             // Profile_btn
             // 
-            this.Profile_btn.BackColor = System.Drawing.Color.White;
+            this.Profile_btn.BackColor = System.Drawing.Color.Transparent;
             this.Profile_btn.BackgroundImage = global::main_screen.Properties.Resources.small_button_hi;
             this.Profile_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Profile_btn.FlatAppearance.BorderSize = 0;
@@ -185,7 +185,7 @@
             // 
             // contact_page
             // 
-            this.contact_page.BackColor = System.Drawing.Color.White;
+            this.contact_page.BackColor = System.Drawing.Color.Transparent;
             this.contact_page.BackgroundImage = global::main_screen.Properties.Resources.small_button_hi;
             this.contact_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.contact_page.FlatAppearance.BorderSize = 0;
@@ -207,7 +207,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderSize = 0;
@@ -222,7 +222,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderSize = 0;
@@ -242,9 +242,9 @@
             this.motd.Controls.Add(this.motd_txt);
             this.motd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.motd.ForeColor = System.Drawing.Color.AliceBlue;
-            this.motd.Location = new System.Drawing.Point(245, 228);
+            this.motd.Location = new System.Drawing.Point(251, 26);
             this.motd.Name = "motd";
-            this.motd.Size = new System.Drawing.Size(295, 221);
+            this.motd.Size = new System.Drawing.Size(290, 211);
             this.motd.TabIndex = 22;
             this.motd.TabStop = false;
             this.motd.Text = "Message Of the Day";
@@ -263,7 +263,7 @@
             // 
             // add_event
             // 
-            this.add_event.BackColor = System.Drawing.Color.White;
+            this.add_event.BackColor = System.Drawing.Color.Transparent;
             this.add_event.BackgroundImage = global::main_screen.Properties.Resources.small_button_hi;
             this.add_event.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.add_event.FlatAppearance.BorderSize = 0;
@@ -280,6 +280,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources._1680;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

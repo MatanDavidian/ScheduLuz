@@ -57,6 +57,7 @@
             // 
             // add_user
             // 
+            this.add_user.BackColor = System.Drawing.Color.Transparent;
             this.add_user.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("add_user.BackgroundImage")));
             this.add_user.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.add_user.FlatAppearance.BorderSize = 0;
@@ -66,11 +67,12 @@
             this.add_user.Size = new System.Drawing.Size(125, 30);
             this.add_user.TabIndex = 1;
             this.add_user.Text = "Add user";
-            this.add_user.UseVisualStyleBackColor = true;
+            this.add_user.UseVisualStyleBackColor = false;
             this.add_user.Click += new System.EventHandler(this.button1_Click);
             // 
             // Add_event
             // 
+            this.Add_event.BackColor = System.Drawing.Color.Transparent;
             this.Add_event.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Add_event.BackgroundImage")));
             this.Add_event.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Add_event.FlatAppearance.BorderSize = 0;
@@ -80,11 +82,12 @@
             this.Add_event.Size = new System.Drawing.Size(125, 30);
             this.Add_event.TabIndex = 2;
             this.Add_event.Text = "Add event";
-            this.Add_event.UseVisualStyleBackColor = true;
+            this.Add_event.UseVisualStyleBackColor = false;
             this.Add_event.Click += new System.EventHandler(this.button2_Click);
             // 
             // Profile_btn
             // 
+            this.Profile_btn.BackColor = System.Drawing.Color.Transparent;
             this.Profile_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Profile_btn.BackgroundImage")));
             this.Profile_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Profile_btn.FlatAppearance.BorderSize = 0;
@@ -94,11 +97,12 @@
             this.Profile_btn.Size = new System.Drawing.Size(125, 30);
             this.Profile_btn.TabIndex = 3;
             this.Profile_btn.Text = "Profile";
-            this.Profile_btn.UseVisualStyleBackColor = true;
+            this.Profile_btn.UseVisualStyleBackColor = false;
             this.Profile_btn.Click += new System.EventHandler(this.Profile_btn_Click);
             // 
             // BBorad_btn
             // 
+            this.BBorad_btn.BackColor = System.Drawing.Color.Transparent;
             this.BBorad_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BBorad_btn.BackgroundImage")));
             this.BBorad_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BBorad_btn.FlatAppearance.BorderSize = 0;
@@ -108,11 +112,12 @@
             this.BBorad_btn.Size = new System.Drawing.Size(125, 30);
             this.BBorad_btn.TabIndex = 4;
             this.BBorad_btn.Text = "Bulletin Board";
-            this.BBorad_btn.UseVisualStyleBackColor = true;
+            this.BBorad_btn.UseVisualStyleBackColor = false;
             this.BBorad_btn.Click += new System.EventHandler(this.BBorad_btn_Click);
             // 
             // fixed_btn
             // 
+            this.fixed_btn.BackColor = System.Drawing.Color.Transparent;
             this.fixed_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fixed_btn.BackgroundImage")));
             this.fixed_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fixed_btn.FlatAppearance.BorderSize = 0;
@@ -122,11 +127,12 @@
             this.fixed_btn.Size = new System.Drawing.Size(125, 30);
             this.fixed_btn.TabIndex = 5;
             this.fixed_btn.Text = "Fixed Schedule";
-            this.fixed_btn.UseVisualStyleBackColor = true;
+            this.fixed_btn.UseVisualStyleBackColor = false;
             this.fixed_btn.Click += new System.EventHandler(this.fixed_btn_Click_1);
             // 
             // contact_page_btn
             // 
+            this.contact_page_btn.BackColor = System.Drawing.Color.Transparent;
             this.contact_page_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("contact_page_btn.BackgroundImage")));
             this.contact_page_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.contact_page_btn.FlatAppearance.BorderSize = 0;
@@ -136,10 +142,11 @@
             this.contact_page_btn.Size = new System.Drawing.Size(125, 30);
             this.contact_page_btn.TabIndex = 6;
             this.contact_page_btn.Text = "Contact Page";
-            this.contact_page_btn.UseVisualStyleBackColor = true;
+            this.contact_page_btn.UseVisualStyleBackColor = false;
             // 
             // public_event_btn
             // 
+            this.public_event_btn.BackColor = System.Drawing.Color.Transparent;
             this.public_event_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("public_event_btn.BackgroundImage")));
             this.public_event_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.public_event_btn.FlatAppearance.BorderSize = 0;
@@ -149,10 +156,11 @@
             this.public_event_btn.Size = new System.Drawing.Size(125, 30);
             this.public_event_btn.TabIndex = 7;
             this.public_event_btn.Text = "Public Event";
-            this.public_event_btn.UseVisualStyleBackColor = true;
+            this.public_event_btn.UseVisualStyleBackColor = false;
             // 
             // button8
             // 
+            this.button8.BackColor = System.Drawing.Color.Transparent;
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button8.FlatAppearance.BorderSize = 0;
@@ -162,11 +170,12 @@
             this.button8.Size = new System.Drawing.Size(125, 30);
             this.button8.TabIndex = 8;
             this.button8.Text = "Login Report";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
+            this.button9.BackColor = System.Drawing.Color.Transparent;
             this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button9.FlatAppearance.BorderSize = 0;
@@ -176,7 +185,7 @@
             this.button9.Size = new System.Drawing.Size(125, 30);
             this.button9.TabIndex = 9;
             this.button9.Text = "Log out";
-            this.button9.UseVisualStyleBackColor = true;
+            this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // motd
