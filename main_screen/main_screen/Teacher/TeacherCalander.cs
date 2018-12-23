@@ -430,5 +430,12 @@ namespace main_screen
             this.Hide();
 
         }
+
+        private void Surveys_Click(object sender, EventArgs e)
+        {
+            Teacher.Surveys n = new Teacher.Surveys();
+            n.Show();
+            this.Hide();
+        }
     }
 }

@@ -50,6 +50,7 @@
             this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Starts = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Surveys = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.motd.SuspendLayout();
             this.SuspendLayout();
@@ -251,11 +252,22 @@
             this.Ends.Text = "Ends";
             this.Ends.Width = 62;
             // 
+            // Surveys
+            // 
+            this.Surveys.Location = new System.Drawing.Point(706, 310);
+            this.Surveys.Name = "Surveys";
+            this.Surveys.Size = new System.Drawing.Size(125, 30);
+            this.Surveys.TabIndex = 25;
+            this.Surveys.Text = "Surveys";
+            this.Surveys.UseVisualStyleBackColor = true;
+            this.Surveys.Click += new System.EventHandler(this.Surveys_Click);
+            // 
             // TeacherCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 461);
+            this.Controls.Add(this.Surveys);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.motd);
             this.Controls.Add(this.groupBox1);
@@ -303,5 +315,6 @@
         private System.Windows.Forms.ColumnHeader Title;
         private System.Windows.Forms.ColumnHeader Starts;
         private System.Windows.Forms.ColumnHeader Ends;
+        private System.Windows.Forms.Button Surveys;
     }
 }

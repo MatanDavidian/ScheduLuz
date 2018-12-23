@@ -229,7 +229,7 @@ namespace main_screen.Student
                         sda0 = new SqlDataAdapter(query0, conn);
                         dtbl0 = new DataTable();
                         sda0.Fill(dtbl0);
-                        bool flag=false, flag2=false;
+                        bool flag=false;
                         for (int m = 0; m < dtbl0.Rows.Count; m++)//***CHECK IF THE EVENT IS ALREADY EXIST.
                         {//labels[i].Text.ToString().Trim() == already_exist && 
 

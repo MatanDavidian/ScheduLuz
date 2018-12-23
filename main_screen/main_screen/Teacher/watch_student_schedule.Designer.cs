@@ -321,6 +321,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "watch_student_schedule";
             this.Text = "watch_student_schedule";
+            this.Load += new System.EventHandler(this.watch_student_schedule_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.profilePic_img)).EndInit();
             this.groupBox1.ResumeLayout(false);

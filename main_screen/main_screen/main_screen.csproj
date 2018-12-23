@@ -54,6 +54,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -151,6 +152,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ScheduLuzDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Student\AnswerSurveys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\AnswerSurveys.Designer.cs">
+      <DependentUpon>AnswerSurveys.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\AppointmentPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +224,18 @@
     <Compile Include="Teacher\SendEmail.Designer.cs">
       <DependentUpon>SendEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\surveys results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\surveys results.Designer.cs">
+      <DependentUpon>surveys results.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\Surveys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\Surveys.Designer.cs">
+      <DependentUpon>Surveys.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\TeacherCalander.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +291,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Student\AnswerSurveys.resx">
+      <DependentUpon>AnswerSurveys.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student\AppointmentPage.resx">
       <DependentUpon>AppointmentPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +326,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\SendEmail.resx">
       <DependentUpon>SendEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\surveys results.resx">
+      <DependentUpon>surveys results.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\Surveys.resx">
+      <DependentUpon>Surveys.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\TeacherCalander.resx">
       <DependentUpon>TeacherCalander.cs</DependentUpon>

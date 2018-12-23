@@ -317,6 +317,13 @@ namespace main_screen
             this.Hide();
             n.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Student.AnswerSurveys n = new Student.AnswerSurveys();
+            this.Hide();
+            n.Show();
+        }
     }
 }
                 

@@ -343,6 +343,11 @@ namespace main_screen.Teacher
             n.Show();
             this.Hide();
         }
+
+        private void watch_student_schedule_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
