@@ -82,6 +82,7 @@
             this.submit.Text = "submit";
             this.submit.UseVisualStyleBackColor = true;
             this.submit.Click += new System.EventHandler(this.submit_Click);
+            //this.submit.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.submit_ControlAdded);
             // 
             // button3
             // 

@@ -41,6 +41,17 @@ namespace main_screen
 
         private void button9_Click(object sender, EventArgs e)
         {
+            dataBase loging_dataBase = new dataBase();
+            SqlConnection conn = loging_dataBase.connect_to_scheduluz_DB();
+            DateTime dt = DateTime.Now;
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO logins_report(date,user_id,user_name,connectORdisconnect) VALUES(@date,@user_id,@user_name,@connectORdisconnect) ", conn);
+            cmd.Parameters.Add("@date", dt);
+            cmd.Parameters.Add("@user_id", log_in_page.userId);
+            cmd.Parameters.Add("@user_name", log_in_page.loginUserName);
+            cmd.Parameters.Add("@connectORdisconnect", "disconnect");
+            cmd.ExecuteNonQuery();
             log_in_page frmCal = new log_in_page();
             frmCal.Show();
             Visible = false;
@@ -320,6 +331,30 @@ namespace main_screen
         private void public_event_btn_Click(object sender, EventArgs e)
         {
             Manager.public_event n = new Manager.public_event();
+            n.Show();
+            this.Hide();
+        }
+
+        private void motd_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Manager.LoginsReport n = new Manager.LoginsReport();
+            n.Show();
+            this.Hide();
+        }
+
+        private void fixed_btn_Click_1(object sender, EventArgs e)
+        {
+            Manager.fixed_schedule n = new Manager.fixed_schedule();
             n.Show();
             this.Hide();
         }

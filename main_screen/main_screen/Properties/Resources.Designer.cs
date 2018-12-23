@@ -63,29 +63,19 @@ namespace main_screen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1680 {
+            get {
+                object obj = ResourceManager.GetObject("1680", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bBoard {
             get {
                 object obj = ResourceManager.GetObject("bBoard", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bg {
-            get {
-                object obj = ResourceManager.GetObject("bg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bluebtn {
-            get {
-                object obj = ResourceManager.GetObject("bluebtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +93,9 @@ namespace main_screen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap greybtn {
+        internal static System.Drawing.Bitmap deardairy {
             get {
-                object obj = ResourceManager.GetObject("greybtn", resourceCulture);
+                object obj = ResourceManager.GetObject("deardairy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +103,9 @@ namespace main_screen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap orangebtn {
+        internal static System.Drawing.Bitmap multiEventBackground {
             get {
-                object obj = ResourceManager.GetObject("orangebtn", resourceCulture);
+                object obj = ResourceManager.GetObject("multiEventBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +116,16 @@ namespace main_screen.Properties {
         internal static System.Drawing.Bitmap sched_l_z_logo {
             get {
                 object obj = ResourceManager.GetObject("sched_l_z_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap small_button_hi {
+            get {
+                object obj = ResourceManager.GetObject("small-button-hi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

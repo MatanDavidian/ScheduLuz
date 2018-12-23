@@ -114,6 +114,12 @@
     <Compile Include="Manager\fixed_shedule.Designer.cs">
       <DependentUpon>fixed_shedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\LoginsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\LoginsReport.Designer.cs">
+      <DependentUpon>LoginsReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\ManagerCalander.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,12 @@
     <Compile Include="Student\Multiplayer_event.Designer.cs">
       <DependentUpon>Multiplayer_event.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\My schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\My schedule.Designer.cs">
+      <DependentUpon>My schedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\MyDearDairy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +295,9 @@
     <EmbeddedResource Include="Manager\fixed_shedule.resx">
       <DependentUpon>fixed_shedule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manager\LoginsReport.resx">
+      <DependentUpon>LoginsReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManagerCalander.resx">
       <DependentUpon>ManagerCalander.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Multiplayer_event.resx">
       <DependentUpon>Multiplayer_event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\My schedule.resx">
+      <DependentUpon>My schedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\MyDearDairy.resx">
       <DependentUpon>MyDearDairy.cs</DependentUpon>
@@ -405,6 +423,10 @@
   <ItemGroup>
     <None Include="Resources\bBoard.png" />
     <None Include="Resources\checklist.png" />
+    <None Include="Resources\small-button-hi.png" />
+    <None Include="Resources\1680.jpg" />
+    <None Include="Resources\multiEventBackground.jpg" />
+    <None Include="Resources\deardairy.jpg" />
     <Content Include="ScheduLuz.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

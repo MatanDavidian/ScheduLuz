@@ -26,6 +26,18 @@ namespace main_screen
 
         private void button9_Click(object sender, EventArgs e)
         {
+            dataBase loging_dataBase = new dataBase();
+            SqlConnection conn = loging_dataBase.connect_to_scheduluz_DB();
+            DateTime dt = DateTime.Now;
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO logins_report(date,user_id,user_name,connectORdisconnect) VALUES(@date,@user_id,@user_name,@connectORdisconnect) ", conn);
+            cmd.Parameters.Add("@date", dt);
+            cmd.Parameters.Add("@user_id", log_in_page.userId);
+            cmd.Parameters.Add("@user_name", log_in_page.loginUserName);
+            cmd.Parameters.Add("@connectORdisconnect", "disconnect");
+            cmd.ExecuteNonQuery();
+
             log_in_page frmCal = new log_in_page();
             frmCal.Show();
             Visible = false;
@@ -330,9 +342,9 @@ namespace main_screen
 
         }
 
-        private void add_hw_btn_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Student.Add_hw_form n = new Student.Add_hw_form();
+            Student.My_schedule n = new Student.My_schedule();
             this.Hide();
             n.Show();
         }

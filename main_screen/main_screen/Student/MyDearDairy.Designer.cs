@@ -36,6 +36,8 @@
             this.edit_btn = new System.Windows.Forms.Button();
             this.view_btn = new System.Windows.Forms.Button();
             this.date_lbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // return_btn
@@ -112,11 +114,22 @@
             this.date_lbl.TabIndex = 7;
             this.date_lbl.Text = "label1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::main_screen.Properties.Resources.deardairy;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(426, 239);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(362, 199);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // MyDearDairy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.date_lbl);
             this.Controls.Add(this.view_btn);
             this.Controls.Add(this.edit_btn);
@@ -128,6 +141,7 @@
             this.Name = "MyDearDairy";
             this.Text = "MyDearDairy";
             this.Load += new System.EventHandler(this.MyDearDairy_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +157,6 @@
         private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Button view_btn;
         private System.Windows.Forms.Label date_lbl;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
