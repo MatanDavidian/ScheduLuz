@@ -103,7 +103,6 @@
             this.fixed_btn.TabIndex = 5;
             this.fixed_btn.Text = "Fixed Schedule";
             this.fixed_btn.UseVisualStyleBackColor = true;
-           //this.fixed_btn.Click += new System.EventHandler(this.fixed_btn_Click);
             // 
             // contact_page_btn
             // 
@@ -113,7 +112,6 @@
             this.contact_page_btn.TabIndex = 6;
             this.contact_page_btn.Text = "Contact Page";
             this.contact_page_btn.UseVisualStyleBackColor = true;
-            //this.contact_page_btn.Click += new System.EventHandler(this.button6_Click);
             // 
             // public_event_btn
             // 
@@ -123,7 +121,6 @@
             this.public_event_btn.TabIndex = 7;
             this.public_event_btn.Text = "Public Event";
             this.public_event_btn.UseVisualStyleBackColor = true;
-           // this.public_event_btn.Click += new System.EventHandler(this.public_event_btn_Click);
             // 
             // button8
             // 
@@ -146,7 +143,11 @@
             // 
             // motd
             // 
+            this.motd.BackColor = System.Drawing.Color.Transparent;
+            this.motd.BackgroundImage = global::main_screen.Properties.Resources.bBoard;
+            this.motd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.motd.Controls.Add(this.motd_txt);
+            this.motd.ForeColor = System.Drawing.Color.AliceBlue;
             this.motd.Location = new System.Drawing.Point(252, 228);
             this.motd.Name = "motd";
             this.motd.Size = new System.Drawing.Size(289, 221);
@@ -157,7 +158,8 @@
             // motd_txt
             // 
             this.motd_txt.AutoSize = true;
-            this.motd_txt.Location = new System.Drawing.Point(7, 20);
+            this.motd_txt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.motd_txt.Location = new System.Drawing.Point(15, 16);
             this.motd_txt.Name = "motd_txt";
             this.motd_txt.Size = new System.Drawing.Size(104, 13);
             this.motd_txt.TabIndex = 0;

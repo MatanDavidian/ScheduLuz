@@ -176,7 +176,11 @@
             // 
             // motd
             // 
+            this.motd.BackgroundImage = global::main_screen.Properties.Resources.bBoard;
+            this.motd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.motd.Controls.Add(this.motd_txt);
+            this.motd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.motd.ForeColor = System.Drawing.Color.AliceBlue;
             this.motd.Location = new System.Drawing.Point(245, 228);
             this.motd.Name = "motd";
             this.motd.Size = new System.Drawing.Size(295, 221);
@@ -187,11 +191,14 @@
             // motd_txt
             // 
             this.motd_txt.AutoSize = true;
-            this.motd_txt.Location = new System.Drawing.Point(7, 20);
+            this.motd_txt.BackColor = System.Drawing.Color.Transparent;
+            this.motd_txt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.motd_txt.Location = new System.Drawing.Point(19, 17);
             this.motd_txt.Name = "motd_txt";
             this.motd_txt.Size = new System.Drawing.Size(104, 13);
             this.motd_txt.TabIndex = 0;
             this.motd_txt.Text = "Message Of the Day";
+            this.motd_txt.Click += new System.EventHandler(this.motd_txt_Click);
             // 
             // button1
             // 

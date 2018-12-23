@@ -389,6 +389,8 @@
     <None Include="Resources\sched_l_z_logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\bBoard.png" />
+    <None Include="Resources\checklist.png" />
     <Content Include="ScheduLuz.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -409,6 +411,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UnitTest\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -324,6 +324,11 @@ namespace main_screen
             this.Hide();
             n.Show();
         }
+
+        private void motd_txt_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
                 

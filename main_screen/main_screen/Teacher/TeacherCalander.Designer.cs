@@ -44,15 +44,17 @@
             this.add_chklist_btn = new System.Windows.Forms.Button();
             this.add_chklist_txt = new System.Windows.Forms.TextBox();
             this.checklist = new System.Windows.Forms.CheckedListBox();
-            this.motd = new System.Windows.Forms.GroupBox();
-            this.motd_txt = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Starts = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Surveys = new System.Windows.Forms.Button();
+            this.motd = new System.Windows.Forms.GroupBox();
+            this.motd_txt = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.motd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button9
@@ -153,6 +155,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.clear_done_btn);
             this.groupBox1.Controls.Add(this.add_chklist_btn);
             this.groupBox1.Controls.Add(this.add_chklist_txt);
@@ -204,25 +207,6 @@
             this.checklist.TabIndex = 0;
             this.checklist.SelectedIndexChanged += new System.EventHandler(this.checklist_SelectedIndexChanged);
             // 
-            // motd
-            // 
-            this.motd.Controls.Add(this.motd_txt);
-            this.motd.Location = new System.Drawing.Point(245, 228);
-            this.motd.Name = "motd";
-            this.motd.Size = new System.Drawing.Size(231, 221);
-            this.motd.TabIndex = 23;
-            this.motd.TabStop = false;
-            this.motd.Text = "Message Of the Day";
-            // 
-            // motd_txt
-            // 
-            this.motd_txt.AutoSize = true;
-            this.motd_txt.Location = new System.Drawing.Point(7, 20);
-            this.motd_txt.Name = "motd_txt";
-            this.motd_txt.Size = new System.Drawing.Size(104, 13);
-            this.motd_txt.TabIndex = 0;
-            this.motd_txt.Text = "Message Of the Day";
-            // 
             // listView1
             // 
             this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -262,6 +246,40 @@
             this.Surveys.UseVisualStyleBackColor = true;
             this.Surveys.Click += new System.EventHandler(this.Surveys_Click);
             // 
+            // motd
+            // 
+            this.motd.BackgroundImage = global::main_screen.Properties.Resources.bBoard;
+            this.motd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.motd.Controls.Add(this.motd_txt);
+            this.motd.ForeColor = System.Drawing.Color.AliceBlue;
+            this.motd.Location = new System.Drawing.Point(245, 228);
+            this.motd.Name = "motd";
+            this.motd.Size = new System.Drawing.Size(231, 221);
+            this.motd.TabIndex = 23;
+            this.motd.TabStop = false;
+            this.motd.Text = "Message Of the Day";
+            // 
+            // motd_txt
+            // 
+            this.motd_txt.AutoSize = true;
+            this.motd_txt.BackColor = System.Drawing.Color.Transparent;
+            this.motd_txt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.motd_txt.Location = new System.Drawing.Point(7, 20);
+            this.motd_txt.Name = "motd_txt";
+            this.motd_txt.Size = new System.Drawing.Size(104, 13);
+            this.motd_txt.TabIndex = 0;
+            this.motd_txt.Text = "Message Of the Day";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::main_screen.Properties.Resources.checklist;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(112, 296);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 104);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
             // TeacherCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +307,7 @@
             this.groupBox1.PerformLayout();
             this.motd.ResumeLayout(false);
             this.motd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,5 +335,6 @@
         private System.Windows.Forms.ColumnHeader Starts;
         private System.Windows.Forms.ColumnHeader Ends;
         private System.Windows.Forms.Button Surveys;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

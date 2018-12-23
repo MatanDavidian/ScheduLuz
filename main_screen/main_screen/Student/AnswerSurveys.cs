@@ -62,7 +62,7 @@ namespace main_screen.Student
                 Table.Controls.Clear();
                 Table.RowStyles.Clear();
 
-                Table.Location = new Point(75, 180);
+                Table.Location = new Point(406, 60);
                 Table.Size = new Size(400, 115);
                 Table.AutoSize = false;
                 Table.Name = "Desk";
