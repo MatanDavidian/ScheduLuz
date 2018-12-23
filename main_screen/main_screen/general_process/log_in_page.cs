@@ -76,7 +76,9 @@ namespace main_screen
                         this.Hide();
                        // perFile.Write("M");
                         loginUserName = textBox1.Text;
-                       //perFile.Close();
+                        insert_logins_report();
+                 
+                        //perFile.Close();
                         Mc.Show();
                     }
                     if (per == "teacher")
@@ -85,7 +87,8 @@ namespace main_screen
                         this.Hide();
              //           perFile.Write("T");
                         loginUserName = textBox1.Text;
-             //           perFile.Close();
+                        insert_logins_report();
+                        //perFile.Close();
                         Tc.Show();
                     }
                     if (per == "student")
@@ -94,6 +97,7 @@ namespace main_screen
                         this.Hide();
              //           perFile.Write("S");
                         loginUserName = textBox1.Text;
+                        insert_logins_report();
              //           perFile.Close();
                         Sc.Show();
                     }
@@ -150,6 +154,20 @@ namespace main_screen
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+        private void insert_logins_report()
+        {
+            dataBase loging_dataBase = new dataBase();
+            SqlConnection conn = loging_dataBase.connect_to_scheduluz_DB();
+            DateTime dt = DateTime.Now;
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO logins_report(date,user_id,user_name,connectORdisconnect) VALUES(@date,@user_id,@user_name,@connectORdisconnect) ", conn);
+            cmd.Parameters.Add("@date", dt);
+            cmd.Parameters.Add("@user_id", log_in_page.userId);
+            cmd.Parameters.Add("@user_name", log_in_page.loginUserName);
+            cmd.Parameters.Add("@connectORdisconnect", "connect");
+            cmd.ExecuteNonQuery();
         }
     }
 }

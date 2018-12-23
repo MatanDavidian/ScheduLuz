@@ -137,7 +137,6 @@ namespace main_screen.Manager
                                 dtbl = new DataTable();
                                 sda.Fill(dtbl);
 
-
                                 if (schedule[2, i].Value != null)
                                 {
                                     if (dtbl.Rows.Count > 0)

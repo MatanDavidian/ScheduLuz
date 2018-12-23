@@ -114,6 +114,12 @@
     <Compile Include="Manager\fixed_shedule.Designer.cs">
       <DependentUpon>fixed_shedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\LoginsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\LoginsReport.Designer.cs">
+      <DependentUpon>LoginsReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\ManagerCalander.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\fixed_shedule.resx">
       <DependentUpon>fixed_shedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\LoginsReport.resx">
+      <DependentUpon>LoginsReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\ManagerCalander.resx">
       <DependentUpon>ManagerCalander.cs</DependentUpon>

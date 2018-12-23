@@ -403,5 +403,6 @@ namespace main_screen.Student
             //MessageBox.Show("Your event added successfully");
             conn.Close();
         }
+
     }
 }
