@@ -15,7 +15,7 @@ using USER;
 namespace check_funcs
 {
     
-    struct CheckDetails
+    public struct CheckDetails
     {
 
         public bool Check_onlyNums(string pnum)
@@ -40,3 +40,4 @@ namespace check_funcs
     }
 
 }
+

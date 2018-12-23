@@ -57,7 +57,7 @@
             this.listView.Location = new System.Drawing.Point(12, 60);
             this.listView.MultiSelect = false;
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(611, 103);
+            this.listView.Size = new System.Drawing.Size(343, 363);
             this.listView.TabIndex = 82;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -75,10 +75,10 @@
             // 
             // Return
             // 
-            this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Return.Location = new System.Drawing.Point(26, 438);
+            this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Return.Location = new System.Drawing.Point(12, 447);
             this.Return.Name = "Return";
-            this.Return.Size = new System.Drawing.Size(84, 34);
+            this.Return.Size = new System.Drawing.Size(84, 25);
             this.Return.TabIndex = 84;
             this.Return.Text = "Return";
             this.Return.UseVisualStyleBackColor = true;
@@ -86,10 +86,10 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button3.Location = new System.Drawing.Point(309, 438);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button3.Location = new System.Drawing.Point(271, 447);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 34);
+            this.button3.Size = new System.Drawing.Size(84, 25);
             this.button3.TabIndex = 85;
             this.button3.Text = "Submit";
             this.button3.UseVisualStyleBackColor = true;
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 484);
+            this.ClientSize = new System.Drawing.Size(764, 484);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.label1);

@@ -53,10 +53,10 @@
             // 
             // Return
             // 
-            this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Return.Location = new System.Drawing.Point(12, 330);
+            this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Return.Location = new System.Drawing.Point(11, 343);
             this.Return.Name = "Return";
-            this.Return.Size = new System.Drawing.Size(84, 34);
+            this.Return.Size = new System.Drawing.Size(75, 25);
             this.Return.TabIndex = 77;
             this.Return.Text = "Return";
             this.Return.UseVisualStyleBackColor = true;
@@ -64,10 +64,10 @@
             // 
             // Submit
             // 
-            this.Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Submit.Location = new System.Drawing.Point(338, 330);
+            this.Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Submit.Location = new System.Drawing.Point(155, 343);
             this.Submit.Name = "Submit";
-            this.Submit.Size = new System.Drawing.Size(143, 34);
+            this.Submit.Size = new System.Drawing.Size(143, 25);
             this.Submit.TabIndex = 78;
             this.Submit.Text = "send your survey";
             this.Submit.UseVisualStyleBackColor = true;
@@ -75,10 +75,10 @@
             // 
             // surveys_results
             // 
-            this.surveys_results.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.surveys_results.Location = new System.Drawing.Point(620, 330);
+            this.surveys_results.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.surveys_results.Location = new System.Drawing.Point(304, 343);
             this.surveys_results.Name = "surveys_results";
-            this.surveys_results.Size = new System.Drawing.Size(128, 34);
+            this.surveys_results.Size = new System.Drawing.Size(75, 25);
             this.surveys_results.TabIndex = 79;
             this.surveys_results.Text = "surveys results";
             this.surveys_results.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             this.groupBox1.Controls.Add(this.grade_cb);
             this.groupBox1.Location = new System.Drawing.Point(41, 221);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(582, 69);
+            this.groupBox1.Size = new System.Drawing.Size(338, 69);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class:";
@@ -240,16 +240,16 @@
             // 
             // question_txt
             // 
-            this.question_txt.Location = new System.Drawing.Point(111, 80);
+            this.question_txt.Location = new System.Drawing.Point(131, 80);
             this.question_txt.Name = "question_txt";
-            this.question_txt.Size = new System.Drawing.Size(268, 20);
+            this.question_txt.Size = new System.Drawing.Size(248, 20);
             this.question_txt.TabIndex = 92;
             // 
             // Surveys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 380);
+            this.ClientSize = new System.Drawing.Size(401, 380);
             this.Controls.Add(this.question_txt);
             this.Controls.Add(this.answersOpD);
             this.Controls.Add(this.answersOpC);
