@@ -103,6 +103,7 @@
             this.fixed_btn.TabIndex = 5;
             this.fixed_btn.Text = "Fixed Schedule";
             this.fixed_btn.UseVisualStyleBackColor = true;
+            this.fixed_btn.Click += new System.EventHandler(this.fixed_btn_Click_1);
             // 
             // contact_page_btn
             // 
@@ -128,8 +129,9 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(125, 30);
             this.button8.TabIndex = 8;
-            this.button8.Text = "button8";
+            this.button8.Text = "Login Report";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -154,6 +156,7 @@
             this.motd.TabIndex = 12;
             this.motd.TabStop = false;
             this.motd.Text = "Message Of the Day";
+            this.motd.Enter += new System.EventHandler(this.motd_Enter);
             // 
             // motd_txt
             // 
@@ -179,6 +182,7 @@
             this.listView1.TabIndex = 22;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Title
             // 

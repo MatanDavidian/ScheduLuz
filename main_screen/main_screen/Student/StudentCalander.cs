@@ -341,6 +341,13 @@ namespace main_screen
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Student.My_schedule n = new Student.My_schedule();
+            this.Hide();
+            n.Show();
+        }
     }
 }
                 

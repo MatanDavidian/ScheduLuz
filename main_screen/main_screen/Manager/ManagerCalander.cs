@@ -334,6 +334,30 @@ namespace main_screen
             n.Show();
             this.Hide();
         }
+
+        private void motd_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Manager.LoginsReport n = new Manager.LoginsReport();
+            n.Show();
+            this.Hide();
+        }
+
+        private void fixed_btn_Click_1(object sender, EventArgs e)
+        {
+            Manager.fixed_schedule n = new Manager.fixed_schedule();
+            n.Show();
+            this.Hide();
+        }
     }
 }
 

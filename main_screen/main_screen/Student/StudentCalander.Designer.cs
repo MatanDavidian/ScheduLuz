@@ -43,9 +43,10 @@
             this.contact_page = new System.Windows.Forms.Button();
             this.add_event = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.motd = new System.Windows.Forms.GroupBox();
             this.motd_txt = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.motd.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,6 +175,26 @@
             this.monthCalendar1.TabIndex = 11;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(547, 300);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 30);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Answer Surveys";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(547, 336);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 30);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "My schedule";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // motd
             // 
             this.motd.BackgroundImage = global::main_screen.Properties.Resources.bBoard;
@@ -200,21 +221,12 @@
             this.motd_txt.Text = "Message Of the Day";
             this.motd_txt.Click += new System.EventHandler(this.motd_txt_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(547, 343);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 30);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Answer Surveys";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // StudentCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.motd);
             this.Controls.Add(this.listView1);
@@ -257,5 +269,6 @@
         private System.Windows.Forms.ColumnHeader Starts;
         private System.Windows.Forms.ColumnHeader Ends;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
