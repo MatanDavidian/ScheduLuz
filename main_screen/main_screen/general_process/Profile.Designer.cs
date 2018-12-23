@@ -82,6 +82,13 @@ namespace main_screen.general_process
             // 
             // browse_btn
             // 
+            this.browse_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browse_btn.BackgroundImage")));
+            this.browse_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browse_btn.FlatAppearance.BorderSize = 0;
+            this.browse_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.browse_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.browse_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.browse_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.browse_btn.Location = new System.Drawing.Point(155, 146);
             this.browse_btn.Name = "browse_btn";
             this.browse_btn.Size = new System.Drawing.Size(75, 23);
@@ -187,6 +194,13 @@ namespace main_screen.general_process
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(608, 451);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -275,6 +289,13 @@ namespace main_screen.general_process
             // 
             // view_btn
             // 
+            this.view_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("view_btn.BackgroundImage")));
+            this.view_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.view_btn.FlatAppearance.BorderSize = 0;
+            this.view_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.view_btn.Location = new System.Drawing.Point(256, 144);
             this.view_btn.Name = "view_btn";
             this.view_btn.Size = new System.Drawing.Size(44, 23);
@@ -354,6 +375,13 @@ namespace main_screen.general_process
             // 
             // return_btn
             // 
+            this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.return_btn.FlatAppearance.BorderSize = 0;
+            this.return_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.return_btn.Location = new System.Drawing.Point(12, 660);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(75, 23);

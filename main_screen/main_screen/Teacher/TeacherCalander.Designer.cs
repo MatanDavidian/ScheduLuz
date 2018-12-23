@@ -78,9 +78,16 @@
             // 
             // clear_done_btn
             // 
-            this.clear_done_btn.Location = new System.Drawing.Point(6, 262);
+            this.clear_done_btn.BackgroundImage = global::main_screen.Properties.Resources.orangebtn;
+            this.clear_done_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.clear_done_btn.FlatAppearance.BorderSize = 0;
+            this.clear_done_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.clear_done_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.clear_done_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.clear_done_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clear_done_btn.Location = new System.Drawing.Point(6, 244);
             this.clear_done_btn.Name = "clear_done_btn";
-            this.clear_done_btn.Size = new System.Drawing.Size(206, 23);
+            this.clear_done_btn.Size = new System.Drawing.Size(206, 41);
             this.clear_done_btn.TabIndex = 3;
             this.clear_done_btn.Text = "Clear Checked";
             this.clear_done_btn.UseVisualStyleBackColor = true;
@@ -151,6 +158,9 @@
             this.Surveys.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Surveys.BackgroundImage")));
             this.Surveys.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Surveys.FlatAppearance.BorderSize = 0;
+            this.Surveys.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.Surveys.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Surveys.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Surveys.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Surveys.Location = new System.Drawing.Point(706, 310);
             this.Surveys.Name = "Surveys";
@@ -187,9 +197,12 @@
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.Transparent;
-            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
+            this.button9.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Location = new System.Drawing.Point(706, 419);
             this.button9.Name = "button9";
@@ -205,6 +218,9 @@
             this.reception_hours.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reception_hours.BackgroundImage")));
             this.reception_hours.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.reception_hours.FlatAppearance.BorderSize = 0;
+            this.reception_hours.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.reception_hours.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.reception_hours.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.reception_hours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reception_hours.Location = new System.Drawing.Point(706, 274);
             this.reception_hours.Name = "reception_hours";
@@ -220,6 +236,9 @@
             this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Location = new System.Drawing.Point(706, 238);
             this.button7.Name = "button7";
@@ -234,6 +253,9 @@
             this.view_contacts_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("view_contacts_btn.BackgroundImage")));
             this.view_contacts_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.view_contacts_btn.FlatAppearance.BorderSize = 0;
+            this.view_contacts_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.view_contacts_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.view_contacts_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.view_contacts_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.view_contacts_btn.Location = new System.Drawing.Point(706, 202);
             this.view_contacts_btn.Name = "view_contacts_btn";
@@ -249,6 +271,9 @@
             this.watch_stundent_schedule.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("watch_stundent_schedule.BackgroundImage")));
             this.watch_stundent_schedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.watch_stundent_schedule.FlatAppearance.BorderSize = 0;
+            this.watch_stundent_schedule.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.watch_stundent_schedule.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.watch_stundent_schedule.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.watch_stundent_schedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.watch_stundent_schedule.Location = new System.Drawing.Point(706, 156);
             this.watch_stundent_schedule.Name = "watch_stundent_schedule";
@@ -264,6 +289,9 @@
             this.multi_studnt_event_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("multi_studnt_event_btn.BackgroundImage")));
             this.multi_studnt_event_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.multi_studnt_event_btn.FlatAppearance.BorderSize = 0;
+            this.multi_studnt_event_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.multi_studnt_event_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.multi_studnt_event_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.multi_studnt_event_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.multi_studnt_event_btn.Location = new System.Drawing.Point(706, 120);
             this.multi_studnt_event_btn.Name = "multi_studnt_event_btn";
@@ -279,6 +307,9 @@
             this.profile_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("profile_btn.BackgroundImage")));
             this.profile_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.profile_btn.FlatAppearance.BorderSize = 0;
+            this.profile_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.profile_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.profile_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.profile_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profile_btn.Location = new System.Drawing.Point(706, 84);
             this.profile_btn.Name = "profile_btn";
@@ -294,6 +325,9 @@
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(706, 48);
             this.button2.Name = "button2";
@@ -309,6 +343,9 @@
             this.add_event.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("add_event.BackgroundImage")));
             this.add_event.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.add_event.FlatAppearance.BorderSize = 0;
+            this.add_event.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.add_event.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.add_event.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.add_event.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_event.Location = new System.Drawing.Point(706, 12);
             this.add_event.Name = "add_event";
@@ -339,6 +376,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.add_event);
             this.Controls.Add(this.monthCalendar1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TeacherCalander";
             this.Text = "Calander - Teacher";
