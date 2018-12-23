@@ -47,22 +47,22 @@ namespace main_screen.Teacher
             }
             else if (answersOpA.Text == "")
             {
-                MessageBox.Show("please fill the place");
+                MessageBox.Show("please fill the answers A");
 
             }
             else if (answersOpB.Text == "")
             {
-                MessageBox.Show("please fill the place");
+                MessageBox.Show("please fill the answers B");
 
             }
             else if (answersOpC.Text == "")
             {
-                MessageBox.Show("please fill the place");
+                MessageBox.Show("please fill the answers C");
 
             }
             else if (answersOpD.Text == "")
             {
-                MessageBox.Show("please fill the place");
+                MessageBox.Show("please fill the answers D");
 
             }
             else
@@ -114,6 +114,12 @@ namespace main_screen.Teacher
                 }
 
             }
+            question_txt.Clear();
+            answersOpA.Clear();
+            answersOpB.Clear();
+            answersOpC.Clear();
+            answersOpD.Clear();
+
         }
 
         private void class_num_cb_SelectedIndexChanged(object sender, EventArgs e)
