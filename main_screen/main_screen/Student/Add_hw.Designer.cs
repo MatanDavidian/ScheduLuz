@@ -45,8 +45,8 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.profassion_txt = new System.Windows.Forms.TextBox();
             this.details_txt = new System.Windows.Forms.RichTextBox();
-            this.submit_btn = new System.Windows.Forms.Button();
             this.return_btn = new System.Windows.Forms.Button();
+            this.submit_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.from_hour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.from_minute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.to_minute)).BeginInit();
@@ -184,9 +184,11 @@
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(95, 200);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(80, 20);
             this.dateTimePicker2.TabIndex = 12;
             // 
             // profassion_txt
@@ -204,23 +206,6 @@
             this.details_txt.TabIndex = 15;
             this.details_txt.Text = "";
             // 
-            // submit_btn
-            // 
-            this.submit_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
-            this.submit_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.submit_btn.FlatAppearance.BorderSize = 0;
-            this.submit_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.submit_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.submit_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.submit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submit_btn.Location = new System.Drawing.Point(237, 244);
-            this.submit_btn.Name = "submit_btn";
-            this.submit_btn.Size = new System.Drawing.Size(75, 23);
-            this.submit_btn.TabIndex = 16;
-            this.submit_btn.Text = "Submit";
-            this.submit_btn.UseVisualStyleBackColor = true;
-            this.submit_btn.Click += new System.EventHandler(this.submit_btn_Click);
-            // 
             // return_btn
             // 
             this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
@@ -237,6 +222,23 @@
             this.return_btn.Text = "Return";
             this.return_btn.UseVisualStyleBackColor = true;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
+            // 
+            // submit_btn
+            // 
+            this.submit_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.submit_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.submit_btn.FlatAppearance.BorderSize = 0;
+            this.submit_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.submit_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.submit_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.submit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submit_btn.Location = new System.Drawing.Point(237, 244);
+            this.submit_btn.Name = "submit_btn";
+            this.submit_btn.Size = new System.Drawing.Size(75, 23);
+            this.submit_btn.TabIndex = 16;
+            this.submit_btn.Text = "Submit";
+            this.submit_btn.UseVisualStyleBackColor = true;
+            this.submit_btn.Click += new System.EventHandler(this.submit_btn_Click);
             // 
             // Add_hw_form
             // 
@@ -264,6 +266,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_hw_form";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Add_hw_form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.from_hour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.from_minute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.to_minute)).EndInit();

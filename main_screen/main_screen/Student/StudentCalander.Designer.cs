@@ -35,7 +35,7 @@
             this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.add_hw_btn = new System.Windows.Forms.Button();
             this.my_dear_diary_btn = new System.Windows.Forms.Button();
             this.mail_btn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -115,22 +115,23 @@
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button7
+            // add_hw_btn
             // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(547, 228);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(125, 30);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = false;
+            this.add_hw_btn.BackColor = System.Drawing.Color.Transparent;
+            this.add_hw_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("add_hw_btn.BackgroundImage")));
+            this.add_hw_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.add_hw_btn.FlatAppearance.BorderSize = 0;
+            this.add_hw_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.add_hw_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.add_hw_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.add_hw_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_hw_btn.Location = new System.Drawing.Point(547, 228);
+            this.add_hw_btn.Name = "add_hw_btn";
+            this.add_hw_btn.Size = new System.Drawing.Size(125, 30);
+            this.add_hw_btn.TabIndex = 18;
+            this.add_hw_btn.Text = "Add HW";
+            this.add_hw_btn.UseVisualStyleBackColor = false;
+            this.add_hw_btn.Click += new System.EventHandler(this.button7_Click);
             // 
             // my_dear_diary_btn
             // 
@@ -322,7 +323,7 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.add_hw_btn);
             this.Controls.Add(this.my_dear_diary_btn);
             this.Controls.Add(this.mail_btn);
             this.Controls.Add(this.button4);
@@ -345,7 +346,7 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button add_hw_btn;
         private System.Windows.Forms.Button my_dear_diary_btn;
         private System.Windows.Forms.Button mail_btn;
         private System.Windows.Forms.Button button4;
@@ -360,5 +361,6 @@
         private System.Windows.Forms.ColumnHeader Ends;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

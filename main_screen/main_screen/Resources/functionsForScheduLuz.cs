@@ -49,7 +49,7 @@ namespace check_funcs
     public struct DBfuncs
     {
         public bool insertToEvents(string userID,string title,string details , string place , string privacy , string up_for_cancellation
-            ,string date ,string hours_start,string hours_end ,string minutes_start,string minutes_end, string kind ="Regular")
+            ,DateTime date ,string hours_start,string hours_end ,string minutes_start,string minutes_end, string kind ="Regular")
         {
             //try
             //{

@@ -136,6 +136,7 @@ namespace main_screen.Teacher
             // 
             // btnSend
             // 
+            this.btnSend.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
             this.btnSend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSend.FlatAppearance.BorderSize = 0;
             this.btnSend.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
@@ -238,7 +239,7 @@ namespace main_screen.Teacher
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(216, 20);
             this.txtPassword.TabIndex = 14;
-            this.txtPassword.Text = "A1346014";
+            this.txtPassword.Text = "tom-ls123456";
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 

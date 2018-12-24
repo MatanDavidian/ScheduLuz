@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
 using USER;
+using Event;
 using database_location;
 using System.IO;
 using check_funcs;
@@ -187,6 +188,7 @@ namespace main_screen
                         ListViewItem item = new ListViewItem(dtb2.Rows[0]["Event_name"].ToString().Trim());
                         item.SubItems.Add(hours_start + ":" + minutes_start);
                         item.SubItems.Add(hours_end + ":" + minutes_end);
+                        item.SubItems.Add(event_id);
 
                         /*
                          * choosing color -- need to update if updated.
@@ -194,18 +196,21 @@ namespace main_screen
                         switch (dtb2.Rows[0]["event_kind"].ToString().Trim())
                         {
                             case "Muliplayer":
-                                item.BackColor = Color.Orange;
+                                item.BackColor = Color.DeepSkyBlue;
                                 break;
 
                             case "School":
-                                item.BackColor = Color.YellowGreen;
+                                item.BackColor = Color.Red;
                                 break;
 
                             case "Regular":
                                 item.BackColor = Color.SteelBlue;
                                 break;
                             case "system-public":
-                                item.BackColor = Color.HotPink;
+                                item.BackColor = Color.Red;
+                                break;
+                            case "HW":
+                                item.BackColor = Color.YellowGreen;
                                 break;
 
                             default:
@@ -255,7 +260,8 @@ namespace main_screen
                 ListViewItem item = new ListViewItem(dtb3.Rows[i]["title"].ToString().Trim());
                 item.SubItems.Add(hours_start + ":" + minutes_start);
                 item.SubItems.Add(hours_end + ":" + minutes_end);
-                item.BackColor = Color.IndianRed;
+                item.SubItems.Add(dtb3.Rows[i]["wEvent_id"].ToString().Trim());
+                item.BackColor = Color.Orange;
 
                 //listView1.Items.Add(item);
                 itemlist.Add(item);
@@ -317,10 +323,29 @@ namespace main_screen
 
             return false;
         }
-
+        public string event_id =null;
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems.Count > 0)
+            {
+               
+                ListViewItem item = listView1.SelectedItems[0];
+                if (item.BackColor == Color.Orange)
+                    general_process.show_edit_event.weekly = true;
+                else
+                    general_process.show_edit_event.weekly = false;
 
+                general_process.show_edit_event.event_id = item.SubItems[3].Text.ToString();
+
+                
+
+
+                general_process.show_edit_event show = new general_process.show_edit_event();
+                show.Show();
+                this.Hide();
+                
+                
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -347,6 +372,13 @@ namespace main_screen
             Student.My_schedule n = new Student.My_schedule();
             this.Hide();
             n.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Student.Add_hw_form n = new Student.Add_hw_form();
+            n.Show();
+            this.Hide();
         }
     }
 }

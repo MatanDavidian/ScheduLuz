@@ -96,6 +96,12 @@
     <Compile Include="general_process\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="general_process\show_edit_event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="general_process\show_edit_event.Designer.cs">
+      <DependentUpon>show_edit_event.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\add_user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,7 @@
     <Compile Include="Resources\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Resources\structEvent.cs" />
     <Compile Include="Resources\structUser.cs" />
     <Compile Include="ScheduLuzDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -285,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="general_process\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="general_process\show_edit_event.resx">
+      <DependentUpon>show_edit_event.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\add_user.resx">
       <DependentUpon>add_user.cs</DependentUpon>

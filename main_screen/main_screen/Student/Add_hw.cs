@@ -39,7 +39,7 @@ namespace main_screen.Student
             string place = "";
             string privacy = "private";
             string up_for_cancellation = "YES";
-            string date = dateTimePicker1.ToString();
+            DateTime date = dateTimePicker1.Value;
             string hours_start = from_hour.Value.ToString(); ;
             string hours_end = to_hour.Value.ToString();
             string minutes_start = from_minute.Value.ToString();
@@ -48,14 +48,28 @@ namespace main_screen.Student
 
             if(
             addEvent.insertToEvents(userID, title, details, place, privacy, up_for_cancellation
-            , date, hours_start, hours_end, minutes_start, minutes_end, kind = "Regular"))
+            , date, hours_start, hours_end, minutes_start, minutes_end, kind))
             {
-                MessageBox.Show("added!");
+                if (addEvent.insertToEvents(userID, "Submit" + title, "", place, privacy, up_for_cancellation,
+                    dateTimePicker2.Value, "23", "23", "0", "59", kind))
+                {
+                    MessageBox.Show("added!");
+                }
+                else
+                {
+                    MessageBox.Show("problem");
+                }
+
             }
             else
             {
                 MessageBox.Show("problem");
             }
+
+        }
+
+        private void Add_hw_form_Load(object sender, EventArgs e)
+        {
 
         }
     }
