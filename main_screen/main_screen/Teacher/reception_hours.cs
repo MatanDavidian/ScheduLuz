@@ -33,41 +33,29 @@ namespace main_screen.Teacher
             Table.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddRows;
             this.Controls.Add(Table);
 
-            
             for (int i = 0; i < 6; i++)
             {
                 labels[i] = new Label { BackColor = Color.Black, ForeColor = Color.White, Dock = DockStyle.Fill };
+                Table.Controls.Add(labels[i], i+1, 0);
+
             }
             labels[0].Text = "Sunday";
-            Table.Controls.Add(labels[0], 1, 0);
             labels[1].Text = "Monday";
-            Table.Controls.Add(labels[1], 2, 0);
             labels[2].Text = "Tuesday";
-            Table.Controls.Add(labels[2], 3, 0);
             labels[3].Text = "Wednesday";
-            Table.Controls.Add(labels[3], 4, 0);
             labels[4].Text = "Thursday";
-            Table.Controls.Add(labels[4], 5, 0);
             labels[5].Text = "Friday";
-            Table.Controls.Add(labels[5], 6, 0);
-
             for (int i = 6; i < 12; i++)
             {
                 labels[i] = new Label { BackColor = Color.DarkBlue, ForeColor = Color.White, Dock = DockStyle.Fill };
+                Table.Controls.Add(labels[i], 0, i-5);
             }
-            labels[6].Text = "8-10";
-            Table.Controls.Add(labels[6], 0, 1);
-            labels[7].Text = "10-12";
-            Table.Controls.Add(labels[7], 0, 2);
-            labels[8].Text = "12-14";
-            Table.Controls.Add(labels[8], 0, 3);
-            labels[9].Text = "14-16";
-            Table.Controls.Add(labels[9], 0, 4);
-            labels[10].Text = "16-18";
-            Table.Controls.Add(labels[10], 0, 5);
-            labels[11].Text = "18-20";
-            Table.Controls.Add(labels[11], 0, 6);
-            int k = 12;
+            labels[6].Text = "8:00-10:00";
+            labels[7].Text = "10:00-12:00";
+            labels[8].Text = "12:00-14:00";
+            labels[9].Text = "14:00-16:00";
+            labels[10].Text = "16:00-18:00";
+            labels[11].Text = "18:00-20:00";
 
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
@@ -75,11 +63,11 @@ namespace main_screen.Teacher
             DataTable dtbl;
             conn.Open();
             string query = "Select * from weekly_events where user_id_OR_class=" + log_in_page.userId+ "and event_kind='"+ "reception_hours"+"'" ;
-
             sda = new SqlDataAdapter(query, conn);
             dtbl = new DataTable();
             sda.Fill(dtbl);
             string hours;
+            int k = 12;
             for (int i = 1; i < 7; i++)
             {
                 for (int j = 1; j < 7; j++)

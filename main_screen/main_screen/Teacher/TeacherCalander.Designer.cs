@@ -51,6 +51,7 @@
             this.profile_btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.add_event = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.motd.SuspendLayout();
             this.SuspendLayout();
@@ -361,6 +362,24 @@
             this.add_event.UseVisualStyleBackColor = false;
             this.add_event.Click += new System.EventHandler(this.add_event_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(706, 382);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 30);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "cancel a lesson";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TeacherCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,6 +387,7 @@
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(843, 461);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Surveys);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.motd);
@@ -418,5 +438,6 @@
         private System.Windows.Forms.ColumnHeader Starts;
         private System.Windows.Forms.ColumnHeader Ends;
         private System.Windows.Forms.Button Surveys;
+        private System.Windows.Forms.Button button1;
     }
 }
