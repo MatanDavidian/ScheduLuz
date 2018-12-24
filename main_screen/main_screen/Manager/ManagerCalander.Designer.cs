@@ -222,7 +222,7 @@
             this.motd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.motd.Controls.Add(this.motd_txt);
             this.motd.ForeColor = System.Drawing.Color.AliceBlue;
-            this.motd.Location = new System.Drawing.Point(252, 26);
+            this.motd.Location = new System.Drawing.Point(245, 246);
             this.motd.Name = "motd";
             this.motd.Size = new System.Drawing.Size(289, 203);
             this.motd.TabIndex = 12;
@@ -274,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::main_screen.Properties.Resources._1680;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.listView1);
@@ -289,6 +289,7 @@
             this.Controls.Add(this.Add_event);
             this.Controls.Add(this.add_user);
             this.Controls.Add(this.monthCalendar1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManagerCalander";
             this.Text = "Calander - Manager";

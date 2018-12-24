@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherCalander));
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.clear_done_btn = new System.Windows.Forms.Button();
             this.add_chklist_btn = new System.Windows.Forms.Button();
             this.add_chklist_txt = new System.Windows.Forms.TextBox();
@@ -53,7 +52,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.add_event = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.motd.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,31 +65,20 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.clear_done_btn);
             this.groupBox1.Controls.Add(this.add_chklist_btn);
             this.groupBox1.Controls.Add(this.add_chklist_txt);
             this.groupBox1.Controls.Add(this.checklist);
-            this.groupBox1.Location = new System.Drawing.Point(482, 14);
+            this.groupBox1.Location = new System.Drawing.Point(482, 157);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(218, 435);
+            this.groupBox1.Size = new System.Drawing.Size(218, 292);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Checklist";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::main_screen.Properties.Resources.checklist;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(112, 296);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 104);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
             // clear_done_btn
             // 
-            this.clear_done_btn.Location = new System.Drawing.Point(6, 406);
+            this.clear_done_btn.Location = new System.Drawing.Point(6, 262);
             this.clear_done_btn.Name = "clear_done_btn";
             this.clear_done_btn.Size = new System.Drawing.Size(206, 23);
             this.clear_done_btn.TabIndex = 3;
@@ -123,9 +110,9 @@
             this.checklist.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checklist.ForeColor = System.Drawing.SystemColors.ControlText;
             this.checklist.FormattingEnabled = true;
-            this.checklist.Location = new System.Drawing.Point(16, 60);
+            this.checklist.Location = new System.Drawing.Point(6, 60);
             this.checklist.Name = "checklist";
-            this.checklist.Size = new System.Drawing.Size(196, 330);
+            this.checklist.Size = new System.Drawing.Size(196, 195);
             this.checklist.TabIndex = 0;
             this.checklist.SelectedIndexChanged += new System.EventHandler(this.checklist_SelectedIndexChanged);
             // 
@@ -179,7 +166,7 @@
             this.motd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.motd.Controls.Add(this.motd_txt);
             this.motd.ForeColor = System.Drawing.Color.AliceBlue;
-            this.motd.Location = new System.Drawing.Point(245, 26);
+            this.motd.Location = new System.Drawing.Point(245, 228);
             this.motd.Name = "motd";
             this.motd.Size = new System.Drawing.Size(231, 221);
             this.motd.TabIndex = 23;
@@ -335,7 +322,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::main_screen.Properties.Resources._1680;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(843, 461);
             this.Controls.Add(this.Surveys);
@@ -358,7 +345,6 @@
             this.Load += new System.EventHandler(this.TeacherCalander_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.motd.ResumeLayout(false);
             this.motd.PerformLayout();
             this.ResumeLayout(false);
@@ -388,6 +374,5 @@
         private System.Windows.Forms.ColumnHeader Starts;
         private System.Windows.Forms.ColumnHeader Ends;
         private System.Windows.Forms.Button Surveys;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

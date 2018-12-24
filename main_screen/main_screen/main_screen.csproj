@@ -141,7 +141,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\functionsForScheduLuz.cs" />
-    <Compile Include="Resources\dataBaseLocation.cs" />
+    <Compile Include="Resources\dataBaseLocation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Resources\structUser.cs" />
     <Compile Include="ScheduLuzDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -175,6 +180,12 @@
     </Compile>
     <Compile Include="Student\ContactPage.Designer.cs">
       <DependentUpon>ContactPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Add_hw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Add_hw.Designer.cs">
+      <DependentUpon>Add_hw.cs</DependentUpon>
     </Compile>
     <Compile Include="Student\identify.cs">
       <SubType>Form</SubType>
@@ -315,6 +326,9 @@
     <EmbeddedResource Include="Student\ContactPage.resx">
       <DependentUpon>ContactPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Student\Add_hw.resx">
+      <DependentUpon>Add_hw.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student\identify.resx">
       <DependentUpon>identify.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,6 +427,10 @@
     <None Include="Resources\1680.jpg" />
     <None Include="Resources\multiEventBackground.jpg" />
     <None Include="Resources\deardairy.jpg" />
+    <None Include="Resources\kisspng-triangle-yellow-pattern-personalized-diamond-lattice-gradient-background-5a91ef91c81131.6370130715195134898195.png" />
+    <None Include="Resources\5a1bf3bd298f32.9845137615117813091702.png" />
+    <None Include="Resources\bg_student.png" />
+    <None Include="Resources\bg_worker.png" />
     <Content Include="ScheduLuz.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
