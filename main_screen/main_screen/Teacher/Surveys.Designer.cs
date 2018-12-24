@@ -53,6 +53,13 @@
             // 
             // Return
             // 
+            this.Return.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Return.FlatAppearance.BorderSize = 0;
+            this.Return.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Return.Location = new System.Drawing.Point(11, 343);
             this.Return.Name = "Return";
@@ -64,10 +71,17 @@
             // 
             // Submit
             // 
+            this.Submit.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.Submit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Submit.FlatAppearance.BorderSize = 0;
+            this.Submit.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.Submit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Submit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Submit.Location = new System.Drawing.Point(155, 343);
+            this.Submit.Location = new System.Drawing.Point(179, 343);
             this.Submit.Name = "Submit";
-            this.Submit.Size = new System.Drawing.Size(143, 25);
+            this.Submit.Size = new System.Drawing.Size(109, 25);
             this.Submit.TabIndex = 78;
             this.Submit.Text = "send your survey";
             this.Submit.UseVisualStyleBackColor = true;
@@ -75,10 +89,17 @@
             // 
             // surveys_results
             // 
+            this.surveys_results.BackgroundImage = global::main_screen.Properties.Resources.greybtn;
+            this.surveys_results.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.surveys_results.FlatAppearance.BorderSize = 0;
+            this.surveys_results.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.surveys_results.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.surveys_results.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.surveys_results.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.surveys_results.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.surveys_results.Location = new System.Drawing.Point(304, 343);
+            this.surveys_results.Location = new System.Drawing.Point(298, 343);
             this.surveys_results.Name = "surveys_results";
-            this.surveys_results.Size = new System.Drawing.Size(75, 25);
+            this.surveys_results.Size = new System.Drawing.Size(91, 25);
             this.surveys_results.TabIndex = 79;
             this.surveys_results.Text = "surveys results";
             this.surveys_results.UseVisualStyleBackColor = true;

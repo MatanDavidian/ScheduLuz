@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Return = new System.Windows.Forms.Button();
             this.listView = new System.Windows.Forms.ListView();
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,6 +43,12 @@
             // 
             // Return
             // 
+            this.Return.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Return.FlatAppearance.BorderSize = 0;
+            this.Return.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Return.Location = new System.Drawing.Point(26, 497);
             this.Return.Name = "Return";
@@ -100,17 +106,17 @@
             // 
             // survey
             // 
-            chartArea2.Name = "ChartArea1";
-            this.survey.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.survey.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.survey.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.survey.Legends.Add(legend1);
             this.survey.Location = new System.Drawing.Point(341, 60);
             this.survey.Name = "survey";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Salary";
-            this.survey.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Salary";
+            this.survey.Series.Add(series1);
             this.survey.Size = new System.Drawing.Size(451, 428);
             this.survey.TabIndex = 82;
             this.survey.Text = "chart1";

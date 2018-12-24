@@ -95,6 +95,12 @@
             // 
             // add_chklist_btn
             // 
+            this.add_chklist_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.add_chklist_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.add_chklist_btn.FlatAppearance.BorderSize = 0;
+            this.add_chklist_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.add_chklist_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.add_chklist_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_chklist_btn.Location = new System.Drawing.Point(163, 32);
             this.add_chklist_btn.Name = "add_chklist_btn";
             this.add_chklist_btn.Size = new System.Drawing.Size(49, 23);

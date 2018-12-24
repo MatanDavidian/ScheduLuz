@@ -251,6 +251,13 @@
             // 
             // load_student_btn
             // 
+            this.load_student_btn.BackgroundImage = global::main_screen.Properties.Resources.greybtn;
+            this.load_student_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.load_student_btn.FlatAppearance.BorderSize = 0;
+            this.load_student_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.load_student_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.load_student_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.load_student_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.load_student_btn.Location = new System.Drawing.Point(273, 67);
             this.load_student_btn.Name = "load_student_btn";
             this.load_student_btn.Size = new System.Drawing.Size(106, 23);
@@ -296,6 +303,13 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.return_btn.FlatAppearance.BorderSize = 0;
+            this.return_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.return_btn.Location = new System.Drawing.Point(13, 535);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(75, 23);

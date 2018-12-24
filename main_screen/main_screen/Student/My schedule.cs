@@ -20,7 +20,6 @@ namespace main_screen.Student
         }
         Label[] labels = new Label[91];
         TableLayoutPanel Table = new TableLayoutPanel();
-        String global_teacher_name;
         DateTime dt = DateTime.Today;
         private void My_schedule_Load(object sender, EventArgs e)
         {
@@ -42,7 +41,7 @@ namespace main_screen.Student
 
             for (int i = 0; i < 6; i++)
             {
-                labels[i] = new Label { BackColor = Color.Black, ForeColor = Color.White, Dock = DockStyle.Fill };
+                labels[i] = new Label { BackColor = Color.DodgerBlue, ForeColor = Color.White, Dock = DockStyle.Fill };
                 Table.Controls.Add(labels[i], i+1, 0);
             }
             labels[0].Text = "Sunday";
@@ -55,7 +54,7 @@ namespace main_screen.Student
            
             for (int i = 6; i < 18; i++)
             {
-                labels[i] = new Label { BackColor = Color.DarkBlue, ForeColor = Color.White, Dock = DockStyle.Fill };
+                labels[i] = new Label { BackColor = Color.DodgerBlue, ForeColor = Color.White, Dock = DockStyle.Fill };
                 Table.Controls.Add(labels[i], 0, i-5);
             }
             labels[6].Text = "8-9";
@@ -96,12 +95,14 @@ namespace main_screen.Student
             {
                 for (int j = 1; j < 7; j++)
                 {
-                    labels[k] = new Label { BackColor = Color.White, Dock = DockStyle.Fill };
+                    labels[k] = new Label { BackColor = Color.LightBlue, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter };
+                    if (i % 2 == 0)
+                        labels[k].BackColor = Color.LightSkyBlue;
                     Table.Controls.Add(labels[k], j, i);
                     //labels[k].Text = labels[i + 5].Text;//the hours text
-                    labels[k].TextAlign = ContentAlignment.MiddleCenter;
-                    labels[k].ForeColor = Color.Black;
-
+                    //labels[k].TextAlign = ContentAlignment.MiddleCenter;
+                    //labels[k].ForeColor = Color.Black;
+ 
                     for (int m = 0; m < dtbl.Rows.Count; m++)
                     {
                         hours = dtbl.Rows[m]["start"].ToString().Trim() + "-" + dtbl.Rows[m]["ends"].ToString().Trim();
@@ -115,7 +116,9 @@ namespace main_screen.Student
                        // {
                         //    labels[k].Text = "";
                        // }
+                     
                     }
+
                     k++;
                 }
             }
@@ -130,5 +133,6 @@ namespace main_screen.Student
             frmCal.Show();
             Visible = false;
         }
+
     }
 }

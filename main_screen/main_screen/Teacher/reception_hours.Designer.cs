@@ -49,6 +49,13 @@
             // 
             // Return
             // 
+            this.Return.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Return.FlatAppearance.BorderSize = 0;
+            this.Return.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Return.Location = new System.Drawing.Point(12, 395);
             this.Return.Name = "Return";
@@ -60,6 +67,13 @@
             // 
             // Submit
             // 
+            this.Submit.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.Submit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Submit.FlatAppearance.BorderSize = 0;
+            this.Submit.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.Submit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Submit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Submit.Location = new System.Drawing.Point(391, 395);
             this.Submit.Name = "Submit";

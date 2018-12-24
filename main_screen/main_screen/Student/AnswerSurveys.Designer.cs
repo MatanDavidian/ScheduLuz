@@ -75,6 +75,13 @@
             // 
             // Return
             // 
+            this.Return.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Return.FlatAppearance.BorderSize = 0;
+            this.Return.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Return.Location = new System.Drawing.Point(12, 447);
             this.Return.Name = "Return";
@@ -86,6 +93,13 @@
             // 
             // button3
             // 
+            this.button3.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.button3.Location = new System.Drawing.Point(271, 447);
             this.button3.Name = "button3";
@@ -99,6 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(764, 484);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Return);

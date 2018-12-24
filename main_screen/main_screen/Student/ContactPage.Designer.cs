@@ -46,6 +46,12 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.return_btn.FlatAppearance.BorderSize = 0;
+            this.return_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.return_btn.Location = new System.Drawing.Point(12, 416);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(75, 23);

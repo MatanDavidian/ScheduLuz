@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyDearDairy));
             this.return_btn = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.day_txt = new System.Windows.Forms.RichTextBox();
@@ -36,12 +37,17 @@
             this.edit_btn = new System.Windows.Forms.Button();
             this.view_btn = new System.Windows.Forms.Button();
             this.date_lbl = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // return_btn
             // 
+            this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.return_btn.FlatAppearance.BorderSize = 0;
+            this.return_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.return_btn.Location = new System.Drawing.Point(12, 415);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(75, 23);
@@ -67,6 +73,13 @@
             // 
             // save_btn
             // 
+            this.save_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.save_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.save_btn.FlatAppearance.BorderSize = 0;
+            this.save_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.save_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.save_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.save_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save_btn.Location = new System.Drawing.Point(326, 353);
             this.save_btn.Name = "save_btn";
             this.save_btn.Size = new System.Drawing.Size(75, 23);
@@ -77,6 +90,13 @@
             // 
             // print_btn
             // 
+            this.print_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("print_btn.BackgroundImage")));
+            this.print_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.print_btn.FlatAppearance.BorderSize = 0;
+            this.print_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.print_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.print_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.print_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.print_btn.Location = new System.Drawing.Point(326, 398);
             this.print_btn.Name = "print_btn";
             this.print_btn.Size = new System.Drawing.Size(75, 23);
@@ -87,6 +107,13 @@
             // 
             // edit_btn
             // 
+            this.edit_btn.BackgroundImage = global::main_screen.Properties.Resources.greybtn;
+            this.edit_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.edit_btn.FlatAppearance.BorderSize = 0;
+            this.edit_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.edit_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.edit_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edit_btn.Location = new System.Drawing.Point(12, 353);
             this.edit_btn.Name = "edit_btn";
             this.edit_btn.Size = new System.Drawing.Size(75, 23);
@@ -97,6 +124,13 @@
             // 
             // view_btn
             // 
+            this.view_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("view_btn.BackgroundImage")));
+            this.view_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.view_btn.FlatAppearance.BorderSize = 0;
+            this.view_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.view_btn.Location = new System.Drawing.Point(555, 193);
             this.view_btn.Name = "view_btn";
             this.view_btn.Size = new System.Drawing.Size(75, 23);
@@ -114,22 +148,11 @@
             this.date_lbl.TabIndex = 7;
             this.date_lbl.Text = "label1";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::main_screen.Properties.Resources.deardairy;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(426, 239);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(362, 199);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
             // MyDearDairy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.date_lbl);
             this.Controls.Add(this.view_btn);
             this.Controls.Add(this.edit_btn);
@@ -141,7 +164,6 @@
             this.Name = "MyDearDairy";
             this.Text = "MyDearDairy";
             this.Load += new System.EventHandler(this.MyDearDairy_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +179,5 @@
         private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Button view_btn;
         private System.Windows.Forms.Label date_lbl;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
