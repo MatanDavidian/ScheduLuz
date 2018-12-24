@@ -317,6 +317,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\dataBaseLocation.resx">
+      <DependentUpon>dataBaseLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RoundButton.resx">
+      <DependentUpon>RoundButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student\AnswerSurveys.resx">
       <DependentUpon>AnswerSurveys.cs</DependentUpon>
     </EmbeddedResource>
