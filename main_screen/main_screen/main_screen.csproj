@@ -108,6 +108,12 @@
     <Compile Include="Manager\add_user.Designer.cs">
       <DependentUpon>add_user.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\approve_cancellation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\approve_cancellation.Designer.cs">
+      <DependentUpon>approve_cancellation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\BBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,12 @@
     <Compile Include="Student\StudentCalander.Designer.cs">
       <DependentUpon>StudentCalander.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\ask_for_cancelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\ask_for_cancelation.Designer.cs">
+      <DependentUpon>ask_for_cancelation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\multiStudentEvent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\add_user.resx">
       <DependentUpon>add_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager\approve_cancellation.resx">
+      <DependentUpon>approve_cancellation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager\BBoard.resx">
       <DependentUpon>BBoard.cs</DependentUpon>
@@ -365,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\StudentCalander.resx">
       <DependentUpon>StudentCalander.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\ask_for_cancelation.resx">
+      <DependentUpon>ask_for_cancelation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\multiStudentEvent.resx">
       <DependentUpon>multiStudentEvent.cs</DependentUpon>

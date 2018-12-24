@@ -54,7 +54,7 @@
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.title.ForeColor = System.Drawing.Color.Maroon;
+            this.title.ForeColor = System.Drawing.Color.RoyalBlue;
             this.title.Location = new System.Drawing.Point(19, 9);
             this.title.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.title.Name = "title";

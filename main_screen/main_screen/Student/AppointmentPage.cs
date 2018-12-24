@@ -283,13 +283,12 @@ namespace main_screen.Student
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string day;
             string start, end;
             int int_start, int_end;
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-            SqlDataAdapter sda0, sda2;
-            DataTable dtbl0, dtbl1, dtbl2;
+            SqlDataAdapter sda0;
+            DataTable dtbl0, dtbl1;
 
             conn.Open();
             //string find_
@@ -299,7 +298,6 @@ namespace main_screen.Student
             sda0.Fill(dtbl0);
             string already_exist;
             bool flag = false;
-            bool flag2 = false;
             for (int i = 12; i < 48; i++)
             {
                 if (labels[i].BackColor == Color.YellowGreen)
@@ -310,7 +308,7 @@ namespace main_screen.Student
                     cmd.Parameters.Add("@event_kind", "reception_hour");
                     cmd.Parameters.Add("@Event_name", "reception hour");
 
-                    dt=dt.AddDays(int.Parse(labels[i % 6].Name)- dt.Day);
+                    dt=dt.AddDays(int.Parse(labels[i % 6].Name)- dt.Day);//caculate the event date.
                     cmd.Parameters.Add("@date", dt);
 
                     var hours = (labels[i].Text.ToString()).Split('-');//label text = hours start and end.
@@ -353,7 +351,7 @@ namespace main_screen.Student
                         continue;
                     }
 
-                    cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();//the event not exist then added.
 
 
                     //take the max id event from Event table

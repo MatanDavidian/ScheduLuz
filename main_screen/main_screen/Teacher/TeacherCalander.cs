@@ -451,5 +451,12 @@ namespace main_screen
             n.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Teacher.ask_for_cancelation n = new Teacher.ask_for_cancelation();
+            n.Show();
+            this.Hide();
+        }
     }
 }

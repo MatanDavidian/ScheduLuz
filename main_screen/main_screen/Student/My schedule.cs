@@ -28,7 +28,7 @@ namespace main_screen.Student
             Table.RowStyles.Clear();
 
             Table.Location = new Point(70, 90);
-            Table.Size = new Size(536, 253);
+            Table.Size = new Size(536, 250);
             Table.AutoSize = true;
             Table.Name = "Desk";
             Table.ColumnCount = 7;
@@ -70,13 +70,11 @@ namespace main_screen.Student
             labels[16].Text = "18-19";
             labels[17].Text = "19-20";
 
-            //the next code take the teacher reception time
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
             SqlDataAdapter sda;
             DataTable dtbl;
             conn.Open();
-
 
             string query = "Select * from users where Id='" + log_in_page.userId + "'";
             sda = new SqlDataAdapter(query, conn);
@@ -88,45 +86,29 @@ namespace main_screen.Student
             dtbl = new DataTable();
             sda.Fill(dtbl);
 
-
             string hours;
             int k = 18;
             for (int i = 1; i < 13; i++)
             {
                 for (int j = 1; j < 7; j++)
                 {
-                    labels[k] = new Label { BackColor = Color.LightBlue, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter };
+                    labels[k] = new Label { BackColor = Color.LightBlue, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter/*, Size = new Size(30,10)*/ };
                     if (i % 2 == 0)
                         labels[k].BackColor = Color.LightSkyBlue;
                     Table.Controls.Add(labels[k], j, i);
-                    //labels[k].Text = labels[i + 5].Text;//the hours text
-                    //labels[k].TextAlign = ContentAlignment.MiddleCenter;
-                    //labels[k].ForeColor = Color.Black;
- 
                     for (int m = 0; m < dtbl.Rows.Count; m++)
                     {
                         hours = dtbl.Rows[m]["start"].ToString().Trim() + "-" + dtbl.Rows[m]["ends"].ToString().Trim();
                         if (labels[i+5].Text.Trim() == hours && labels[k % 6].Text.Trim() == dtbl.Rows[m]["day_in_week"].ToString().Trim())
                         {
                             labels[k].Text = dtbl.Rows[m]["title"].ToString().Trim();
-                            labels[k].BackColor = Color.LightGreen;
-                            labels[k].ForeColor = Color.Black;
-                        }
-                        //else
-                       // {
-                        //    labels[k].Text = "";
-                       // }
-                     
+                            labels[k].BorderStyle = BorderStyle.Fixed3D;
+                        }    
                     }
-
                     k++;
                 }
             }
-
-
         }
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             StudentCalander frmCal = new StudentCalander();
