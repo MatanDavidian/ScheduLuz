@@ -37,6 +37,13 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.return_btn.FlatAppearance.BorderSize = 0;
+            this.return_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.return_btn.Location = new System.Drawing.Point(13, 415);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(75, 23);
@@ -55,9 +62,16 @@
             // 
             // edit_last_btn
             // 
+            this.edit_last_btn.BackgroundImage = global::main_screen.Properties.Resources.greybtn;
+            this.edit_last_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.edit_last_btn.FlatAppearance.BorderSize = 0;
+            this.edit_last_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.edit_last_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.edit_last_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.edit_last_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edit_last_btn.Location = new System.Drawing.Point(13, 324);
             this.edit_last_btn.Name = "edit_last_btn";
-            this.edit_last_btn.Size = new System.Drawing.Size(119, 23);
+            this.edit_last_btn.Size = new System.Drawing.Size(119, 34);
             this.edit_last_btn.TabIndex = 2;
             this.edit_last_btn.Text = "Edit Last Message";
             this.edit_last_btn.UseVisualStyleBackColor = true;
@@ -65,9 +79,15 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(138, 324);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 23);
+            this.button1.Size = new System.Drawing.Size(133, 34);
             this.button1.TabIndex = 3;
             this.button1.Text = "Publish";
             this.button1.UseVisualStyleBackColor = true;
@@ -77,6 +97,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(283, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.edit_last_btn);

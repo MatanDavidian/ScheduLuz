@@ -437,6 +437,10 @@
     <None Include="Resources\5a1bf3bd298f32.9845137615117813091702.png" />
     <None Include="Resources\bg_student.png" />
     <None Include="Resources\bg_worker.png" />
+    <None Include="Resources\greybtn.png" />
+    <None Include="Resources\bluebtn.png" />
+    <None Include="Resources\orangebtn.png" />
+    <None Include="Resources\greenbtn.png" />
     <Content Include="ScheduLuz.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

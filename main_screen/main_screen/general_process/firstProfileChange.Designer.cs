@@ -78,6 +78,7 @@
             // profile_name
             // 
             this.profile_name.AutoSize = true;
+            this.profile_name.BackColor = System.Drawing.Color.Transparent;
             this.profile_name.Location = new System.Drawing.Point(9, 6);
             this.profile_name.Name = "profile_name";
             this.profile_name.Size = new System.Drawing.Size(45, 13);
@@ -113,6 +114,7 @@
             // 
             // password_groupbox
             // 
+            this.password_groupbox.BackColor = System.Drawing.Color.Transparent;
             this.password_groupbox.Controls.Add(this.view_btn);
             this.password_groupbox.Controls.Add(this.confirm_pass_txt);
             this.password_groupbox.Controls.Add(this.label3);
@@ -128,7 +130,14 @@
             // 
             // view_btn
             // 
-            this.view_btn.Location = new System.Drawing.Point(256, 77);
+            this.view_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("view_btn.BackgroundImage")));
+            this.view_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.view_btn.FlatAppearance.BorderSize = 0;
+            this.view_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.view_btn.Location = new System.Drawing.Point(256, 104);
             this.view_btn.Name = "view_btn";
             this.view_btn.Size = new System.Drawing.Size(44, 23);
             this.view_btn.TabIndex = 6;
@@ -155,6 +164,7 @@
             // 
             // connections
             // 
+            this.connections.BackColor = System.Drawing.Color.Transparent;
             this.connections.Controls.Add(this.confirm_PEmail_txt);
             this.connections.Controls.Add(this.label8);
             this.connections.Controls.Add(this.PEmail_txt);
@@ -265,6 +275,13 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(608, 591);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -275,6 +292,7 @@
             // 
             // classGroup
             // 
+            this.classGroup.BackColor = System.Drawing.Color.Transparent;
             this.classGroup.Controls.Add(this.classCB);
             this.classGroup.Controls.Add(this.label11);
             this.classGroup.Controls.Add(this.label9);
@@ -336,6 +354,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.hobies_txt);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.freetext_txt);
@@ -425,6 +444,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.browse_btn);
             this.groupBox2.Controls.Add(this.profilePic_img);
             this.groupBox2.Location = new System.Drawing.Point(367, 398);
@@ -436,7 +456,14 @@
             // 
             // browse_btn
             // 
-            this.browse_btn.Location = new System.Drawing.Point(156, 87);
+            this.browse_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browse_btn.BackgroundImage")));
+            this.browse_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browse_btn.FlatAppearance.BorderSize = 0;
+            this.browse_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.browse_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.browse_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.browse_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.browse_btn.Location = new System.Drawing.Point(156, 142);
             this.browse_btn.Name = "browse_btn";
             this.browse_btn.Size = new System.Drawing.Size(75, 23);
             this.browse_btn.TabIndex = 1;
@@ -457,6 +484,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.ClientSize = new System.Drawing.Size(691, 690);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
