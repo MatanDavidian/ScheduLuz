@@ -110,7 +110,35 @@ namespace main_screen.Manager
 
         private void LabelClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var button = sender as Button;
+
+            dataBase dataBase = new dataBase();
+            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+            SqlDataAdapter sda;
+            DataTable dt_reqest;
+            conn.Open();
+
+            string query = "Select * from Request_to_cancel";
+            sda = new SqlDataAdapter(query, conn);
+            dt_reqest = new DataTable();
+            sda.Fill(dt_reqest);
+
+            for (int i = 0; i < dt_reqest.Rows.Count; i++)
+            {
+                if (button.Name == i.ToString()+"S")
+                {
+                    SqlCommand cmd = new SqlCommand("UPDATE Request_to_cancel SET approved_condition ='" + "approved" + "' WHERE wEvent_id ='" + dt_reqest.Rows[i]["wEvent_id"] + "'", conn);
+                    cmd.ExecuteNonQuery();
+                    //cmd = new SqlCommand("UPDATE Request_to_cancel SET approved_condition ='" + "approved" + "' WHERE wEvent_id ='" + dt_reqest.Rows[i]["wEvent_id"] + "'", conn);
+                    //cmd.ExecuteNonQuery();
+                }
+                else if (button.Name == i.ToString()+"D")
+                {
+                    SqlCommand cmd = new SqlCommand("UPDATE Request_to_cancel SET approved_condition ='" + "rejected" + "' WHERE wEvent_id ='" + dt_reqest.Rows[i]["wEvent_id"] + "'", conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
         }
     }
 }

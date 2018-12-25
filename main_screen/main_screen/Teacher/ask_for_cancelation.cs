@@ -100,9 +100,9 @@ namespace main_screen.Teacher
                             {
                                 if(dtbl.Rows[m]["wEvent_id"].ToString().Trim()== dt_reqest.Rows[l]["wEvent_id"].ToString().Trim())
                                 {
-                                    if(dt_reqest.Rows[l]["wEvent_id"].ToString().Trim()=="not_approved")
+                                    if(dt_reqest.Rows[l]["approved_condition"].ToString().Trim()== "rejected")
                                     {
-                                        labels[k].Text = "approved_condition";
+                                        labels[k].Text = "rejected";
                                         labels[k].BackColor = Color.Red;
                                     }
                                     else if (dt_reqest.Rows[l]["approved_condition"].ToString().Trim() == "approved")

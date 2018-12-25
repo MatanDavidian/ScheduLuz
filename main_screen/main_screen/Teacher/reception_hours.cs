@@ -50,12 +50,12 @@ namespace main_screen.Teacher
                 labels[i] = new Label { BackColor = Color.DarkBlue, ForeColor = Color.White, Dock = DockStyle.Fill };
                 Table.Controls.Add(labels[i], 0, i-5);
             }
-            labels[6].Text = "8:00-10:00";
-            labels[7].Text = "10:00-12:00";
-            labels[8].Text = "12:00-14:00";
-            labels[9].Text = "14:00-16:00";
-            labels[10].Text = "16:00-18:00";
-            labels[11].Text = "18:00-20:00";
+            labels[6].Text = "8-10";
+            labels[7].Text = "10-12";
+            labels[8].Text = "12-14";
+            labels[9].Text = "14-16";
+            labels[10].Text = "16-18";
+            labels[11].Text = "18-20";
 
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
