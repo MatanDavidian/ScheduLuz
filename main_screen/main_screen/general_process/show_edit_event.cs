@@ -26,6 +26,7 @@ namespace main_screen.general_process
         }
         public static string event_id;
         public static bool weekly;
+        public static bool editalbe;
         private void show_edit_event_Load(object sender, EventArgs e)
         {
             Event.Event n = new Event.Event();
@@ -34,7 +35,23 @@ namespace main_screen.general_process
             title_txt.Text = n.getTitle();
             place_txt.Text = n.getPlace();
             details_txt.Text = n.getDetails();
-            if (!weekly)
+            if(n.getKind().ToLower() == "regular")
+            {
+                editalbe = true;
+            }
+            else if (n.getKind().ToLower() =="muliplayer" && log_in_page.permission.ToLower() != "student")
+            {
+                editalbe = true;
+            }
+            else if (n.getKind().ToLower() == "system-public" && log_in_page.permission.ToLower() == "manager")
+            {
+                editalbe = true;
+            }
+            else
+            {
+                editalbe = false;
+            }
+                if (!weekly)
             {
                 date.Value = n.getTheDate();
                 day_in_week.Visible = false;
@@ -81,6 +98,43 @@ namespace main_screen.general_process
                 StudentCalander n = new StudentCalander();
                 n.Show();
                 this.Hide();
+            }
+        }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            if (weekly && log_in_page.permission.ToLower() == "manager")
+            {
+                event_gb.Enabled = true;
+                day_in_week_cb.Visible = true;
+            }
+
+
+            if (!weekly && editalbe)
+                event_gb.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string privacy="";
+            Event.Event n = new Event.Event();
+            if(private_B.Checked == true)
+            {
+                 privacy = "private";
+            }
+            else if(public_B.Checked == true)
+            {
+                 privacy = "public";
+            }
+            bool updated = n.updateEvent(weekly, event_id, title_txt.Text, place_txt.Text, day_in_week_cb.Text, date.Value, hours_start.Value.ToString(), hours_end.Value.ToString(), minutes_start.Value.ToString(), minutes_end.Value.ToString(), details_txt.Text, privacy);
+            if (updated)
+            {
+                MessageBox.Show("updated");
+                button2.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("not updated");
             }
         }
     }

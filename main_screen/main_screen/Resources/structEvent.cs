@@ -264,21 +264,77 @@ namespace Event
 
            return n;
         }
-        public string getEventID(bool isweakly , string title , string hours_start ,string  hours_end ,string minutes_start= "0", string minutes_end="0")
+        public bool updateEvent(bool isweekly , string eventid, string title , string place , string day_in_week,DateTime date ,string start_hours,
+            string end_hours , string start_minutes, string end_minutes ,string details , string privacy)
         {
-            string id="";
+            //try
+            //{
+            title.Replace("'", "");
+            place.Replace("'", "");
+            details.Replace("'", "");
             dataBase dataBase = new dataBase();
-            SqlConnection con = dataBase.connect_to_scheduluz_DB();
-            string query_name = "Select id from Events Where Event_name = '" + title + "' and hours_start='"+hours_start+"' and minutes_start='" +
-                minutes_start+"' and hours_end='"+hours_end+"' and minutes_end='"+minutes_end+"'";
-            SqlDataAdapter sda = new SqlDataAdapter(query_name, con);
-            DataTable dtb = new DataTable();
-            sda.Fill(dtb);
+                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+                conn.Open();
+                if (isweekly)
+                {
+                    SqlCommand cmd1 = new SqlCommand("UPDATE weekly_events SET title ='" + title + "' WHERE wEvent_id ='" + eventid + "'", conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE weekly_events SET day_in_week ='" + day_in_week + "' WHERE wEvent_id ='" + eventid + "'", conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE weekly_events SET start ='" + start_hours + "' WHERE wEvent_id ='" + eventid + "'", conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE weekly_events SET end ='" + end_hours + "' WHERE wEvent_id ='" + eventid + "'", conn);
+                    cmd1.ExecuteNonQuery();
 
 
-            return id;
+                }
+
+                if (!isweekly)
+                {
+                    SqlCommand cmd1 = new SqlCommand("UPDATE Events SET Event_name ='" + title + "' WHERE Event_id =" + eventid, conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE Events SET Event_name ='" + title + "' WHERE Event_id =" + eventid, conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE Events SET Event_details ='" + details + "' WHERE Event_id =" + eventid + "", conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE Events SET event_place ='" + place + "' WHERE Event_id =" + eventid + "", conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE Events SET event_privacy ='" + privacy + "' WHERE Event_id =" + eventid + "", conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE Events SET date ='" + date.ToShortDateString() + "' WHERE Event_id =" + eventid + "", conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE Events SET hours_start ='" + start_hours + "' WHERE Event_id =" + eventid + "", conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE Events SET hours_end ='" + end_hours + "' WHERE Event_id =" + eventid + "", conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE Events SET minutes_start ='" + start_minutes + "' WHERE Event_id =" + eventid + "", conn);
+                    cmd1.ExecuteNonQuery();
+
+                    cmd1 = new SqlCommand("UPDATE Events SET minutes_end ='" + end_minutes + "' WHERE Event_id =" + eventid + "", conn);
+                    cmd1.ExecuteNonQuery();
+
+
+                }
+                return true;
+            //}
+            //catch
+            //{
+              //  return false;
+            //}
+
+            
         }
-
 
 
 

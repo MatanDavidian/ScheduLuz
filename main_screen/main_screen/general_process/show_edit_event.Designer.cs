@@ -33,6 +33,7 @@
             this.private_B = new System.Windows.Forms.RadioButton();
             this.public_B = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.day_in_week = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.DateTimePicker();
             this.hours_start = new System.Windows.Forms.NumericUpDown();
@@ -51,7 +52,7 @@
             this.title = new System.Windows.Forms.Label();
             this.event_gb = new System.Windows.Forms.GroupBox();
             this.edit_btn = new System.Windows.Forms.Button();
-            this.day_in_week = new System.Windows.Forms.Label();
+            this.day_in_week_cb = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
@@ -66,7 +67,6 @@
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.private_B);
             this.groupBox3.Controls.Add(this.public_B);
-            this.groupBox3.Enabled = false;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(9, 291);
             this.groupBox3.Name = "groupBox3";
@@ -102,6 +102,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.day_in_week_cb);
             this.groupBox1.Controls.Add(this.day_in_week);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.date);
@@ -111,7 +112,6 @@
             this.groupBox1.Controls.Add(this.hours_end);
             this.groupBox1.Controls.Add(this.End_time);
             this.groupBox1.Controls.Add(this.minutes_end);
-            this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 84);
             this.groupBox1.Name = "groupBox1";
@@ -119,6 +119,15 @@
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Date and Time";
+            // 
+            // day_in_week
+            // 
+            this.day_in_week.AutoSize = true;
+            this.day_in_week.Location = new System.Drawing.Point(76, 39);
+            this.day_in_week.Name = "day_in_week";
+            this.day_in_week.Size = new System.Drawing.Size(99, 13);
+            this.day_in_week.TabIndex = 59;
+            this.day_in_week.Text = "every day_in_week";
             // 
             // label5
             // 
@@ -234,7 +243,6 @@
             // 
             // place_txt
             // 
-            this.place_txt.Enabled = false;
             this.place_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.place_txt.Location = new System.Drawing.Point(68, 58);
             this.place_txt.Name = "place_txt";
@@ -245,7 +253,6 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Enabled = false;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 58);
             this.label7.Name = "label7";
@@ -269,10 +276,10 @@
             this.button1.TabIndex = 61;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // details_txt
             // 
-            this.details_txt.Enabled = false;
             this.details_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.details_txt.Location = new System.Drawing.Point(68, 190);
             this.details_txt.Name = "details_txt";
@@ -284,7 +291,6 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 190);
             this.label3.Name = "label3";
@@ -294,7 +300,6 @@
             // 
             // title_txt
             // 
-            this.title_txt.Enabled = false;
             this.title_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title_txt.Location = new System.Drawing.Point(68, 32);
             this.title_txt.Name = "title_txt";
@@ -305,7 +310,6 @@
             // 
             this.title.AutoSize = true;
             this.title.BackColor = System.Drawing.Color.Transparent;
-            this.title.Enabled = false;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.Location = new System.Drawing.Point(3, 32);
             this.title.Name = "title";
@@ -323,6 +327,7 @@
             this.event_gb.Controls.Add(this.place_txt);
             this.event_gb.Controls.Add(this.details_txt);
             this.event_gb.Controls.Add(this.label7);
+            this.event_gb.Enabled = false;
             this.event_gb.Location = new System.Drawing.Point(12, 12);
             this.event_gb.Name = "event_gb";
             this.event_gb.Size = new System.Drawing.Size(464, 346);
@@ -348,15 +353,25 @@
             this.edit_btn.TabIndex = 67;
             this.edit_btn.Text = "Edit";
             this.edit_btn.UseVisualStyleBackColor = false;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
-            // day_in_week
+            // day_in_week_cb
             // 
-            this.day_in_week.AutoSize = true;
-            this.day_in_week.Location = new System.Drawing.Point(76, 39);
-            this.day_in_week.Name = "day_in_week";
-            this.day_in_week.Size = new System.Drawing.Size(99, 13);
-            this.day_in_week.TabIndex = 59;
-            this.day_in_week.Text = "every day_in_week";
+            this.day_in_week_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.day_in_week_cb.FormattingEnabled = true;
+            this.day_in_week_cb.Items.AddRange(new object[] {
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wenedsday",
+            "Thursday",
+            "Friday",
+            "Saturday"});
+            this.day_in_week_cb.Location = new System.Drawing.Point(79, 35);
+            this.day_in_week_cb.Name = "day_in_week_cb";
+            this.day_in_week_cb.Size = new System.Drawing.Size(109, 21);
+            this.day_in_week_cb.TabIndex = 60;
+            this.day_in_week_cb.Visible = false;
             // 
             // show_edit_event
             // 
@@ -410,5 +425,6 @@
         private System.Windows.Forms.GroupBox event_gb;
         private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Label day_in_week;
+        private System.Windows.Forms.ComboBox day_in_week_cb;
     }
 }
