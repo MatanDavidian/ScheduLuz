@@ -149,8 +149,8 @@ namespace main_screen.Teacher
                     var hours = (labels[i].Text.ToString()).Split('-');//label text = hours start and end.
                     start = hours[0];
                     end = hours[1];
-                    int_start=int.Parse(start);
-                    int_end = int.Parse(end);
+                    int_start=int.Parse(start.ToString());
+                    int_end = int.Parse(end.ToString());
                     cmd.Parameters.Add("@start", int_start);
                     cmd.Parameters.Add("@ends", int_end);
                     cmd.Parameters.Add("@event_kind", "reception_hours");
