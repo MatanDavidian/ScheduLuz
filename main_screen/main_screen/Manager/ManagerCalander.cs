@@ -184,6 +184,7 @@ namespace main_screen
                         ListViewItem item = new ListViewItem(dtb2.Rows[0]["Event_name"].ToString().Trim());
                         item.SubItems.Add(hours_start + ":" + minutes_start);
                         item.SubItems.Add(hours_end + ":" + minutes_end);
+                        item.SubItems.Add(event_id);
 
                         /*
                          * choosing color -- need to update if updated.
@@ -255,6 +256,7 @@ namespace main_screen
                 ListViewItem item = new ListViewItem(dtb3.Rows[i]["title"].ToString().Trim());
                 item.SubItems.Add(hours_start + ":" + minutes_start);
                 item.SubItems.Add(hours_end + ":" + minutes_end);
+                item.SubItems.Add(dtb3.Rows[i]["wEvent_id"].ToString().Trim());
                 item.BackColor = Color.Orange;
 
                 //listView1.Items.Add(item);
@@ -345,10 +347,29 @@ namespace main_screen
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems.Count > 0)
+            {
 
+                ListViewItem item = listView1.SelectedItems[0];
+                if (item.BackColor == Color.Orange)
+                    general_process.show_edit_event.weekly = true;
+                else
+                    general_process.show_edit_event.weekly = false;
+
+                general_process.show_edit_event.event_id = item.SubItems[3].Text.ToString();
+
+
+
+
+                general_process.show_edit_event show = new general_process.show_edit_event();
+                show.Show();
+                this.Hide();
+
+
+            }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+            private void button8_Click(object sender, EventArgs e)
         {
             Manager.LoginsReport n = new Manager.LoginsReport();
             n.Show();

@@ -153,9 +153,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\functionsForScheduLuz.cs" />
-    <Compile Include="Resources\dataBaseLocation.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Resources\dataBaseLocation.cs" />
     <Compile Include="Resources\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>

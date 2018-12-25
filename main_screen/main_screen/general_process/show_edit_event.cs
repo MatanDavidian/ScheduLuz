@@ -64,9 +64,24 @@ namespace main_screen.general_process
 
         private void button2_Click(object sender, EventArgs e)
         {
-            StudentCalander n = new StudentCalander();
-            n.Show();
-            this.Hide();
+            if (log_in_page.permission.ToLower() == "manager")
+            {
+                ManagerCalander n = new ManagerCalander();
+                n.Show();
+                this.Hide();
+            }
+            else if (log_in_page.permission.ToLower() == "teacher")
+            {
+                TeacherCalander n = new TeacherCalander();
+                n.Show();
+                this.Hide();
+            }
+            else
+            {
+                StudentCalander n = new StudentCalander();
+                n.Show();
+                this.Hide();
+            }
         }
     }
 }
