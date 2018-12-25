@@ -130,7 +130,8 @@ namespace main_screen.Teacher
                 int event_Id = Int32.Parse(event_id);
 
 
-
+                SqlCommand cmd0 = new SqlCommand("UPDATE Events SET event_place ='"+place_txt.Text+"' WHERE Event_id ='" + event_id + "'", conn);
+                cmd0.ExecuteNonQuery();
 
 
                 SqlCommand cmd1 = new SqlCommand("UPDATE Events SET event_privacy ='public' WHERE Event_id ='" + event_id + "'", conn);

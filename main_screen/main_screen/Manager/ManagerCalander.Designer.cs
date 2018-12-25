@@ -162,6 +162,7 @@
             this.contact_page_btn.TabIndex = 6;
             this.contact_page_btn.Text = "Contact Page";
             this.contact_page_btn.UseVisualStyleBackColor = false;
+            this.contact_page_btn.Click += new System.EventHandler(this.contact_page_btn_Click);
             // 
             // public_event_btn
             // 

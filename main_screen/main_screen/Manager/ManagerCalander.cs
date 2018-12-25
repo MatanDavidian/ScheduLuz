@@ -389,6 +389,13 @@ namespace main_screen
             n.Show();
             this.Hide();
         }
+
+        private void contact_page_btn_Click(object sender, EventArgs e)
+        {
+            general_process.ManagerAndTeacher_view_contacts n = new general_process.ManagerAndTeacher_view_contacts();
+            n.Show();
+            this.Hide();
+        }
     }
 }
 
