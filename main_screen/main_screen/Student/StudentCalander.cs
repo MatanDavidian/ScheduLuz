@@ -88,6 +88,7 @@ namespace main_screen
 
         private void StudentCalander_Load(object sender, EventArgs e)
         {
+
             dataBase dataBase = new dataBase();
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
             string rownumOfMax = "0";
@@ -110,6 +111,183 @@ namespace main_screen
                 if (dtb.Rows.Count > 0)
                 {
                     motd_txt.Text = dtb.Rows[0][0].ToString();
+                }
+            }
+
+
+            {
+                List<ListViewItem> itemlist = new List<ListViewItem>();
+                listView1.Items.Clear();
+
+                int thisday = monthCalendar1.SelectionRange.Start.Day;
+                int thismonth = monthCalendar1.SelectionRange.Start.Month;
+                int thisyear = monthCalendar1.SelectionRange.Start.Year;
+                string dayOfWeek = monthCalendar1.SelectionRange.Start.DayOfWeek.ToString();
+
+
+
+                dataBase = new dataBase();
+                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+
+                conn.Open();
+
+
+                string id = "'" + log_in_page.userId.ToString() + "'";
+
+                query = "Select Event_ID from Events_to_Users where User_ID=" + id;
+
+
+
+                sda = new SqlDataAdapter(query, conn);
+                dtb = new DataTable();
+                sda.Fill(dtb);
+
+                for (int i = 0; i < dtb.Rows.Count; i++)
+                {
+                    string event_id = "'" + dtb.Rows[i][0].ToString() + "'";
+
+                    string query2 = "Select * from Events where Event_id=" + event_id;
+
+                    SqlDataAdapter sda2 = new SqlDataAdapter(query2, conn);
+                    DataTable dtb2 = new DataTable();
+                    sda2.Fill(dtb2);
+                    /* 1/15/2019 00:00:00*/
+                    if (dtb2.Rows.Count > 0)
+                    {
+                        if (dtb2.Rows[0]["date"].ToString() == thismonth.ToString() + "/" + thisday.ToString() + "/" + thisyear.ToString() + " 00:00:00")
+                        {
+                            string hours_end = dtb2.Rows[0]["hours_end"].ToString().Trim();
+
+                            if (hours_end.Length < 2)
+                            {
+                                hours_end = "0" + hours_end;
+                            }
+
+                            string hours_start = dtb2.Rows[0]["hours_start"].ToString().Trim();
+
+                            if (hours_start.Length < 2)
+                            {
+                                hours_start = "0" + hours_start;
+                            }
+
+                            string minutes_start = dtb2.Rows[0]["minutes_start"].ToString().Trim();
+
+                            if (minutes_start.Length < 2)
+                            {
+                                minutes_start = "0" + minutes_start;
+                            }
+
+                            string minutes_end = dtb2.Rows[0]["minutes_end"].ToString().Trim();
+
+                            if (minutes_end.Length < 2)
+                            {
+                                minutes_end = "0" + minutes_end;
+                            }
+
+                            ListViewItem item = new ListViewItem(dtb2.Rows[0]["Event_name"].ToString().Trim());
+                            item.SubItems.Add(hours_start + ":" + minutes_start);
+                            item.SubItems.Add(hours_end + ":" + minutes_end);
+                            item.SubItems.Add(event_id);
+
+                            /*
+                             * choosing color -- need to update if updated.
+                             */
+                            switch (dtb2.Rows[0]["event_kind"].ToString().Trim())
+                            {
+                                case "Muliplayer":
+                                    item.BackColor = Color.DeepSkyBlue;
+                                    break;
+
+                                case "School":
+                                    item.BackColor = Color.Red;
+                                    break;
+
+                                case "Regular":
+                                    item.BackColor = Color.SteelBlue;
+                                    break;
+                                case "system-public":
+                                    item.BackColor = Color.Red;
+                                    break;
+                                case "HW":
+                                    item.BackColor = Color.YellowGreen;
+                                    break;
+
+                                default:
+                                    break;
+                            }
+                            //listView1.Items.Add(item);
+                            itemlist.Add(item);
+                        }
+                    }
+
+                }
+
+
+                string user_class;
+                User user = new User();
+                user = user.GetUser(log_in_page.userId);
+                user_class = user.getGrade() + "-" + user.getClassNumber();
+                string query3 = "Select * from weekly_events where day_in_week='" + dayOfWeek + "' and user_id_OR_class='" + user_class + "'";
+
+                SqlDataAdapter sda3 = new SqlDataAdapter(query3, conn);
+                DataTable dtb3 = new DataTable();
+                sda3.Fill(dtb3);
+
+                for (int i = 0; i < dtb3.Rows.Count; i++)
+                {
+                    string hours_end = dtb3.Rows[i]["ends"].ToString().Trim();
+
+                    if (hours_end.Length < 2)
+                    {
+                        hours_end = "0" + hours_end;
+                    }
+
+                    string hours_start = dtb3.Rows[i]["start"].ToString().Trim();
+
+                    if (hours_start.Length < 2)
+                    {
+                        hours_start = "0" + hours_start;
+                    }
+
+                    string minutes_start = "00";
+
+
+
+                    string minutes_end = "00";
+
+
+                    ListViewItem item = new ListViewItem(dtb3.Rows[i]["title"].ToString().Trim());
+                    item.SubItems.Add(hours_start + ":" + minutes_start);
+                    item.SubItems.Add(hours_end + ":" + minutes_end);
+                    item.SubItems.Add(dtb3.Rows[i]["wEvent_id"].ToString().Trim());
+                    item.BackColor = Color.Orange;
+
+                    //listView1.Items.Add(item);
+                    itemlist.Add(item);
+
+                }
+
+                //MessageBox.Show(itemlist[0].SubItems[1].ToString());
+
+                for (int i = 0; i < itemlist.Count - 1; i++)
+                {
+                    for (int j = 0; j < itemlist.Count - 1; j++)
+                    {
+                        string firsthour = itemlist[j].SubItems[1].ToString();
+                        string secondhour = itemlist[j + 1].SubItems[1].ToString();
+                        if (compairhours(firsthour, secondhour))
+                        {
+                            ListViewItem temp = new ListViewItem();
+                            temp = itemlist[j];
+                            itemlist[j] = itemlist[j + 1];
+                            itemlist[j + 1] = temp;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < itemlist.Count; i++)
+                {
+                    listView1.Items.Add(itemlist[i]);
                 }
             }
         }

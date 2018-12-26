@@ -33,6 +33,7 @@
             this.private_B = new System.Windows.Forms.RadioButton();
             this.public_B = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.day_in_week_cb = new System.Windows.Forms.ComboBox();
             this.day_in_week = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.DateTimePicker();
@@ -52,7 +53,6 @@
             this.title = new System.Windows.Forms.Label();
             this.event_gb = new System.Windows.Forms.GroupBox();
             this.edit_btn = new System.Windows.Forms.Button();
-            this.day_in_week_cb = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
@@ -120,6 +120,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Date and Time";
             // 
+            // day_in_week_cb
+            // 
+            this.day_in_week_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.day_in_week_cb.FormattingEnabled = true;
+            this.day_in_week_cb.Items.AddRange(new object[] {
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wenedsday",
+            "Thursday",
+            "Friday",
+            "Saturday"});
+            this.day_in_week_cb.Location = new System.Drawing.Point(79, 35);
+            this.day_in_week_cb.Name = "day_in_week_cb";
+            this.day_in_week_cb.Size = new System.Drawing.Size(109, 21);
+            this.day_in_week_cb.TabIndex = 60;
+            this.day_in_week_cb.Visible = false;
+            // 
             // day_in_week
             // 
             this.day_in_week.AutoSize = true;
@@ -161,6 +179,7 @@
             this.hours_start.Name = "hours_start";
             this.hours_start.Size = new System.Drawing.Size(37, 20);
             this.hours_start.TabIndex = 3;
+            this.hours_start.ValueChanged += new System.EventHandler(this.hours_start_ValueChanged);
             // 
             // minutes_start
             // 
@@ -354,24 +373,6 @@
             this.edit_btn.Text = "Edit";
             this.edit_btn.UseVisualStyleBackColor = false;
             this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
-            // 
-            // day_in_week_cb
-            // 
-            this.day_in_week_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.day_in_week_cb.FormattingEnabled = true;
-            this.day_in_week_cb.Items.AddRange(new object[] {
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wenedsday",
-            "Thursday",
-            "Friday",
-            "Saturday"});
-            this.day_in_week_cb.Location = new System.Drawing.Point(79, 35);
-            this.day_in_week_cb.Name = "day_in_week_cb";
-            this.day_in_week_cb.Size = new System.Drawing.Size(109, 21);
-            this.day_in_week_cb.TabIndex = 60;
-            this.day_in_week_cb.Visible = false;
             // 
             // show_edit_event
             // 

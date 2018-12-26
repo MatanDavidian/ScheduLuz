@@ -116,25 +116,61 @@ namespace main_screen.general_process
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string privacy="";
-            Event.Event n = new Event.Event();
-            if(private_B.Checked == true)
+            if (title_txt.Text == "")
             {
-                 privacy = "private";
+                MessageBox.Show("please fill the title.");
             }
-            else if(public_B.Checked == true)
+            else if (place_txt.Text == "")
             {
-                 privacy = "public";
+                MessageBox.Show("please fill the place.");
             }
-            bool updated = n.updateEvent(weekly, event_id, title_txt.Text, place_txt.Text, day_in_week_cb.Text, date.Value, hours_start.Value.ToString(), hours_end.Value.ToString(), minutes_start.Value.ToString(), minutes_end.Value.ToString(), details_txt.Text, privacy);
-            if (updated)
+
+            else if (hours_start.Value > hours_end.Value)
             {
-                MessageBox.Show("updated");
-                button2.PerformClick();
+                MessageBox.Show("your end time is before your start time.");
+            }
+            else if (hours_end.Value == hours_start.Value && minutes_end.Value <= minutes_start.Value)
+            {
+                MessageBox.Show("your end time is before your start time.");
             }
             else
             {
-                MessageBox.Show("not updated");
+                string privacy = "";
+                Event.Event n = new Event.Event();
+                if (private_B.Checked == true)
+                {
+                    privacy = "private";
+                }
+                else if (public_B.Checked == true)
+                {
+                    privacy = "public";
+                }
+                bool updated = n.updateEvent(weekly, event_id, title_txt.Text, place_txt.Text, day_in_week_cb.Text, date.Value, hours_start.Value.ToString(), hours_end.Value.ToString(), minutes_start.Value.ToString(), minutes_end.Value.ToString(), details_txt.Text, privacy);
+                if (updated)
+                {
+                    MessageBox.Show("updated");
+                    button2.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("not updated");
+                }
+            }
+        }
+
+        private void hours_start_ValueChanged(object sender, EventArgs e)
+        {
+            if (hours_start.Value == 24)
+            {
+                hours_start.Value = 0;
+            }
+            if (hours_start.Value >= 23)
+            {
+                hours_end.Value = 23;
+            }
+            else
+            {
+                hours_end.Value = hours_start.Value + 1;
             }
         }
     }
