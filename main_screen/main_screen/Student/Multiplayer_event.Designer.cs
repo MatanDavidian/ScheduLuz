@@ -53,6 +53,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.student_lst = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
@@ -64,8 +65,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(19, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label1.Name = "label1";
@@ -85,21 +87,24 @@
             // 
             // friend_name
             // 
-            this.friend_name.Location = new System.Drawing.Point(10, 47);
+            this.friend_name.Location = new System.Drawing.Point(6, 47);
             this.friend_name.Name = "friend_name";
-            this.friend_name.Size = new System.Drawing.Size(119, 20);
+            this.friend_name.Size = new System.Drawing.Size(133, 20);
             this.friend_name.TabIndex = 40;
+            this.friend_name.TextChanged += new System.EventHandler(this.friend_name_TextChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.student_lst);
             this.groupBox1.Controls.Add(this.listView1);
             this.groupBox1.Controls.Add(this.Add_friend_button);
             this.groupBox1.Controls.Add(this.title);
             this.groupBox1.Controls.Add(this.friend_name);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(26, 72);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(424, 157);
+            this.groupBox1.Size = new System.Drawing.Size(424, 206);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "find friends";
@@ -112,7 +117,7 @@
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(238, 16);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(175, 132);
+            this.listView1.Size = new System.Drawing.Size(175, 184);
             this.listView1.TabIndex = 43;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -120,11 +125,13 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Invented friends:";
+            this.columnHeader1.Text = "Invited friends:";
             this.columnHeader1.Width = 171;
             // 
             // Add_friend_button
             // 
+            this.Add_friend_button.BackColor = System.Drawing.Color.Transparent;
+            this.Add_friend_button.BackgroundImage = global::main_screen.Properties.Resources.greybtn;
             this.Add_friend_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Add_friend_button.FlatAppearance.BorderSize = 0;
             this.Add_friend_button.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
@@ -135,12 +142,13 @@
             this.Add_friend_button.Name = "Add_friend_button";
             this.Add_friend_button.Size = new System.Drawing.Size(74, 20);
             this.Add_friend_button.TabIndex = 42;
-            this.Add_friend_button.Text = "Invante";
-            this.Add_friend_button.UseVisualStyleBackColor = true;
+            this.Add_friend_button.Text = "Invite";
+            this.Add_friend_button.UseVisualStyleBackColor = false;
             this.Add_friend_button.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.date);
             this.groupBox3.Controls.Add(this.hours_start);
@@ -149,7 +157,7 @@
             this.groupBox3.Controls.Add(this.hours_end);
             this.groupBox3.Controls.Add(this.End_time);
             this.groupBox3.Controls.Add(this.minutes_end);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(26, 337);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(447, 100);
@@ -227,8 +235,8 @@
             // 
             // Place
             // 
-            this.Place.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Place.Location = new System.Drawing.Point(98, 284);
+            this.Place.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Place.Location = new System.Drawing.Point(98, 309);
             this.Place.Multiline = true;
             this.Place.Name = "Place";
             this.Place.Size = new System.Drawing.Size(222, 20);
@@ -237,16 +245,17 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 284);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(23, 309);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 20);
+            this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 71;
             this.label7.Text = "Place:";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(88, 449);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(379, 95);
@@ -256,17 +265,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 449);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 20);
+            this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 69;
             this.label3.Text = "Details:";
             // 
             // text_title
             // 
-            this.text_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.text_title.Location = new System.Drawing.Point(98, 242);
+            this.text_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_title.Location = new System.Drawing.Point(98, 284);
             this.text_title.Multiline = true;
             this.text_title.Name = "text_title";
             this.text_title.Size = new System.Drawing.Size(222, 20);
@@ -275,10 +285,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label8.Location = new System.Drawing.Point(23, 242);
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(23, 284);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 20);
+            this.label8.Size = new System.Drawing.Size(30, 13);
             this.label8.TabIndex = 67;
             this.label8.Text = "Title:";
             // 
@@ -291,7 +302,7 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(26, 568);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 34);
@@ -309,7 +320,7 @@
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(380, 568);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 34);
@@ -318,10 +329,21 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // student_lst
+            // 
+            this.student_lst.FormattingEnabled = true;
+            this.student_lst.Location = new System.Drawing.Point(6, 64);
+            this.student_lst.Name = "student_lst";
+            this.student_lst.Size = new System.Drawing.Size(133, 82);
+            this.student_lst.Sorted = true;
+            this.student_lst.TabIndex = 44;
+            this.student_lst.SelectedIndexChanged += new System.EventHandler(this.student_lst_SelectedIndexChanged);
+            // 
             // Multiplayer_event
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(21F, 39F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.ClientSize = new System.Drawing.Size(526, 612);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
@@ -338,7 +360,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "Multiplayer_event";
-            this.Text = "Multiplayer_event";
+            this.Text = "Multiplayer event";
             this.Load += new System.EventHandler(this.Multiplayer_event_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -379,5 +401,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListBox student_lst;
     }
 }
