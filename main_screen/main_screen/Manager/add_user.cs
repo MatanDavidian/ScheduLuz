@@ -29,9 +29,6 @@ namespace main_screen.Manager
 
         }
 
-        
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -156,7 +153,7 @@ namespace main_screen.Manager
             }
             catch(System.ArgumentException)
             {
-                MessageBox.Show("id cant start with 0.");
+                MessageBox.Show("ID can't start with 0.");
             }
         
 
