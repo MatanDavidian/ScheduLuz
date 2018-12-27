@@ -321,6 +321,9 @@
     <EmbeddedResource Include="Manager\BBoard.resx">
       <DependentUpon>BBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manager\delete_user.resx">
+      <DependentUpon>delete_user.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager\fixed_shedule.resx">
       <DependentUpon>fixed_shedule.cs</DependentUpon>
     </EmbeddedResource>

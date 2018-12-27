@@ -108,5 +108,12 @@ namespace main_screen.Manager
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ManagerCalander n = new ManagerCalander();
+            this.Hide();
+            n.Show();
+        }
     }
 }
