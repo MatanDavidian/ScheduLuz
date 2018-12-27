@@ -53,6 +53,7 @@
             this.title = new System.Windows.Forms.Label();
             this.event_gb = new System.Windows.Forms.GroupBox();
             this.edit_btn = new System.Windows.Forms.Button();
+            this.delete_btn = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
@@ -374,11 +375,32 @@
             this.edit_btn.UseVisualStyleBackColor = false;
             this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
+            // delete_btn
+            // 
+            this.delete_btn.BackColor = System.Drawing.Color.Transparent;
+            this.delete_btn.BackgroundImage = global::main_screen.Properties.Resources.greybtn;
+            this.delete_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.delete_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.delete_btn.FlatAppearance.BorderSize = 0;
+            this.delete_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.delete_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.delete_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_btn.Location = new System.Drawing.Point(320, 364);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Size = new System.Drawing.Size(75, 23);
+            this.delete_btn.TabIndex = 68;
+            this.delete_btn.Text = "Delete";
+            this.delete_btn.UseVisualStyleBackColor = false;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
+            // 
             // show_edit_event
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 450);
+            this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.event_gb);
             this.Controls.Add(this.button2);
@@ -427,5 +449,6 @@
         private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Label day_in_week;
         private System.Windows.Forms.ComboBox day_in_week_cb;
+        private System.Windows.Forms.Button delete_btn;
     }
 }

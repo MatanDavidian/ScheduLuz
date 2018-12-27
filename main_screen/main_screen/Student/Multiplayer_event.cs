@@ -217,5 +217,40 @@ namespace main_screen.Student
         {
             
         }
+
+        private void friend_name_TextChanged(object sender, EventArgs e)
+        {
+            dataBase dataBase = new dataBase();
+            SqlConnection con = dataBase.connect_to_scheduluz_DB();
+            string query = "Select id,name,lastName from users Where permission = 'student'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            DataTable dtb = new DataTable();
+            sda.Fill(dtb);
+
+            student_lst.Items.Clear();
+
+            for (int i = 0; i < dtb.Rows.Count; i++)
+            {
+                string temp = dtb.Rows[i]["name"].ToString().Trim().ToUpper() + " " + dtb.Rows[i]["lastName"].ToString().Trim().ToUpper();
+
+                if (temp.Contains(friend_name.Text.ToUpper()))
+                {
+                    student_lst.Items.Add(dtb.Rows[i]["name"].ToString().Trim() + " " + dtb.Rows[i]["lastName"].ToString().Trim());
+                }
+            }
+        }
+
+        private void student_lst_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = student_lst.SelectedIndex;
+                friend_name.Text = student_lst.Items[index].ToString();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

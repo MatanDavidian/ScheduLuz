@@ -33,13 +33,13 @@ namespace main_screen.Manager
             sda = new SqlDataAdapter(query, conn);
             dt_reqest = new DataTable();
             sda.Fill(dt_reqest);
-      
-            Label[] labels = new Label[dt_reqest.Rows.Count*5];
-            int help = 0;
+          
+            int help = 0;//check if has a request for cancelltion
             if (dt_reqest.Rows.Count > 0)
             {
                 help = 1;
             }
+            Label[] labels = new Label[dt_reqest.Rows.Count * 5 +(help*5)];
             Button[] buttons = new Button[dt_reqest.Rows.Count * 2];
             TableLayoutPanel Table = new TableLayoutPanel();
             Table.Controls.Clear();
@@ -58,7 +58,7 @@ namespace main_screen.Manager
             int k = 0;
 
 
-            for (int i = 0; i < dt_reqest.Rows.Count; i++)
+            for (int i = 0; i < dt_reqest.Rows.Count+help; i++)
             {
                 for (int j = 0; j < 5; j++)
                 {

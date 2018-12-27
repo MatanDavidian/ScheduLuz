@@ -56,11 +56,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(13, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Profassion:";
+            this.label1.Text = "Profession:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dateTimePicker1
             // 
@@ -74,6 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(12, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
@@ -83,6 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(11, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
@@ -92,6 +96,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(11, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
@@ -109,6 +114,7 @@
             this.from_hour.Name = "from_hour";
             this.from_hour.Size = new System.Drawing.Size(38, 20);
             this.from_hour.TabIndex = 5;
+            this.from_hour.ValueChanged += new System.EventHandler(this.from_hour_ValueChanged);
             // 
             // label5
             // 
@@ -167,6 +173,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(12, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(23, 13);
@@ -176,6 +183,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Location = new System.Drawing.Point(11, 206);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 13);
@@ -208,6 +216,7 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackColor = System.Drawing.Color.Transparent;
             this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.return_btn.FlatAppearance.BorderSize = 0;
@@ -220,11 +229,12 @@
             this.return_btn.Size = new System.Drawing.Size(75, 23);
             this.return_btn.TabIndex = 17;
             this.return_btn.Text = "Return";
-            this.return_btn.UseVisualStyleBackColor = true;
+            this.return_btn.UseVisualStyleBackColor = false;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
             // 
             // submit_btn
             // 
+            this.submit_btn.BackColor = System.Drawing.Color.Transparent;
             this.submit_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
             this.submit_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.submit_btn.FlatAppearance.BorderSize = 0;
@@ -237,13 +247,15 @@
             this.submit_btn.Size = new System.Drawing.Size(75, 23);
             this.submit_btn.TabIndex = 16;
             this.submit_btn.Text = "Submit";
-            this.submit_btn.UseVisualStyleBackColor = true;
+            this.submit_btn.UseVisualStyleBackColor = false;
             this.submit_btn.Click += new System.EventHandler(this.submit_btn_Click);
             // 
             // Add_hw_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(324, 279);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.submit_btn);
@@ -265,7 +277,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_hw_form";
-            this.Text = "Form1";
+            this.Text = "Add Homework";
             this.Load += new System.EventHandler(this.Add_hw_form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.from_hour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.from_minute)).EndInit();

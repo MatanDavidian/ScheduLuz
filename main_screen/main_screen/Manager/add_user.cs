@@ -29,6 +29,10 @@ namespace main_screen.Manager
 
         }
 
+        
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             ManagerCalander frmAEF = new ManagerCalander();
@@ -63,8 +67,10 @@ namespace main_screen.Manager
 
         private void button1_Click_2(object sender, EventArgs e)
         {
+
             bool user_exsist = false;
             try
+           
             {
                 dataBase dataBase = new dataBase();
                 SqlConnection con = dataBase.connect_to_scheduluz_DB();
@@ -93,8 +99,16 @@ namespace main_screen.Manager
             else
                 per = "none";
 
+            
+            
+
             try
+            
             {
+                if (userIDtextBox.Text[0] == '0')
+                {
+                    throw new System.ArgumentException("Parameter cannot be null", "original");
+                }
 
 
                 if (userIDtextBox.Text.Length == 0 || userFirstNameTextBox.Text.Length == 0 || userLastNameTextBox.Text.Length == 0)
@@ -140,10 +154,15 @@ namespace main_screen.Manager
                     MessageBox.Show(userFirstNameTextBox.Text.Trim() + " " + userLastNameTextBox.Text.Trim() + " already exsists in the system");
                 }
             }
-
-            catch
+            catch(System.ArgumentException)
             {
-                MessageBox.Show("Problem detected. please contact your Scheduluz Guide for more information.");
+                MessageBox.Show("id cant start with 0.");
+            }
+        
+
+           catch
+            {
+                MessageBox.Show("Problem detected. this id might be registered already.");
             }
         }
 

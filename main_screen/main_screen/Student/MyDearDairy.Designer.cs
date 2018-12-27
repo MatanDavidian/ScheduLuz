@@ -41,6 +41,7 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackColor = System.Drawing.Color.Transparent;
             this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.return_btn.FlatAppearance.BorderSize = 0;
@@ -53,14 +54,15 @@
             this.return_btn.Size = new System.Drawing.Size(75, 23);
             this.return_btn.TabIndex = 0;
             this.return_btn.Text = "Return";
-            this.return_btn.UseVisualStyleBackColor = true;
+            this.return_btn.UseVisualStyleBackColor = false;
             this.return_btn.Click += new System.EventHandler(this.button1_Click);
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(555, 18);
+            this.monthCalendar1.Location = new System.Drawing.Point(413, 49);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // day_txt
             // 
@@ -73,6 +75,7 @@
             // 
             // save_btn
             // 
+            this.save_btn.BackColor = System.Drawing.Color.Transparent;
             this.save_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
             this.save_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.save_btn.FlatAppearance.BorderSize = 0;
@@ -85,11 +88,12 @@
             this.save_btn.Size = new System.Drawing.Size(75, 23);
             this.save_btn.TabIndex = 3;
             this.save_btn.Text = "Save";
-            this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.UseVisualStyleBackColor = false;
             this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
             // print_btn
             // 
+            this.print_btn.BackColor = System.Drawing.Color.Transparent;
             this.print_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("print_btn.BackgroundImage")));
             this.print_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.print_btn.FlatAppearance.BorderSize = 0;
@@ -102,11 +106,12 @@
             this.print_btn.Size = new System.Drawing.Size(75, 23);
             this.print_btn.TabIndex = 4;
             this.print_btn.Text = "Print";
-            this.print_btn.UseVisualStyleBackColor = true;
+            this.print_btn.UseVisualStyleBackColor = false;
             this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
             // 
             // edit_btn
             // 
+            this.edit_btn.BackColor = System.Drawing.Color.Transparent;
             this.edit_btn.BackgroundImage = global::main_screen.Properties.Resources.greybtn;
             this.edit_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.edit_btn.FlatAppearance.BorderSize = 0;
@@ -119,7 +124,7 @@
             this.edit_btn.Size = new System.Drawing.Size(75, 23);
             this.edit_btn.TabIndex = 5;
             this.edit_btn.Text = "Edit";
-            this.edit_btn.UseVisualStyleBackColor = true;
+            this.edit_btn.UseVisualStyleBackColor = false;
             this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // view_btn
@@ -131,7 +136,7 @@
             this.view_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.view_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.view_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.view_btn.Location = new System.Drawing.Point(555, 193);
+            this.view_btn.Location = new System.Drawing.Point(413, 223);
             this.view_btn.Name = "view_btn";
             this.view_btn.Size = new System.Drawing.Size(75, 23);
             this.view_btn.TabIndex = 6;
@@ -142,6 +147,7 @@
             // date_lbl
             // 
             this.date_lbl.AutoSize = true;
+            this.date_lbl.BackColor = System.Drawing.Color.Transparent;
             this.date_lbl.Location = new System.Drawing.Point(13, 18);
             this.date_lbl.Name = "date_lbl";
             this.date_lbl.Size = new System.Drawing.Size(35, 13);
@@ -152,7 +158,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_student;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(648, 450);
             this.Controls.Add(this.date_lbl);
             this.Controls.Add(this.view_btn);
             this.Controls.Add(this.edit_btn);
@@ -161,6 +169,7 @@
             this.Controls.Add(this.day_txt);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.return_btn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MyDearDairy";
             this.Text = "MyDearDairy";
             this.Load += new System.EventHandler(this.MyDearDairy_Load);

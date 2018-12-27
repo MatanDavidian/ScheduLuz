@@ -224,6 +224,11 @@ namespace main_screen.Teacher
                 send_to_lst.Items.Add(student);
             }
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
