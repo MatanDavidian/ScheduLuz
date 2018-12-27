@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(surveys_results));
             this.Return = new System.Windows.Forms.Button();
             this.listView = new System.Windows.Forms.ListView();
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -87,14 +88,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(19, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 39);
+            this.label1.Size = new System.Drawing.Size(285, 39);
             this.label1.TabIndex = 81;
-            this.label1.Text = "surveys results";
+            this.label1.Text = "Surveys Results";
             // 
             // tableAdapterManager1
             // 
@@ -126,13 +128,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(824, 538);
             this.Controls.Add(this.survey);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.Return);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "surveys_results";
-            this.Text = "surveys_results";
+            this.Text = "Surveys Results";
             this.Load += new System.EventHandler(this.surveys_results_Load);
             ((System.ComponentModel.ISupportInitialize)(this.survey)).EndInit();
             this.ResumeLayout(false);
