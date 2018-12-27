@@ -22,6 +22,9 @@ namespace main_screen.Manager
 
         private void approve_cancellation_Load(object sender, EventArgs e)
         {
+            //vScrollBar1 viewer = new vScrollBar1();
+            //viewer.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+            //vScrollBar1.AutoScrollOffset
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
             SqlDataAdapter sda;
@@ -44,7 +47,7 @@ namespace main_screen.Manager
             Table.Controls.Clear();
             Table.RowStyles.Clear();
 
-            Table.Location = new Point(70, 90);
+            Table.Location = new Point(50, 90);
             Table.Size = new Size(536, 250);
             Table.AutoSize = true;
             Table.Name = "Desk";
@@ -61,7 +64,7 @@ namespace main_screen.Manager
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    labels[k] = new Label { BackColor = Color.Wheat, ForeColor = Color.White, Dock = DockStyle.Fill };
+                    labels[k] = new Label { BackColor = Color.Wheat, ForeColor = Color.Black, Dock = DockStyle.Fill };
                     Table.Controls.Add(labels[k], j, i);
 
                     k++;
@@ -82,7 +85,7 @@ namespace main_screen.Manager
                     labels[k - 4].Text = dt_event.Rows[0]["title"].ToString().Trim();
                     labels[k - 3].Text = dt_event.Rows[0]["day_in_week"].ToString().Trim();
                     labels[k - 2].Text = dt_event.Rows[0]["start"].ToString().Trim() + "-" + dt_event.Rows[0]["ends"].ToString().Trim();
-                    labels[k - 1].Text = dt_reqest.Rows[0]["reason"].ToString().Trim();
+                    labels[k - 1].Text = dt_reqest.Rows[i-1]["reason"].ToString().Trim();
                 }
             }
             if (help != 0)
@@ -101,14 +104,14 @@ namespace main_screen.Manager
             k =0;
             for (int i = help; i < dt_reqest.Rows.Count+ help; i++)
             {
-                buttons[i - help] = new Button { Name=(i-help).ToString()+"S",BackColor = Color.SaddleBrown, ForeColor = Color.White, Dock = DockStyle.Fill };
+                buttons[i - help] = new Button { Name=(i-help).ToString()+"S",BackColor = Color.SaddleBrown, ForeColor = Color.White, Dock = DockStyle.Fill, Text= "accept" };
                 buttons[i - help].Click += new System.EventHandler(LabelClick);
                 Table.Controls.Add(buttons[i - help], 5, i);
 
             }
             for (int i = help; i < dt_reqest.Rows.Count+ help; i++)
             {
-                buttons[dt_reqest.Rows.Count+i-help] = new Button { Name = (i-help).ToString() + "D",BackColor = Color.SaddleBrown, ForeColor = Color.White, Dock = DockStyle.Fill };
+                buttons[dt_reqest.Rows.Count+i-help] = new Button { Name = (i-help).ToString() + "D",BackColor = Color.SaddleBrown, ForeColor = Color.White, Dock = DockStyle.Fill, Text = "reject" };
                 buttons[dt_reqest.Rows.Count+i- help].Click += new System.EventHandler(LabelClick);
                 Table.Controls.Add(buttons[dt_reqest.Rows.Count+i - help], 6, i);
             }
