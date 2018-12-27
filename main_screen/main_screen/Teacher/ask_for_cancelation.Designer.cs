@@ -33,12 +33,13 @@
             this.Submit = new System.Windows.Forms.Button();
             this.Return = new System.Windows.Forms.Button();
             this.reason = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label1.BackColor = System.Drawing.Color.GreenYellow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.Location = new System.Drawing.Point(23, 61);
             this.label1.Name = "label1";
@@ -49,7 +50,7 @@
             // title
             // 
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.title.ForeColor = System.Drawing.Color.Maroon;
+            this.title.ForeColor = System.Drawing.Color.Black;
             this.title.Location = new System.Drawing.Point(19, 9);
             this.title.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.title.Name = "title";
@@ -67,7 +68,7 @@
             this.Submit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Submit.Location = new System.Drawing.Point(536, 476);
+            this.Submit.Location = new System.Drawing.Point(541, 499);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(84, 34);
             this.Submit.TabIndex = 81;
@@ -85,7 +86,7 @@
             this.Return.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Return.Location = new System.Drawing.Point(7, 476);
+            this.Return.Location = new System.Drawing.Point(12, 499);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(84, 34);
             this.Return.TabIndex = 80;
@@ -95,16 +96,28 @@
             // 
             // reason
             // 
-            this.reason.Location = new System.Drawing.Point(545, 56);
+            this.reason.Location = new System.Drawing.Point(236, 449);
             this.reason.Name = "reason";
-            this.reason.Size = new System.Drawing.Size(181, 20);
+            this.reason.Size = new System.Drawing.Size(248, 20);
             this.reason.TabIndex = 83;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(90, 449);
+            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 20);
+            this.label2.TabIndex = 84;
+            this.label2.Text = "add your reason pls:";
             // 
             // ask_for_cancelation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 522);
+            this.ClientSize = new System.Drawing.Size(901, 545);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.reason);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Submit);
@@ -125,5 +138,6 @@
         private System.Windows.Forms.Button Return;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.TextBox reason;
+        private System.Windows.Forms.Label label2;
     }
 }
