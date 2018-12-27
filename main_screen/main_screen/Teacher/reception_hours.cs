@@ -33,41 +33,29 @@ namespace main_screen.Teacher
             Table.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddRows;
             this.Controls.Add(Table);
 
-            
             for (int i = 0; i < 6; i++)
             {
                 labels[i] = new Label { BackColor = Color.Black, ForeColor = Color.White, Dock = DockStyle.Fill };
-            }
-            labels[0].Text = "Monday";
-            Table.Controls.Add(labels[0], 1, 0);
-            labels[1].Text = "Sunday";
-            Table.Controls.Add(labels[1], 2, 0);
-            labels[2].Text = "Tuesday";
-            Table.Controls.Add(labels[2], 3, 0);
-            labels[3].Text = "Wednesday";
-            Table.Controls.Add(labels[3], 4, 0);
-            labels[4].Text = "Thursday";
-            Table.Controls.Add(labels[4], 5, 0);
-            labels[5].Text = "Friday";
-            Table.Controls.Add(labels[5], 6, 0);
+                Table.Controls.Add(labels[i], i+1, 0);
 
+            }
+            labels[0].Text = "Sunday";
+            labels[1].Text = "Monday";
+            labels[2].Text = "Tuesday";
+            labels[3].Text = "Wednesday";
+            labels[4].Text = "Thursday";
+            labels[5].Text = "Friday";
             for (int i = 6; i < 12; i++)
             {
                 labels[i] = new Label { BackColor = Color.DarkBlue, ForeColor = Color.White, Dock = DockStyle.Fill };
+                Table.Controls.Add(labels[i], 0, i-5);
             }
             labels[6].Text = "8-10";
-            Table.Controls.Add(labels[6], 0, 1);
             labels[7].Text = "10-12";
-            Table.Controls.Add(labels[7], 0, 2);
             labels[8].Text = "12-14";
-            Table.Controls.Add(labels[8], 0, 3);
             labels[9].Text = "14-16";
-            Table.Controls.Add(labels[9], 0, 4);
             labels[10].Text = "16-18";
-            Table.Controls.Add(labels[10], 0, 5);
             labels[11].Text = "18-20";
-            Table.Controls.Add(labels[11], 0, 6);
-            int k = 12;
 
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
@@ -75,11 +63,11 @@ namespace main_screen.Teacher
             DataTable dtbl;
             conn.Open();
             string query = "Select * from weekly_events where user_id_OR_class=" + log_in_page.userId+ "and event_kind='"+ "reception_hours"+"'" ;
-
             sda = new SqlDataAdapter(query, conn);
             dtbl = new DataTable();
             sda.Fill(dtbl);
             string hours;
+            int k = 12;
             for (int i = 1; i < 7; i++)
             {
                 for (int j = 1; j < 7; j++)
@@ -90,7 +78,7 @@ namespace main_screen.Teacher
                     labels[k].Click += new System.EventHandler(LabelClick);
                     labels[k].Text = labels[i+5].Text;
                     labels[k].TextAlign = ContentAlignment.MiddleCenter;
-                    labels[k].ForeColor = Color.DarkRed;
+                    labels[k].ForeColor = Color.Black;
 
                     for (int m = 0; m < dtbl.Rows.Count; m++)
                     {
@@ -117,7 +105,7 @@ namespace main_screen.Teacher
             else
             {
                 label.BackColor = Color.DarkRed;
-                label.ForeColor = Color.DarkRed;
+                label.ForeColor = Color.Black;
             }
         }
     
@@ -141,13 +129,13 @@ namespace main_screen.Teacher
 
             conn.Open();
 
-            string query0 = "Select * from weekly_events where user_id_OR_class=" + log_in_page.userId + "and event_kind='" + "reception_hours" + "'";
+            string query0 = "Select * from weekly_events where user_id_OR_class='" + log_in_page.userId+"'";/* + "and event_kind='" + "reception_hours" + "'"*/
             sda0 = new SqlDataAdapter(query0, conn);
             dtbl0 = new DataTable();
             sda0.Fill(dtbl0);
             string already_exist;
             bool flag = false;
-
+            bool flag2 = false;
             for (int i = 12; i < 48; i++)
             {
                 if(labels[i].BackColor==Color.LightGreen)
@@ -161,16 +149,20 @@ namespace main_screen.Teacher
                     var hours = (labels[i].Text.ToString()).Split('-');//label text = hours start and end.
                     start = hours[0];
                     end = hours[1];
-                    int_start=int.Parse(start);
-                    int_end = int.Parse(end);
+                    int_start=int.Parse(start.ToString());
+                    int_end = int.Parse(end.ToString());
                     cmd.Parameters.Add("@start", int_start);
                     cmd.Parameters.Add("@ends", int_end);
                     cmd.Parameters.Add("@event_kind", "reception_hours");
                     for (int m = 0; m < dtbl0.Rows.Count; m++)//***CHECK IF THE EVENT IS ALREADY EXIST.
-                    {
+                    {//labels[i].Text.ToString().Trim() == already_exist && 
                         already_exist = dtbl0.Rows[m]["start"].ToString().Trim() + "-" + dtbl0.Rows[m]["ends"].ToString().Trim();
-                        if (labels[i].Text.ToString().Trim() == already_exist && labels[i % 6].Text.Trim() == dtbl0.Rows[m]["day_in_week"].ToString().Trim())
+                        if ((int_start == int.Parse(dtbl0.Rows[m]["start"].ToString().Trim()) || int_end== int.Parse(dtbl0.Rows[m]["ends"].ToString().Trim())) && labels[i % 6].Text.Trim() == dtbl0.Rows[m]["day_in_week"].ToString().Trim() )
                         {
+                            if (dtbl0.Rows[m]["event_kind"].ToString().Trim() != "reception_hours")
+                            {
+                                flag2 = true;
+                            }
                             flag = true;
                             break;
                         }
@@ -178,6 +170,12 @@ namespace main_screen.Teacher
                     if(flag)//IF the event already exist.
                     {
                         flag = false;
+                        if (flag2==true)
+                        {
+                            labels[i].BackColor = Color.DarkRed;
+                            MessageBox.Show("You have other system event at "+ labels[i % 6].Text.Trim() + " between " + int_start + " to " + int_end + " choose other time.");
+                            flag2 = false;
+                        }
                         continue;
                     }
                     cmd.ExecuteNonQuery();

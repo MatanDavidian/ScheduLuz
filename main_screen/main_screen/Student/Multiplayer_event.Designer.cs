@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Multiplayer_event));
             this.label1 = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.friend_name = new System.Windows.Forms.TextBox();
@@ -120,11 +121,16 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Invented friends:";
-            this.columnHeader1.Width = 153;
+            this.columnHeader1.Width = 171;
             // 
             // Add_friend_button
             // 
-            this.Add_friend_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Add_friend_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Add_friend_button.FlatAppearance.BorderSize = 0;
+            this.Add_friend_button.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.Add_friend_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Add_friend_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Add_friend_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_friend_button.Location = new System.Drawing.Point(145, 47);
             this.Add_friend_button.Name = "Add_friend_button";
             this.Add_friend_button.Size = new System.Drawing.Size(74, 20);
@@ -278,6 +284,13 @@
             // 
             // button2
             // 
+            this.button2.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.button2.Location = new System.Drawing.Point(26, 568);
             this.button2.Name = "button2";
@@ -289,6 +302,13 @@
             // 
             // button3
             // 
+            this.button3.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.button3.Location = new System.Drawing.Point(380, 568);
             this.button3.Name = "button3";
@@ -315,6 +335,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "Multiplayer_event";
             this.Text = "Multiplayer_event";

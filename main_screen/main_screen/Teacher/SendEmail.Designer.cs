@@ -136,6 +136,13 @@ namespace main_screen.Teacher
             // 
             // btnSend
             // 
+            this.btnSend.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.btnSend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSend.FlatAppearance.BorderSize = 0;
+            this.btnSend.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnSend.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSend.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.Location = new System.Drawing.Point(297, 19);
             this.btnSend.Margin = new System.Windows.Forms.Padding(2);
             this.btnSend.Name = "btnSend";
@@ -232,7 +239,7 @@ namespace main_screen.Teacher
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(216, 20);
             this.txtPassword.TabIndex = 14;
-            this.txtPassword.Text = "A1346014";
+            this.txtPassword.Text = "tom-ls123456";
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -272,6 +279,13 @@ namespace main_screen.Teacher
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(461, 459);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(60, 28);

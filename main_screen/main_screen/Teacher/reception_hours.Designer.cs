@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reception_hours));
             this.title = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Return = new System.Windows.Forms.Button();
+            this.Submit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -46,27 +47,41 @@
             this.title.TabIndex = 5;
             this.title.Text = "reception hours";
             // 
-            // button2
+            // Return
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button2.Location = new System.Drawing.Point(35, 364);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 34);
-            this.button2.TabIndex = 76;
-            this.button2.Text = "Return";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Return.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Return.FlatAppearance.BorderSize = 0;
+            this.Return.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Return.Location = new System.Drawing.Point(12, 395);
+            this.Return.Name = "Return";
+            this.Return.Size = new System.Drawing.Size(84, 34);
+            this.Return.TabIndex = 76;
+            this.Return.Text = "Return";
+            this.Return.UseVisualStyleBackColor = true;
+            this.Return.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // Submit
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button3.Location = new System.Drawing.Point(385, 364);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 34);
-            this.button3.TabIndex = 77;
-            this.button3.Text = "Submit";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Submit.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.Submit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Submit.FlatAppearance.BorderSize = 0;
+            this.Submit.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.Submit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Submit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Submit.Location = new System.Drawing.Point(391, 395);
+            this.Submit.Name = "Submit";
+            this.Submit.Size = new System.Drawing.Size(84, 34);
+            this.Submit.TabIndex = 77;
+            this.Submit.Text = "Submit";
+            this.Submit.UseVisualStyleBackColor = true;
+            this.Submit.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -85,9 +100,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 441);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Submit);
+            this.Controls.Add(this.Return);
             this.Controls.Add(this.title);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "reception_hours";
             this.Text = "reception_hours";
             this.Load += new System.EventHandler(this.reception_hours_Load);
@@ -99,8 +115,8 @@
         #endregion
 
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Return;
+        private System.Windows.Forms.Button Submit;
         private System.Windows.Forms.Label label1;
     }
 }

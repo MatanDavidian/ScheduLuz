@@ -39,6 +39,12 @@
             // 
             // new_msg_btn
             // 
+            this.new_msg_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.new_msg_btn.FlatAppearance.BorderSize = 0;
+            this.new_msg_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.new_msg_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.new_msg_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.new_msg_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.new_msg_btn.Location = new System.Drawing.Point(12, 31);
             this.new_msg_btn.Name = "new_msg_btn";
             this.new_msg_btn.Size = new System.Drawing.Size(118, 23);
@@ -49,6 +55,13 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.return_btn.FlatAppearance.BorderSize = 0;
+            this.return_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.return_btn.Location = new System.Drawing.Point(12, 415);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(75, 23);

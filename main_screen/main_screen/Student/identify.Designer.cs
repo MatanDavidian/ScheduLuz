@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(identify));
             this.label1 = new System.Windows.Forms.Label();
             this.pass_txt = new System.Windows.Forms.TextBox();
             this.submit_pass = new System.Windows.Forms.Button();
@@ -53,6 +54,12 @@
             // 
             // submit_pass
             // 
+            this.submit_pass.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.submit_pass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.submit_pass.FlatAppearance.BorderSize = 0;
+            this.submit_pass.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.submit_pass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.submit_pass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submit_pass.Location = new System.Drawing.Point(47, 65);
             this.submit_pass.Name = "submit_pass";
             this.submit_pass.Size = new System.Drawing.Size(75, 23);
@@ -69,6 +76,7 @@
             this.Controls.Add(this.submit_pass);
             this.Controls.Add(this.pass_txt);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "identify";
             this.Text = "identify";
             this.Load += new System.EventHandler(this.identify_Load);

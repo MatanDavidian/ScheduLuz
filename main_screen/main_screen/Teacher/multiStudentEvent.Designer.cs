@@ -30,12 +30,18 @@ namespace main_screen.Teacher
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(multiStudentEvent));
             this.student_lst = new System.Windows.Forms.ListBox();
             this.to_txt = new System.Windows.Forms.TextBox();
             this.send_to_lst = new System.Windows.Forms.ListBox();
             this.add_btn = new System.Windows.Forms.Button();
             this.clear_btn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.class_num_cb = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.grade_cb = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,12 +59,7 @@ namespace main_screen.Teacher
             this.minutes_end = new System.Windows.Forms.NumericUpDown();
             this.return_btn = new System.Windows.Forms.Button();
             this.create_btn = new System.Windows.Forms.Button();
-            this.grade_cb = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.class_num_cb = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
@@ -95,6 +96,13 @@ namespace main_screen.Teacher
             // 
             // add_btn
             // 
+            this.add_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("add_btn.BackgroundImage")));
+            this.add_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.add_btn.FlatAppearance.BorderSize = 0;
+            this.add_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.add_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.add_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_btn.Location = new System.Drawing.Point(297, 46);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(75, 23);
@@ -105,6 +113,13 @@ namespace main_screen.Teacher
             // 
             // clear_btn
             // 
+            this.clear_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clear_btn.BackgroundImage")));
+            this.clear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.clear_btn.FlatAppearance.BorderSize = 0;
+            this.clear_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.clear_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.clear_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.clear_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clear_btn.Location = new System.Drawing.Point(297, 75);
             this.clear_btn.Name = "clear_btn";
             this.clear_btn.Size = new System.Drawing.Size(75, 23);
@@ -131,6 +146,69 @@ namespace main_screen.Teacher
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Users:";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(298, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Add Class>>";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(135, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Class Number:";
+            // 
+            // class_num_cb
+            // 
+            this.class_num_cb.FormattingEnabled = true;
+            this.class_num_cb.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "ALL"});
+            this.class_num_cb.Location = new System.Drawing.Point(216, 15);
+            this.class_num_cb.Name = "class_num_cb";
+            this.class_num_cb.Size = new System.Drawing.Size(75, 21);
+            this.class_num_cb.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Grade:";
+            // 
+            // grade_cb
+            // 
+            this.grade_cb.FormattingEnabled = true;
+            this.grade_cb.Items.AddRange(new object[] {
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.grade_cb.Location = new System.Drawing.Point(52, 15);
+            this.grade_cb.Name = "grade_cb";
+            this.grade_cb.Size = new System.Drawing.Size(75, 21);
+            this.grade_cb.TabIndex = 11;
             // 
             // label1
             // 
@@ -244,6 +322,11 @@ namespace main_screen.Teacher
             // 
             this.hours_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hours_start.Location = new System.Drawing.Point(203, 108);
+            this.hours_start.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.hours_start.Name = "hours_start";
             this.hours_start.Size = new System.Drawing.Size(37, 20);
             this.hours_start.TabIndex = 60;
@@ -252,6 +335,11 @@ namespace main_screen.Teacher
             // 
             this.minutes_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minutes_start.Location = new System.Drawing.Point(246, 109);
+            this.minutes_start.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
             this.minutes_start.Name = "minutes_start";
             this.minutes_start.Size = new System.Drawing.Size(37, 20);
             this.minutes_start.TabIndex = 61;
@@ -260,6 +348,11 @@ namespace main_screen.Teacher
             // 
             this.hours_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hours_end.Location = new System.Drawing.Point(362, 109);
+            this.hours_end.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.hours_end.Name = "hours_end";
             this.hours_end.Size = new System.Drawing.Size(37, 20);
             this.hours_end.TabIndex = 63;
@@ -268,12 +361,24 @@ namespace main_screen.Teacher
             // 
             this.minutes_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minutes_end.Location = new System.Drawing.Point(405, 109);
+            this.minutes_end.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
             this.minutes_end.Name = "minutes_end";
             this.minutes_end.Size = new System.Drawing.Size(37, 20);
             this.minutes_end.TabIndex = 62;
             // 
             // return_btn
             // 
+            this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.return_btn.FlatAppearance.BorderSize = 0;
+            this.return_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.return_btn.Location = new System.Drawing.Point(21, 582);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(75, 23);
@@ -284,6 +389,13 @@ namespace main_screen.Teacher
             // 
             // create_btn
             // 
+            this.create_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.create_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.create_btn.FlatAppearance.BorderSize = 0;
+            this.create_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.create_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.create_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.create_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.create_btn.Location = new System.Drawing.Point(508, 582);
             this.create_btn.Name = "create_btn";
             this.create_btn.Size = new System.Drawing.Size(86, 23);
@@ -292,71 +404,17 @@ namespace main_screen.Teacher
             this.create_btn.UseVisualStyleBackColor = true;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
-            // grade_cb
-            // 
-            this.grade_cb.FormattingEnabled = true;
-            this.grade_cb.Items.AddRange(new object[] {
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.grade_cb.Location = new System.Drawing.Point(52, 15);
-            this.grade_cb.Name = "grade_cb";
-            this.grade_cb.Size = new System.Drawing.Size(75, 21);
-            this.grade_cb.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Grade:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(135, 18);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Class Number:";
-            // 
-            // class_num_cb
-            // 
-            this.class_num_cb.FormattingEnabled = true;
-            this.class_num_cb.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "ALL"});
-            this.class_num_cb.Location = new System.Drawing.Point(216, 15);
-            this.class_num_cb.Name = "class_num_cb";
-            this.class_num_cb.Size = new System.Drawing.Size(75, 21);
-            this.class_num_cb.TabIndex = 13;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(298, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Add Class>>";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // multiStudentEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(606, 617);
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "multiStudentEvent";
             this.Text = "multiStudentEvent";
             this.Load += new System.EventHandler(this.multiStudentEvent_Load);

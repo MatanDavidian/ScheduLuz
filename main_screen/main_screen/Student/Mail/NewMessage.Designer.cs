@@ -101,6 +101,10 @@
             // 
             // send_btn
             // 
+            this.send_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.send_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.send_btn.FlatAppearance.BorderSize = 0;
+            this.send_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.send_btn.Location = new System.Drawing.Point(365, 415);
             this.send_btn.Name = "send_btn";
             this.send_btn.Size = new System.Drawing.Size(75, 23);
@@ -111,6 +115,10 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
+            this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.return_btn.FlatAppearance.BorderSize = 0;
+            this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.return_btn.Location = new System.Drawing.Point(13, 415);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(75, 23);

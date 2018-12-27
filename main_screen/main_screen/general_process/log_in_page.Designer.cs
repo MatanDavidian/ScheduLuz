@@ -29,25 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(log_in_page));
-            this.Login = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.Login = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Login
-            // 
-            this.Login.Location = new System.Drawing.Point(140, 123);
-            this.Login.Margin = new System.Windows.Forms.Padding(2);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(129, 41);
-            this.Login.TabIndex = 0;
-            this.Login.Text = "Login";
-            this.Login.UseVisualStyleBackColor = true;
-            this.Login.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -82,12 +71,31 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Password:";
             // 
+            // Login
+            // 
+            this.Login.BackColor = System.Drawing.Color.Transparent;
+            this.Login.BackgroundImage = global::main_screen.Properties.Resources.bluebtn1;
+            this.Login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Login.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.Login.FlatAppearance.BorderSize = 0;
+            this.Login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Login.Location = new System.Drawing.Point(167, 101);
+            this.Login.Margin = new System.Windows.Forms.Padding(2);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(98, 35);
+            this.Login.TabIndex = 0;
+            this.Login.Text = "Login";
+            this.Login.UseVisualStyleBackColor = false;
+            this.Login.Click += new System.EventHandler(this.button1_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::main_screen.Properties.Resources.sched_l_z_logo;
             this.pictureBox1.Location = new System.Drawing.Point(12, 87);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(119, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(119, 81);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -98,7 +106,7 @@
             this.AcceptButton = this.Login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 180);
+            this.ClientSize = new System.Drawing.Size(301, 171);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

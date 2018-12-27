@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(firstProfileChange));
             this.profile_name = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,7 +78,8 @@
             // profile_name
             // 
             this.profile_name.AutoSize = true;
-            this.profile_name.Location = new System.Drawing.Point(83, 27);
+            this.profile_name.BackColor = System.Drawing.Color.Transparent;
+            this.profile_name.Location = new System.Drawing.Point(9, 6);
             this.profile_name.Name = "profile_name";
             this.profile_name.Size = new System.Drawing.Size(45, 13);
             this.profile_name.TabIndex = 0;
@@ -112,13 +114,14 @@
             // 
             // password_groupbox
             // 
+            this.password_groupbox.BackColor = System.Drawing.Color.Transparent;
             this.password_groupbox.Controls.Add(this.view_btn);
             this.password_groupbox.Controls.Add(this.confirm_pass_txt);
             this.password_groupbox.Controls.Add(this.label3);
             this.password_groupbox.Controls.Add(this.label1);
             this.password_groupbox.Controls.Add(this.pass_txt);
             this.password_groupbox.Controls.Add(this.label2);
-            this.password_groupbox.Location = new System.Drawing.Point(86, 64);
+            this.password_groupbox.Location = new System.Drawing.Point(12, 22);
             this.password_groupbox.Name = "password_groupbox";
             this.password_groupbox.Size = new System.Drawing.Size(316, 150);
             this.password_groupbox.TabIndex = 4;
@@ -127,7 +130,14 @@
             // 
             // view_btn
             // 
-            this.view_btn.Location = new System.Drawing.Point(256, 77);
+            this.view_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("view_btn.BackgroundImage")));
+            this.view_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.view_btn.FlatAppearance.BorderSize = 0;
+            this.view_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.view_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.view_btn.Location = new System.Drawing.Point(256, 104);
             this.view_btn.Name = "view_btn";
             this.view_btn.Size = new System.Drawing.Size(44, 23);
             this.view_btn.TabIndex = 6;
@@ -154,6 +164,7 @@
             // 
             // connections
             // 
+            this.connections.BackColor = System.Drawing.Color.Transparent;
             this.connections.Controls.Add(this.confirm_PEmail_txt);
             this.connections.Controls.Add(this.label8);
             this.connections.Controls.Add(this.PEmail_txt);
@@ -165,7 +176,7 @@
             this.connections.Controls.Add(this.label5);
             this.connections.Controls.Add(this.Email_1st);
             this.connections.Controls.Add(this.label6);
-            this.connections.Location = new System.Drawing.Point(441, 64);
+            this.connections.Location = new System.Drawing.Point(367, 22);
             this.connections.Name = "connections";
             this.connections.Size = new System.Drawing.Size(316, 362);
             this.connections.TabIndex = 6;
@@ -264,7 +275,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(682, 676);
+            this.button1.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(608, 591);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -274,11 +292,12 @@
             // 
             // classGroup
             // 
+            this.classGroup.BackColor = System.Drawing.Color.Transparent;
             this.classGroup.Controls.Add(this.classCB);
             this.classGroup.Controls.Add(this.label11);
             this.classGroup.Controls.Add(this.label9);
             this.classGroup.Controls.Add(this.yearCB);
-            this.classGroup.Location = new System.Drawing.Point(86, 231);
+            this.classGroup.Location = new System.Drawing.Point(12, 189);
             this.classGroup.Name = "classGroup";
             this.classGroup.Size = new System.Drawing.Size(316, 64);
             this.classGroup.TabIndex = 8;
@@ -335,6 +354,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.hobies_txt);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.freetext_txt);
@@ -343,7 +363,7 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.address_txt);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Location = new System.Drawing.Point(86, 326);
+            this.groupBox1.Location = new System.Drawing.Point(12, 284);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 397);
             this.groupBox1.TabIndex = 9;
@@ -389,9 +409,12 @@
             this.birthdate_pckr.CustomFormat = "yyyy-MM-dd";
             this.birthdate_pckr.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.birthdate_pckr.Location = new System.Drawing.Point(67, 66);
+            this.birthdate_pckr.MaxDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.birthdate_pckr.MinDate = new System.DateTime(1997, 1, 1, 0, 0, 0, 0);
             this.birthdate_pckr.Name = "birthdate_pckr";
             this.birthdate_pckr.Size = new System.Drawing.Size(95, 20);
             this.birthdate_pckr.TabIndex = 3;
+            this.birthdate_pckr.Value = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.birthdate_pckr.ValueChanged += new System.EventHandler(this.birthdate_pckr_ValueChanged);
             // 
             // label13
@@ -421,9 +444,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.browse_btn);
             this.groupBox2.Controls.Add(this.profilePic_img);
-            this.groupBox2.Location = new System.Drawing.Point(441, 440);
+            this.groupBox2.Location = new System.Drawing.Point(367, 398);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(316, 187);
             this.groupBox2.TabIndex = 10;
@@ -432,7 +456,14 @@
             // 
             // browse_btn
             // 
-            this.browse_btn.Location = new System.Drawing.Point(156, 87);
+            this.browse_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("browse_btn.BackgroundImage")));
+            this.browse_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.browse_btn.FlatAppearance.BorderSize = 0;
+            this.browse_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.browse_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.browse_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.browse_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.browse_btn.Location = new System.Drawing.Point(156, 142);
             this.browse_btn.Name = "browse_btn";
             this.browse_btn.Size = new System.Drawing.Size(75, 23);
             this.browse_btn.TabIndex = 1;
@@ -453,7 +484,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 736);
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.ClientSize = new System.Drawing.Size(691, 690);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.classGroup);
@@ -461,6 +493,7 @@
             this.Controls.Add(this.connections);
             this.Controls.Add(this.password_groupbox);
             this.Controls.Add(this.profile_name);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "firstProfileChange";
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);
