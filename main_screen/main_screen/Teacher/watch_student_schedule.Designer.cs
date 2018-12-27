@@ -64,6 +64,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.profilePic_img);
             this.groupBox2.Location = new System.Drawing.Point(388, 11);
             this.groupBox2.Name = "groupBox2";
@@ -83,6 +84,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.hobies_txt);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.freetext_txt);
@@ -169,6 +171,7 @@
             // 
             // connections
             // 
+            this.connections.BackColor = System.Drawing.Color.Transparent;
             this.connections.Controls.Add(this.PEmail_txt);
             this.connections.Controls.Add(this.label10);
             this.connections.Controls.Add(this.phone_txt);
@@ -251,6 +254,7 @@
             // 
             // load_student_btn
             // 
+            this.load_student_btn.BackColor = System.Drawing.Color.Transparent;
             this.load_student_btn.BackgroundImage = global::main_screen.Properties.Resources.greybtn;
             this.load_student_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.load_student_btn.FlatAppearance.BorderSize = 0;
@@ -263,7 +267,7 @@
             this.load_student_btn.Size = new System.Drawing.Size(106, 23);
             this.load_student_btn.TabIndex = 23;
             this.load_student_btn.Text = "Load Student";
-            this.load_student_btn.UseVisualStyleBackColor = true;
+            this.load_student_btn.UseVisualStyleBackColor = false;
             this.load_student_btn.Click += new System.EventHandler(this.load_student_btn_Click);
             // 
             // listView1
@@ -303,6 +307,7 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackColor = System.Drawing.Color.Transparent;
             this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.return_btn.FlatAppearance.BorderSize = 0;
@@ -315,14 +320,16 @@
             this.return_btn.Size = new System.Drawing.Size(75, 23);
             this.return_btn.TabIndex = 26;
             this.return_btn.Text = "Return";
-            this.return_btn.UseVisualStyleBackColor = true;
+            this.return_btn.UseVisualStyleBackColor = false;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
             // 
             // watch_student_schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 571);
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(764, 561);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.monthCalendar1);
@@ -332,9 +339,10 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.connections);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "watch_student_schedule";
-            this.Text = "watch_student_schedule";
+            this.Text = "View Student Schedule";
             this.Load += new System.EventHandler(this.watch_student_schedule_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.profilePic_img)).EndInit();
