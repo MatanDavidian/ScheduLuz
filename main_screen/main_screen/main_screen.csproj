@@ -120,6 +120,12 @@
     <Compile Include="Manager\BBoard.Designer.cs">
       <DependentUpon>BBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\delete_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\delete_user.Designer.cs">
+      <DependentUpon>delete_user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\fixed_shedule.cs">
       <SubType>Form</SubType>
     </Compile>
