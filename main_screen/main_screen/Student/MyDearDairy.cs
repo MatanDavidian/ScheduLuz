@@ -171,5 +171,10 @@ namespace main_screen.Student
                 MessageBox.Show("Problem detected. please contact your Scheduluz Guide for more information.");
             }
         }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
     }
 }

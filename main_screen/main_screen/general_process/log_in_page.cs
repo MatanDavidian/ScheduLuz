@@ -142,7 +142,7 @@ namespace main_screen
                 }
                 else
                 {
-                    MessageBox.Show("Check you username and password");
+                    MessageBox.Show("Invalid username or password.");
                     //    perFile.Close();
                     //    userFile.Close();
                 }

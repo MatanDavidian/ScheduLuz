@@ -71,6 +71,7 @@ namespace main_screen.general_process
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.browse_btn);
             this.groupBox2.Controls.Add(this.profilePic_img);
             this.groupBox2.Location = new System.Drawing.Point(367, 220);
@@ -109,6 +110,7 @@ namespace main_screen.general_process
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.hobies_txt);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.freetext_txt);
@@ -211,6 +213,7 @@ namespace main_screen.general_process
             // 
             // connections
             // 
+            this.connections.BackColor = System.Drawing.Color.Transparent;
             this.connections.Controls.Add(this.PEmail_txt);
             this.connections.Controls.Add(this.label10);
             this.connections.Controls.Add(this.phone_txt);
@@ -274,6 +277,7 @@ namespace main_screen.general_process
             // 
             // password_groupbox
             // 
+            this.password_groupbox.BackColor = System.Drawing.Color.Transparent;
             this.password_groupbox.Controls.Add(this.view_btn);
             this.password_groupbox.Controls.Add(this.confirm_new_pass_txt);
             this.password_groupbox.Controls.Add(this.label3);
@@ -349,6 +353,7 @@ namespace main_screen.general_process
             // profile_name
             // 
             this.profile_name.AutoSize = true;
+            this.profile_name.BackColor = System.Drawing.Color.Transparent;
             this.profile_name.Location = new System.Drawing.Point(9, 11);
             this.profile_name.Name = "profile_name";
             this.profile_name.Size = new System.Drawing.Size(45, 13);
@@ -358,6 +363,7 @@ namespace main_screen.general_process
             // permi
             // 
             this.permi.AutoSize = true;
+            this.permi.BackColor = System.Drawing.Color.Transparent;
             this.permi.Location = new System.Drawing.Point(367, 11);
             this.permi.Name = "permi";
             this.permi.Size = new System.Drawing.Size(60, 13);
@@ -367,6 +373,7 @@ namespace main_screen.general_process
             // permissin_txt
             // 
             this.permissin_txt.AutoSize = true;
+            this.permissin_txt.BackColor = System.Drawing.Color.Transparent;
             this.permissin_txt.Location = new System.Drawing.Point(434, 11);
             this.permissin_txt.Name = "permissin_txt";
             this.permissin_txt.Size = new System.Drawing.Size(53, 13);
@@ -394,6 +401,7 @@ namespace main_screen.general_process
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.ClientSize = new System.Drawing.Size(694, 693);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.permissin_txt);

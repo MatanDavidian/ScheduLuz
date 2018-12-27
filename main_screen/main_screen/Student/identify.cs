@@ -40,12 +40,14 @@ namespace main_screen.Student
                 n.Show();
             }
 
-            else if (num_of_tries == 3)
+            else if (num_of_tries == 2)
             {
                 num_of_tries = 0;
                 log_in_page n = new log_in_page();
                 this.Hide();
+                MessageBox.Show("There are no tries left.\nTransfering to the main page");
                 n.Show();
+
             }
 
             else

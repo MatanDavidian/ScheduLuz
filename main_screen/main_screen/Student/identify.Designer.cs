@@ -37,6 +37,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 13);
@@ -54,6 +55,7 @@
             // 
             // submit_pass
             // 
+            this.submit_pass.BackColor = System.Drawing.Color.Transparent;
             this.submit_pass.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
             this.submit_pass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.submit_pass.FlatAppearance.BorderSize = 0;
@@ -65,13 +67,15 @@
             this.submit_pass.Size = new System.Drawing.Size(75, 23);
             this.submit_pass.TabIndex = 2;
             this.submit_pass.Text = "Submit";
-            this.submit_pass.UseVisualStyleBackColor = true;
+            this.submit_pass.UseVisualStyleBackColor = false;
             this.submit_pass.Click += new System.EventHandler(this.submit_pass_Click);
             // 
             // identify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_student;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(176, 104);
             this.Controls.Add(this.submit_pass);
             this.Controls.Add(this.pass_txt);

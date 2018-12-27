@@ -46,6 +46,7 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackColor = System.Drawing.Color.Transparent;
             this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.return_btn.FlatAppearance.BorderSize = 0;
@@ -57,7 +58,7 @@
             this.return_btn.Size = new System.Drawing.Size(75, 23);
             this.return_btn.TabIndex = 13;
             this.return_btn.Text = "Return";
-            this.return_btn.UseVisualStyleBackColor = true;
+            this.return_btn.UseVisualStyleBackColor = false;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
             // 
             // contacts_lv
@@ -104,6 +105,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.profilePic_img);
             this.groupBox2.Location = new System.Drawing.Point(639, 41);
             this.groupBox2.Name = "groupBox2";
@@ -124,6 +126,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(23, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
@@ -142,6 +145,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_student;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(803, 450);
             this.Controls.Add(this.search_txt);
             this.Controls.Add(this.label1);
