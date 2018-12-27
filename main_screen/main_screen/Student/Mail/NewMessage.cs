@@ -116,5 +116,10 @@ namespace main_screen.Student.Mail
 
             }
         }
+
+        private void NewMessage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mail_form));
             this.new_msg_btn = new System.Windows.Forms.Button();
             this.return_btn = new System.Windows.Forms.Button();
             this.msg_lst = new System.Windows.Forms.ListView();
@@ -39,22 +40,25 @@
             // 
             // new_msg_btn
             // 
+            this.new_msg_btn.BackColor = System.Drawing.Color.Transparent;
             this.new_msg_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.new_msg_btn.FlatAppearance.BorderSize = 0;
             this.new_msg_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.new_msg_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.new_msg_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.new_msg_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.new_msg_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.new_msg_btn.Location = new System.Drawing.Point(12, 31);
             this.new_msg_btn.Name = "new_msg_btn";
             this.new_msg_btn.Size = new System.Drawing.Size(118, 23);
             this.new_msg_btn.TabIndex = 0;
             this.new_msg_btn.Text = "New Message";
-            this.new_msg_btn.UseVisualStyleBackColor = true;
+            this.new_msg_btn.UseVisualStyleBackColor = false;
             this.new_msg_btn.Click += new System.EventHandler(this.new_msg_btn_Click);
             // 
             // return_btn
             // 
+            this.return_btn.BackColor = System.Drawing.Color.Transparent;
             this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.return_btn.FlatAppearance.BorderSize = 0;
@@ -67,7 +71,7 @@
             this.return_btn.Size = new System.Drawing.Size(75, 23);
             this.return_btn.TabIndex = 1;
             this.return_btn.Text = "Return";
-            this.return_btn.UseVisualStyleBackColor = true;
+            this.return_btn.UseVisualStyleBackColor = false;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
             // 
             // msg_lst
@@ -112,10 +116,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_student;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.msg_lst);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.new_msg_btn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Mail_form";
             this.Text = "Mail";
             this.Load += new System.EventHandler(this.Mail_form_Load);

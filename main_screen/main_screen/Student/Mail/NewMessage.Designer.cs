@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMessage));
             this.label1 = new System.Windows.Forms.Label();
             this.subject_txt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(10, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
@@ -58,6 +60,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(10, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 13);
@@ -93,6 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(10, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
@@ -101,6 +105,7 @@
             // 
             // send_btn
             // 
+            this.send_btn.BackColor = System.Drawing.Color.Transparent;
             this.send_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
             this.send_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.send_btn.FlatAppearance.BorderSize = 0;
@@ -110,11 +115,12 @@
             this.send_btn.Size = new System.Drawing.Size(75, 23);
             this.send_btn.TabIndex = 8;
             this.send_btn.Text = "Send";
-            this.send_btn.UseVisualStyleBackColor = true;
+            this.send_btn.UseVisualStyleBackColor = false;
             this.send_btn.Click += new System.EventHandler(this.send_btn_Click);
             // 
             // return_btn
             // 
+            this.return_btn.BackColor = System.Drawing.Color.Transparent;
             this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.return_btn.FlatAppearance.BorderSize = 0;
@@ -124,13 +130,15 @@
             this.return_btn.Size = new System.Drawing.Size(75, 23);
             this.return_btn.TabIndex = 9;
             this.return_btn.Text = "Return";
-            this.return_btn.UseVisualStyleBackColor = true;
+            this.return_btn.UseVisualStyleBackColor = false;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
             // 
             // NewMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(456, 450);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.send_btn);
@@ -141,8 +149,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.subject_txt);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewMessage";
-            this.Text = "NewMessage";
+            this.Text = "New Message";
+            this.Load += new System.EventHandler(this.NewMessage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
