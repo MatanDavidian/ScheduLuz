@@ -61,6 +61,7 @@ namespace main_screen.Teacher
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(53, 57);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -89,6 +90,7 @@ namespace main_screen.Teacher
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(53, 84);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -108,6 +110,7 @@ namespace main_screen.Teacher
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(53, 114);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -118,6 +121,7 @@ namespace main_screen.Teacher
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(53, 146);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
@@ -154,6 +158,7 @@ namespace main_screen.Teacher
             // 
             // Setting
             // 
+            this.Setting.BackColor = System.Drawing.Color.Transparent;
             this.Setting.Controls.Add(this.chkSSL);
             this.Setting.Controls.Add(this.txtSmtp);
             this.Setting.Controls.Add(this.label8);
@@ -279,6 +284,7 @@ namespace main_screen.Teacher
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderSize = 0;
@@ -291,14 +297,15 @@ namespace main_screen.Teacher
             this.button1.Size = new System.Drawing.Size(60, 28);
             this.button1.TabIndex = 9;
             this.button1.Text = "Return";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(12, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(204, 39);
@@ -322,6 +329,7 @@ namespace main_screen.Teacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.ClientSize = new System.Drawing.Size(533, 499);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label9);
@@ -338,7 +346,7 @@ namespace main_screen.Teacher
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SendEmail";
-            this.Text = "SendEmail";
+            this.Text = "Send Email";
             this.Load += new System.EventHandler(this.SendEmail_Load);
             this.Setting.ResumeLayout(false);
             this.Setting.PerformLayout();
