@@ -47,8 +47,9 @@
             // title
             // 
             this.title.AutoSize = true;
+            this.title.BackColor = System.Drawing.Color.Transparent;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.title.ForeColor = System.Drawing.Color.Maroon;
+            this.title.ForeColor = System.Drawing.Color.Black;
             this.title.Location = new System.Drawing.Point(19, 9);
             this.title.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.title.Name = "title";
@@ -59,6 +60,7 @@
             // choose_teacher
             // 
             this.choose_teacher.AutoSize = true;
+            this.choose_teacher.BackColor = System.Drawing.Color.Transparent;
             this.choose_teacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.choose_teacher.Location = new System.Drawing.Point(50, 76);
             this.choose_teacher.Name = "choose_teacher";
@@ -76,6 +78,7 @@
             // 
             // submit
             // 
+            this.submit.BackColor = System.Drawing.Color.Transparent;
             this.submit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("submit.BackgroundImage")));
             this.submit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.submit.FlatAppearance.BorderSize = 0;
@@ -88,11 +91,12 @@
             this.submit.Size = new System.Drawing.Size(92, 20);
             this.submit.TabIndex = 9;
             this.submit.Text = "submit";
-            this.submit.UseVisualStyleBackColor = true;
+            this.submit.UseVisualStyleBackColor = false;
             this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatAppearance.BorderSize = 0;
@@ -106,11 +110,12 @@
             this.button3.Size = new System.Drawing.Size(84, 34);
             this.button3.TabIndex = 79;
             this.button3.Text = "Submit";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderSize = 0;
@@ -124,7 +129,7 @@
             this.button2.Size = new System.Drawing.Size(84, 34);
             this.button2.TabIndex = 78;
             this.button2.Text = "Return";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // l
@@ -160,6 +165,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(781, 355);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
@@ -169,6 +175,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(781, 378);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
@@ -178,6 +185,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(781, 404);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
@@ -198,6 +206,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_student;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(879, 450);
             this.Controls.Add(this.student_lst);
             this.Controls.Add(this.label5);
