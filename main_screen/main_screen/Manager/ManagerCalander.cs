@@ -59,6 +59,14 @@ namespace main_screen
 
         private void ManagerCalander_Load(object sender, EventArgs e)
         {
+            DateTime now_dt = DateTime.Now;//END YEAR button visible or invisible according the date.
+            DateTime start = new DateTime(int.Parse(now_dt.Year.ToString().Trim()), 10, 1);
+            DateTime end = new DateTime(int.Parse(now_dt.Year.ToString().Trim()), 12, 30);
+            if (now_dt.Ticks >= start.Ticks && now_dt.Ticks <= end.Ticks)
+            {
+                EndYear_btn.Visible = true;
+            }
+        
             List<ListViewItem> itemlist = new List<ListViewItem>();
             listView1.Items.Clear();
 
@@ -162,6 +170,9 @@ namespace main_screen
                         itemlist.Add(item);
                     }
                 }
+
+            
+
 
             }
 
@@ -585,6 +596,65 @@ namespace main_screen
             Manager.public_event n = new Manager.public_event();
             n.Show();
             this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you want to remove all the 12 grades student and remove all schedule?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // user clicked yes
+                if (MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // user clicked yes again
+                    dataBase dataBase = new dataBase();
+                    SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+                    SqlDataAdapter sda;
+                    DataTable dt_lastyearusers;
+                    conn.Open();
+
+                    string query = "Select Id from users where grade= "+ 12;
+                    sda = new SqlDataAdapter(query, conn);
+                    dt_lastyearusers = new DataTable();
+                    sda.Fill(dt_lastyearusers);
+
+                    for(int i=0;i< dt_lastyearusers.Rows.Count;i++)
+                    {
+                        string sendToId = dt_lastyearusers.Rows[i]["Id"].ToString().Trim();
+
+                        User n = new User();
+                        n.DeleteUser(sendToId);
+                    }  
+                    SqlCommand cmd = new SqlCommand("DELETE FROM weekly_events WHERE user_id_OR_class ='" +"12-1"+"'", conn);
+                    cmd.ExecuteNonQuery();
+                    cmd = new SqlCommand("DELETE FROM weekly_events WHERE user_id_OR_class ='" + "12-2" + "'", conn);
+                    cmd.ExecuteNonQuery();
+                    cmd = new SqlCommand("DELETE FROM weekly_events WHERE user_id_OR_class ='" + "12-3" + "'", conn);
+                    cmd.ExecuteNonQuery();
+                    if (dt_lastyearusers.Rows.Count > 0)
+                    {
+                        MessageBox.Show("All student at 12 grade and there schedule are deleted.");
+                    }
+                    else
+                        MessageBox.Show("There not student at 12 grade.");
+                }
+                else
+                {
+                    // user clicked no
+                    log_in_page n = new log_in_page();
+                    n.Show();
+                    this.Hide();
+
+                }
+            }
+            else
+            {
+                // user clicked no
+                log_in_page n = new log_in_page();
+                n.Show();
+                this.Hide();
+
+            }
+
         }
     }
 }

@@ -67,7 +67,7 @@ namespace main_screen.Teacher
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
             SqlDataAdapter sda;
-            DataTable dtbl,dt_reqest;
+            DataTable dtbl,dt_reqest, db_delete;
             conn.Open();
 
             string query = "Select * from weekly_events where user_id_OR_class='" + log_in_page.userId + "'";
@@ -89,6 +89,7 @@ namespace main_screen.Teacher
                 {
                     labels[k] = new Label {Text="", BackColor = Color.LightGreen, Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter};
                     Table.Controls.Add(labels[k], j, i);
+                    
                     for (int m = 0; m < dtbl.Rows.Count; m++)
                     {
                         hours = dtbl.Rows[m]["start"].ToString().Trim() + "-" + dtbl.Rows[m]["ends"].ToString().Trim();
@@ -98,11 +99,10 @@ namespace main_screen.Teacher
 
                             for(int l=0;l< dt_reqest.Rows.Count; l++)
                             {
-                                if(dtbl.Rows[m]["wEvent_id"].ToString().Trim()== dt_reqest.Rows[l]["wEvent_id"].ToString().Trim())
+                                if(dtbl.Rows[m]["wEvent_id"].ToString().Trim()== dt_reqest.Rows[l]["wEvent_id"].ToString().Trim() && dt_reqest.Rows[l]["approved_condition"].ToString().Trim() != "approved")
                                 {
                                     if(dt_reqest.Rows[l]["approved_condition"].ToString().Trim()== "rejected")
                                     {
-                                        labels[k].Text = "rejected";
                                         labels[k].BackColor = Color.Red;
                                     }
                                     else if (dt_reqest.Rows[l]["approved_condition"].ToString().Trim() == "approved")
@@ -116,12 +116,29 @@ namespace main_screen.Teacher
                                         labels[k].BackColor = Color.Yellow;
                                     }
                                 }
+
+                            }
+                           
+                            for (int l = 0; l < dt_reqest.Rows.Count; l++)
+                            {
+                                query = "Select * from Request_to_cancel where approved_condition= '" + "approved" + "'";
+                                sda = new SqlDataAdapter(query, conn);
+                                db_delete = new DataTable();
+                                sda.Fill(db_delete);
+                                if (db_delete.Rows.Count!=0 && dt_reqest.Rows[l]["approved_condition"].ToString().Trim() == "approved")
+                                {
+                                    labels[k].Text = "approved";
+                                    labels[k].BackColor = Color.LimeGreen;
+                                    labels[k].Click += new System.EventHandler(LabelClick);
+                                    SqlCommand cmd = new SqlCommand("DELETE FROM Request_to_cancel WHERE wEvent_id ='" + dt_reqest.Rows[l]["wEvent_id"] + "'", conn);
+                                    cmd.ExecuteNonQuery();
+                                }
                             }
                             string id = dtbl.Rows[m]["wEvent_id"].ToString().Trim();
                             labels[k].Click += new System.EventHandler(LabelClick);
 
                         }
-                    }
+                    }  
                     k++;
                 }
             }
@@ -144,20 +161,29 @@ namespace main_screen.Teacher
             }
             else if (label.BackColor == Color.Red)
             {   
-                label.BackColor = Color.LightGreen;
-                string query = "Select Event_id from Request_to_cancel where user_id='" + log_in_page.userId + "'" + " and approved_condition ='" + "rejected" + "'";
+                string query = "Select wEvent_id from Request_to_cancel where user_id='" + log_in_page.userId + "'" + " and approved_condition ='" + "rejected" + "'";
                 sda = new SqlDataAdapter(query, conn);
                 dtbl = new DataTable();
                 sda.Fill(dtbl);
                 for(int i=0;i<dtbl.Rows.Count;i++)
                 {
-                    SqlCommand cmd1 = new SqlCommand("DELETE FROM Request_to_cancel WHERE Event_id ='" + dtbl.Rows[i]["Event_id"] + "'", conn);
+                    SqlCommand cmd1 = new SqlCommand("DELETE FROM Request_to_cancel WHERE wEvent_id ='" + dtbl.Rows[i]["wEvent_id"] + "'", conn);
                     cmd1.ExecuteNonQuery();
                 }
-                
+                label.BackColor = Color.LightGreen;
             }
             else if (label.BackColor == Color.LimeGreen)
             {
+                string query = "Select wEvent_id from Request_to_cancel where user_id='" + log_in_page.userId + "'" + " and approved_condition ='" + "approved" + "'";
+                sda = new SqlDataAdapter(query, conn);
+                dtbl = new DataTable();
+                sda.Fill(dtbl);
+                for (int i = 0; i < dtbl.Rows.Count; i++)
+                {
+                    SqlCommand cmd1 = new SqlCommand("DELETE FROM Request_to_cancel WHERE wEvent_id ='" + dtbl.Rows[i]["wEvent_id"] + "'", conn);
+                    cmd1.ExecuteNonQuery();
+                }
+                label.Text = "";
                 label.BackColor = Color.LightGreen;
             }
             else if(label.BackColor == Color.MediumSeaGreen)
