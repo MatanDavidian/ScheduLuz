@@ -129,6 +129,13 @@ namespace main_screen.Teacher
 
         private void LabelClick(object sender, EventArgs e)
         {
+
+            dataBase dataBase = new dataBase();
+            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+            SqlDataAdapter sda;
+            DataTable dtbl;
+            conn.Open();
+
             var label = sender as Label;
             
             if(label.BackColor == Color.LightGreen) 
@@ -136,10 +143,18 @@ namespace main_screen.Teacher
                 label.BackColor = Color.MediumSeaGreen;
             }
             else if (label.BackColor == Color.Red)
-            {
+            {   
                 label.BackColor = Color.LightGreen;
-                //SqlCommand cmd1 = new SqlCommand("DELETE FROM Request_to_cancel WHERE Event_id ='" + dtbl1.Rows[0]["Event_id"] + "'", conn);
-                //cmd1.ExecuteNonQuery();
+                string query = "Select Event_id from Request_to_cancel where user_id='" + log_in_page.userId + "'" + " and approved_condition ='" + "rejected" + "'";
+                sda = new SqlDataAdapter(query, conn);
+                dtbl = new DataTable();
+                sda.Fill(dtbl);
+                for(int i=0;i<dtbl.Rows.Count;i++)
+                {
+                    SqlCommand cmd1 = new SqlCommand("DELETE FROM Request_to_cancel WHERE Event_id ='" + dtbl.Rows[i]["Event_id"] + "'", conn);
+                    cmd1.ExecuteNonQuery();
+                }
+                
             }
             else if (label.BackColor == Color.LimeGreen)
             {

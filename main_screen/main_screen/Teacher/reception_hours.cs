@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using database_location;
+using USER;
 
 namespace main_screen.Teacher
 {
@@ -141,7 +142,10 @@ namespace main_screen.Teacher
                 if(labels[i].BackColor==Color.LightGreen)
                 { 
                     SqlCommand cmd = new SqlCommand("INSERT INTO weekly_events(user_id_OR_class,day_in_week,start,ends,event_kind,title) VALUES(@user_id_OR_class,@day_in_week,@start,@ends,@event_kind,@title) ", conn);
-                    string helpstring = log_in_page.loginUserName + " reception hours.";
+                    
+                    User user = new User();
+                    user = user.GetUser(log_in_page.userId);
+                    string helpstring = user.getName() + " " + user.getLastName() + " reception hours.";
                     cmd.Parameters.Add("@title", helpstring);
                     cmd.Parameters.Add("@user_id_OR_class", log_in_page.userId);
                     day = labels[i % 6].Text.ToString();//i%6 get the day
