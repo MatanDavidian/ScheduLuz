@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.student_lst = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // title
@@ -82,7 +83,7 @@
             this.submit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.submit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submit.Location = new System.Drawing.Point(365, 71);
+            this.submit.Location = new System.Drawing.Point(365, 72);
             this.submit.Name = "submit";
             this.submit.Size = new System.Drawing.Size(92, 20);
             this.submit.TabIndex = 9;
@@ -183,11 +184,22 @@
             this.label5.TabIndex = 85;
             this.label5.Text = "submit -";
             // 
+            // student_lst
+            // 
+            this.student_lst.FormattingEnabled = true;
+            this.student_lst.Location = new System.Drawing.Point(198, 87);
+            this.student_lst.Name = "student_lst";
+            this.student_lst.Size = new System.Drawing.Size(161, 82);
+            this.student_lst.Sorted = true;
+            this.student_lst.TabIndex = 87;
+            this.student_lst.SelectedIndexChanged += new System.EventHandler(this.student_lst_SelectedIndexChanged);
+            // 
             // AppointmentPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 450);
+            this.Controls.Add(this.student_lst);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -223,5 +235,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox student_lst;
     }
 }

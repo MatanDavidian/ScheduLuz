@@ -291,6 +291,67 @@ namespace USER
             cmd1.ExecuteNonQuery();
         }
 
+        public void DeleteUser(string userId)
+        {
+            dataBase dataBase = new dataBase();
+            SqlConnection con = dataBase.connect_to_scheduluz_DB();
+
+            SqlDataAdapter sda;
+            DataTable dtbl, dtbl1;
+            con.Open();
+            string query = "Select * from Events_to_Users where User_ID='" + userId  + "'";
+            sda = new SqlDataAdapter(query, con);
+            dtbl = new DataTable();
+            sda.Fill(dtbl);
+            for(int i=0;i<dtbl.Rows.Count;i++)//Delete regular events
+            {
+                int eve_id = int.Parse(dtbl.Rows[i]["Event_ID"].ToString().Trim());
+                SqlCommand cmd = new SqlCommand("DELETE FROM Events_to_Users WHERE Event_ID =" + eve_id, con);
+                cmd.ExecuteNonQuery();
+
+                query = "Select * from Events_to_Users where Event_ID='" + eve_id + "'";
+                sda = new SqlDataAdapter(query, con);
+                dtbl1 = new DataTable();
+                sda.Fill(dtbl1);
+                if(dtbl1.Rows.Count==0)
+                {
+                    cmd = new SqlCommand("DELETE FROM Events WHERE Event_ID =" + eve_id, con);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            query = "Select * from weekly_events_to_users where User_ID='" + userId + "'";
+            sda = new SqlDataAdapter(query, con);
+            dtbl = new DataTable();
+            sda.Fill(dtbl);
+            for (int i = 0; i < dtbl.Rows.Count; i++)//Delete reception hour weekly events
+            {
+                int eve_id = int.Parse(dtbl.Rows[i]["wEvent_id"].ToString().Trim());
+                SqlCommand cmd = new SqlCommand("DELETE FROM weekly_events_to_Users WHERE Event_ID =" + eve_id, con);
+                cmd.ExecuteNonQuery();
+
+                cmd = new SqlCommand("DELETE FROM Events WHERE Event_ID =" + eve_id, con);
+                cmd.ExecuteNonQuery();
+            }
+
+            query = "Select * from weekly_events where user_id_OR_class='" + userId + "'";
+            sda = new SqlDataAdapter(query, con);
+            dtbl = new DataTable();
+            sda.Fill(dtbl);
+            for (int i = 0; i < dtbl.Rows.Count; i++)//Delete all weekly events
+            {
+                int eve_id = int.Parse(dtbl.Rows[i]["wEvent_id"].ToString().Trim());
+                SqlCommand cmd = new SqlCommand("DELETE FROM Events WHERE Event_ID =" + eve_id, con);
+                cmd.ExecuteNonQuery();
+            }
+
+
+
+            SqlCommand cmd1 = new SqlCommand("DELETE FROM users WHERE Id ='" + userId + "'", con);
+            cmd1.ExecuteNonQuery();
+            cmd1 = new SqlCommand("DELETE FROM connection_details WHERE Id ='" + userId + "'", con);
+            cmd1.ExecuteNonQuery();
+        }
 
 
 

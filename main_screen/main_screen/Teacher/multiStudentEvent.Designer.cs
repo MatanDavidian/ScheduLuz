@@ -34,10 +34,7 @@ namespace main_screen.Teacher
             this.student_lst = new System.Windows.Forms.ListBox();
             this.to_txt = new System.Windows.Forms.TextBox();
             this.send_to_lst = new System.Windows.Forms.ListBox();
-            this.add_btn = new System.Windows.Forms.Button();
-            this.clear_btn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.class_num_cb = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,9 +54,12 @@ namespace main_screen.Teacher
             this.minutes_start = new System.Windows.Forms.NumericUpDown();
             this.hours_end = new System.Windows.Forms.NumericUpDown();
             this.minutes_end = new System.Windows.Forms.NumericUpDown();
-            this.return_btn = new System.Windows.Forms.Button();
-            this.create_btn = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.create_btn = new System.Windows.Forms.Button();
+            this.return_btn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.clear_btn = new System.Windows.Forms.Button();
+            this.add_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
@@ -94,40 +94,6 @@ namespace main_screen.Teacher
             this.send_to_lst.Size = new System.Drawing.Size(193, 95);
             this.send_to_lst.TabIndex = 8;
             // 
-            // add_btn
-            // 
-            this.add_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("add_btn.BackgroundImage")));
-            this.add_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.add_btn.FlatAppearance.BorderSize = 0;
-            this.add_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.add_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.add_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.add_btn.Location = new System.Drawing.Point(297, 46);
-            this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(75, 23);
-            this.add_btn.TabIndex = 9;
-            this.add_btn.Text = "Add>>";
-            this.add_btn.UseVisualStyleBackColor = true;
-            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
-            // 
-            // clear_btn
-            // 
-            this.clear_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clear_btn.BackgroundImage")));
-            this.clear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.clear_btn.FlatAppearance.BorderSize = 0;
-            this.clear_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.clear_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.clear_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.clear_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clear_btn.Location = new System.Drawing.Point(297, 75);
-            this.clear_btn.Name = "clear_btn";
-            this.clear_btn.Size = new System.Drawing.Size(75, 23);
-            this.clear_btn.TabIndex = 10;
-            this.clear_btn.Text = "Clear";
-            this.clear_btn.UseVisualStyleBackColor = true;
-            this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
@@ -146,23 +112,6 @@ namespace main_screen.Teacher
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Users:";
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(298, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Add Class>>";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label8
             // 
@@ -299,6 +248,7 @@ namespace main_screen.Teacher
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Event Details";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label6
             // 
@@ -370,6 +320,23 @@ namespace main_screen.Teacher
             this.minutes_end.Size = new System.Drawing.Size(37, 20);
             this.minutes_end.TabIndex = 62;
             // 
+            // create_btn
+            // 
+            this.create_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
+            this.create_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.create_btn.FlatAppearance.BorderSize = 0;
+            this.create_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.create_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.create_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.create_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.create_btn.Location = new System.Drawing.Point(508, 582);
+            this.create_btn.Name = "create_btn";
+            this.create_btn.Size = new System.Drawing.Size(86, 23);
+            this.create_btn.TabIndex = 27;
+            this.create_btn.Text = "Create Event";
+            this.create_btn.UseVisualStyleBackColor = true;
+            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
+            // 
             // return_btn
             // 
             this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
@@ -387,22 +354,56 @@ namespace main_screen.Teacher
             this.return_btn.UseVisualStyleBackColor = true;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
             // 
-            // create_btn
+            // button1
             // 
-            this.create_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
-            this.create_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.create_btn.FlatAppearance.BorderSize = 0;
-            this.create_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.create_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.create_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.create_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.create_btn.Location = new System.Drawing.Point(508, 582);
-            this.create_btn.Name = "create_btn";
-            this.create_btn.Size = new System.Drawing.Size(86, 23);
-            this.create_btn.TabIndex = 27;
-            this.create_btn.Text = "Create Event";
-            this.create_btn.UseVisualStyleBackColor = true;
-            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(298, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Add Class>>";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // clear_btn
+            // 
+            this.clear_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clear_btn.BackgroundImage")));
+            this.clear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.clear_btn.FlatAppearance.BorderSize = 0;
+            this.clear_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.clear_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.clear_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.clear_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clear_btn.Location = new System.Drawing.Point(297, 75);
+            this.clear_btn.Name = "clear_btn";
+            this.clear_btn.Size = new System.Drawing.Size(75, 23);
+            this.clear_btn.TabIndex = 10;
+            this.clear_btn.Text = "Clear";
+            this.clear_btn.UseVisualStyleBackColor = true;
+            this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
+            // 
+            // add_btn
+            // 
+            this.add_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("add_btn.BackgroundImage")));
+            this.add_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.add_btn.FlatAppearance.BorderSize = 0;
+            this.add_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.add_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.add_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_btn.Location = new System.Drawing.Point(297, 46);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(75, 23);
+            this.add_btn.TabIndex = 9;
+            this.add_btn.Text = "Add>>";
+            this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // multiStudentEvent
             // 
