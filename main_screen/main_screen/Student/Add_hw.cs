@@ -72,5 +72,29 @@ namespace main_screen.Student
         {
 
         }
+
+        private void from_hour_ValueChanged(object sender, EventArgs e)
+        {
+            if (from_hour.Value == 24)
+            {
+                from_hour.Value = 0;
+            }
+            if (from_hour.Value >= 23)
+            {
+                to_hour.Value = 23;
+            }
+            else
+            {
+                to_hour.Value = from_hour.Value + 1;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
+
+
