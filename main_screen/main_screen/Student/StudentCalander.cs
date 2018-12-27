@@ -154,7 +154,7 @@ namespace main_screen
                     /* 1/15/2019 00:00:00*/
                     if (dtb2.Rows.Count > 0)
                     {
-                        if (dtb2.Rows[0]["date"].ToString() == thismonth.ToString() + "/" + thisday.ToString() + "/" + thisyear.ToString() + " 00:00:00")
+                        if (dtb2.Rows[0]["date"].ToString() == monthCalendar1.SelectionRange.Start.ToString())
                         {
                             string hours_end = dtb2.Rows[0]["hours_end"].ToString().Trim();
 
@@ -333,7 +333,7 @@ namespace main_screen
                 /* 1/15/2019 00:00:00*/
                 if (dtb2.Rows.Count > 0)
                 {
-                    if (dtb2.Rows[0]["date"].ToString() == thismonth.ToString() + "/" + thisday.ToString() + "/" + thisyear.ToString() + " 00:00:00")
+                    if (dtb2.Rows[0]["date"].ToString() == monthCalendar1.SelectionRange.Start.ToString())
                     {
                         string hours_end = dtb2.Rows[0]["hours_end"].ToString().Trim();
 

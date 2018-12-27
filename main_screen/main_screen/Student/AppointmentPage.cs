@@ -43,7 +43,7 @@ namespace main_screen.Student
             Table.Controls.Clear();
             Table.RowStyles.Clear();
 
-            Table.Location = new Point(75, 120);
+            Table.Location = new Point(50, 200);
             Table.Size = new Size(536, 253);
             Table.AutoSize = true;
             Table.Name = "Desk";
@@ -278,7 +278,24 @@ namespace main_screen.Student
 
         private void teacher_name_TextChanged(object sender, EventArgs e)
         {
+            dataBase dataBase = new dataBase();
+            SqlConnection con = dataBase.connect_to_scheduluz_DB();
+            string query = "Select id,name,lastName from users Where permission = 'teacher'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            DataTable dtb = new DataTable();
+            sda.Fill(dtb);
 
+            student_lst.Items.Clear();
+
+            for (int i = 0; i < dtb.Rows.Count; i++)
+            {
+                string temp = dtb.Rows[i]["name"].ToString().Trim().ToUpper() + " " + dtb.Rows[i]["lastName"].ToString().Trim().ToUpper();
+
+                if (temp.Contains(teacher_name.Text.ToUpper()))
+                {
+                    student_lst.Items.Add(dtb.Rows[i]["name"].ToString().Trim() + " " + dtb.Rows[i]["lastName"].ToString().Trim());
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -402,5 +419,17 @@ namespace main_screen.Student
             conn.Close();
         }
 
+        private void student_lst_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = student_lst.SelectedIndex;
+                teacher_name.Text = student_lst.Items[index].ToString();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

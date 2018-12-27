@@ -97,7 +97,7 @@ namespace main_screen
                 /* 1/15/2019 00:00:00*/
                 if (dtb2.Rows.Count > 0)
                 {
-                    if (dtb2.Rows[0]["date"].ToString() == thismonth.ToString() + "/" + thisday.ToString() + "/" + thisyear.ToString() + " 00:00:00")
+                    if (dtb2.Rows[0]["date"].ToString() == monthCalendar1.SelectionRange.Start.ToString())
                     {
                         string hours_end = dtb2.Rows[0]["hours_end"].ToString().Trim();
 
@@ -326,7 +326,7 @@ namespace main_screen
                 /* 1/15/2019 00:00:00*/
                 if (dtb2.Rows.Count > 0)
                 {
-                    if (dtb2.Rows[0]["date"].ToString() == thismonth.ToString() + "/" + thisday.ToString() + "/" + thisyear.ToString() + " 00:00:00")
+                    if (dtb2.Rows[0]["date"].ToString() == monthCalendar1.SelectionRange.Start.ToString())
                     {
                         string hours_end = dtb2.Rows[0]["hours_end"].ToString().Trim();
 
@@ -568,6 +568,21 @@ namespace main_screen
         private void contact_page_btn_Click(object sender, EventArgs e)
         {
             general_process.ManagerAndTeacher_view_contacts n = new general_process.ManagerAndTeacher_view_contacts();
+            n.Show();
+            this.Hide();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Manager.delete_user n = new Manager.delete_user();
+            n.Show();
+            this.Hide();
+        }
+
+        private void public_event_btn_Click_1(object sender, EventArgs e)
+        {
+
+            Manager.public_event n = new Manager.public_event();
             n.Show();
             this.Hide();
         }

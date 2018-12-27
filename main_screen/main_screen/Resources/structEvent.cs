@@ -336,6 +336,31 @@ namespace Event
             
         }
 
+        public bool deleteEvent(bool isweekly , string eventid)
+        {
+            if(isweekly)
+            {
+                dataBase dataBase = new dataBase();
+                SqlConnection con = dataBase.connect_to_scheduluz_DB();
+                SqlCommand cmd1 = new SqlCommand("DELETE FROM weekly_events WHERE wEvent_id ='" + eventid + "'", con);
+                cmd1.ExecuteNonQuery();
+            }
+            if(!isweekly)
+            {
+                dataBase dataBase = new dataBase();
+                SqlConnection con = dataBase.connect_to_scheduluz_DB();
+                con.Open();
+                SqlCommand cmd1 = new SqlCommand("DELETE FROM Events WHERE Event_id =" + eventid + "", con);
+                cmd1.ExecuteNonQuery();
+
+                cmd1 = new SqlCommand("DELETE FROM Events_to_Users WHERE Event_id =" + eventid + "", con);
+                cmd1.ExecuteNonQuery();
+                
+            }
+
+            return true;
+        }
+
 
 
 

@@ -46,6 +46,7 @@
             this.Starts = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.motd.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,6 +181,7 @@
             this.public_event_btn.TabIndex = 7;
             this.public_event_btn.Text = "Public Event";
             this.public_event_btn.UseVisualStyleBackColor = false;
+            this.public_event_btn.Click += new System.EventHandler(this.public_event_btn_Click_1);
             // 
             // button8
             // 
@@ -290,6 +292,24 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(547, 300);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 30);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Login Report";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // ManagerCalander
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,6 +317,7 @@
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.motd);
@@ -340,5 +361,6 @@
         private System.Windows.Forms.ColumnHeader Starts;
         private System.Windows.Forms.ColumnHeader Ends;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

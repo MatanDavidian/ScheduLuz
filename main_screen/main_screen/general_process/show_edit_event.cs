@@ -29,6 +29,7 @@ namespace main_screen.general_process
         public static bool editalbe;
         private void show_edit_event_Load(object sender, EventArgs e)
         {
+            delete_btn.Visible = false;
             Event.Event n = new Event.Event();
             n = n.getEvent(event_id,weekly);
 
@@ -50,6 +51,10 @@ namespace main_screen.general_process
             else
             {
                 editalbe = false;
+            }
+            if(editalbe)
+            {
+                delete_btn.Visible = true;
             }
                 if (!weekly)
             {
@@ -173,5 +178,13 @@ namespace main_screen.general_process
                 hours_end.Value = hours_start.Value + 1;
             }
         }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            Event.Event n = new Event.Event();
+            n.deleteEvent(weekly, event_id);
+            MessageBox.Show("Your event is deleted.");
+            button2.PerformClick();
+       }
     }
 }
