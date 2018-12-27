@@ -47,6 +47,7 @@
             this.Ends = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.EndYear_btn = new System.Windows.Forms.Button();
             this.motd.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -284,11 +285,11 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(547, 383);
+            this.button1.Location = new System.Drawing.Point(547, 336);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 30);
             this.button1.TabIndex = 23;
-            this.button1.Text = "approve cancellation";
+            this.button1.Text = "Approve cancellation";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -306,9 +307,28 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 30);
             this.button2.TabIndex = 24;
-            this.button2.Text = "Login Report";
+            this.button2.Text = "Delete user";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // EndYear_btn
+            // 
+            this.EndYear_btn.BackColor = System.Drawing.Color.Transparent;
+            this.EndYear_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EndYear_btn.BackgroundImage")));
+            this.EndYear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.EndYear_btn.FlatAppearance.BorderSize = 0;
+            this.EndYear_btn.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.EndYear_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.EndYear_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.EndYear_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EndYear_btn.Location = new System.Drawing.Point(547, 372);
+            this.EndYear_btn.Name = "EndYear_btn";
+            this.EndYear_btn.Size = new System.Drawing.Size(125, 30);
+            this.EndYear_btn.TabIndex = 25;
+            this.EndYear_btn.Text = "END YEAR";
+            this.EndYear_btn.UseVisualStyleBackColor = false;
+            this.EndYear_btn.Visible = false;
+            this.EndYear_btn.Click += new System.EventHandler(this.button3_Click);
             // 
             // ManagerCalander
             // 
@@ -317,6 +337,7 @@
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.EndYear_btn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
@@ -362,5 +383,6 @@
         private System.Windows.Forms.ColumnHeader Ends;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button EndYear_btn;
     }
 }

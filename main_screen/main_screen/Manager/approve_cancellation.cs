@@ -13,7 +13,6 @@ namespace main_screen.Manager
         {
             InitializeComponent();
         }
-        //public static List<string> list = new List<string>();
         private void Return_Click(object sender, EventArgs e)
         {
             ManagerCalander n = new ManagerCalander();
@@ -62,7 +61,7 @@ namespace main_screen.Manager
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    labels[k] = new Label { BackColor = Color.DarkGreen, ForeColor = Color.White, Dock = DockStyle.Fill };
+                    labels[k] = new Label { BackColor = Color.Wheat, ForeColor = Color.White, Dock = DockStyle.Fill };
                     Table.Controls.Add(labels[k], j, i);
 
                     k++;
@@ -89,22 +88,27 @@ namespace main_screen.Manager
             if (help != 0)
             {
                 labels[0].Text = "name";
+                labels[0].BackColor = Color.Tan;
                 labels[1].Text = "lesson";
+                labels[1].BackColor = Color.Tan;
                 labels[2].Text = "day";
+                labels[2].BackColor = Color.Tan;
                 labels[3].Text = "hour";
+                labels[3].BackColor = Color.Tan;
                 labels[4].Text = "reason";
+                labels[4].BackColor = Color.Tan;
             }
             k =0;
             for (int i = help; i < dt_reqest.Rows.Count+ help; i++)
             {
-                buttons[i - help] = new Button { Name=(i-help).ToString()+"S",BackColor = Color.DarkGreen, ForeColor = Color.White, Dock = DockStyle.Fill };
+                buttons[i - help] = new Button { Name=(i-help).ToString()+"S",BackColor = Color.SaddleBrown, ForeColor = Color.White, Dock = DockStyle.Fill };
                 buttons[i - help].Click += new System.EventHandler(LabelClick);
                 Table.Controls.Add(buttons[i - help], 5, i);
 
             }
             for (int i = help; i < dt_reqest.Rows.Count+ help; i++)
             {
-                buttons[dt_reqest.Rows.Count+i-help] = new Button { Name = (i-help).ToString() + "D",BackColor = Color.DarkGreen, ForeColor = Color.White, Dock = DockStyle.Fill };
+                buttons[dt_reqest.Rows.Count+i-help] = new Button { Name = (i-help).ToString() + "D",BackColor = Color.SaddleBrown, ForeColor = Color.White, Dock = DockStyle.Fill };
                 buttons[dt_reqest.Rows.Count+i- help].Click += new System.EventHandler(LabelClick);
                 Table.Controls.Add(buttons[dt_reqest.Rows.Count+i - help], 6, i);
             }
@@ -118,7 +122,7 @@ namespace main_screen.Manager
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
             SqlDataAdapter sda;
-            DataTable dt_reqest,dt_user;
+            DataTable dt_reqest;
             conn.Open();
 
             string query = "Select * from Request_to_cancel where approved_condition= '"+"send" +"'";
@@ -130,15 +134,22 @@ namespace main_screen.Manager
             {
                 if (button.Name == i.ToString()+"S")
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE Request_to_cancel SET approved_condition ='" + "approved" + "' WHERE wEvent_id ='" + dt_reqest.Rows[i]["wEvent_id"] + "'", conn);
-                    cmd.ExecuteNonQuery();
+                    SqlCommand cmd;
                     cmd = new SqlCommand("DELETE FROM weekly_events WHERE wEvent_id ='" + dt_reqest.Rows[i]["wEvent_id"] + "'", conn);
                     cmd.ExecuteNonQuery();
+                    cmd = new SqlCommand("DELETE FROM Request_to_cancel WHERE wEvent_id ='" + dt_reqest.Rows[i]["wEvent_id"] + "'", conn);
+                    cmd.ExecuteNonQuery();
+                    Manager.approve_cancellation n = new Manager.approve_cancellation();
+                    n.Show();
+                    this.Hide();
                 }
                 else if (button.Name == i.ToString()+"D")
                 {
                     SqlCommand cmd = new SqlCommand("UPDATE Request_to_cancel SET approved_condition ='" + "rejected" + "' WHERE wEvent_id ='" + dt_reqest.Rows[i]["wEvent_id"] + "'", conn);
                     cmd.ExecuteNonQuery();
+                    Manager.approve_cancellation n = new Manager.approve_cancellation();
+                    n.Show();
+                    this.Hide();
                 }
             }
 

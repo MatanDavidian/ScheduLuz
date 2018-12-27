@@ -103,7 +103,6 @@ namespace main_screen.Teacher
                                 {
                                     if(dt_reqest.Rows[l]["approved_condition"].ToString().Trim()== "rejected")
                                     {
-                                        labels[k].Text = "rejected";
                                         labels[k].BackColor = Color.Red;
                                     }
                                     else if (dt_reqest.Rows[l]["approved_condition"].ToString().Trim() == "approved")
@@ -139,16 +138,7 @@ namespace main_screen.Teacher
                             labels[k].Click += new System.EventHandler(LabelClick);
 
                         }
-                    }
-                    //for (int m = 0; m < dt_reqest.Rows.Count; m++)
-                    //{
-                    //    if (dt_reqest.Rows[m]["approved_condition"].ToString().Trim() == "approved")
-                    //    {
-                    //        labels[k].Text = "approved";
-                    //        labels[k].BackColor = Color.LimeGreen;
-                    //        labels[k].Click += new System.EventHandler(LabelClick);
-                    //    }
-                    //}
+                    }  
                     k++;
                 }
             }
@@ -171,18 +161,16 @@ namespace main_screen.Teacher
             }
             else if (label.BackColor == Color.Red)
             {   
-                
-                string query = "Select Event_id from Request_to_cancel where user_id='" + log_in_page.userId + "'" + " and approved_condition ='" + "rejected" + "'";
+                string query = "Select wEvent_id from Request_to_cancel where user_id='" + log_in_page.userId + "'" + " and approved_condition ='" + "rejected" + "'";
                 sda = new SqlDataAdapter(query, conn);
                 dtbl = new DataTable();
                 sda.Fill(dtbl);
                 for(int i=0;i<dtbl.Rows.Count;i++)
                 {
-                    SqlCommand cmd1 = new SqlCommand("DELETE FROM Request_to_cancel WHERE Event_id ='" + dtbl.Rows[i]["Event_id"] + "'", conn);
+                    SqlCommand cmd1 = new SqlCommand("DELETE FROM Request_to_cancel WHERE wEvent_id ='" + dtbl.Rows[i]["wEvent_id"] + "'", conn);
                     cmd1.ExecuteNonQuery();
                 }
                 label.BackColor = Color.LightGreen;
-                label.Text = "";
             }
             else if (label.BackColor == Color.LimeGreen)
             {
