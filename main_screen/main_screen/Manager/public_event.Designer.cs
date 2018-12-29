@@ -291,7 +291,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "public_event";
-            this.Text = "public_event";
+            this.Text = "Public Event";
             this.Load += new System.EventHandler(this.public_event_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
