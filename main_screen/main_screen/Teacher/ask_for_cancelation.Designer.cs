@@ -34,18 +34,20 @@
             this.Submit = new System.Windows.Forms.Button();
             this.Return = new System.Windows.Forms.Button();
             this.reason = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.Location = new System.Drawing.Point(23, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 13);
+            this.label1.Size = new System.Drawing.Size(287, 16);
             this.label1.TabIndex = 82;
-            this.label1.Text = "Choose the hours you wish to cancel:";
+            this.label1.Text = "Write the reason for your cancel request:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // title
             // 
@@ -99,10 +101,21 @@
             // 
             // reason
             // 
-            this.reason.Location = new System.Drawing.Point(545, 56);
+            this.reason.Location = new System.Drawing.Point(316, 59);
             this.reason.Name = "reason";
             this.reason.Size = new System.Drawing.Size(181, 20);
             this.reason.TabIndex = 83;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(503, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(269, 16);
+            this.label2.TabIndex = 84;
+            this.label2.Text = "Select the lessons you wish to cancel:";
             // 
             // ask_for_cancelation
             // 
@@ -110,6 +123,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.ClientSize = new System.Drawing.Size(901, 522);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.reason);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Submit);
@@ -131,5 +145,6 @@
         private System.Windows.Forms.Button Return;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.TextBox reason;
+        private System.Windows.Forms.Label label2;
     }
 }
