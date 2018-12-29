@@ -283,6 +283,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(424, 402);
             this.Controls.Add(this.question_txt);
             this.Controls.Add(this.answersOpD);
@@ -300,6 +301,7 @@
             this.Controls.Add(this.surveys_results);
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.Return);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Surveys";
             this.Text = "Surveys";

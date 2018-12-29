@@ -120,6 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(901, 603);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.reason);
@@ -127,6 +128,7 @@
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.title);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ask_for_cancelation";
             this.Text = "Cancel Request";

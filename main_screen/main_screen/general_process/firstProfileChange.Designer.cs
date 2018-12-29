@@ -485,6 +485,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(691, 690);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -493,6 +494,7 @@
             this.Controls.Add(this.connections);
             this.Controls.Add(this.password_groupbox);
             this.Controls.Add(this.profile_name);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "firstProfileChange";
             this.Text = "Profile";

@@ -330,6 +330,7 @@ namespace main_screen.Teacher
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(533, 499);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label9);
@@ -343,6 +344,7 @@ namespace main_screen.Teacher
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTo);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SendEmail";
