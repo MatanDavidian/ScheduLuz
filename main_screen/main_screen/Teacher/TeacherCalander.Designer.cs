@@ -114,6 +114,7 @@
             // 
             this.add_chklist_txt.BackColor = System.Drawing.SystemColors.Control;
             this.add_chklist_txt.Location = new System.Drawing.Point(6, 34);
+            this.add_chklist_txt.MaxLength = 29;
             this.add_chklist_txt.Name = "add_chklist_txt";
             this.add_chklist_txt.Size = new System.Drawing.Size(154, 20);
             this.add_chklist_txt.TabIndex = 1;

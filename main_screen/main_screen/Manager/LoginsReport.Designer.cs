@@ -39,6 +39,7 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackColor = System.Drawing.Color.Transparent;
             this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.return_btn.FlatAppearance.BorderSize = 0;
@@ -50,7 +51,7 @@
             this.return_btn.Size = new System.Drawing.Size(75, 23);
             this.return_btn.TabIndex = 21;
             this.return_btn.Text = "Return";
-            this.return_btn.UseVisualStyleBackColor = true;
+            this.return_btn.UseVisualStyleBackColor = false;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
             // 
             // listView1
@@ -108,7 +109,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginsReport";
-            this.Text = "LoginsReport";
+            this.Text = "Login Reports";
             this.Load += new System.EventHandler(this.LoginsReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
