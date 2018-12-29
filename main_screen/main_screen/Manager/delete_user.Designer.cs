@@ -234,6 +234,7 @@
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "delete_user";
             this.Text = "delete_user";
             this.Load += new System.EventHandler(this.delete_user_Load);

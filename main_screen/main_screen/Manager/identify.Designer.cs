@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(identify));
             this.Confirm_btn = new System.Windows.Forms.Button();
             this.pass_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,6 +77,7 @@
             this.Controls.Add(this.Confirm_btn);
             this.Controls.Add(this.pass_txt);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "identify";
             this.Text = "identify";
             this.ResumeLayout(false);

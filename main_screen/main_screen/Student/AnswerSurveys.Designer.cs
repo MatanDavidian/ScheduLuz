@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnswerSurveys));
             this.label1 = new System.Windows.Forms.Label();
             this.listView = new System.Windows.Forms.ListView();
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -120,6 +121,8 @@
             this.Controls.Add(this.Return);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AnswerSurveys";
             this.Text = "AnswerSurveys";
             this.Load += new System.EventHandler(this.AnswerSurveys_Load);
