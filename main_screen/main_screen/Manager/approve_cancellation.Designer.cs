@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(approve_cancellation));
             this.title = new System.Windows.Forms.Label();
             this.Return = new System.Windows.Forms.Button();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
             // 
             // title
@@ -65,13 +64,6 @@
             this.Return.UseVisualStyleBackColor = false;
             this.Return.Click += new System.EventHandler(this.Return_Click);
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(9, 119);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 274);
-            this.vScrollBar1.TabIndex = 82;
-            // 
             // approve_cancellation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -79,7 +71,6 @@
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.title);
             this.DoubleBuffered = true;
@@ -95,6 +86,5 @@
 
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Button Return;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }

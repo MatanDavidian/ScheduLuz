@@ -104,7 +104,7 @@
             this.Profile_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Profile_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Profile_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Profile_btn.Location = new System.Drawing.Point(547, 84);
+            this.Profile_btn.Location = new System.Drawing.Point(547, 85);
             this.Profile_btn.Name = "Profile_btn";
             this.Profile_btn.Size = new System.Drawing.Size(125, 30);
             this.Profile_btn.TabIndex = 3;
