@@ -158,9 +158,9 @@ namespace check_funcs
 
 
                     /*
-                     * if tests of input passed it will be insert to the data base.
-                     * 
-                     */
+                    * if tests of input passed it will be insert to the data base.
+                      
+                    */
                     dataBase dataBase = new dataBase();
                     SqlConnection conn = dataBase.connect_to_scheduluz_DB();
 
@@ -220,5 +220,3 @@ namespace check_funcs
         }
 
 }
-
-
