@@ -252,6 +252,12 @@
     <Compile Include="Student\StudentCalander.Designer.cs">
       <DependentUpon>StudentCalander.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\AppointmentBetweenStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\AppointmentBetweenStudents.Designer.cs">
+      <DependentUpon>AppointmentBetweenStudents.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\ask_for_cancelation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\StudentCalander.resx">
       <DependentUpon>StudentCalander.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\AppointmentBetweenStudents.resx">
+      <DependentUpon>AppointmentBetweenStudents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\ask_for_cancelation.resx">
       <DependentUpon>ask_for_cancelation.cs</DependentUpon>

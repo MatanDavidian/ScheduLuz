@@ -38,7 +38,7 @@
             this.student_lst = new System.Windows.Forms.ListBox();
             this.to_txt = new System.Windows.Forms.TextBox();
             this.clear_btn = new System.Windows.Forms.Button();
-            this.send_to_lst = new System.Windows.Forms.ListBox();
+            this.detele_lst = new System.Windows.Forms.ListBox();
             this.add_btn = new System.Windows.Forms.Button();
             this.return_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@
             this.groupBox1.Controls.Add(this.student_lst);
             this.groupBox1.Controls.Add(this.to_txt);
             this.groupBox1.Controls.Add(this.clear_btn);
-            this.groupBox1.Controls.Add(this.send_to_lst);
+            this.groupBox1.Controls.Add(this.detele_lst);
             this.groupBox1.Controls.Add(this.add_btn);
             this.groupBox1.Location = new System.Drawing.Point(12, 56);
             this.groupBox1.Name = "groupBox1";
@@ -163,14 +163,14 @@
             this.clear_btn.UseVisualStyleBackColor = true;
             this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
             // 
-            // send_to_lst
+            // detele_lst
             // 
-            this.send_to_lst.FormattingEnabled = true;
-            this.send_to_lst.Location = new System.Drawing.Point(378, 46);
-            this.send_to_lst.Name = "send_to_lst";
-            this.send_to_lst.Size = new System.Drawing.Size(193, 95);
-            this.send_to_lst.TabIndex = 8;
-            this.send_to_lst.SelectedIndexChanged += new System.EventHandler(this.send_to_lst_SelectedIndexChanged);
+            this.detele_lst.FormattingEnabled = true;
+            this.detele_lst.Location = new System.Drawing.Point(378, 46);
+            this.detele_lst.Name = "detele_lst";
+            this.detele_lst.Size = new System.Drawing.Size(193, 95);
+            this.detele_lst.TabIndex = 8;
+            this.detele_lst.SelectedIndexChanged += new System.EventHandler(this.send_to_lst_SelectedIndexChanged);
             // 
             // add_btn
             // 
@@ -255,7 +255,7 @@
         private System.Windows.Forms.ListBox student_lst;
         private System.Windows.Forms.TextBox to_txt;
         private System.Windows.Forms.Button clear_btn;
-        private System.Windows.Forms.ListBox send_to_lst;
+        private System.Windows.Forms.ListBox detele_lst;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button return_btn;
         private System.Windows.Forms.Button delete_btn;

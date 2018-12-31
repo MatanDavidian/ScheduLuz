@@ -52,7 +52,7 @@ namespace main_screen.Manager
             {
                 string temp = dtb.Rows[i]["name"].ToString().Trim().ToUpper() + " " + dtb.Rows[i]["lastName"].ToString().Trim().ToUpper();
 
-                if (temp.Contains(to_txt.Text.ToUpper()) && !send_to_lst.Items.Contains(temp))
+                if (temp.Contains(to_txt.Text.ToUpper()) && !detele_lst.Items.Contains(temp))
                 {
                     student_lst.Items.Add(dtb.Rows[i]["name"].ToString().Trim() + " " + dtb.Rows[i]["lastName"].ToString().Trim());
                 }
@@ -90,23 +90,23 @@ namespace main_screen.Manager
             for (int i = 0; i < dtb.Rows.Count; i++)
             {
                 string student = dtb.Rows[i]["name"].ToString().Trim().ToUpper() + " " + dtb.Rows[i]["lastName"].ToString().Trim().ToUpper();
-                if (!send_to_lst.Items.Contains(student))
-                    send_to_lst.Items.Add(student);
+                if (!detele_lst.Items.Contains(student))
+                    detele_lst.Items.Add(student);
             }
         }
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            if (student_lst.Items.Contains(to_txt.Text) && !send_to_lst.Items.Contains(to_txt.Text.ToUpper()))
+            if (student_lst.Items.Contains(to_txt.Text) && !detele_lst.Items.Contains(to_txt.Text.ToUpper()))
             {
-                send_to_lst.Items.Add(to_txt.Text.ToUpper());
+                detele_lst.Items.Add(to_txt.Text.ToUpper());
                 to_txt.Clear();
             }
         }
 
         private void clear_btn_Click(object sender, EventArgs e)
         {
-             send_to_lst.Items.Clear();
+             detele_lst.Items.Clear();
         }
 
         private void grade_cb_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,10 +124,10 @@ namespace main_screen.Manager
             dataBase dataBase = new dataBase();
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
 
-            for (int i = 0; i < send_to_lst.Items.Count; i++)
+            for (int i = 0; i < detele_lst.Items.Count; i++)
             {
 
-                string username = send_to_lst.Items[i].ToString().Replace(" ", "");
+                string username = detele_lst.Items[i].ToString().Replace(" ", "");
 
                 string queryTogetStudentID = "Select id from connection_details Where userName = '" + username + "'";
                 SqlDataAdapter sda = new SqlDataAdapter(queryTogetStudentID, con);
@@ -138,7 +138,7 @@ namespace main_screen.Manager
                 User n = new User();
                 n.DeleteUser(sendToId);
             }
-            MessageBox.Show("Your event is deleted.");
+            MessageBox.Show("The user deleted.");
             delete_user frm = new delete_user();
             this.Hide();
             frm.Show();
