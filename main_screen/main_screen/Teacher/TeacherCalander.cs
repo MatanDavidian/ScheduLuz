@@ -657,5 +657,12 @@ namespace main_screen
             n.Show();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Teacher.AppointmentBetweenStudents n = new Teacher.AppointmentBetweenStudents();
+            n.Show();
+            this.Hide();
+        }
     }
 }

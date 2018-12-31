@@ -65,9 +65,10 @@
             // 
             this.title.AutoSize = true;
             this.title.BackColor = System.Drawing.Color.Transparent;
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.title.Location = new System.Drawing.Point(34, 23);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(159, 13);
+            this.title.Size = new System.Drawing.Size(240, 17);
             this.title.TabIndex = 15;
             this.title.Text = "Set a meeting between students";
             // 
@@ -348,6 +349,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.kisspng_triangle_yellow_pattern_personalized_diamond_lattice_gradient_background_5a91ef91c81131_6370130715195134898195;
             this.ClientSize = new System.Drawing.Size(606, 574);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -356,7 +358,7 @@
             this.Controls.Add(this.title);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AppointmentBetweenStudents";
-            this.Text = "AppointmentBatweenStudents";
+            this.Text = "AppointmentBetweenStudents";
             this.Load += new System.EventHandler(this.AppointmentBetweenStudents_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
