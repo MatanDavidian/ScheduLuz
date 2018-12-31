@@ -336,6 +336,7 @@ namespace main_screen.Teacher
             this.hours_start.Name = "hours_start";
             this.hours_start.Size = new System.Drawing.Size(37, 20);
             this.hours_start.TabIndex = 60;
+            this.hours_start.ValueChanged += new System.EventHandler(this.hours_start_ValueChanged);
             // 
             // minutes_start
             // 
