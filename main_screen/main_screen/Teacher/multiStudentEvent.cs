@@ -234,6 +234,21 @@ namespace main_screen.Teacher
         {
 
         }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+
+        }
+
+        private void details_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void send_to_lst_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

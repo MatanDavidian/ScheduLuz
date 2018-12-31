@@ -93,6 +93,7 @@ namespace main_screen.Teacher
             this.send_to_lst.Name = "send_to_lst";
             this.send_to_lst.Size = new System.Drawing.Size(193, 95);
             this.send_to_lst.TabIndex = 8;
+            this.send_to_lst.SelectedIndexChanged += new System.EventHandler(this.send_to_lst_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -278,6 +279,7 @@ namespace main_screen.Teacher
             this.details_txt.Size = new System.Drawing.Size(201, 96);
             this.details_txt.TabIndex = 20;
             this.details_txt.Text = "";
+            this.details_txt.TextChanged += new System.EventHandler(this.details_txt_TextChanged);
             // 
             // groupBox2
             // 
@@ -374,6 +376,10 @@ namespace main_screen.Teacher
             this.minutes_end.Size = new System.Drawing.Size(37, 20);
             this.minutes_end.TabIndex = 62;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // create_btn
             // 
             this.create_btn.BackColor = System.Drawing.Color.Transparent;
@@ -421,6 +427,7 @@ namespace main_screen.Teacher
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "multiStudentEvent";
             this.Text = "Multi Student Event";

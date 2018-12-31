@@ -150,5 +150,10 @@ namespace main_screen.Manager
             this.Hide();
             n.Show();
         }
+
+        private void class_num_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
