@@ -101,6 +101,7 @@
             // reason
             // 
             this.reason.Location = new System.Drawing.Point(249, 514);
+            this.reason.MaxLength = 190;
             this.reason.Name = "reason";
             this.reason.Size = new System.Drawing.Size(289, 20);
             this.reason.TabIndex = 83;

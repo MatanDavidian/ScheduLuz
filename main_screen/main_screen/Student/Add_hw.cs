@@ -57,7 +57,7 @@ namespace main_screen.Student
                 }
                 else
                 {
-                    MessageBox.Show("problem");
+                    MessageBox.Show("Problem -  please check your values");
                 }
 
             }

@@ -246,6 +246,7 @@
             // answersOpA
             // 
             this.answersOpA.Location = new System.Drawing.Point(131, 106);
+            this.answersOpA.MaxLength = 40;
             this.answersOpA.Name = "answersOpA";
             this.answersOpA.Size = new System.Drawing.Size(248, 20);
             this.answersOpA.TabIndex = 88;
@@ -253,6 +254,7 @@
             // answersOpB
             // 
             this.answersOpB.Location = new System.Drawing.Point(131, 131);
+            this.answersOpB.MaxLength = 40;
             this.answersOpB.Name = "answersOpB";
             this.answersOpB.Size = new System.Drawing.Size(248, 20);
             this.answersOpB.TabIndex = 89;
@@ -260,6 +262,7 @@
             // answersOpC
             // 
             this.answersOpC.Location = new System.Drawing.Point(131, 156);
+            this.answersOpC.MaxLength = 40;
             this.answersOpC.Name = "answersOpC";
             this.answersOpC.Size = new System.Drawing.Size(248, 20);
             this.answersOpC.TabIndex = 90;
@@ -267,6 +270,7 @@
             // answersOpD
             // 
             this.answersOpD.Location = new System.Drawing.Point(131, 182);
+            this.answersOpD.MaxLength = 40;
             this.answersOpD.Name = "answersOpD";
             this.answersOpD.Size = new System.Drawing.Size(248, 20);
             this.answersOpD.TabIndex = 91;
@@ -274,6 +278,7 @@
             // question_txt
             // 
             this.question_txt.Location = new System.Drawing.Point(131, 80);
+            this.question_txt.MaxLength = 40;
             this.question_txt.Name = "question_txt";
             this.question_txt.Size = new System.Drawing.Size(248, 20);
             this.question_txt.TabIndex = 92;

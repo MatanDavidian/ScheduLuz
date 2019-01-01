@@ -187,6 +187,7 @@
             // 
             this.Place.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Place.Location = new System.Drawing.Point(74, 60);
+            this.Place.MaxLength = 20;
             this.Place.Name = "Place";
             this.Place.Size = new System.Drawing.Size(222, 20);
             this.Place.TabIndex = 57;
@@ -244,6 +245,7 @@
             // 
             this.text_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_title.Location = new System.Drawing.Point(74, 34);
+            this.text_title.MaxLength = 20;
             this.text_title.Name = "text_title";
             this.text_title.Size = new System.Drawing.Size(222, 20);
             this.text_title.TabIndex = 56;
