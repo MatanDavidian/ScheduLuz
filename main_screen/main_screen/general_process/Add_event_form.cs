@@ -186,5 +186,10 @@ namespace main_screen.general_process
                 hours_end.Value = hours_start.Value + 1;
             }
         }
+
+        private void hours_end_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

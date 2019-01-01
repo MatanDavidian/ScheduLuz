@@ -94,6 +94,7 @@ namespace main_screen.Teacher
             this.send_to_lst.Name = "send_to_lst";
             this.send_to_lst.Size = new System.Drawing.Size(193, 95);
             this.send_to_lst.TabIndex = 8;
+            this.send_to_lst.SelectedIndexChanged += new System.EventHandler(this.send_to_lst_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -281,6 +282,7 @@ namespace main_screen.Teacher
             this.details_txt.Size = new System.Drawing.Size(201, 96);
             this.details_txt.TabIndex = 20;
             this.details_txt.Text = "";
+            this.details_txt.TextChanged += new System.EventHandler(this.details_txt_TextChanged);
             // 
             // groupBox2
             // 
@@ -337,6 +339,7 @@ namespace main_screen.Teacher
             this.hours_start.Name = "hours_start";
             this.hours_start.Size = new System.Drawing.Size(37, 20);
             this.hours_start.TabIndex = 60;
+            this.hours_start.ValueChanged += new System.EventHandler(this.hours_start_ValueChanged);
             // 
             // minutes_start
             // 
@@ -376,6 +379,10 @@ namespace main_screen.Teacher
             this.minutes_end.Name = "minutes_end";
             this.minutes_end.Size = new System.Drawing.Size(37, 20);
             this.minutes_end.TabIndex = 62;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // create_btn
             // 

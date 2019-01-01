@@ -61,7 +61,7 @@ namespace main_screen
         {
             DateTime now_dt = DateTime.Now;//END YEAR button visible or invisible according the date.
             DateTime start = new DateTime(int.Parse(now_dt.Year.ToString().Trim()), 10, 1);
-            DateTime end = new DateTime(int.Parse(now_dt.Year.ToString().Trim()), 12, 30);
+            DateTime end = new DateTime(int.Parse(now_dt.Year.ToString().Trim())+1, 12, 31);
             if (now_dt.Ticks >= start.Ticks && now_dt.Ticks <= end.Ticks)
             {
                 EndYear_btn.Visible = true;
@@ -609,7 +609,7 @@ namespace main_screen
                     dataBase dataBase = new dataBase();
                     SqlConnection conn = dataBase.connect_to_scheduluz_DB();
                     SqlDataAdapter sda;
-                    DataTable dt_lastyearusers;
+                    DataTable dt_lastyearusers, dt_students;
                     conn.Open();
 
                     string query = "Select Id from users where grade= "+ 12;
@@ -623,16 +623,37 @@ namespace main_screen
 
                         User n = new User();
                         n.DeleteUser(sendToId);
-                    }  
+                    }
+                    for (int i = 7; i <= 12; i++)
+                    {
+                        SqlCommand cmd = new SqlCommand("DELETE FROM weekly_events WHERE user_id_OR_class ='"+i.ToString()+"'", conn);
+                        cmd.ExecuteNonQuery();
+                        for (int j = 1; j <= 3; j++)
+                        {
+                            SqlCommand cmd1 = new SqlCommand("DELETE FROM weekly_events WHERE user_id_OR_class ='" + i.ToString()+"-"+j.ToString() + "'", conn);
+                            cmd1.ExecuteNonQuery();
+                        }
+                    }
+                    /*
                     SqlCommand cmd = new SqlCommand("DELETE FROM weekly_events WHERE user_id_OR_class ='" +"12-1"+"'", conn);
                     cmd.ExecuteNonQuery();
                     cmd = new SqlCommand("DELETE FROM weekly_events WHERE user_id_OR_class ='" + "12-2" + "'", conn);
                     cmd.ExecuteNonQuery();
                     cmd = new SqlCommand("DELETE FROM weekly_events WHERE user_id_OR_class ='" + "12-3" + "'", conn);
                     cmd.ExecuteNonQuery();
+                    */
+                    query = "Select * from users where permission = '" +"student"+"'";
+                    sda = new SqlDataAdapter(query, conn);
+                    dt_students = new DataTable();
+                    sda.Fill(dt_students);
+                    for(int i=0;i< dt_students.Rows.Count;i++)
+                    {
+                        SqlCommand cmd2 = new SqlCommand("UPDATE users SET grade ='" + (int.Parse(dt_students.Rows[i]["grade"].ToString().Trim())+1).ToString() + "' WHERE id ='" + dt_students.Rows[i]["Id"] + "'", conn);
+                        cmd2.ExecuteNonQuery();
+                    }
                     if (dt_lastyearusers.Rows.Count > 0)
                     {
-                        MessageBox.Show("All student at 12 grade and there schedule are deleted.");
+                        MessageBox.Show("All student at 12 grade are deleted and all the schedule.");
                     }
                     else
                         MessageBox.Show("There not student at 12 grade.");
