@@ -24,7 +24,7 @@ namespace main_screen.Teacher
         private void reception_hours_Load(object sender, EventArgs e)
         {
             TableLayoutPanel Table = new TableLayoutPanel();
-            Table.Location = new Point(75, 120);
+            Table.Location = new Point(50, 120);
             Table.Size = new Size(536, 253);
             Table.AutoSize = true;
             Table.Name = "Desk";

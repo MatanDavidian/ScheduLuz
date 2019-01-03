@@ -85,6 +85,10 @@ namespace main_screen.Teacher
             {
                 MessageBox.Show("there are no student to invite.");
             }
+            else if (send_to_lst.Items.Count == 1)
+            {
+                MessageBox.Show("please choose two students.");
+            }
             else
             {
 
