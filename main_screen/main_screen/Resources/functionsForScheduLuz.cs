@@ -57,32 +57,32 @@ namespace check_funcs
 
                         if (!checker.Check_onlyNums(userID))
                         {
-                            MessageBox.Show("id!");
+                            //MessageBox.Show("id!");
                             return false;
                         }
                         else if (title.GetType() != "hi".GetType())
                         {
-                            MessageBox.Show("title!");
+                            //MessageBox.Show("title!");
                             return false;
                         }
                         else if (details.GetType() != "hi".GetType())
                         {
-                            MessageBox.Show("details!");
+                           // MessageBox.Show("details!");
                             return false;
                         }
                         else if (place.GetType() != "hi".GetType())
                         {
-                            MessageBox.Show("place!");
+                            //MessageBox.Show("place!");
                             return false;
                         }
                         else if (!(privacy.ToLower() == "private" || privacy.ToLower() == "public"))
                         {
-                            MessageBox.Show("privacy!");
+                            //MessageBox.Show("privacy!");
                             return false;
                         }
                         else if (!(up_for_cancellation.ToLower() == "yes" || up_for_cancellation.ToLower() == "no"))
                         {
-                            MessageBox.Show("cancellation!");
+                            //MessageBox.Show("cancellation!");
                             return false;
                         }
 
@@ -92,13 +92,13 @@ namespace check_funcs
                             int hours_start_int = Int32.Parse(hours_start);
                             if (hours_start_int < 0 || hours_start_int > 23)
                             {
-                                MessageBox.Show("h_start!");
+                                //MessageBox.Show("h_start!");
                                 return false;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("h_start!2");
+                            //MessageBox.Show("h_start!2");
                             return false;
                         }
                         if (checker.Check_onlyNums(hours_end))
@@ -106,13 +106,13 @@ namespace check_funcs
                             int hours_end_int = Int32.Parse(hours_end);
                             if (hours_end_int < 0 || hours_end_int > 23)
                             {
-                                MessageBox.Show("h_end!");
+                               //MessageBox.Show("h_end!");
                                 return false;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("h_end2!");
+                            //MessageBox.Show("h_end2!");
                             return false;
                         }
                         if (checker.Check_onlyNums(minutes_start))
@@ -120,13 +120,13 @@ namespace check_funcs
                             int minutes_start_int = Int32.Parse(minutes_start);
                             if (minutes_start_int < 0 || minutes_start_int > 59)
                             {
-                                MessageBox.Show("m_start!");
+                                //MessageBox.Show("m_start!");
                                 return false;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("m_start2!");
+                            //MessageBox.Show("m_start2!");
                             return false;
                         }
                         if (checker.Check_onlyNums(minutes_end))
@@ -134,18 +134,18 @@ namespace check_funcs
                             int minutes_end_int = Int32.Parse(minutes_end);
                             if (minutes_end_int < 0 || minutes_end_int > 59)
                             {
-                                MessageBox.Show("m_end!");
+                                //MessageBox.Show("m_end!");
                                 return false;
                             }
                         }
                         else
                         {
-                            MessageBox.Show("m_end2!");
+                            //MessageBox.Show("m_end2!");
                             return false;
                         }
                         if (kind.GetType() != "hi".GetType())
                         {
-                            MessageBox.Show("type!");
+                            //MessageBox.Show("type!");
                             return false;
                         }
 
@@ -158,9 +158,9 @@ namespace check_funcs
 
 
                     /*
-                     * if tests of input passed it will be insert to the data base.
-                     * 
-                     */
+                    * if tests of input passed it will be insert to the data base.
+                      
+                    */
                     dataBase dataBase = new dataBase();
                     SqlConnection conn = dataBase.connect_to_scheduluz_DB();
 
@@ -220,5 +220,3 @@ namespace check_funcs
         }
 
 }
-
-

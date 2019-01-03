@@ -34,6 +34,7 @@
             this.Submit = new System.Windows.Forms.Button();
             this.Return = new System.Windows.Forms.Button();
             this.reason = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -70,7 +71,7 @@
             this.Submit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Submit.Location = new System.Drawing.Point(536, 476);
+            this.Submit.Location = new System.Drawing.Point(541, 557);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(84, 34);
             this.Submit.TabIndex = 81;
@@ -89,7 +90,7 @@
             this.Return.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Return.Location = new System.Drawing.Point(7, 476);
+            this.Return.Location = new System.Drawing.Point(12, 557);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(84, 34);
             this.Return.TabIndex = 80;
@@ -99,22 +100,36 @@
             // 
             // reason
             // 
-            this.reason.Location = new System.Drawing.Point(545, 56);
+            this.reason.Location = new System.Drawing.Point(249, 514);
+            this.reason.MaxLength = 190;
             this.reason.Name = "reason";
-            this.reason.Size = new System.Drawing.Size(181, 20);
+            this.reason.Size = new System.Drawing.Size(289, 20);
             this.reason.TabIndex = 83;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label2.Location = new System.Drawing.Point(88, 515);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 15);
+            this.label2.TabIndex = 84;
+            this.label2.Text = "Enter yours reason please :";
             // 
             // ask_for_cancelation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
-            this.ClientSize = new System.Drawing.Size(901, 522);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(901, 603);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.reason);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.title);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ask_for_cancelation";
             this.Text = "Cancel Request";
@@ -131,5 +146,6 @@
         private System.Windows.Forms.Button Return;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.TextBox reason;
+        private System.Windows.Forms.Label label2;
     }
 }

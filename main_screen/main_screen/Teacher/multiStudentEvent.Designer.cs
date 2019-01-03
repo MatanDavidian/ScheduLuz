@@ -81,6 +81,7 @@ namespace main_screen.Teacher
             // to_txt
             // 
             this.to_txt.Location = new System.Drawing.Point(52, 42);
+            this.to_txt.MaxLength = 20;
             this.to_txt.Name = "to_txt";
             this.to_txt.Size = new System.Drawing.Size(239, 20);
             this.to_txt.TabIndex = 6;
@@ -93,6 +94,7 @@ namespace main_screen.Teacher
             this.send_to_lst.Name = "send_to_lst";
             this.send_to_lst.Size = new System.Drawing.Size(193, 95);
             this.send_to_lst.TabIndex = 8;
+            this.send_to_lst.SelectedIndexChanged += new System.EventHandler(this.send_to_lst_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -251,6 +253,7 @@ namespace main_screen.Teacher
             // title_txt
             // 
             this.title_txt.Location = new System.Drawing.Point(52, 40);
+            this.title_txt.MaxLength = 40;
             this.title_txt.Name = "title_txt";
             this.title_txt.Size = new System.Drawing.Size(204, 20);
             this.title_txt.TabIndex = 17;
@@ -258,6 +261,7 @@ namespace main_screen.Teacher
             // place_txt
             // 
             this.place_txt.Location = new System.Drawing.Point(52, 74);
+            this.place_txt.MaxLength = 40;
             this.place_txt.Name = "place_txt";
             this.place_txt.Size = new System.Drawing.Size(204, 20);
             this.place_txt.TabIndex = 18;
@@ -278,6 +282,7 @@ namespace main_screen.Teacher
             this.details_txt.Size = new System.Drawing.Size(201, 96);
             this.details_txt.TabIndex = 20;
             this.details_txt.Text = "";
+            this.details_txt.TextChanged += new System.EventHandler(this.details_txt_TextChanged);
             // 
             // groupBox2
             // 
@@ -334,6 +339,7 @@ namespace main_screen.Teacher
             this.hours_start.Name = "hours_start";
             this.hours_start.Size = new System.Drawing.Size(37, 20);
             this.hours_start.TabIndex = 60;
+            this.hours_start.ValueChanged += new System.EventHandler(this.hours_start_ValueChanged);
             // 
             // minutes_start
             // 
@@ -373,6 +379,10 @@ namespace main_screen.Teacher
             this.minutes_end.Name = "minutes_end";
             this.minutes_end.Size = new System.Drawing.Size(37, 20);
             this.minutes_end.TabIndex = 62;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // create_btn
             // 
@@ -421,6 +431,7 @@ namespace main_screen.Teacher
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "multiStudentEvent";
             this.Text = "Multi Student Event";

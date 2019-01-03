@@ -47,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grade_cb = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schedule)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.teachers_lst);
             this.groupBox1.Controls.Add(this.teacher_name_txt);
@@ -126,6 +128,7 @@
             // 
             // update_btn
             // 
+            this.update_btn.BackColor = System.Drawing.Color.Transparent;
             this.update_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
             this.update_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.update_btn.FlatAppearance.BorderSize = 0;
@@ -138,7 +141,7 @@
             this.update_btn.Size = new System.Drawing.Size(75, 23);
             this.update_btn.TabIndex = 12;
             this.update_btn.Text = "Update";
-            this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.UseVisualStyleBackColor = false;
             this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // days
@@ -161,6 +164,7 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackColor = System.Drawing.Color.Transparent;
             this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.return_btn.FlatAppearance.BorderSize = 0;
@@ -173,33 +177,36 @@
             this.return_btn.Size = new System.Drawing.Size(75, 23);
             this.return_btn.TabIndex = 14;
             this.return_btn.Text = "Return";
-            this.return_btn.UseVisualStyleBackColor = true;
+            this.return_btn.UseVisualStyleBackColor = false;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click_1);
             // 
             // teacher_rad_btn
             // 
             this.teacher_rad_btn.AutoSize = true;
+            this.teacher_rad_btn.BackColor = System.Drawing.Color.Transparent;
             this.teacher_rad_btn.Location = new System.Drawing.Point(35, 74);
             this.teacher_rad_btn.Name = "teacher_rad_btn";
             this.teacher_rad_btn.Size = new System.Drawing.Size(14, 13);
             this.teacher_rad_btn.TabIndex = 15;
             this.teacher_rad_btn.TabStop = true;
-            this.teacher_rad_btn.UseVisualStyleBackColor = true;
+            this.teacher_rad_btn.UseVisualStyleBackColor = false;
             this.teacher_rad_btn.CheckedChanged += new System.EventHandler(this.teacher_rad_btn_CheckedChanged);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
             this.radioButton1.Location = new System.Drawing.Point(35, 241);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(14, 13);
             this.radioButton1.TabIndex = 17;
             this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.UseVisualStyleBackColor = false;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.classnum_cb);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label1);
@@ -236,6 +243,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
@@ -257,11 +265,25 @@
             this.grade_cb.Size = new System.Drawing.Size(65, 21);
             this.grade_cb.TabIndex = 0;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(41, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(215, 20);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Weekly hours managment";
+            // 
             // fixed_schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(711, 450);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.teacher_rad_btn);
@@ -270,6 +292,7 @@
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.schedule);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fixed_schedule";
             this.Text = "Fixed Schedule";
@@ -304,5 +327,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox grade_cb;
+        private System.Windows.Forms.Label label4;
     }
 }

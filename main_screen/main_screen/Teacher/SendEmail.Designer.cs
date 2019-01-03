@@ -74,6 +74,7 @@ namespace main_screen.Teacher
             // 
             this.txtTo.Location = new System.Drawing.Point(116, 57);
             this.txtTo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTo.MaxLength = 40;
             this.txtTo.Name = "txtTo";
             this.txtTo.Size = new System.Drawing.Size(216, 20);
             this.txtTo.TabIndex = 0;
@@ -83,6 +84,7 @@ namespace main_screen.Teacher
             // 
             this.txtCC.Location = new System.Drawing.Point(116, 84);
             this.txtCC.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCC.MaxLength = 40;
             this.txtCC.Name = "txtCC";
             this.txtCC.Size = new System.Drawing.Size(216, 20);
             this.txtCC.TabIndex = 1;
@@ -103,6 +105,7 @@ namespace main_screen.Teacher
             // 
             this.txtSubject.Location = new System.Drawing.Point(116, 114);
             this.txtSubject.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSubject.MaxLength = 40;
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(216, 20);
             this.txtSubject.TabIndex = 2;
@@ -330,6 +333,7 @@ namespace main_screen.Teacher
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(533, 499);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label9);
@@ -343,6 +347,7 @@ namespace main_screen.Teacher
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTo);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SendEmail";

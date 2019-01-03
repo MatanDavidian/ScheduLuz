@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(approve_cancellation));
             this.title = new System.Windows.Forms.Label();
             this.Return = new System.Windows.Forms.Button();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
             // 
             // title
             // 
-            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.title.ForeColor = System.Drawing.Color.Sienna;
-            this.title.Location = new System.Drawing.Point(19, 9);
+            this.title.BackColor = System.Drawing.Color.Transparent;
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.Color.Black;
+            this.title.Location = new System.Drawing.Point(19, 18);
             this.title.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(390, 39);
+            this.title.Size = new System.Drawing.Size(362, 34);
             this.title.TabIndex = 80;
-            this.title.Text = "approve cancelation";
+            this.title.Text = "Approve Cancel Requests";
             // 
             // Return
             // 
+            this.Return.BackColor = System.Drawing.Color.Transparent;
             this.Return.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Return.FlatAppearance.BorderSize = 0;
@@ -59,26 +61,22 @@
             this.Return.Size = new System.Drawing.Size(84, 34);
             this.Return.TabIndex = 81;
             this.Return.Text = "Return";
-            this.Return.UseVisualStyleBackColor = true;
+            this.Return.UseVisualStyleBackColor = false;
             this.Return.Click += new System.EventHandler(this.Return_Click);
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(9, 119);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 274);
-            this.vScrollBar1.TabIndex = 82;
             // 
             // approve_cancellation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.title);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "approve_cancellation";
-            this.Text = "approve_cancellation";
+            this.Text = "Approve Cancel Requests";
             this.Load += new System.EventHandler(this.approve_cancellation_Load);
             this.ResumeLayout(false);
 
@@ -88,6 +86,5 @@
 
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Button Return;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }

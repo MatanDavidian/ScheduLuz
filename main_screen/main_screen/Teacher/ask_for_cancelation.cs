@@ -241,5 +241,10 @@ namespace main_screen.Teacher
             //MessageBox.Show("Your event added successfully");
             conn.Close();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

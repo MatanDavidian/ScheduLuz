@@ -47,6 +47,7 @@
             // pass_txt
             // 
             this.pass_txt.Location = new System.Drawing.Point(16, 39);
+            this.pass_txt.MaxLength = 20;
             this.pass_txt.Name = "pass_txt";
             this.pass_txt.Size = new System.Drawing.Size(137, 20);
             this.pass_txt.TabIndex = 1;

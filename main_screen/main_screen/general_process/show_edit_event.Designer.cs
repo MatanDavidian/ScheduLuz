@@ -339,6 +339,7 @@
             // 
             // event_gb
             // 
+            this.event_gb.BackColor = System.Drawing.Color.Transparent;
             this.event_gb.Controls.Add(this.groupBox1);
             this.event_gb.Controls.Add(this.groupBox3);
             this.event_gb.Controls.Add(this.title);
@@ -399,12 +400,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(495, 450);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.event_gb);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "show_edit_event";
             this.Text = "Show or Edit Event";

@@ -38,7 +38,7 @@
             this.student_lst = new System.Windows.Forms.ListBox();
             this.to_txt = new System.Windows.Forms.TextBox();
             this.clear_btn = new System.Windows.Forms.Button();
-            this.send_to_lst = new System.Windows.Forms.ListBox();
+            this.detele_lst = new System.Windows.Forms.ListBox();
             this.add_btn = new System.Windows.Forms.Button();
             this.return_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
@@ -47,6 +47,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.class_num_cb);
@@ -55,9 +56,9 @@
             this.groupBox1.Controls.Add(this.student_lst);
             this.groupBox1.Controls.Add(this.to_txt);
             this.groupBox1.Controls.Add(this.clear_btn);
-            this.groupBox1.Controls.Add(this.send_to_lst);
+            this.groupBox1.Controls.Add(this.detele_lst);
             this.groupBox1.Controls.Add(this.add_btn);
-            this.groupBox1.Location = new System.Drawing.Point(12, 56);
+            this.groupBox1.Location = new System.Drawing.Point(12, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(582, 167);
             this.groupBox1.TabIndex = 13;
@@ -102,6 +103,7 @@
             this.class_num_cb.Name = "class_num_cb";
             this.class_num_cb.Size = new System.Drawing.Size(75, 21);
             this.class_num_cb.TabIndex = 13;
+            this.class_num_cb.SelectedIndexChanged += new System.EventHandler(this.class_num_cb_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -163,14 +165,14 @@
             this.clear_btn.UseVisualStyleBackColor = true;
             this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
             // 
-            // send_to_lst
+            // detele_lst
             // 
-            this.send_to_lst.FormattingEnabled = true;
-            this.send_to_lst.Location = new System.Drawing.Point(378, 46);
-            this.send_to_lst.Name = "send_to_lst";
-            this.send_to_lst.Size = new System.Drawing.Size(193, 95);
-            this.send_to_lst.TabIndex = 8;
-            this.send_to_lst.SelectedIndexChanged += new System.EventHandler(this.send_to_lst_SelectedIndexChanged);
+            this.detele_lst.FormattingEnabled = true;
+            this.detele_lst.Location = new System.Drawing.Point(378, 46);
+            this.detele_lst.Name = "detele_lst";
+            this.detele_lst.Size = new System.Drawing.Size(193, 95);
+            this.detele_lst.TabIndex = 8;
+            this.detele_lst.SelectedIndexChanged += new System.EventHandler(this.send_to_lst_SelectedIndexChanged);
             // 
             // add_btn
             // 
@@ -191,6 +193,7 @@
             // 
             // return_btn
             // 
+            this.return_btn.BackColor = System.Drawing.Color.Transparent;
             this.return_btn.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.return_btn.FlatAppearance.BorderSize = 0;
@@ -198,16 +201,17 @@
             this.return_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.return_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.return_btn.Location = new System.Drawing.Point(12, 246);
+            this.return_btn.Location = new System.Drawing.Point(12, 235);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(75, 23);
             this.return_btn.TabIndex = 16;
             this.return_btn.Text = "Return";
-            this.return_btn.UseVisualStyleBackColor = true;
+            this.return_btn.UseVisualStyleBackColor = false;
             this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
             // 
             // delete_btn
             // 
+            this.delete_btn.BackColor = System.Drawing.Color.Transparent;
             this.delete_btn.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
             this.delete_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.delete_btn.FlatAppearance.BorderSize = 0;
@@ -215,22 +219,26 @@
             this.delete_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.delete_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete_btn.Location = new System.Drawing.Point(545, 246);
+            this.delete_btn.Location = new System.Drawing.Point(519, 235);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(75, 23);
             this.delete_btn.TabIndex = 15;
             this.delete_btn.Text = "Delete";
-            this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.UseVisualStyleBackColor = false;
             this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // delete_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 301);
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(632, 285);
             this.Controls.Add(this.return_btn);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "delete_user";
             this.Text = "delete_user";
             this.Load += new System.EventHandler(this.delete_user_Load);
@@ -251,7 +259,7 @@
         private System.Windows.Forms.ListBox student_lst;
         private System.Windows.Forms.TextBox to_txt;
         private System.Windows.Forms.Button clear_btn;
-        private System.Windows.Forms.ListBox send_to_lst;
+        private System.Windows.Forms.ListBox detele_lst;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button return_btn;
         private System.Windows.Forms.Button delete_btn;

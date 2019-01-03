@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Surveys));
             this.Return = new System.Windows.Forms.Button();
             this.Submit = new System.Windows.Forms.Button();
             this.surveys_results = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@
             // 
             // Return
             // 
+            this.Return.BackColor = System.Drawing.Color.Transparent;
             this.Return.BackgroundImage = global::main_screen.Properties.Resources.bluebtn;
             this.Return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Return.FlatAppearance.BorderSize = 0;
@@ -66,11 +68,12 @@
             this.Return.Size = new System.Drawing.Size(75, 25);
             this.Return.TabIndex = 77;
             this.Return.Text = "Return";
-            this.Return.UseVisualStyleBackColor = true;
+            this.Return.UseVisualStyleBackColor = false;
             this.Return.Click += new System.EventHandler(this.Return_Click);
             // 
             // Submit
             // 
+            this.Submit.BackColor = System.Drawing.Color.Transparent;
             this.Submit.BackgroundImage = global::main_screen.Properties.Resources.greenbtn;
             this.Submit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Submit.FlatAppearance.BorderSize = 0;
@@ -84,11 +87,12 @@
             this.Submit.Size = new System.Drawing.Size(109, 25);
             this.Submit.TabIndex = 78;
             this.Submit.Text = "send your survey";
-            this.Submit.UseVisualStyleBackColor = true;
+            this.Submit.UseVisualStyleBackColor = false;
             this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
             // surveys_results
             // 
+            this.surveys_results.BackColor = System.Drawing.Color.Transparent;
             this.surveys_results.BackgroundImage = global::main_screen.Properties.Resources.greybtn;
             this.surveys_results.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.surveys_results.FlatAppearance.BorderSize = 0;
@@ -102,41 +106,45 @@
             this.surveys_results.Size = new System.Drawing.Size(91, 25);
             this.surveys_results.TabIndex = 79;
             this.surveys_results.Text = "surveys results";
-            this.surveys_results.UseVisualStyleBackColor = true;
+            this.surveys_results.UseVisualStyleBackColor = false;
             this.surveys_results.Click += new System.EventHandler(this.surveys_results_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(19, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 39);
+            this.label1.Size = new System.Drawing.Size(151, 39);
             this.label1.TabIndex = 80;
-            this.label1.Text = "surveys";
+            this.label1.Text = "Surveys";
             // 
             // questionLabel
             // 
             this.questionLabel.AutoSize = true;
+            this.questionLabel.BackColor = System.Drawing.Color.Transparent;
             this.questionLabel.Location = new System.Drawing.Point(38, 80);
             this.questionLabel.Name = "questionLabel";
-            this.questionLabel.Size = new System.Drawing.Size(53, 13);
+            this.questionLabel.Size = new System.Drawing.Size(52, 13);
             this.questionLabel.TabIndex = 81;
-            this.questionLabel.Text = "question: ";
+            this.questionLabel.Text = "Question:";
             // 
             // answersLabel
             // 
             this.answersLabel.AutoSize = true;
+            this.answersLabel.BackColor = System.Drawing.Color.Transparent;
             this.answersLabel.Location = new System.Drawing.Point(38, 106);
             this.answersLabel.Name = "answersLabel";
-            this.answersLabel.Size = new System.Drawing.Size(52, 13);
+            this.answersLabel.Size = new System.Drawing.Size(50, 13);
             this.answersLabel.TabIndex = 82;
-            this.answersLabel.Text = "answers: ";
+            this.answersLabel.Text = "Answers:";
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.class_num_cb);
             this.groupBox1.Controls.Add(this.label7);
@@ -198,6 +206,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(108, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 13);
@@ -207,6 +216,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(108, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(17, 13);
@@ -216,6 +226,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(108, 163);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(17, 13);
@@ -225,6 +236,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Location = new System.Drawing.Point(108, 190);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(18, 13);
@@ -234,6 +246,7 @@
             // answersOpA
             // 
             this.answersOpA.Location = new System.Drawing.Point(131, 106);
+            this.answersOpA.MaxLength = 40;
             this.answersOpA.Name = "answersOpA";
             this.answersOpA.Size = new System.Drawing.Size(248, 20);
             this.answersOpA.TabIndex = 88;
@@ -241,6 +254,7 @@
             // answersOpB
             // 
             this.answersOpB.Location = new System.Drawing.Point(131, 131);
+            this.answersOpB.MaxLength = 40;
             this.answersOpB.Name = "answersOpB";
             this.answersOpB.Size = new System.Drawing.Size(248, 20);
             this.answersOpB.TabIndex = 89;
@@ -248,6 +262,7 @@
             // answersOpC
             // 
             this.answersOpC.Location = new System.Drawing.Point(131, 156);
+            this.answersOpC.MaxLength = 40;
             this.answersOpC.Name = "answersOpC";
             this.answersOpC.Size = new System.Drawing.Size(248, 20);
             this.answersOpC.TabIndex = 90;
@@ -255,6 +270,7 @@
             // answersOpD
             // 
             this.answersOpD.Location = new System.Drawing.Point(131, 182);
+            this.answersOpD.MaxLength = 40;
             this.answersOpD.Name = "answersOpD";
             this.answersOpD.Size = new System.Drawing.Size(248, 20);
             this.answersOpD.TabIndex = 91;
@@ -262,6 +278,7 @@
             // question_txt
             // 
             this.question_txt.Location = new System.Drawing.Point(131, 80);
+            this.question_txt.MaxLength = 40;
             this.question_txt.Name = "question_txt";
             this.question_txt.Size = new System.Drawing.Size(248, 20);
             this.question_txt.TabIndex = 92;
@@ -270,7 +287,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 380);
+            this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(424, 402);
             this.Controls.Add(this.question_txt);
             this.Controls.Add(this.answersOpD);
             this.Controls.Add(this.answersOpC);
@@ -287,6 +306,8 @@
             this.Controls.Add(this.surveys_results);
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.Return);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Surveys";
             this.Text = "Surveys";
             this.Load += new System.EventHandler(this.Surveys_Load);

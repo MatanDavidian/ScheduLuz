@@ -33,6 +33,7 @@
             this.title = new System.Windows.Forms.Label();
             this.friend_name = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.student_lst = new System.Windows.Forms.ListBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Add_friend_button = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.student_lst = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hours_start)).BeginInit();
@@ -88,6 +88,7 @@
             // friend_name
             // 
             this.friend_name.Location = new System.Drawing.Point(6, 47);
+            this.friend_name.MaxLength = 20;
             this.friend_name.Name = "friend_name";
             this.friend_name.Size = new System.Drawing.Size(133, 20);
             this.friend_name.TabIndex = 40;
@@ -108,6 +109,16 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "find friends";
+            // 
+            // student_lst
+            // 
+            this.student_lst.FormattingEnabled = true;
+            this.student_lst.Location = new System.Drawing.Point(6, 64);
+            this.student_lst.Name = "student_lst";
+            this.student_lst.Size = new System.Drawing.Size(133, 82);
+            this.student_lst.Sorted = true;
+            this.student_lst.TabIndex = 44;
+            this.student_lst.SelectedIndexChanged += new System.EventHandler(this.student_lst_SelectedIndexChanged);
             // 
             // listView1
             // 
@@ -187,6 +198,11 @@
             // hours_start
             // 
             this.hours_start.Location = new System.Drawing.Point(315, 29);
+            this.hours_start.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.hours_start.Name = "hours_start";
             this.hours_start.Size = new System.Drawing.Size(37, 20);
             this.hours_start.TabIndex = 48;
@@ -195,6 +211,11 @@
             // minutes_start
             // 
             this.minutes_start.Location = new System.Drawing.Point(376, 29);
+            this.minutes_start.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
             this.minutes_start.Name = "minutes_start";
             this.minutes_start.Size = new System.Drawing.Size(37, 20);
             this.minutes_start.TabIndex = 49;
@@ -212,6 +233,11 @@
             // hours_end
             // 
             this.hours_end.Location = new System.Drawing.Point(315, 55);
+            this.hours_end.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.hours_end.Name = "hours_end";
             this.hours_end.Size = new System.Drawing.Size(37, 20);
             this.hours_end.TabIndex = 59;
@@ -229,6 +255,11 @@
             // minutes_end
             // 
             this.minutes_end.Location = new System.Drawing.Point(376, 55);
+            this.minutes_end.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
             this.minutes_end.Name = "minutes_end";
             this.minutes_end.Size = new System.Drawing.Size(37, 20);
             this.minutes_end.TabIndex = 58;
@@ -237,6 +268,7 @@
             // 
             this.Place.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Place.Location = new System.Drawing.Point(98, 309);
+            this.Place.MaxLength = 20;
             this.Place.Multiline = true;
             this.Place.Name = "Place";
             this.Place.Size = new System.Drawing.Size(222, 20);
@@ -277,6 +309,7 @@
             // 
             this.text_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_title.Location = new System.Drawing.Point(98, 284);
+            this.text_title.MaxLength = 20;
             this.text_title.Multiline = true;
             this.text_title.Name = "text_title";
             this.text_title.Size = new System.Drawing.Size(222, 20);
@@ -329,21 +362,12 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // student_lst
-            // 
-            this.student_lst.FormattingEnabled = true;
-            this.student_lst.Location = new System.Drawing.Point(6, 64);
-            this.student_lst.Name = "student_lst";
-            this.student_lst.Size = new System.Drawing.Size(133, 82);
-            this.student_lst.Sorted = true;
-            this.student_lst.TabIndex = 44;
-            this.student_lst.SelectedIndexChanged += new System.EventHandler(this.student_lst_SelectedIndexChanged);
-            // 
             // Multiplayer_event
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(21F, 39F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(526, 612);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
@@ -356,6 +380,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);

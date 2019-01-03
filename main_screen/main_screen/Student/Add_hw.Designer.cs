@@ -202,6 +202,7 @@
             // profassion_txt
             // 
             this.profassion_txt.Location = new System.Drawing.Point(96, 22);
+            this.profassion_txt.MaxLength = 20;
             this.profassion_txt.Name = "profassion_txt";
             this.profassion_txt.Size = new System.Drawing.Size(200, 20);
             this.profassion_txt.TabIndex = 14;
@@ -275,6 +276,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_hw_form";
             this.Text = "Add Homework";

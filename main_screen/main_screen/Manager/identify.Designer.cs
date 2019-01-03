@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(identify));
             this.Confirm_btn = new System.Windows.Forms.Button();
             this.pass_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             // pass_txt
             // 
             this.pass_txt.Location = new System.Drawing.Point(12, 41);
+            this.pass_txt.MaxLength = 20;
             this.pass_txt.Name = "pass_txt";
             this.pass_txt.Size = new System.Drawing.Size(185, 20);
             this.pass_txt.TabIndex = 4;
@@ -76,6 +78,7 @@
             this.Controls.Add(this.Confirm_btn);
             this.Controls.Add(this.pass_txt);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "identify";
             this.Text = "identify";
             this.ResumeLayout(false);

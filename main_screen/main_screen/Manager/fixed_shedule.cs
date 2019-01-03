@@ -321,6 +321,7 @@ namespace main_screen.Manager
                             }
                         }
                     }
+                    MessageBox.Show( "Schedule updated.");
                 }
             }
             catch
