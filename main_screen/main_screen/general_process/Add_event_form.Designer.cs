@@ -251,6 +251,7 @@
             this.hours_end.Name = "hours_end";
             this.hours_end.Size = new System.Drawing.Size(37, 20);
             this.hours_end.TabIndex = 7;
+            this.hours_end.ValueChanged += new System.EventHandler(this.hours_end_ValueChanged);
             // 
             // eventsBindingSource
             // 

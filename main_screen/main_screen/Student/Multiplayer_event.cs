@@ -215,7 +215,18 @@ namespace main_screen.Student
 
         private void hours_start_ValueChanged(object sender, EventArgs e)
         {
-            
+            if (hours_start.Value == 24)
+            {
+                hours_start.Value = 0;
+            }
+            if (hours_start.Value >= 23)
+            {
+                hours_end.Value = 23;
+            }
+            else
+            {
+                hours_end.Value = hours_start.Value + 1;
+            }
         }
 
         private void friend_name_TextChanged(object sender, EventArgs e)

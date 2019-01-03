@@ -44,7 +44,6 @@
             this.motd_txt = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.reception_hours = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.view_contacts_btn = new System.Windows.Forms.Button();
             this.watch_stundent_schedule = new System.Windows.Forms.Button();
             this.multi_studnt_event_btn = new System.Windows.Forms.Button();
@@ -52,6 +51,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.add_event = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.motd.SuspendLayout();
             this.SuspendLayout();
@@ -170,7 +170,7 @@
             this.Surveys.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Surveys.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Surveys.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Surveys.Location = new System.Drawing.Point(706, 310);
+            this.Surveys.Location = new System.Drawing.Point(706, 273);
             this.Surveys.Name = "Surveys";
             this.Surveys.Size = new System.Drawing.Size(125, 30);
             this.Surveys.TabIndex = 25;
@@ -230,30 +230,13 @@
             this.reception_hours.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.reception_hours.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.reception_hours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reception_hours.Location = new System.Drawing.Point(706, 274);
+            this.reception_hours.Location = new System.Drawing.Point(706, 237);
             this.reception_hours.Name = "reception_hours";
             this.reception_hours.Size = new System.Drawing.Size(125, 30);
             this.reception_hours.TabIndex = 19;
             this.reception_hours.Text = "reception hours";
             this.reception_hours.UseVisualStyleBackColor = false;
             this.reception_hours.Click += new System.EventHandler(this.reception_hours_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(706, 238);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(125, 30);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = false;
             // 
             // view_contacts_btn
             // 
@@ -373,13 +356,31 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(706, 382);
+            this.button1.Location = new System.Drawing.Point(706, 345);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 30);
             this.button1.TabIndex = 26;
             this.button1.Text = "cancel a lesson";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(706, 309);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(125, 30);
+            this.button3.TabIndex = 27;
+            this.button3.Text = "Set a students meeting";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // TeacherCalander
             // 
@@ -388,6 +389,7 @@
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(843, 461);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Surveys);
             this.Controls.Add(this.listView1);
@@ -395,7 +397,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.reception_hours);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.view_contacts_btn);
             this.Controls.Add(this.watch_stundent_schedule);
             this.Controls.Add(this.multi_studnt_event_btn);
@@ -419,7 +420,6 @@
         #endregion
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button reception_hours;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button view_contacts_btn;
         private System.Windows.Forms.Button watch_stundent_schedule;
         private System.Windows.Forms.Button multi_studnt_event_btn;
@@ -440,5 +440,6 @@
         private System.Windows.Forms.ColumnHeader Ends;
         private System.Windows.Forms.Button Surveys;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }

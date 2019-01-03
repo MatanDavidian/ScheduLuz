@@ -339,6 +339,7 @@
             // 
             // event_gb
             // 
+            this.event_gb.BackColor = System.Drawing.Color.Transparent;
             this.event_gb.Controls.Add(this.groupBox1);
             this.event_gb.Controls.Add(this.groupBox3);
             this.event_gb.Controls.Add(this.title);
