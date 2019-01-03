@@ -130,6 +130,8 @@ namespace USER
 
         public User GetUser(string userId)
         {
+            id = userId;
+
             dataBase dataBase = new dataBase();
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
             string query_name = "Select name from users Where id = '" + userId + "'";
