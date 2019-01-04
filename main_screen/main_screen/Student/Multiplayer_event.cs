@@ -146,71 +146,94 @@ namespace main_screen.Student
 
         private void button3_Click(object sender, EventArgs e)
         {
-            dataBase dataBase = new dataBase();
-            SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Events(Event_name,event_kind,date,hours_start,minutes_start,hours_end,minutes_end,Event_details,event_place,up_for_cancellation) VALUES(@Event_name,@event_kind,@date,@hours_start,@minutes_start,@hours_end,@minutes_end,@Event_details,@Place,@up_for_cancellation) ", conn);
-
-            cmd.Parameters.Add("@up_for_cancellation", "YES");
-            cmd.Parameters.Add("@event_kind", "Muliplayer");
-            cmd.Parameters.Add("@Event_name", text_title.Text.ToString());
-            cmd.Parameters.Add("@date", date.Text);
-            cmd.Parameters.Add("@hours_start", hours_start.Value);
-            cmd.Parameters.Add("@minutes_start", minutes_start.Text);
-            cmd.Parameters.Add("@hours_end", hours_end.Text);
-            cmd.Parameters.Add("@minutes_end", minutes_end.Text);
-            //cmd.Parameters.Add("@time_before", time_before.SelectedItem.ToString());
-            cmd.Parameters.Add("@Event_details", richTextBox1.Text.ToString());
-            
-            cmd.Parameters.Add("@Place", Place.Text.ToString());
-            cmd.ExecuteNonQuery();
-            //take the max id event from Event table
-            string query = "Select MAX(Event_id) from Events";
-            SqlDataAdapter sda = new SqlDataAdapter(query, conn);
-            DataTable dtbl = new DataTable();
-            sda.Fill(dtbl);
-            int eve_id = int.Parse(dtbl.Rows[0][0].ToString().Trim());
-            int usr_id;
-            String fullName;
-            //insert the max id event and the event id to Events_to_Users table
-            for (int i = listView1.Items.Count - 1; i >= 0; i--)
+            if (text_title.Text == "")
             {
-                fullName = listView1.Items[i].Text.ToString().Trim();
-                var names = fullName.Split(' ');
-                if (names.Length != 2)
-                {
-                    friend_name.Clear();
-                    MessageBox.Show("illegal enter first name and last name separate.");
-                    conn.Close();
-                }
-                else
-                {
-                    string firstName = names[0];
-                    string lastName = names[1];
-                    query = "Select * from users Where name = '" + firstName + "' and LastName = '" + lastName + "'";                    sda = new SqlDataAdapter(query, conn);
-                    dtbl = new DataTable();
-                    sda.Fill(dtbl);
-                    usr_id = int.Parse(dtbl.Rows[0][0].ToString().Trim());
+                MessageBox.Show("please fill the title");
+            }
+            else if (Place.Text == "")
+            {
+                MessageBox.Show("please fill the place");
 
-                    cmd = new SqlCommand("INSERT INTO Events_to_Users (User_ID,Event_ID) VALUES(@User_ID,@Event_ID) ", conn);
-                    cmd.Parameters.Add("@User_ID", usr_id);
-                    cmd.Parameters.Add("@Event_ID", eve_id);
-                    cmd.ExecuteNonQuery();
+            }
+            else if (hours_start.Value > hours_end.Value)
+            {
+                MessageBox.Show("your start hours is later than your end hours.");
+            }
+            else if (hours_start.Value == hours_end.Value && minutes_start.Value >= minutes_end.Value)
+            {
+                MessageBox.Show("your start hour is later or equal to your end hour.");
+            }
+            else if (listView1.Items.Count == 0)
+            {
+                MessageBox.Show("there are no student to invite.");
+            }
+            else
+            {
+                dataBase dataBase = new dataBase();
+                SqlConnection conn = dataBase.connect_to_scheduluz_DB();
+
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO Events(Event_name,event_kind,date,hours_start,minutes_start,hours_end,minutes_end,Event_details,event_place,up_for_cancellation,event_privacy) VALUES(@Event_name,@event_kind,@date,@hours_start,@minutes_start,@hours_end,@minutes_end,@Event_details,@Place,@up_for_cancellation,@event_privacy) ", conn);
+
+                cmd.Parameters.Add("@event_privacy", "Private");
+                cmd.Parameters.Add("@up_for_cancellation", "YES");
+                cmd.Parameters.Add("@event_kind", "Muliplayer");
+                cmd.Parameters.Add("@Event_name", text_title.Text.ToString());
+                cmd.Parameters.Add("@date", date.Text);
+                cmd.Parameters.Add("@hours_start", hours_start.Value);
+                cmd.Parameters.Add("@minutes_start", minutes_start.Text);
+                cmd.Parameters.Add("@hours_end", hours_end.Text);
+                cmd.Parameters.Add("@minutes_end", minutes_end.Text);
+                cmd.Parameters.Add("@Event_details", richTextBox1.Text.ToString());
+                cmd.Parameters.Add("@Place", Place.Text.ToString());
+                cmd.ExecuteNonQuery();
+                //take the max id event from Event table
+                string query = "Select MAX(Event_id) from Events";
+                SqlDataAdapter sda = new SqlDataAdapter(query, conn);
+                DataTable dtbl = new DataTable();
+                sda.Fill(dtbl);
+                int eve_id = int.Parse(dtbl.Rows[0][0].ToString().Trim());
+                int usr_id;
+                String fullName;
+                //insert the max id event and the event id to Events_to_Users table
+                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                {
+                    fullName = listView1.Items[i].Text.ToString().Trim();
+                    var names = fullName.Split(' ');
+                    if (names.Length != 2)
+                    {
+                        friend_name.Clear();
+                        MessageBox.Show("illegal enter first name and last name separate.");
+                        conn.Close();
+                    }
+                    else
+                    {
+                        string firstName = names[0];
+                        string lastName = names[1];
+                        query = "Select * from users Where name = '" + firstName + "' and LastName = '" + lastName + "'"; sda = new SqlDataAdapter(query, conn);
+                        dtbl = new DataTable();
+                        sda.Fill(dtbl);
+                        usr_id = int.Parse(dtbl.Rows[0][0].ToString().Trim());
+
+                        cmd = new SqlCommand("INSERT INTO Events_to_Users (User_ID,Event_ID) VALUES(@User_ID,@Event_ID) ", conn);
+                        cmd.Parameters.Add("@User_ID", usr_id);
+                        cmd.Parameters.Add("@Event_ID", eve_id);
+                        cmd.ExecuteNonQuery();
+                    }
+
                 }
+
+
+                MessageBox.Show("Your event added successfully");
                 StudentCalander n = new StudentCalander();
                 n.Show();
                 this.Hide();
+                conn.Close();
+                text_title.Clear();
+                richTextBox1.Clear();
+                Place.Clear();
+                listView1.Clear();
             }
-            
-
-            MessageBox.Show("Your event added successfully");
-            conn.Close();
-            text_title.Clear();
-            richTextBox1.Clear();
-            Place.Clear();
-            listView1.Clear();
-    
         }
 
         private void hours_start_ValueChanged(object sender, EventArgs e)
