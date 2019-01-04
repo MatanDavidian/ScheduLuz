@@ -81,6 +81,7 @@ namespace main_screen.Teacher
             // to_txt
             // 
             this.to_txt.Location = new System.Drawing.Point(52, 42);
+            this.to_txt.MaxLength = 20;
             this.to_txt.Name = "to_txt";
             this.to_txt.Size = new System.Drawing.Size(239, 20);
             this.to_txt.TabIndex = 6;
@@ -252,6 +253,7 @@ namespace main_screen.Teacher
             // title_txt
             // 
             this.title_txt.Location = new System.Drawing.Point(52, 40);
+            this.title_txt.MaxLength = 40;
             this.title_txt.Name = "title_txt";
             this.title_txt.Size = new System.Drawing.Size(204, 20);
             this.title_txt.TabIndex = 17;
@@ -259,6 +261,7 @@ namespace main_screen.Teacher
             // place_txt
             // 
             this.place_txt.Location = new System.Drawing.Point(52, 74);
+            this.place_txt.MaxLength = 40;
             this.place_txt.Name = "place_txt";
             this.place_txt.Size = new System.Drawing.Size(204, 20);
             this.place_txt.TabIndex = 18;

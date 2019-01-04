@@ -113,6 +113,7 @@
             // 
             this.userIDtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userIDtextBox.Location = new System.Drawing.Point(121, 160);
+            this.userIDtextBox.MaxLength = 10;
             this.userIDtextBox.Name = "userIDtextBox";
             this.userIDtextBox.Size = new System.Drawing.Size(136, 20);
             this.userIDtextBox.TabIndex = 6;
@@ -143,6 +144,7 @@
             // 
             this.userFirstNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userFirstNameTextBox.Location = new System.Drawing.Point(121, 199);
+            this.userFirstNameTextBox.MaxLength = 10;
             this.userFirstNameTextBox.Name = "userFirstNameTextBox";
             this.userFirstNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.userFirstNameTextBox.TabIndex = 9;
@@ -163,6 +165,7 @@
             // 
             this.userLastNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userLastNameTextBox.Location = new System.Drawing.Point(121, 240);
+            this.userLastNameTextBox.MaxLength = 10;
             this.userLastNameTextBox.Name = "userLastNameTextBox";
             this.userLastNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.userLastNameTextBox.TabIndex = 11;

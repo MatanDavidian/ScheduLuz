@@ -88,6 +88,7 @@
             // friend_name
             // 
             this.friend_name.Location = new System.Drawing.Point(6, 47);
+            this.friend_name.MaxLength = 20;
             this.friend_name.Name = "friend_name";
             this.friend_name.Size = new System.Drawing.Size(133, 20);
             this.friend_name.TabIndex = 40;
@@ -197,6 +198,11 @@
             // hours_start
             // 
             this.hours_start.Location = new System.Drawing.Point(315, 29);
+            this.hours_start.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.hours_start.Name = "hours_start";
             this.hours_start.Size = new System.Drawing.Size(37, 20);
             this.hours_start.TabIndex = 48;
@@ -205,6 +211,11 @@
             // minutes_start
             // 
             this.minutes_start.Location = new System.Drawing.Point(376, 29);
+            this.minutes_start.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
             this.minutes_start.Name = "minutes_start";
             this.minutes_start.Size = new System.Drawing.Size(37, 20);
             this.minutes_start.TabIndex = 49;
@@ -222,6 +233,11 @@
             // hours_end
             // 
             this.hours_end.Location = new System.Drawing.Point(315, 55);
+            this.hours_end.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.hours_end.Name = "hours_end";
             this.hours_end.Size = new System.Drawing.Size(37, 20);
             this.hours_end.TabIndex = 59;
@@ -239,6 +255,11 @@
             // minutes_end
             // 
             this.minutes_end.Location = new System.Drawing.Point(376, 55);
+            this.minutes_end.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
             this.minutes_end.Name = "minutes_end";
             this.minutes_end.Size = new System.Drawing.Size(37, 20);
             this.minutes_end.TabIndex = 58;
@@ -247,6 +268,7 @@
             // 
             this.Place.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Place.Location = new System.Drawing.Point(98, 309);
+            this.Place.MaxLength = 20;
             this.Place.Multiline = true;
             this.Place.Name = "Place";
             this.Place.Size = new System.Drawing.Size(222, 20);
@@ -287,6 +309,7 @@
             // 
             this.text_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_title.Location = new System.Drawing.Point(98, 284);
+            this.text_title.MaxLength = 20;
             this.text_title.Multiline = true;
             this.text_title.Name = "text_title";
             this.text_title.Size = new System.Drawing.Size(222, 20);

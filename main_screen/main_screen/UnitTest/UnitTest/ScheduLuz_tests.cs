@@ -57,13 +57,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray =  "aviran@gmail.com" ;
+            checker = checker.GetUser("1");
+            string expectedArray = "pstudent1@gmail.com";
 
             //Act
             string result = checker.getParentEmail();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -71,13 +72,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "1";
+            checker = checker.GetUser("1");
+            string expectedArray = "3";
 
             //Act
             string result = checker.getClassNumber();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -85,13 +87,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "Some free Txt should be here.";
+            checker = checker.GetUser("123456789");
+            string expectedArray = "aviran free text";
 
             //Act
             string result = checker.getFreeTxt();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -99,13 +102,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "Sport, Runing, Music";
+            checker = checker.GetUser("123456789");
+            string expectedArray = "aviran hobies";
 
             //Act
             string result = checker.getHobies();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -113,13 +117,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "A";
+            checker = checker.GetUser("1");
+            string expectedArray = "11";
 
             //Act
             string result = checker.getGrade();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -127,13 +132,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "10, 10, 2018";
+            checker = checker.GetUser("123456789");
+            string expectedArray = "12/9/2018 00:00:00";
 
             //Act
             string result = checker.getBirthDate();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -141,13 +147,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "Aviran123@gmail.com";
+            checker = checker.GetUser("123456789");
+            string expectedArray = "aviran@gmail.com";
 
             //Act
             string result = checker.getEmail();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -155,13 +162,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "Since 12";
+            checker = checker.GetUser("123456789");
+            string expectedArray = "avirans house 1";
 
             //Act
             string result = checker.getAddress();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -169,13 +177,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "0501234567";
+            checker = checker.GetUser("123456789");
+            string expectedArray = "0544444444";
 
             //Act
             string result = checker.getPhoneNumber();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -183,13 +192,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "Avirangur";
+            checker = checker.GetUser("123456789");
+            string expectedArray = "AviranGur";
 
             //Act
             string result = checker.getUsername();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -197,13 +207,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "1234";
+            checker = checker.GetUser("123456789");
+            string expectedArray = "1";
 
             //Act
             string result = checker.getPassword();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -211,13 +222,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "Manager";
+            checker = checker.GetUser("123456789");
+            string expectedArray = "teacher";
 
             //Act
             string result = checker.getPermission();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -225,13 +237,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "123111234";
+            checker = checker.GetUser("123456789");
+            string expectedArray = "123456789";
 
             //Act
             string result = checker.getID();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -239,13 +252,14 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
-            string expectedArray = "Aviran Gur";
+            checker = checker.GetUser("123456789");
+            string expectedArray = "Aviran";
 
             //Act
             string result = checker.getName();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
         }
 
         [TestMethod]
@@ -253,13 +267,81 @@ namespace UnitTest
         {
             //Arrange
             var checker = new User();
+            checker = checker.GetUser("123456789");
             string expectedArray = "Gur";
 
             //Act
             string result = checker.getLastName();
 
             //String Assert
-            StringAssert.Equals(expectedArray, result);
+            Assert.AreEqual(expectedArray, result);
+        }
+
+        [TestMethod]
+        public void Check_GetEventTitle_returns_event()
+        {
+            //Arrange
+            var checker = new Event.Event();
+            checker = checker.getEvent("51", false);
+            string expectedArray = "Toms event";
+
+            //Act
+            string result = checker.getTitle();
+
+
+            //String Assert
+            Assert.AreEqual(expectedArray, result);
+        }
+
+        [TestMethod]
+        public void Check_GetEventDetails_returns_event()
+        {
+            //Arrange
+            var checker = new Event.Event();
+            checker = checker.getEvent("51", false);
+            string expectedArray = "123123123";
+
+            //Act
+            string result = checker.getDetails();
+
+
+            //String Assert
+            Assert.AreEqual(expectedArray, result);
+        }
+
+        [TestMethod]
+        public void Check_GetEventPlace_returns_event()
+        {
+            //Arrange
+            var checker = new Event.Event();
+            checker = checker.getEvent("51", false);
+            string expectedArray = "here";
+
+            //Act
+            string result = checker.getPlace();
+
+
+            //String Assert
+            Assert.AreEqual(expectedArray, result);
+        }
+
+        [TestMethod]
+        public void Check_GetEventDate_returns_event()
+        {
+            //Arrange
+            var checker = new Event.Event();
+            checker = checker.getEvent("51", false);
+            string expectedArray = "12/10/2018";
+
+            //Act
+            string resultDay = checker.getTheDate().Day.ToString();
+            string resultMonth = checker.getTheDate().Month.ToString();
+            string resultYear= checker.getTheDate().Year.ToString();
+            string result = resultMonth + "/" + resultDay + "/" + resultYear;
+
+
+            //String Assert
+            Assert.AreEqual(expectedArray, result);
         }
     }
 }

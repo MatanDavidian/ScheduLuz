@@ -71,6 +71,7 @@
             // teacher_name
             // 
             this.teacher_name.Location = new System.Drawing.Point(198, 72);
+            this.teacher_name.MaxLength = 20;
             this.teacher_name.Name = "teacher_name";
             this.teacher_name.Size = new System.Drawing.Size(161, 20);
             this.teacher_name.TabIndex = 8;
