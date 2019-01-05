@@ -49,7 +49,6 @@ namespace main_screen.Teacher
 
         private void load_student_btn_Click(object sender, EventArgs e)
         {
-            monthCalendar1.Visible = true;
             profilePic_img.Image = null;
 
             dataBase dataBase = new dataBase();
@@ -61,6 +60,7 @@ namespace main_screen.Teacher
 
             if(dtb6.Rows.Count > 0)
             {
+                monthCalendar1.Visible = true;  
                 student_id = dtb6.Rows[0][0].ToString().Trim();
                 User student = new User();
                 student = student.GetUser(student_id);
@@ -126,6 +126,8 @@ namespace main_screen.Teacher
             else
             {
                 MessageBox.Show("There is no such a student.");
+                monthCalendar1.Visible = false;
+                return ;
             }
 
 
