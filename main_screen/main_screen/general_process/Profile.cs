@@ -116,7 +116,26 @@ namespace main_screen.general_process
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
+            hobies_txt.Text.Replace("'", "");
+            hobies_txt.Text.Replace("@", " ");
+            hobies_txt.Text.Replace("!", " ");
+            hobies_txt.Text.Replace("#", " ");
+            hobies_txt.Text.Replace("$", " ");
+            hobies_txt.Text.Replace("%", " ");
+            hobies_txt.Text.Replace("^", " ");
+            hobies_txt.Text.Replace("&", " ");
+            hobies_txt.Text.Replace("*", " ");
+            hobies_txt.Text.Replace("(", " ");
+            hobies_txt.Text.Replace(")", " ");
+            hobies_txt.Text.Replace("-", " ");
+            hobies_txt.Text.Replace("_", " ");
+            hobies_txt.Text.Replace("=", " ");
+            hobies_txt.Text.Replace("+", " ");
+            hobies_txt.Text.Replace("/", " ");
+            hobies_txt.Text.Replace(".", " ");
+            hobies_txt.Text.Replace(",", " ");
+            hobies_txt.Text.Replace("\"", " ");
 
             CheckDetails check = new CheckDetails();
 
@@ -298,6 +317,16 @@ namespace main_screen.general_process
                 new_pass_txt.UseSystemPasswordChar = true;
                 confirm_new_pass_txt.UseSystemPasswordChar = true;
             }
+        }
+
+        private void freetext_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hobies_txt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
