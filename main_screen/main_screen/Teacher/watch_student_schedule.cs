@@ -61,7 +61,7 @@ namespace main_screen.Teacher
             if (exsit_flag == true)
             {
 
-
+            
                 profilePic_img.Image = null;
 
                 dataBase dataBase = new dataBase();
