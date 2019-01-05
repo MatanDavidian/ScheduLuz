@@ -72,8 +72,20 @@ namespace main_screen.general_process
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
+            string HobiesForReplacing = hobies_txt.Text;
+            HobiesForReplacing = HobiesForReplacing.Replace("'", string.Empty);
+            string FreeTextForReplacing = freetext_txt.Text;
+            FreeTextForReplacing = FreeTextForReplacing.Replace("'", string.Empty);
+            string AddressForReplace = address_txt.Text;
+            AddressForReplace = AddressForReplace.Replace("'", string.Empty);
+            string PhoneForReplace = phone_txt.Text;
+            PhoneForReplace = PhoneForReplace.Replace("'", string.Empty);
+            string EmailForReplace = Email_1st.Text;
+            EmailForReplace = EmailForReplace.Replace("'", string.Empty);
+            string PEmailForReplace = PEmail_txt.Text;
+            PEmailForReplace = PEmailForReplace.Replace("'", string.Empty);
+            string PasswordForReplace = pass_txt.Text;
+            PasswordForReplace = PasswordForReplace.Replace("'", string.Empty);
             CheckDetails check = new CheckDetails();
 
             if (pass_txt.Text == userId)
@@ -137,19 +149,19 @@ namespace main_screen.general_process
                     dataBase dataBase = new dataBase();
                     SqlConnection conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd1 = new SqlCommand("UPDATE users SET phoneNumber ='" + phone_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd1 = new SqlCommand("UPDATE users SET phoneNumber ='" + PhoneForReplace + "' WHERE id ='" + userId + "'", conn);
                     cmd1.ExecuteNonQuery();
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd2 = new SqlCommand("UPDATE users SET Email ='" + Email_1st.Text + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd2 = new SqlCommand("UPDATE users SET Email ='" + EmailForReplace + "' WHERE id ='" + userId + "'", conn);
                     cmd2.ExecuteNonQuery();
 
                     if (log_in_page.permission == "student")
                     {
                         conn = dataBase.connect_to_scheduluz_DB();
                         conn.Open();
-                        SqlCommand cmd3 = new SqlCommand("UPDATE users SET ParentEmail ='" + PEmail_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                        SqlCommand cmd3 = new SqlCommand("UPDATE users SET ParentEmail ='" + PEmailForReplace + "' WHERE id ='" + userId + "'", conn);
                         cmd3.ExecuteNonQuery();
 
 
@@ -166,7 +178,7 @@ namespace main_screen.general_process
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd6 = new SqlCommand("UPDATE users SET address ='" + address_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd6 = new SqlCommand("UPDATE users SET address ='" + AddressForReplace + "' WHERE id ='" + userId + "'", conn);
                     cmd6.ExecuteNonQuery();
 
                     conn = dataBase.connect_to_scheduluz_DB();
@@ -176,19 +188,19 @@ namespace main_screen.general_process
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd8 = new SqlCommand("UPDATE users SET freeTxt ='" + freetext_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd8 = new SqlCommand("UPDATE users SET freeTxt ='" + FreeTextForReplacing + "' WHERE id ='" + userId + "'", conn);
                     cmd8.ExecuteNonQuery();
 
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd9 = new SqlCommand("UPDATE users SET hobies ='" + hobies_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd9 = new SqlCommand("UPDATE users SET hobies ='" + HobiesForReplacing + "' WHERE id ='" + userId + "'", conn);
                     cmd9.ExecuteNonQuery();
 
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd10 = new SqlCommand("UPDATE connection_details SET password ='" + pass_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd10 = new SqlCommand("UPDATE connection_details SET password ='" + PasswordForReplace + "' WHERE id ='" + userId + "'", conn);
                     cmd10.ExecuteNonQuery();
 
                     /* adding the image - dont ask*/
