@@ -49,6 +49,7 @@ namespace main_screen.Teacher
 
         private void load_student_btn_Click(object sender, EventArgs e)
         {
+            monthCalendar1.Visible = true;
             profilePic_img.Image = null;
 
             dataBase dataBase = new dataBase();
@@ -166,10 +167,11 @@ namespace main_screen.Teacher
                     SqlDataAdapter sda2 = new SqlDataAdapter(query2, conn);
                     DataTable dtb2 = new DataTable();
                     sda2.Fill(dtb2);
-                    /* 1/15/2019 00:00:00*/
+                /* 1/15/2019 00:00:00*/
+                
                     if (dtb2.Rows.Count > 0)
                     {
-                        if (dtb2.Rows[0]["date"].ToString() == thismonth.ToString() + "/" + thisday.ToString() + "/" + thisyear.ToString() + " 00:00:00")
+                        if (dtb2.Rows[0]["date"].ToString() == thisday.ToString() + "/" + thismonth.ToString() + "/" + thisyear.ToString() + " 00:00:00")
                         {
                             string hours_end = dtb2.Rows[0]["hours_end"].ToString().Trim();
 
@@ -354,9 +356,20 @@ namespace main_screen.Teacher
                 DataTable dtb2 = new DataTable();
                 sda2.Fill(dtb2);
                 /* 1/15/2019 00:00:00*/
+                
                 if (dtb2.Rows.Count > 0)
                 {
-                    if (dtb2.Rows[0]["date"].ToString() == thismonth.ToString() + "/" + thisday.ToString() + "/" + thisyear.ToString() + " 00:00:00")
+                    string day= thisday.ToString();
+                    string month= thismonth.ToString();
+                    if (day.Length < 2)
+                    {
+                        day = "0" + day;
+                    }
+                    if (month.Length < 2)
+                    {
+                        month = "0" + month;
+                    }
+                    if (dtb2.Rows[0]["date"].ToString() == day + "/" + month + "/" + thisyear.ToString() + " 00:00:00")
                     {
                         string hours_end = dtb2.Rows[0]["hours_end"].ToString().Trim();
 

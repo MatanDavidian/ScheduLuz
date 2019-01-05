@@ -191,5 +191,10 @@ namespace main_screen.general_process
         {
 
         }
+
+        private void minutes_start_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

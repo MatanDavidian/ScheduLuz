@@ -62,7 +62,7 @@ namespace main_screen.Manager
 
             for (int i = 0; i < dt_reqest.Rows.Count+help; i++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < 5; j++)//creatse labels
                 {
                     labels[k] = new Label { BackColor = Color.Wheat, ForeColor = Color.Black, Dock = DockStyle.Fill };
                     Table.Controls.Add(labels[k], j, i);
@@ -88,7 +88,7 @@ namespace main_screen.Manager
                     labels[k - 1].Text = dt_reqest.Rows[i-1]["reason"].ToString().Trim();
                 }
             }
-            if (help != 0)
+            if (help != 0)//add titles if has requests
             {
                 labels[0].Text = "name";
                 labels[0].BackColor = Color.Tan;
@@ -102,16 +102,16 @@ namespace main_screen.Manager
                 labels[4].BackColor = Color.Tan;
             }
             k =0;
-            for (int i = help; i < dt_reqest.Rows.Count+ help; i++)
+            for (int i = help; i < dt_reqest.Rows.Count+ help; i++)//create approve buttons
             {
-                buttons[i - help] = new Button { Name=(i-help).ToString()+"S",BackColor = Color.SaddleBrown, ForeColor = Color.White, Dock = DockStyle.Fill, Text= "accept" };
+                buttons[i - help] = new Button { Name=(i-help).ToString()+"S",BackColor = Color.ForestGreen, ForeColor = Color.White, Dock = DockStyle.Fill, Text= "accept" };
                 buttons[i - help].Click += new System.EventHandler(LabelClick);
                 Table.Controls.Add(buttons[i - help], 5, i);
 
             }
-            for (int i = help; i < dt_reqest.Rows.Count+ help; i++)
+            for (int i = help; i < dt_reqest.Rows.Count+ help; i++)//create reject buttons
             {
-                buttons[dt_reqest.Rows.Count+i-help] = new Button { Name = (i-help).ToString() + "D",BackColor = Color.SaddleBrown, ForeColor = Color.White, Dock = DockStyle.Fill, Text = "reject" };
+                buttons[dt_reqest.Rows.Count+i-help] = new Button { Name = (i-help).ToString() + "D",BackColor = Color.Firebrick, ForeColor = Color.White, Dock = DockStyle.Fill, Text = "reject" };
                 buttons[dt_reqest.Rows.Count+i- help].Click += new System.EventHandler(LabelClick);
                 Table.Controls.Add(buttons[dt_reqest.Rows.Count+i - help], 6, i);
             }
