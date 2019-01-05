@@ -285,5 +285,19 @@ namespace main_screen.general_process
 
             }
         }
+
+        private void view_btn_Click(object sender, EventArgs e)
+        {
+            if (new_pass_txt.UseSystemPasswordChar == true)
+            {
+                new_pass_txt.UseSystemPasswordChar = false;
+                confirm_new_pass_txt.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                new_pass_txt.UseSystemPasswordChar = true;
+                confirm_new_pass_txt.UseSystemPasswordChar = true;
+            }
+        }
     }
 }

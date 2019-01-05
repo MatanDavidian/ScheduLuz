@@ -306,6 +306,7 @@ namespace main_screen.general_process
             this.view_btn.TabIndex = 6;
             this.view_btn.Text = "view";
             this.view_btn.UseVisualStyleBackColor = true;
+            this.view_btn.Click += new System.EventHandler(this.view_btn_Click);
             // 
             // confirm_new_pass_txt
             // 
