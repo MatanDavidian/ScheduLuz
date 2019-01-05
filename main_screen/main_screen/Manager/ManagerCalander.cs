@@ -30,6 +30,7 @@ namespace main_screen
             Manager.add_user frmAEF = new Manager.add_user();
             frmAEF.Show();
             Visible = false;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
