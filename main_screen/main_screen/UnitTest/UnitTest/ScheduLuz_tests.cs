@@ -133,7 +133,7 @@ namespace UnitTest
             //Arrange
             var checker = new User();
             checker = checker.GetUser("123456789");
-            string expectedArray = "01/12/1999 00:00:00";
+            string expectedArray = "12/1/1999 12:00:00 AM";
 
             //Act
             string result = checker.getBirthDate();

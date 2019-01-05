@@ -116,6 +116,17 @@ namespace main_screen.general_process
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+            string HobiesForReplacing = hobies_txt.Text;
+            HobiesForReplacing = HobiesForReplacing.Replace("'", string.Empty);
+            string FreeTextForReplacing = freetext_txt.Text;
+            FreeTextForReplacing = FreeTextForReplacing.Replace("'", string.Empty);
+            string AddressForReplace = address_txt.Text;
+            AddressForReplace = AddressForReplace.Replace("'", string.Empty);
+            string PhoneForReplace = phone_txt.Text;
+            PhoneForReplace = PhoneForReplace.Replace("'", string.Empty);
+            string EmailForReplace = Email_1st.Text;
+            EmailForReplace = EmailForReplace.Replace("'", string.Empty);
 
 
             CheckDetails check = new CheckDetails();
@@ -164,12 +175,12 @@ namespace main_screen.general_process
                     dataBase dataBase = new dataBase();
                     SqlConnection conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd1 = new SqlCommand("UPDATE users SET phoneNumber ='" + phone_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd1 = new SqlCommand("UPDATE users SET phoneNumber ='" + PhoneForReplace + "' WHERE id ='" + userId + "'", conn);
                     cmd1.ExecuteNonQuery();
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd2 = new SqlCommand("UPDATE users SET Email ='" + Email_1st.Text + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd2 = new SqlCommand("UPDATE users SET Email ='" + EmailForReplace + "' WHERE id ='" + userId + "'", conn);
                     cmd2.ExecuteNonQuery();
 
                     if (log_in_page.permission == "student")
@@ -182,7 +193,7 @@ namespace main_screen.general_process
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd6 = new SqlCommand("UPDATE users SET address ='" + address_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd6 = new SqlCommand("UPDATE users SET address ='" + AddressForReplace + "' WHERE id ='" + userId + "'", conn);
                     cmd6.ExecuteNonQuery();
 
                     conn = dataBase.connect_to_scheduluz_DB();
@@ -192,13 +203,13 @@ namespace main_screen.general_process
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd8 = new SqlCommand("UPDATE users SET freeTxt ='" + freetext_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd8 = new SqlCommand("UPDATE users SET freeTxt ='" + FreeTextForReplacing + "' WHERE id ='" + userId + "'", conn);
                     cmd8.ExecuteNonQuery();
 
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd9 = new SqlCommand("UPDATE users SET hobies ='" + hobies_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd9 = new SqlCommand("UPDATE users SET hobies ='" + HobiesForReplacing + "' WHERE id ='" + userId + "'", conn);
                     cmd9.ExecuteNonQuery();
 
                     if (new_pass_txt.Text != "")
@@ -298,6 +309,21 @@ namespace main_screen.general_process
                 new_pass_txt.UseSystemPasswordChar = true;
                 confirm_new_pass_txt.UseSystemPasswordChar = true;
             }
+        }
+
+        private void freetext_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hobies_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void address_txt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
