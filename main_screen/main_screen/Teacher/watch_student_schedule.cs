@@ -423,10 +423,10 @@ namespace main_screen.Teacher
 
             }
 
-
+            
             string user_class;
             User user = new User();
-            user = user.GetUser(student_id);
+            user = user.GetUser(student_id);//problem if student not choosen
             user_class = user.getGrade() + "-" + user.getClassNumber();
             string query3 = "Select * from weekly_events where day_in_week='" + dayOfWeek + "' and user_id_OR_class='" + user_class + "'";
 
@@ -528,6 +528,11 @@ namespace main_screen.Teacher
         }
 
         private void watch_student_schedule_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
