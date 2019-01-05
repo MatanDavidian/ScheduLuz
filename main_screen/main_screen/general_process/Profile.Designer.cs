@@ -199,6 +199,7 @@ namespace main_screen.general_process
             this.address_txt.Name = "address_txt";
             this.address_txt.Size = new System.Drawing.Size(348, 26);
             this.address_txt.TabIndex = 1;
+            this.address_txt.TextChanged += new System.EventHandler(this.address_txt_TextChanged);
             // 
             // label12
             // 
