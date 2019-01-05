@@ -117,25 +117,10 @@ namespace main_screen.general_process
         private void button1_Click(object sender, EventArgs e)
         {
             
-            hobies_txt.Text.Replace("'", "");
-            hobies_txt.Text.Replace("@", " ");
-            hobies_txt.Text.Replace("!", " ");
-            hobies_txt.Text.Replace("#", " ");
-            hobies_txt.Text.Replace("$", " ");
-            hobies_txt.Text.Replace("%", " ");
-            hobies_txt.Text.Replace("^", " ");
-            hobies_txt.Text.Replace("&", " ");
-            hobies_txt.Text.Replace("*", " ");
-            hobies_txt.Text.Replace("(", " ");
-            hobies_txt.Text.Replace(")", " ");
-            hobies_txt.Text.Replace("-", " ");
-            hobies_txt.Text.Replace("_", " ");
-            hobies_txt.Text.Replace("=", " ");
-            hobies_txt.Text.Replace("+", " ");
-            hobies_txt.Text.Replace("/", " ");
-            hobies_txt.Text.Replace(".", " ");
-            hobies_txt.Text.Replace(",", " ");
-            hobies_txt.Text.Replace("\"", " ");
+            string HobiesForReplacing = hobies_txt.Text;
+            HobiesForReplacing = HobiesForReplacing.Replace("'", string.Empty);
+            string FreeTextForReplacing = freetext_txt.Text;
+            FreeTextForReplacing = FreeTextForReplacing.Replace("'", string.Empty);
 
             CheckDetails check = new CheckDetails();
 
@@ -211,13 +196,13 @@ namespace main_screen.general_process
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd8 = new SqlCommand("UPDATE users SET freeTxt ='" + freetext_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd8 = new SqlCommand("UPDATE users SET freeTxt ='" + FreeTextForReplacing + "' WHERE id ='" + userId + "'", conn);
                     cmd8.ExecuteNonQuery();
 
 
                     conn = dataBase.connect_to_scheduluz_DB();
                     conn.Open();
-                    SqlCommand cmd9 = new SqlCommand("UPDATE users SET hobies ='" + hobies_txt.Text.Trim() + "' WHERE id ='" + userId + "'", conn);
+                    SqlCommand cmd9 = new SqlCommand("UPDATE users SET hobies ='" + HobiesForReplacing + "' WHERE id ='" + userId + "'", conn);
                     cmd9.ExecuteNonQuery();
 
                     if (new_pass_txt.Text != "")
