@@ -302,22 +302,23 @@ namespace main_screen
         {
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
-
+            string help = add_chklist_txt.Text;
+            help = help.Replace("'", string.Empty);
             conn.Open();
-            if (add_chklist_txt.Text=="")
+            if (help == "")
             {
                 MessageBox.Show("You realy got nothig to do?");
             }
             else
             {
-                
                 SqlCommand cmd = new SqlCommand("INSERT INTO checklists(user_id,item) VALUES(@id,@item) ", conn);
                 cmd.Parameters.Add("@id", log_in_page.userId);
-                cmd.Parameters.Add("@item", add_chklist_txt.Text);
+                
+                cmd.Parameters.Add("@item", help);
 
                 cmd.ExecuteNonQuery();
 
-                checklist.Items.Add(add_chklist_txt.Text);
+                checklist.Items.Add(help);
                 
 
                 add_chklist_txt.Text = "";

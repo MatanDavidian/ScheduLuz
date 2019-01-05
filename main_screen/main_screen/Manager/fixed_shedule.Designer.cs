@@ -34,9 +34,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.schedule = new System.Windows.Forms.DataGridView();
-            this.startTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profassionORclass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.update_btn = new System.Windows.Forms.Button();
             this.days = new System.Windows.Forms.ComboBox();
             this.return_btn = new System.Windows.Forms.Button();
@@ -48,6 +45,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.grade_cb = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.startTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profassionORclass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schedule)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -96,35 +96,18 @@
             // 
             // schedule
             // 
+            this.schedule.AllowUserToAddRows = false;
             this.schedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.schedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.startTime,
             this.endTime,
             this.profassionORclass});
             this.schedule.Location = new System.Drawing.Point(333, 113);
+            this.schedule.MultiSelect = false;
             this.schedule.Name = "schedule";
             this.schedule.Size = new System.Drawing.Size(344, 245);
             this.schedule.TabIndex = 11;
             this.schedule.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // startTime
-            // 
-            this.startTime.HeaderText = "Starts:";
-            this.startTime.Name = "startTime";
-            this.startTime.ReadOnly = true;
-            this.startTime.Width = 50;
-            // 
-            // endTime
-            // 
-            this.endTime.HeaderText = "End:";
-            this.endTime.Name = "endTime";
-            this.endTime.Width = 50;
-            // 
-            // profassionORclass
-            // 
-            this.profassionORclass.HeaderText = "Class:";
-            this.profassionORclass.Name = "profassionORclass";
-            this.profassionORclass.Width = 200;
             // 
             // update_btn
             // 
@@ -276,6 +259,26 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Weekly hours managment";
             // 
+            // startTime
+            // 
+            this.startTime.HeaderText = "Starts:";
+            this.startTime.Name = "startTime";
+            this.startTime.ReadOnly = true;
+            this.startTime.Width = 50;
+            // 
+            // endTime
+            // 
+            this.endTime.HeaderText = "End:";
+            this.endTime.Name = "endTime";
+            this.endTime.ReadOnly = true;
+            this.endTime.Width = 50;
+            // 
+            // profassionORclass
+            // 
+            this.profassionORclass.HeaderText = "Class:";
+            this.profassionORclass.Name = "profassionORclass";
+            this.profassionORclass.Width = 200;
+            // 
             // fixed_schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,9 +316,6 @@
         private System.Windows.Forms.TextBox teacher_name_txt;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView schedule;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profassionORclass;
         private System.Windows.Forms.Button update_btn;
         private System.Windows.Forms.ComboBox days;
         private System.Windows.Forms.Button return_btn;
@@ -328,5 +328,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox grade_cb;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profassionORclass;
     }
 }

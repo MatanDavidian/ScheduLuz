@@ -91,7 +91,7 @@ namespace main_screen.Teacher
             }
             else
             {
-
+                string help;
                 dataBase dataBase = new dataBase();
                 SqlConnection conn = dataBase.connect_to_scheduluz_DB();
 
@@ -101,7 +101,9 @@ namespace main_screen.Teacher
                 SqlCommand cmd = new SqlCommand("INSERT INTO Events(Event_name,event_kind,up_for_cancellation) VALUES(@Event_name,@event_kind,@up_for_cancellation) ", conn);
                 cmd.Parameters.Add("@up_for_cancellation", "YES");
                 cmd.Parameters.Add("@event_kind", "Muliplayer");
-                cmd.Parameters.Add("@Event_name", title_txt.Text);
+                help = title_txt.Text;
+                help = help.Replace("'", string.Empty);
+                cmd.Parameters.Add("@Event_name", help);
                 cmd.ExecuteNonQuery();
 
 
@@ -122,15 +124,17 @@ namespace main_screen.Teacher
 
                 int event_Id = Int32.Parse(event_id);
 
-
-                SqlCommand cmd0 = new SqlCommand("UPDATE Events SET event_place ='" + place_txt.Text + "' WHERE Event_id ='" + event_id + "'", conn);
+                help = place_txt.Text;
+                help = help.Replace("'", string.Empty);
+                SqlCommand cmd0 = new SqlCommand("UPDATE Events SET event_place ='" + help + "' WHERE Event_id ='" + event_id + "'", conn);
                 cmd0.ExecuteNonQuery();
 
 
                 SqlCommand cmd1 = new SqlCommand("UPDATE Events SET event_privacy ='public' WHERE Event_id ='" + event_id + "'", conn);
                 cmd1.ExecuteNonQuery();
-
-                SqlCommand cmd2 = new SqlCommand("UPDATE Events SET Event_details ='" + details_txt.Text + "'WHERE Event_id ='" + event_id + "'", conn);
+                help = details_txt.Text;
+                help = help.Replace("'", string.Empty);
+                SqlCommand cmd2 = new SqlCommand("UPDATE Events SET Event_details ='" + help + "'WHERE Event_id ='" + event_id + "'", conn);
                 cmd2.ExecuteNonQuery();
 
                 SqlCommand cmd3 = new SqlCommand("UPDATE Events SET date ='" + date_pkr.Text + "'WHERE Event_id ='" + event_id + "'", conn);
