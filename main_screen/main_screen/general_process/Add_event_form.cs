@@ -77,8 +77,8 @@ namespace main_screen.general_process
 
 
 
-               // try
-                //{
+                try
+                {
                     dataBase dataBase = new dataBase();
                     SqlConnection conn = dataBase.connect_to_scheduluz_DB();
 
@@ -122,11 +122,11 @@ namespace main_screen.general_process
                     text_title.Clear();
                     richTextBox1.Clear();
                     Place.Clear();
-              //  }
-                //catch
-               // {
+                }
+                catch
+                {
                     MessageBox.Show("Problem detected. please contact your Scheduluz Guide for more information.");
-                //}
+                }
             }
             
 
