@@ -49,90 +49,103 @@ namespace main_screen.Teacher
 
         private void load_student_btn_Click(object sender, EventArgs e)
         {
-            profilePic_img.Image = null;
-
-            dataBase dataBase = new dataBase();
-            SqlConnection con = dataBase.connect_to_scheduluz_DB();
-            string queryTogetStudentID = "Select id from connection_details Where userName = '" + student_name_txt.Text.Replace(" ","") + "'";
-            SqlDataAdapter sda6 = new SqlDataAdapter(queryTogetStudentID, con);
-            DataTable dtb6 = new DataTable();
-            sda6.Fill(dtb6);
-
-            if(dtb6.Rows.Count > 0)
+            bool exsit_flag = false;
+            for (int i = 0; i < student_lst.Items.Count; i++)
             {
-                monthCalendar1.Visible = true;  
-                student_id = dtb6.Rows[0][0].ToString().Trim();
-                User student = new User();
-                student = student.GetUser(student_id);
-
-
                 
-
-
-                address_txt.Text = student.getAddress();
-                birthdate_pckr.Text = student.getBirthDate();
-                freetext_txt.Text = student.getFreeTxt();
-                hobies_txt.Text = student.getHobies();
-                Email_1st.Text = student.getEmail();
-                phone_txt.Text = student.getPhoneNumber();
-                PEmail_txt.Text = student.getParentEmail();
-                
-
-                
-
-
-                /*
-                 * picture
-                 */
-
-                
-                con.Open();
-
-                string query2 = "select picture from users where id='" + student_id + "'";
-
-                SqlCommand cmd = new SqlCommand(query2, con);
-                SqlDataReader dataRead = cmd.ExecuteReader();
-                dataRead.Read();
-
-                try
+                if (student_lst.Items[i].ToString().ToLower() == student_name_txt.Text.Trim().ToLower())
                 {
-                    byte[] img = null;
-                    if (dataRead.HasRows)
-                    {
-                        img = (byte[])dataRead[0];
-                    }
-
-                    if (img == null)
-                    {
-                        profilePic_img.Image = null;
-
-
-                    }
-
-                    else
-                    {
-                        MemoryStream memoryStream = new MemoryStream(img);
-                        profilePic_img.Image = Image.FromStream(memoryStream);
-                    }
+                    exsit_flag = true;
                 }
-
-                catch
-                {
-
-                }
-                con.Close();
-
             }
-            else
+            if (exsit_flag == true)
             {
-                MessageBox.Show("There is no such a student.");
-                monthCalendar1.Visible = false;
-                return ;
-            }
-
-
 
             
+                profilePic_img.Image = null;
+
+                dataBase dataBase = new dataBase();
+                SqlConnection con = dataBase.connect_to_scheduluz_DB();
+                string queryTogetStudentID = "Select id from connection_details Where userName = '" + student_name_txt.Text.Replace(" ", "") + "'";
+                SqlDataAdapter sda6 = new SqlDataAdapter(queryTogetStudentID, con);
+                DataTable dtb6 = new DataTable();
+                sda6.Fill(dtb6);
+
+                if (dtb6.Rows.Count > 0)
+                {
+                    monthCalendar1.Visible = true;
+                    student_id = dtb6.Rows[0][0].ToString().Trim();
+                    User student = new User();
+                    student = student.GetUser(student_id);
+
+
+
+
+
+                    address_txt.Text = student.getAddress();
+                    birthdate_pckr.Text = student.getBirthDate();
+                    freetext_txt.Text = student.getFreeTxt();
+                    hobies_txt.Text = student.getHobies();
+                    Email_1st.Text = student.getEmail();
+                    phone_txt.Text = student.getPhoneNumber();
+                    PEmail_txt.Text = student.getParentEmail();
+
+
+
+
+
+                    /*
+                     * picture
+                     */
+
+
+                    con.Open();
+
+                    string query2 = "select picture from users where id='" + student_id + "'";
+
+                    SqlCommand cmd = new SqlCommand(query2, con);
+                    SqlDataReader dataRead = cmd.ExecuteReader();
+                    dataRead.Read();
+
+                    try
+                    {
+                        byte[] img = null;
+                        if (dataRead.HasRows)
+                        {
+                            img = (byte[])dataRead[0];
+                        }
+
+                        if (img == null)
+                        {
+                            profilePic_img.Image = null;
+
+
+                        }
+
+                        else
+                        {
+                            MemoryStream memoryStream = new MemoryStream(img);
+                            profilePic_img.Image = Image.FromStream(memoryStream);
+                        }
+                    }
+
+                    catch
+                    {
+
+                    }
+                    con.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("There is no such a student.");
+                    monthCalendar1.Visible = false;
+                    return;
+                }
+
+
+
+
 
                 List<ListViewItem> itemlist = new List<ListViewItem>();
                 listView1.Items.Clear();
@@ -169,8 +182,8 @@ namespace main_screen.Teacher
                     SqlDataAdapter sda2 = new SqlDataAdapter(query2, conn);
                     DataTable dtb2 = new DataTable();
                     sda2.Fill(dtb2);
-                /* 1/15/2019 00:00:00*/
-                
+                    /* 1/15/2019 00:00:00*/
+
                     if (dtb2.Rows.Count > 0)
                     {
                         if (dtb2.Rows[0]["date"].ToString() == thisday.ToString() + "/" + thismonth.ToString() + "/" + thisyear.ToString() + " 00:00:00")
@@ -232,7 +245,7 @@ namespace main_screen.Teacher
 
                                 default:
                                     break;
-                        }
+                            }
                             //listView1.Items.Add(item);
                             itemlist.Add(item);
                         }
@@ -306,6 +319,7 @@ namespace main_screen.Teacher
                 {
                     listView1.Items.Add(itemlist[i]);
                 }
+            }
             
         }
 

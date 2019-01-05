@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
+using check_funcs;
 
 namespace main_screen.Teacher
 {
@@ -34,6 +35,9 @@ namespace main_screen.Teacher
 
         private void button1_Click(object sender, EventArgs e)
         {
+            check_funcs.CheckDetails check = new CheckDetails();
+            
+            if (check.CheckEmail(txtTo.Text) && (check.CheckEmail(txtCC.Text) ||txtCC.Text== ""))
             try
             {
                 this.timer1.Start();
