@@ -130,6 +130,8 @@ namespace USER
 
         public User GetUser(string userId)
         {
+            id = userId;
+
             dataBase dataBase = new dataBase();
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
             string query_name = "Select name from users Where id = '" + userId + "'";
@@ -327,7 +329,7 @@ namespace USER
             for (int i = 0; i < dtbl.Rows.Count; i++)//Delete reception hour weekly events
             {
                 int eve_id = int.Parse(dtbl.Rows[i]["wEvent_id"].ToString().Trim());
-                SqlCommand cmd = new SqlCommand("DELETE FROM weekly_events_to_Users WHERE Event_ID =" + eve_id, con);
+                SqlCommand cmd = new SqlCommand("DELETE FROM weekly_events_to_Users WHERE wEvent_ID =" + eve_id, con);
                 cmd.ExecuteNonQuery();
 
                 cmd = new SqlCommand("DELETE FROM Events WHERE Event_ID =" + eve_id, con);
@@ -341,10 +343,32 @@ namespace USER
             for (int i = 0; i < dtbl.Rows.Count; i++)//Delete all weekly events
             {
                 int eve_id = int.Parse(dtbl.Rows[i]["wEvent_id"].ToString().Trim());
-                SqlCommand cmd = new SqlCommand("DELETE FROM Events WHERE Event_ID =" + eve_id, con);
+                SqlCommand cmd = new SqlCommand("DELETE FROM weekly_events WHERE wEvent_ID =" + eve_id, con);
                 cmd.ExecuteNonQuery();
             }
 
+            query = "Select * from weekly_events where user_id_OR_class='" + userId + "'";
+            sda = new SqlDataAdapter(query, con);
+            dtbl = new DataTable();
+            sda.Fill(dtbl);
+            for (int i = 0; i < dtbl.Rows.Count; i++)//Delete all weekly events
+            {
+                int eve_id = int.Parse(dtbl.Rows[i]["wEvent_id"].ToString().Trim());
+                SqlCommand cmd = new SqlCommand("DELETE FROM weekly_Events WHERE Event_ID =" + eve_id, con);
+                cmd.ExecuteNonQuery();
+            }
+
+
+            query = "Select * from Request_to_cancel where user_id='" + userId + "'";
+            sda = new SqlDataAdapter(query, con);
+            dtbl = new DataTable();
+            sda.Fill(dtbl);
+            for (int i = 0; i < dtbl.Rows.Count; i++)//Delete all Request to cancel
+            {
+                int eve_id = int.Parse(dtbl.Rows[i]["wEvent_id"].ToString().Trim());
+                SqlCommand cmd = new SqlCommand("DELETE FROM Request_to_cancel WHERE wEvent_ID =" + eve_id, con);
+                cmd.ExecuteNonQuery();
+            }
 
 
             SqlCommand cmd1 = new SqlCommand("DELETE FROM users WHERE Id ='" + userId + "'", con);

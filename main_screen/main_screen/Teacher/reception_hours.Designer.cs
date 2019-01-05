@@ -33,6 +33,10 @@
             this.Return = new System.Windows.Forms.Button();
             this.Submit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.l = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // title
@@ -78,7 +82,7 @@
             this.Submit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Submit.Location = new System.Drawing.Point(391, 395);
+            this.Submit.Location = new System.Drawing.Point(527, 395);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(84, 34);
             this.Submit.TabIndex = 77;
@@ -97,13 +101,56 @@
             this.label1.TabIndex = 78;
             this.label1.Text = "Check your reception hours:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(733, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 90;
+            this.label4.Text = "reject -";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(733, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 89;
+            this.label3.Text = "send -";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Yellow;
+            this.label2.ForeColor = System.Drawing.Color.Yellow;
+            this.label2.Location = new System.Drawing.Point(804, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 13);
+            this.label2.TabIndex = 88;
+            this.label2.Text = "label1";
+            // 
+            // l
+            // 
+            this.l.BackColor = System.Drawing.Color.Red;
+            this.l.ForeColor = System.Drawing.Color.Red;
+            this.l.Location = new System.Drawing.Point(804, 58);
+            this.l.Name = "l";
+            this.l.Size = new System.Drawing.Size(15, 13);
+            this.l.TabIndex = 86;
+            this.l.Text = "label1";
+            // 
             // reception_hours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(855, 441);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.l);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.Return);
@@ -124,5 +171,9 @@
         private System.Windows.Forms.Button Return;
         private System.Windows.Forms.Button Submit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label l;
     }
 }

@@ -24,7 +24,7 @@ namespace main_screen.Teacher
         private void reception_hours_Load(object sender, EventArgs e)
         {
             TableLayoutPanel Table = new TableLayoutPanel();
-            Table.Location = new Point(75, 120);
+            Table.Location = new Point(50, 120);
             Table.Size = new Size(536, 253);
             Table.AutoSize = true;
             Table.Name = "Desk";
@@ -137,6 +137,7 @@ namespace main_screen.Teacher
             string already_exist;
             bool flag = false;
             bool flag2 = false;
+            bool addeve = false, deleve = false;
             for (int i = 12; i < 48; i++)
             {
                 if(labels[i].BackColor==Color.LightGreen)
@@ -195,7 +196,8 @@ namespace main_screen.Teacher
                     cmd = new SqlCommand("INSERT INTO weekly_events_to_users (wEvent_id,user_id) VALUES(@wEvent_id,@user_id) ", conn);
                     cmd.Parameters.Add("@wEvent_id", eve_id); 
                     cmd.Parameters.Add("@user_id", log_in_page.userId);
-                    cmd.ExecuteNonQuery();   
+                    cmd.ExecuteNonQuery();
+                    addeve = true;
                 }
                 else
                 {
@@ -212,11 +214,23 @@ namespace main_screen.Teacher
                             cmd1.ExecuteNonQuery();
                             cmd1 = new SqlCommand("DELETE FROM weekly_events WHERE wEvent_id ='" + dtbl2.Rows[0][0] + "'", conn);
                             cmd1.ExecuteNonQuery();
+                            deleve = true;
                         }
                     }
                 }
             }
-            //MessageBox.Show("Your event added successfully");
+            if(addeve==true && deleve == true)
+            {
+                MessageBox.Show("Your reception hours added and removed successfully");
+            }
+            else if (addeve == true)
+            {
+                MessageBox.Show("Your reception hours added successfully");
+            }
+            else if (deleve == true)
+            {
+                MessageBox.Show("Your reception hours removed successfully");
+            }
             conn.Close();
 
         }
