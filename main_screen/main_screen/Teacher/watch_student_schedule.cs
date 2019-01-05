@@ -173,7 +173,7 @@ namespace main_screen.Teacher
                 
                     if (dtb2.Rows.Count > 0)
                     {
-                        if (dtb2.Rows[0]["date"].ToString() == thisday.ToString() + "/" + thismonth.ToString() + "/" + thisyear.ToString() + " 00:00:00")
+                        if (dtb2.Rows[0]["date"].ToString() == monthCalendar1.SelectionRange.Start.ToString())
                         {
                             string hours_end = dtb2.Rows[0]["hours_end"].ToString().Trim();
 
@@ -361,6 +361,7 @@ namespace main_screen.Teacher
                 
                 if (dtb2.Rows.Count > 0)
                 {
+                    /*
                     string day= thisday.ToString();
                     string month= thismonth.ToString();
                     if (day.Length < 2)
@@ -370,8 +371,10 @@ namespace main_screen.Teacher
                     if (month.Length < 2)
                     {
                         month = "0" + month;
-                    }
-                    if (dtb2.Rows[0]["date"].ToString() == day + "/" + month + "/" + thisyear.ToString() + " 00:00:00")
+                    }dtb2.Rows[0]["date"].ToString() == thismonth.ToString() + "/" + thisday.ToString() + "/" + thisyear.ToString() + " 00:00:00"
+                    */
+
+                    if (dtb2.Rows[0]["date"].ToString() == monthCalendar1.SelectionRange.Start.ToString())
                     {
                         string hours_end = dtb2.Rows[0]["hours_end"].ToString().Trim();
 
