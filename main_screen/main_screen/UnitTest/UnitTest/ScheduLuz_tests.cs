@@ -133,7 +133,7 @@ namespace UnitTest
             //Arrange
             var checker = new User();
             checker = checker.GetUser("123456789");
-            string expectedArray = "12/9/2018 00:00:00";
+            string expectedArray = "01/12/1999 00:00:00";
 
             //Act
             string result = checker.getBirthDate();
@@ -193,7 +193,7 @@ namespace UnitTest
             //Arrange
             var checker = new User();
             checker = checker.GetUser("123456789");
-            string expectedArray = "AviranGur";
+            string expectedArray = "avirangur";
 
             //Act
             string result = checker.getUsername();
@@ -253,7 +253,7 @@ namespace UnitTest
             //Arrange
             var checker = new User();
             checker = checker.GetUser("123456789");
-            string expectedArray = "Aviran";
+            string expectedArray = "aviran";
 
             //Act
             string result = checker.getName();
@@ -268,7 +268,7 @@ namespace UnitTest
             //Arrange
             var checker = new User();
             checker = checker.GetUser("123456789");
-            string expectedArray = "Gur";
+            string expectedArray = "gur";
 
             //Act
             string result = checker.getLastName();
