@@ -41,17 +41,24 @@ namespace main_screen
 
         private void button9_Click(object sender, EventArgs e)
         {
-            dataBase loging_dataBase = new dataBase();
-            SqlConnection conn = loging_dataBase.connect_to_scheduluz_DB();
-            DateTime dt = DateTime.Now;
-            conn.Open();
+            try
+            {
+                dataBase loging_dataBase = new dataBase();
+                SqlConnection conn = loging_dataBase.connect_to_scheduluz_DB();
+                DateTime dt = DateTime.Now;
+                conn.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO logins_report(date,user_id,user_name,connectORdisconnect) VALUES(@date,@user_id,@user_name,@connectORdisconnect) ", conn);
-            cmd.Parameters.Add("@date", dt);
-            cmd.Parameters.Add("@user_id", log_in_page.userId);
-            cmd.Parameters.Add("@user_name", log_in_page.loginUserName);
-            cmd.Parameters.Add("@connectORdisconnect", "disconnect");
-            cmd.ExecuteNonQuery();
+                SqlCommand cmd = new SqlCommand("INSERT INTO logins_report(date,user_id,user_name,connectORdisconnect) VALUES(@date,@user_id,@user_name,@connectORdisconnect) ", conn);
+                cmd.Parameters.Add("@date", dt);
+                cmd.Parameters.Add("@user_id", log_in_page.userId);
+                cmd.Parameters.Add("@user_name", log_in_page.loginUserName);
+                cmd.Parameters.Add("@connectORdisconnect", "disconnect");
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+
+            }
             log_in_page frmCal = new log_in_page();
             frmCal.Show();
             Visible = false;
@@ -60,8 +67,8 @@ namespace main_screen
         private void ManagerCalander_Load(object sender, EventArgs e)
         {
             DateTime now_dt = DateTime.Now;//END YEAR button visible or invisible according the date.
-            DateTime start = new DateTime(int.Parse(now_dt.Year.ToString().Trim()), 10, 1);
-            DateTime end = new DateTime(int.Parse(now_dt.Year.ToString().Trim())+1, 12, 31);
+            DateTime start = new DateTime(int.Parse(now_dt.Year.ToString().Trim()), 1, 1);
+            DateTime end = new DateTime(int.Parse(now_dt.Year.ToString().Trim()), 12, 31);
             if (now_dt.Ticks >= start.Ticks && now_dt.Ticks <= end.Ticks)
             {
                 EndYear_btn.Visible = true;
@@ -661,18 +668,18 @@ namespace main_screen
                 else
                 {
                     // user clicked no
-                    log_in_page n = new log_in_page();
-                    n.Show();
-                    this.Hide();
+                   // ManagerCalander n = new ManagerCalander();
+                    //n.Show();
+                   // this.Hide();
 
                 }
             }
             else
             {
                 // user clicked no
-                log_in_page n = new log_in_page();
-                n.Show();
-                this.Hide();
+               // ManagerCalander n = new ManagerCalander();
+               // n.Show();
+                //this.Hide();
 
             }
 

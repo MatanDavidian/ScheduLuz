@@ -127,8 +127,10 @@ namespace main_screen.general_process
             PhoneForReplace = PhoneForReplace.Replace("'", string.Empty);
             string EmailForReplace = Email_1st.Text;
             EmailForReplace = EmailForReplace.Replace("'", string.Empty);
-
-
+            string PEmailForReplace = PEmail_txt.Text;
+            PEmailForReplace = PEmailForReplace.Replace("'", string.Empty);
+            string PasswordForReplace = new_pass_txt.Text;
+            PasswordForReplace = PasswordForReplace.Replace("'", string.Empty);
             CheckDetails check = new CheckDetails();
 
             if (new_pass_txt.Text == userId)
@@ -187,7 +189,7 @@ namespace main_screen.general_process
                     {
                         conn = dataBase.connect_to_scheduluz_DB();
                         conn.Open();
-                        SqlCommand cmd3 = new SqlCommand("UPDATE users SET ParentEmail ='" + PEmail_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                        SqlCommand cmd3 = new SqlCommand("UPDATE users SET ParentEmail ='" + PEmailForReplace + "' WHERE id ='" + userId + "'", conn);
                         cmd3.ExecuteNonQuery();
                     }
 
@@ -216,7 +218,7 @@ namespace main_screen.general_process
                     {
                         conn = dataBase.connect_to_scheduluz_DB();
                         conn.Open();
-                        SqlCommand cmd10 = new SqlCommand("UPDATE connection_details SET password ='" + new_pass_txt.Text + "' WHERE id ='" + userId + "'", conn);
+                        SqlCommand cmd10 = new SqlCommand("UPDATE connection_details SET password ='" + PasswordForReplace + "' WHERE id ='" + userId + "'", conn);
                         cmd10.ExecuteNonQuery();
                     }
 
