@@ -95,6 +95,7 @@
             this.minutes_start.Name = "minutes_start";
             this.minutes_start.Size = new System.Drawing.Size(37, 20);
             this.minutes_start.TabIndex = 49;
+            this.minutes_start.ValueChanged += new System.EventHandler(this.minutes_start_ValueChanged);
             // 
             // hours_start
             // 

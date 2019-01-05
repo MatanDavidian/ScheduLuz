@@ -60,6 +60,7 @@ namespace main_screen.Teacher
 
             if(dtb6.Rows.Count > 0)
             {
+                monthCalendar1.Visible = true;  
                 student_id = dtb6.Rows[0][0].ToString().Trim();
                 User student = new User();
                 student = student.GetUser(student_id);
@@ -125,6 +126,8 @@ namespace main_screen.Teacher
             else
             {
                 MessageBox.Show("There is no such a student.");
+                monthCalendar1.Visible = false;
+                return ;
             }
 
 
@@ -166,10 +169,11 @@ namespace main_screen.Teacher
                     SqlDataAdapter sda2 = new SqlDataAdapter(query2, conn);
                     DataTable dtb2 = new DataTable();
                     sda2.Fill(dtb2);
-                    /* 1/15/2019 00:00:00*/
+                /* 1/15/2019 00:00:00*/
+                
                     if (dtb2.Rows.Count > 0)
                     {
-                        if (dtb2.Rows[0]["date"].ToString() == thismonth.ToString() + "/" + thisday.ToString() + "/" + thisyear.ToString() + " 00:00:00")
+                        if (dtb2.Rows[0]["date"].ToString() == thisday.ToString() + "/" + thismonth.ToString() + "/" + thisyear.ToString() + " 00:00:00")
                         {
                             string hours_end = dtb2.Rows[0]["hours_end"].ToString().Trim();
 
@@ -354,9 +358,20 @@ namespace main_screen.Teacher
                 DataTable dtb2 = new DataTable();
                 sda2.Fill(dtb2);
                 /* 1/15/2019 00:00:00*/
+                
                 if (dtb2.Rows.Count > 0)
                 {
-                    if (dtb2.Rows[0]["date"].ToString() == thismonth.ToString() + "/" + thisday.ToString() + "/" + thisyear.ToString() + " 00:00:00")
+                    string day= thisday.ToString();
+                    string month= thismonth.ToString();
+                    if (day.Length < 2)
+                    {
+                        day = "0" + day;
+                    }
+                    if (month.Length < 2)
+                    {
+                        month = "0" + month;
+                    }
+                    if (dtb2.Rows[0]["date"].ToString() == day + "/" + month + "/" + thisyear.ToString() + " 00:00:00")
                     {
                         string hours_end = dtb2.Rows[0]["hours_end"].ToString().Trim();
 
