@@ -30,7 +30,7 @@ namespace UnitTest
             var checker = new CheckDetails();
 
             //Act
-            var result = checker.CheckEmail("tom123@gmail.com");
+            var result = checker.CheckEmail("to3@gmail.com");
 
             //Assert
             Assert.IsTrue(result);
@@ -45,7 +45,7 @@ namespace UnitTest
             DateTime date = new DateTime(2018, 10, 12);
 
             //Act
-            var result = checker.insertToEvents("1", "testFunctioninsert", "test details", "test place", "test privacy", "test up for cancellation"
+            var result = checker.insertToEvents("1", "jh", "test details", "test place", "test privacy", "test up for cancellation"
                                                      , date, "test hours start", "test hours end", "test minute starts", "test minutes ends", "test regular");
 
             //Assert

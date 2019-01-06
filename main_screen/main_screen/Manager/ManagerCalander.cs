@@ -68,8 +68,8 @@ namespace main_screen
         private void ManagerCalander_Load(object sender, EventArgs e)
         {
             DateTime now_dt = DateTime.Now;//END YEAR button visible or invisible according the date.
-            DateTime start = new DateTime(int.Parse(now_dt.Year.ToString().Trim()), 1, 1);
-            DateTime end = new DateTime(int.Parse(now_dt.Year.ToString().Trim()), 12, 31);
+            DateTime start = new DateTime(int.Parse(now_dt.Year.ToString().Trim()), 6, 20);
+            DateTime end = new DateTime(int.Parse(now_dt.Year.ToString().Trim()), 9, 1);
             if (now_dt.Ticks >= start.Ticks && now_dt.Ticks <= end.Ticks)
             {
                 EndYear_btn.Visible = true;

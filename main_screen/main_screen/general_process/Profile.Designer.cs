@@ -314,7 +314,7 @@ namespace main_screen.general_process
             this.password_groupbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.password_groupbox.Name = "password_groupbox";
             this.password_groupbox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.password_groupbox.Size = new System.Drawing.Size(474, 288);
+            this.password_groupbox.Size = new System.Drawing.Size(474, 201);
             this.password_groupbox.TabIndex = 12;
             this.password_groupbox.TabStop = false;
             this.password_groupbox.Text = "Update Password";
@@ -328,7 +328,7 @@ namespace main_screen.general_process
             this.view_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.view_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.view_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.view_btn.Location = new System.Drawing.Point(384, 222);
+            this.view_btn.Location = new System.Drawing.Point(383, 154);
             this.view_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.view_btn.Name = "view_btn";
             this.view_btn.Size = new System.Drawing.Size(66, 35);
@@ -339,7 +339,7 @@ namespace main_screen.general_process
             // 
             // confirm_new_pass_txt
             // 
-            this.confirm_new_pass_txt.Location = new System.Drawing.Point(14, 222);
+            this.confirm_new_pass_txt.Location = new System.Drawing.Point(13, 154);
             this.confirm_new_pass_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.confirm_new_pass_txt.Name = "confirm_new_pass_txt";
             this.confirm_new_pass_txt.Size = new System.Drawing.Size(322, 26);
@@ -349,7 +349,7 @@ namespace main_screen.general_process
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 195);
+            this.label3.Location = new System.Drawing.Point(8, 127);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(171, 20);
@@ -368,7 +368,7 @@ namespace main_screen.general_process
             // 
             // new_pass_txt
             // 
-            this.new_pass_txt.Location = new System.Drawing.Point(14, 154);
+            this.new_pass_txt.Location = new System.Drawing.Point(13, 86);
             this.new_pass_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.new_pass_txt.Name = "new_pass_txt";
             this.new_pass_txt.Size = new System.Drawing.Size(326, 26);
@@ -378,7 +378,7 @@ namespace main_screen.general_process
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 128);
+            this.label2.Location = new System.Drawing.Point(8, 60);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(182, 20);
@@ -427,7 +427,7 @@ namespace main_screen.general_process
             this.return_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.return_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.return_btn.Location = new System.Drawing.Point(18, 1015);
+            this.return_btn.Location = new System.Drawing.Point(773, 694);
             this.return_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(112, 35);
@@ -456,6 +456,8 @@ namespace main_screen.general_process
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Profile";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);
             this.groupBox2.ResumeLayout(false);

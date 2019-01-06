@@ -51,9 +51,10 @@
             this.Return.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Return.Location = new System.Drawing.Point(26, 497);
+            this.Return.Location = new System.Drawing.Point(39, 765);
+            this.Return.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Return.Name = "Return";
-            this.Return.Size = new System.Drawing.Size(84, 28);
+            this.Return.Size = new System.Drawing.Size(126, 43);
             this.Return.TabIndex = 78;
             this.Return.Text = "Return";
             this.Return.UseVisualStyleBackColor = true;
@@ -66,10 +67,11 @@
             this.date,
             this.question});
             this.listView.FullRowSelect = true;
-            this.listView.Location = new System.Drawing.Point(12, 60);
+            this.listView.Location = new System.Drawing.Point(18, 92);
+            this.listView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listView.MultiSelect = false;
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(312, 428);
+            this.listView.Size = new System.Drawing.Size(466, 656);
             this.listView.TabIndex = 79;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -91,10 +93,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(19, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label1.Location = new System.Drawing.Point(28, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 39);
+            this.label1.Size = new System.Drawing.Size(424, 61);
             this.label1.TabIndex = 81;
             this.label1.Text = "Surveys Results";
             // 
@@ -112,31 +114,33 @@
             this.survey.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.survey.Legends.Add(legend1);
-            this.survey.Location = new System.Drawing.Point(341, 60);
+            this.survey.Location = new System.Drawing.Point(512, 92);
+            this.survey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.survey.Name = "survey";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Salary";
             this.survey.Series.Add(series1);
-            this.survey.Size = new System.Drawing.Size(451, 428);
+            this.survey.Size = new System.Drawing.Size(676, 658);
             this.survey.TabIndex = 82;
             this.survey.Text = "chart1";
             this.survey.Click += new System.EventHandler(this.survey_Click);
             // 
             // surveys_results
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::main_screen.Properties.Resources.bg_worker;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(824, 538);
+            this.ClientSize = new System.Drawing.Size(1236, 828);
             this.Controls.Add(this.survey);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.Return);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "surveys_results";
             this.Text = "Surveys Results";
             this.Load += new System.EventHandler(this.surveys_results_Load);

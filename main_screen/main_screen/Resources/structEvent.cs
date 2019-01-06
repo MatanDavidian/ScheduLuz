@@ -291,8 +291,10 @@ namespace Event
 
 
                 }
+            string detailsForReplacing = details;
+            detailsForReplacing = detailsForReplacing.Replace("'", string.Empty);
 
-                if (!isweekly)
+            if (!isweekly)
                 {
                     SqlCommand cmd1 = new SqlCommand("UPDATE Events SET Event_name ='" + title + "' WHERE Event_id =" + eventid, conn);
                     cmd1.ExecuteNonQuery();
@@ -300,7 +302,7 @@ namespace Event
                     cmd1 = new SqlCommand("UPDATE Events SET Event_name ='" + title + "' WHERE Event_id =" + eventid, conn);
                     cmd1.ExecuteNonQuery();
 
-                    cmd1 = new SqlCommand("UPDATE Events SET Event_details ='" + details + "' WHERE Event_id =" + eventid + "", conn);
+                    cmd1 = new SqlCommand("UPDATE Events SET Event_details ='" + detailsForReplacing + "' WHERE Event_id =" + eventid + "", conn);
                     cmd1.ExecuteNonQuery();
 
                     cmd1 = new SqlCommand("UPDATE Events SET event_place ='" + place + "' WHERE Event_id =" + eventid + "", conn);
