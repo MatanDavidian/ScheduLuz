@@ -70,7 +70,10 @@ namespace main_screen.Student
 
         private void Add_hw_form_Load(object sender, EventArgs e)
         {
-
+            DateTime D = new DateTime();
+            D = DateTime.Today;
+            dateTimePicker2.MinDate = D;
+            dateTimePicker1.MinDate = D;
         }
 
         private void from_hour_ValueChanged(object sender, EventArgs e)
@@ -92,6 +95,17 @@ namespace main_screen.Student
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime D = dateTimePicker1.Value;
+            dateTimePicker2.MinDate = D;
         }
     }
 

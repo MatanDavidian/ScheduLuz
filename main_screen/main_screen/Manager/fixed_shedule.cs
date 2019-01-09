@@ -28,7 +28,10 @@ namespace main_screen.Manager
 
         private void fixed_schedule_Load(object sender, EventArgs e)
         {
-            for(int i=0; i<8; i++)
+            
+            schedule.Enabled = false;
+           
+            for (int i=0; i<8; i++)
             {
                 schedule.Rows.Add((i + 8),(i+9));
             }
@@ -108,10 +111,14 @@ namespace main_screen.Manager
                     SqlDataAdapter sda = new SqlDataAdapter(query, con);
                     DataTable dtbl = new DataTable();
                     sda.Fill(dtbl);
-
+                    String validDay = days.Text;
                     if (dtbl.Rows.Count == 0)
                     {
                         MessageBox.Show("there is no such a teacher.");
+                    }
+                    else if (!(days.Items.Contains(validDay)))
+                    {
+                        MessageBox.Show("there is no such a day.");
                     }
                     else
                     {
@@ -388,8 +395,7 @@ namespace main_screen.Manager
                     }
                 
             }
-
-
+            schedule.Enabled = true;
         }
 
         private void return_btn_Click(object sender, EventArgs e)

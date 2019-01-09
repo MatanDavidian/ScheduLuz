@@ -115,5 +115,10 @@ namespace main_screen.Manager
             this.Hide();
             n.Show();
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

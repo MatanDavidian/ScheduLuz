@@ -30,7 +30,7 @@ namespace UnitTest
             var checker = new CheckDetails();
 
             //Act
-            var result = checker.CheckEmail("tom123@gmail.com");
+            var result = checker.CheckEmail("to3@gmail.com");
 
             //Assert
             Assert.IsTrue(result);
@@ -45,7 +45,7 @@ namespace UnitTest
             DateTime date = new DateTime(2018, 10, 12);
 
             //Act
-            var result = checker.insertToEvents("1", "testFunctioninsert", "test details", "test place", "test privacy", "test up for cancellation"
+            var result = checker.insertToEvents("1", "jh", "test details", "test place", "test privacy", "test up for cancellation"
                                                      , date, "test hours start", "test hours end", "test minute starts", "test minutes ends", "test regular");
 
             //Assert
@@ -133,7 +133,7 @@ namespace UnitTest
             //Arrange
             var checker = new User();
             checker = checker.GetUser("123456789");
-            string expectedArray = "12/9/2018 00:00:00";
+            string expectedArray = "1/12/1992 12:00:00 AM";
 
             //Act
             string result = checker.getBirthDate();
@@ -193,7 +193,7 @@ namespace UnitTest
             //Arrange
             var checker = new User();
             checker = checker.GetUser("123456789");
-            string expectedArray = "AviranGur";
+            string expectedArray = "avirangur";
 
             //Act
             string result = checker.getUsername();
@@ -253,7 +253,7 @@ namespace UnitTest
             //Arrange
             var checker = new User();
             checker = checker.GetUser("123456789");
-            string expectedArray = "Aviran";
+            string expectedArray = "aviran";
 
             //Act
             string result = checker.getName();
@@ -268,7 +268,7 @@ namespace UnitTest
             //Arrange
             var checker = new User();
             checker = checker.GetUser("123456789");
-            string expectedArray = "Gur";
+            string expectedArray = "gur";
 
             //Act
             string result = checker.getLastName();

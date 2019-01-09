@@ -51,6 +51,9 @@ namespace main_screen.Manager
             Table.Size = new Size(536, 250);
             Table.AutoSize = true;
             Table.Name = "Desk";
+            Table.BackColor = Color.Transparent;
+            //Table.CellBorderStyle = 0;
+            Table.CellBorderStyle =TableLayoutPanelCellBorderStyle.None;
             Table.ColumnCount = 7;
             Table.RowCount = dt_reqest.Rows.Count + help;
             Table.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;

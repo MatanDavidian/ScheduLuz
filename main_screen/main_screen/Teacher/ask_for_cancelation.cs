@@ -201,6 +201,7 @@ namespace main_screen.Teacher
 
         private void Submit_Click(object sender, EventArgs e)
         {
+            string help;
             dataBase dataBase = new dataBase();
             SqlConnection conn = dataBase.connect_to_scheduluz_DB();
             SqlDataAdapter sda0;
@@ -221,7 +222,9 @@ namespace main_screen.Teacher
 
                     cmd.Parameters.Add("@approved_condition", "send");
                     cmd.Parameters.Add("@user_id", log_in_page.userId);
-                    cmd.Parameters.Add("@reason", reason.Text.ToString());
+                    help = reason.Text;
+                    help = help.Replace("'", string.Empty);
+                    cmd.Parameters.Add("@reason", help);
                     for (int j=0;j<dtbl0.Rows.Count;j++)
                     {
                         if(dtbl0.Rows[j]["day_in_week"].ToString().Trim()== labels[i%6].Text &&
