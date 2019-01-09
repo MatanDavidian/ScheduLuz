@@ -212,6 +212,7 @@
             // details_txt
             // 
             this.details_txt.Location = new System.Drawing.Point(95, 51);
+            this.details_txt.MaxLength = 250;
             this.details_txt.Name = "details_txt";
             this.details_txt.Size = new System.Drawing.Size(200, 45);
             this.details_txt.TabIndex = 15;

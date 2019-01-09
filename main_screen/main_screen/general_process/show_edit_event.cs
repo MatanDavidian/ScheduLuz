@@ -27,6 +27,7 @@ namespace main_screen.general_process
         public static string event_id;
         public static bool weekly;
         public static bool editalbe;
+        public static string kind;
         private void show_edit_event_Load(object sender, EventArgs e)
         {
             delete_btn.Visible = false;
@@ -36,7 +37,12 @@ namespace main_screen.general_process
             title_txt.Text = n.getTitle();
             place_txt.Text = n.getPlace();
             details_txt.Text = n.getDetails();
+            kind = n.getKind();
             if(n.getKind().ToLower() == "regular")
+            {
+                editalbe = true;
+            }
+            else if (n.getKind().ToLower() == "hw" && log_in_page.permission.ToLower() == "student")
             {
                 editalbe = true;
             }
@@ -125,7 +131,7 @@ namespace main_screen.general_process
             {
                 MessageBox.Show("please fill the title.");
             }
-            else if (place_txt.Text == "")
+            else if (place_txt.Text == "" && kind != "HW")
             {
                 MessageBox.Show("please fill the place.");
             }

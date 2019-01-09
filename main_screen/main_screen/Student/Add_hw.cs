@@ -32,38 +32,70 @@ namespace main_screen.Student
 
         private void submit_btn_Click(object sender, EventArgs e)
         {
-            check_funcs.DBfuncs addEvent = new DBfuncs();
-            string userID = log_in_page.userId;
-            string title = "H.W in " + profassion_txt.Text;
-            string details = details_txt.Text;
-            string place = "";
-            string privacy = "private";
-            string up_for_cancellation = "YES";
-            DateTime date = dateTimePicker1.Value;
-            string hours_start = from_hour.Value.ToString(); ;
-            string hours_end = to_hour.Value.ToString();
-            string minutes_start = from_minute.Value.ToString();
-            string minutes_end = to_minute.Value.ToString();
-            string kind = "HW";
-
-            if(
-            addEvent.insertToEvents(userID, title, details, place, privacy, up_for_cancellation
-            , date, hours_start, hours_end, minutes_start, minutes_end, kind))
+            bool exe_flag = false;
+            try
             {
-                if (addEvent.insertToEvents(userID, "Submit" + title, "", place, privacy, up_for_cancellation,
-                    dateTimePicker2.Value, "23", "23", "0", "59", kind))
+                if (profassion_txt.Text.Length == 0)
                 {
-                    MessageBox.Show("added!");
+                    MessageBox.Show("please fill profassion");
                 }
-                else
+                else if (from_hour.Value > to_hour.Value)
                 {
-                    MessageBox.Show("Problem -  please check your values");
+                    MessageBox.Show("your starting hour is later then your ending hour.");
                 }
+                else if (from_hour.Value == to_hour.Value)
+                {
+                    if (from_minute.Value >= to_minute.Value)
+                    {
+                        MessageBox.Show("your starting hour is later then your ending hour.");
+                    }
+                    else exe_flag = true;
+                }
+                else exe_flag = true;
 
+                if (exe_flag)
+                {
+
+                    check_funcs.DBfuncs addEvent = new DBfuncs();
+                    string userID = log_in_page.userId;
+                    string title = "H.W in " + profassion_txt.Text;
+                    string details = details_txt.Text;
+                    string place = "";
+                    string privacy = "private";
+                    string up_for_cancellation = "YES";
+                    DateTime date = dateTimePicker1.Value;
+                    string hours_start = from_hour.Value.ToString(); ;
+                    string hours_end = to_hour.Value.ToString();
+                    string minutes_start = from_minute.Value.ToString();
+                    string minutes_end = to_minute.Value.ToString();
+                    string kind = "HW";
+
+
+
+                    if (
+                    addEvent.insertToEvents(userID, title, details, place, privacy, up_for_cancellation
+                    , date, hours_start, hours_end, minutes_start, minutes_end, kind))
+                    {
+                        if (addEvent.insertToEvents(userID, "Submit" + title, "", place, privacy, up_for_cancellation,
+                            dateTimePicker2.Value, "23", "23", "0", "59", kind))
+                        {
+                            MessageBox.Show("added!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Problem -  please check your values");
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("problem detected. contact your ScheduluzGuide for more info.");
+                    }
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("problem");
+                MessageBox.Show("problem detected. contact your ScheduluzGuide for more info.");
             }
 
         }
