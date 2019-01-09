@@ -27,6 +27,8 @@ namespace main_screen.Teacher
 
         private void to_txt_TextChanged(object sender, EventArgs e)
         {
+            monthCalendar1.Enabled = false;
+
             dataBase dataBase = new dataBase();
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
             string query = "Select id,name,lastName from users Where permission = 'student'";
@@ -51,6 +53,8 @@ namespace main_screen.Teacher
         {
             monthCalendar1.Visible = true;
             profilePic_img.Image = null;
+            monthCalendar1.Enabled = true;
+
 
             dataBase dataBase = new dataBase();
             SqlConnection con = dataBase.connect_to_scheduluz_DB();
@@ -126,6 +130,7 @@ namespace main_screen.Teacher
             else
             {
                 MessageBox.Show("There is no such a student.");
+                monthCalendar1.Enabled = false;
             }
 
 
